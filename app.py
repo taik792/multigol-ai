@@ -1,5 +1,5 @@
 import streamlit as st
-from matches_scraper import get_matches
+from odds_api_scraper import get_matches
 from multigol_engine import analyze_matches
 
 st.title("⚽ MULTIGOL AI SCANNER")
@@ -43,4 +43,5 @@ for b in results["bets"]:
     st.write("Multigol:", b["mg2_home"], "-", b["mg2_away"])
 
     st.write("Quota stimata:", b["quota"])
+
     st.write("---")
