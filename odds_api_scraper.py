@@ -29,7 +29,7 @@ def get_matches():
         params = {
             "apiKey": API_KEY,
             "regions": "eu",
-            "markets": "totals,btts",
+            "markets": "totals",   # solo totals
             "oddsFormat": "decimal"
         }
 
@@ -59,8 +59,6 @@ def get_matches():
 
             over25 = None
             under25 = None
-            goal = None
-            nogoal = None
 
             for bookmaker in game.get("bookmakers", []):
 
@@ -76,16 +74,6 @@ def get_matches():
                             if o["name"] == "Under" and o["point"] == 2.5:
                                 under25 = o["price"]
 
-                    if market.get("key") == "btts":
-
-                        for o in market.get("outcomes", []):
-
-                            if o["name"] == "Yes":
-                                goal = o["price"]
-
-                            if o["name"] == "No":
-                                nogoal = o["price"]
-
             if over25:
 
                 matches.append({
@@ -96,8 +84,9 @@ def get_matches():
                     "over25": over25,
                     "under25": under25 if under25 else 2.0,
 
-                    "goal": goal if goal else 1.9,
-                    "nogoal": nogoal if nogoal else 1.9
+                    # valori neutri se BTTS non disponibile
+                    "goal": 1.90,
+                    "nogoal": 1.90
                 })
 
     return matches
