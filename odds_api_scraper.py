@@ -40,7 +40,13 @@ def get_matches():
             continue
 
         for game in data:
+            start = datetime.fromisoformat(game["commence_time"].replace("Z","+00:00"))
 
+            now = datetime.now(timezone.utc)
+            tomorrow = now + timedelta(days=1)
+
+if start <= now or start > tomorrow:
+    continue
             commence = game.get("commence_time")
 
             if not commence:
@@ -87,3 +93,4 @@ def get_matches():
 
 
     return matches
+
