@@ -5,11 +5,11 @@ from datetime import datetime, timezone, timedelta
 API_KEY = st.secrets["ODDS_API_KEY"]
 
 sports = [
-"soccer_epl",
-"soccer_italy_serie_a",
-"soccer_spain_la_liga",
-"soccer_germany_bundesliga",
-"soccer_france_ligue_one"
+    "soccer_epl",
+    "soccer_italy_serie_a",
+    "soccer_spain_la_liga",
+    "soccer_germany_bundesliga",
+    "soccer_france_ligue_one"
 ]
 
 
@@ -18,6 +18,7 @@ def get_matches():
     matches = []
 
     now = datetime.now(timezone.utc)
+    tomorrow = now + timedelta(days=1)
 
     for sport in sports:
 
@@ -40,57 +41,56 @@ def get_matches():
             continue
 
         for game in data:
+
             start = datetime.fromisoformat(game["commence_time"].replace("Z","+00:00"))
 
-            now = datetime.now(timezone.utc)
-            tomorrow = now + timedelta(days=1)
-
-if start <= now or start > tomorrow:
-    continue
-            commence = game.get("commence_time")
-
-            if not commence:
-                continue
-
-            match_time = datetime.fromisoformat(commence.replace("Z","+00:00"))
-
-            # scarta partite finite da troppo
-            if match_time < now - timedelta(hours=2):
+            # filtro partite oggi + domani
+            if start < now or start > tomorrow:
                 continue
 
             home = game.get("home_team")
             away = game.get("away_team")
 
             over25 = None
+            under25 = None
             goal = None
+            nogoal = None
 
-            for bookmaker in game.get("bookmakers",[]):
+            for bookmaker in game.get("bookmakers", []):
 
-                for market in bookmaker.get("markets",[]):
+                for market in bookmaker.get("markets", []):
 
-                    if market.get("key") == "totals":
+                    if market["key"] == "totals":
 
-                        for outcome in market.get("outcomes",[]):
+                        for outcome in market["outcomes"]:
 
-                            if outcome.get("name") == "Over" and outcome.get("point") == 2.5:
-                                over25 = outcome.get("price")
+                            if outcome["name"] == "Over" and outcome["point"] == 2.5:
+                                over25 = outcome["price"]
 
-                    if market.get("key") == "btts":
+                            if outcome["name"] == "Under" and outcome["point"] == 2.5:
+                                under25 = outcome["price"]
 
-                        for outcome in market.get("outcomes",[]):
+                    if market["key"] == "btts":
 
-                            if outcome.get("name") == "Yes":
-                                goal = outcome.get("price")
+                        for outcome in market["outcomes"]:
+
+                            if outcome["name"] == "Yes":
+                                goal = outcome["price"]
+
+                            if outcome["name"] == "No":
+                                nogoal = outcome["price"]
 
             if over25:
 
                 matches.append({
+
                     "home": home,
                     "away": away,
                     "over25": over25,
-                    "goal": goal if goal else 1.90
+                    "under25": under25 if under25 else 2.0,
+                    "goal": goal if goal else 1.9,
+                    "nogoal": nogoal if nogoal else 1.9
+
                 })
 
-
     return matches
-
