@@ -5,14 +5,24 @@ def calculate_score(match):
 
     score = 0
 
-    if over < 1.55:
+    # partita molto aperta
+    if over <= 1.55:
         score += 50
-    elif over < 1.70:
+
+    # partita offensiva
+    elif over <= 1.65:
         score += 40
-    elif over < 1.85:
+
+    # partita normale
+    elif over <= 1.80:
         score += 30
-    else:
+
+    # partita equilibrata
+    elif over <= 2.00:
         score += 20
+
+    else:
+        score += 10
 
     return score
 
@@ -22,25 +32,47 @@ def generate_multigol(match):
     over = match["over25"]
     under = match["under25"]
 
-    # partita molto offensiva
-    if over <= 1.55:
-        return {"home": "2-4", "away": "1-3"}
+    diff = abs(over - under)
 
-    # partita aperta
+    # partita con tanti gol
+    if over <= 1.55:
+
+        return {
+            "home": "2-4",
+            "away": "1-3"
+        }
+
+    # offensiva
     elif over <= 1.65:
-        return {"home": "1-4", "away": "1-3"}
+
+        return {
+            "home": "1-4",
+            "away": "1-3"
+        }
 
     # partita normale
     elif over <= 1.75:
-        return {"home": "1-3", "away": "1-2"}
+
+        return {
+            "home": "1-3",
+            "away": "1-2"
+        }
 
     # partita equilibrata
     elif over <= 1.90:
-        return {"home": "0-3", "away": "0-2"}
+
+        return {
+            "home": "0-3",
+            "away": "0-2"
+        }
 
     # partita chiusa
     else:
-        return {"home": "0-2", "away": "0-1"}
+
+        return {
+            "home": "0-2",
+            "away": "0-1"
+        }
 
 
 def estimate_odds(match):
@@ -71,6 +103,7 @@ def create_bets(matches):
 
             quota = m1["odds"] * m2["odds"]
 
+            # quota target circa 3
             if 2.8 <= quota <= 3.4:
 
                 bets.append({
@@ -121,13 +154,14 @@ def analyze_matches(matches):
 
     results = sorted(results, key=lambda x: x["score"], reverse=True)
 
-    top = results[:6]
-    playable = results[6:]
+    top_matches = results[:6]
+
+    playable_matches = results[6:]
 
     bets = create_bets(results)
 
     return {
-        "top": top,
-        "playable": playable,
+        "top": top_matches,
+        "playable": playable_matches,
         "bets": bets
     }
