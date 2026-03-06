@@ -1,14 +1,15 @@
 def calculate_score(match):
 
+    over = match["over25"]
+    under = match["under25"]
+
     score = 0
 
-    over25 = match["over25"]
-
-    if over25 <= 1.55:
+    if over < 1.55:
         score += 50
-    elif over25 <= 1.65:
+    elif over < 1.70:
         score += 40
-    elif over25 <= 1.80:
+    elif over < 1.85:
         score += 30
     else:
         score += 20
@@ -16,60 +17,43 @@ def calculate_score(match):
     return score
 
 
-def generate_multigol(over25):
+def generate_multigol(match):
 
-    # partita con molti gol
-    if over25 <= 1.55:
+    over = match["over25"]
+    under = match["under25"]
 
-        return {
-            "home": "2-4",
-            "away": "1-3"
-        }
+    # partita molto offensiva
+    if over <= 1.55:
+        return {"home": "2-4", "away": "1-3"}
 
-    # partita offensiva
-    elif over25 <= 1.65:
-
-        return {
-            "home": "1-4",
-            "away": "1-3"
-        }
+    # partita aperta
+    elif over <= 1.65:
+        return {"home": "1-4", "away": "1-3"}
 
     # partita normale
-    elif over25 <= 1.75:
-
-        return {
-            "home": "1-3",
-            "away": "1-2"
-        }
+    elif over <= 1.75:
+        return {"home": "1-3", "away": "1-2"}
 
     # partita equilibrata
-    elif over25 <= 1.90:
-
-        return {
-            "home": "0-3",
-            "away": "0-2"
-        }
+    elif over <= 1.90:
+        return {"home": "0-3", "away": "0-2"}
 
     # partita chiusa
     else:
-
-        return {
-            "home": "0-2",
-            "away": "0-1"
-        }
+        return {"home": "0-2", "away": "0-1"}
 
 
 def estimate_odds(match):
 
-    over25 = match["over25"]
+    over = match["over25"]
 
-    if over25 <= 1.55:
+    if over <= 1.55:
         return 1.55
-    elif over25 <= 1.65:
+    elif over <= 1.65:
         return 1.60
-    elif over25 <= 1.75:
+    elif over <= 1.75:
         return 1.65
-    elif over25 <= 1.90:
+    elif over <= 1.90:
         return 1.70
     else:
         return 1.75
@@ -114,7 +98,7 @@ def analyze_matches(matches):
 
         score = calculate_score(match)
 
-        multigol = generate_multigol(match["over25"])
+        multigol = generate_multigol(match)
 
         odds = estimate_odds(match)
 
@@ -126,6 +110,7 @@ def analyze_matches(matches):
             "score": score,
 
             "over25": match["over25"],
+            "under25": match["under25"],
 
             "multigol_home": multigol["home"],
             "multigol_away": multigol["away"],
@@ -136,14 +121,13 @@ def analyze_matches(matches):
 
     results = sorted(results, key=lambda x: x["score"], reverse=True)
 
-    top_matches = results[:6]
-
-    playable_matches = results[6:]
+    top = results[:6]
+    playable = results[6:]
 
     bets = create_bets(results)
 
     return {
-        "top": top_matches,
-        "playable": playable_matches,
+        "top": top,
+        "playable": playable,
         "bets": bets
     }
