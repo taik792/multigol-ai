@@ -3,21 +3,21 @@ def calculate_score(match):
     score = 0
 
     over25 = match["over25"]
-    goal = match["goal"]
+    under25 = match["under25"]
 
-    # probabilità molti gol
-    if over25 <= 1.65:
-        score += 40
-    elif over25 <= 1.80:
-        score += 30
-    else:
-        score += 20
+    # partita molto aperta
+    if over25 <= 1.65 and under25 >= 2.10:
+        score += 60
 
-    # entrambe segnano
-    if goal <= 1.70:
+    # buona probabilità di gol
+    elif over25 <= 1.75 and under25 >= 2.00:
+        score += 45
+
+    # partita media
+    elif over25 <= 1.90:
         score += 30
-    elif goal <= 1.90:
-        score += 20
+
+    # partita incerta
     else:
         score += 10
 
@@ -86,7 +86,7 @@ def create_bets(matches):
             quota = m1["odds"] * m2["odds"]
 
             # quota totale circa 3
-            if 2.5 <= quota <= 3.4:
+            if 2.8 <= quota <= 3.4:
 
                 bets.append({
 
@@ -125,7 +125,7 @@ def analyze_matches(matches):
             "score": score,
 
             "over25": match["over25"],
-            "goal": match["goal"],
+            "under25": match["under25"],
 
             "multigol_home": multigol["home"],
             "multigol_away": multigol["away"],
