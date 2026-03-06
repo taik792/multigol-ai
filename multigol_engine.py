@@ -3,39 +3,39 @@ def calculate_score(match):
     score = 0
 
     over25 = match["over25"]
-    under25 = match["under25"]
 
-    # partita molto aperta
-    if over25 <= 1.65 and under25 >= 2.10:
-        score += 60
-
-    # buona probabilità di gol
-    elif over25 <= 1.75 and under25 >= 2.00:
-        score += 45
-
-    # partita media
-    elif over25 <= 1.90:
+    if over25 <= 1.55:
+        score += 50
+    elif over25 <= 1.65:
+        score += 40
+    elif over25 <= 1.80:
         score += 30
-
-    # partita incerta
     else:
-        score += 10
+        score += 20
 
     return score
 
 
 def generate_multigol(over25):
 
-    # partita molto aperta
-    if over25 <= 1.65:
+    # partita con molti gol
+    if over25 <= 1.55:
+
+        return {
+            "home": "2-4",
+            "away": "1-3"
+        }
+
+    # partita offensiva
+    elif over25 <= 1.65:
 
         return {
             "home": "1-4",
             "away": "1-3"
         }
 
-    # partita con gol probabili
-    elif over25 <= 1.80:
+    # partita normale
+    elif over25 <= 1.75:
 
         return {
             "home": "1-3",
@@ -43,7 +43,7 @@ def generate_multigol(over25):
         }
 
     # partita equilibrata
-    elif over25 <= 2.00:
+    elif over25 <= 1.90:
 
         return {
             "home": "0-3",
@@ -63,14 +63,16 @@ def estimate_odds(match):
 
     over25 = match["over25"]
 
-    if over25 <= 1.65:
+    if over25 <= 1.55:
         return 1.55
-    elif over25 <= 1.80:
+    elif over25 <= 1.65:
         return 1.60
-    elif over25 <= 2.00:
+    elif over25 <= 1.75:
         return 1.65
-    else:
+    elif over25 <= 1.90:
         return 1.70
+    else:
+        return 1.75
 
 
 def create_bets(matches):
@@ -85,16 +87,15 @@ def create_bets(matches):
 
             quota = m1["odds"] * m2["odds"]
 
-            # quota totale circa 3
             if 2.8 <= quota <= 3.4:
 
                 bets.append({
 
-                    "match1": m1["home"] + " vs " + m1["away"],
+                    "match1": f"{m1['home']} vs {m1['away']}",
                     "mg1_home": m1["multigol_home"],
                     "mg1_away": m1["multigol_away"],
 
-                    "match2": m2["home"] + " vs " + m2["away"],
+                    "match2": f"{m2['home']} vs {m2['away']}",
                     "mg2_home": m2["multigol_home"],
                     "mg2_away": m2["multigol_away"],
 
@@ -125,7 +126,6 @@ def analyze_matches(matches):
             "score": score,
 
             "over25": match["over25"],
-            "under25": match["under25"],
 
             "multigol_home": multigol["home"],
             "multigol_away": multigol["away"],
@@ -134,7 +134,6 @@ def analyze_matches(matches):
 
         })
 
-    # ordina per score migliore
     results = sorted(results, key=lambda x: x["score"], reverse=True)
 
     top_matches = results[:6]
