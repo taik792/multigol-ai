@@ -1,26 +1,23 @@
 def calculate_score(match):
 
     over = match["over25"]
-    under = match["under25"]
+    goal = match["goal"]
 
     score = 0
 
-    # partita molto aperta
     if over <= 1.55:
-        score += 50
-
-    # partita offensiva
-    elif over <= 1.65:
         score += 40
-
-    # partita normale
-    elif over <= 1.80:
+    elif over <= 1.70:
         score += 30
-
-    # partita equilibrata
-    elif over <= 2.00:
+    elif over <= 1.85:
         score += 20
+    else:
+        score += 10
 
+    if goal <= 1.70:
+        score += 30
+    elif goal <= 1.90:
+        score += 20
     else:
         score += 10
 
@@ -30,49 +27,22 @@ def calculate_score(match):
 def generate_multigol(match):
 
     over = match["over25"]
-    under = match["under25"]
+    goal = match["goal"]
 
-    diff = abs(over - under)
+    if over <= 1.55 and goal <= 1.70:
+        return {"home": "2-4", "away": "1-3"}
 
-    # partita con tanti gol
-    if over <= 1.55:
+    elif over <= 1.65 and goal <= 1.80:
+        return {"home": "1-4", "away": "1-3"}
 
-        return {
-            "home": "2-4",
-            "away": "1-3"
-        }
+    elif over <= 1.80:
+        return {"home": "1-3", "away": "1-2"}
 
-    # offensiva
-    elif over <= 1.65:
+    elif over <= 1.95:
+        return {"home": "0-3", "away": "0-2"}
 
-        return {
-            "home": "1-4",
-            "away": "1-3"
-        }
-
-    # partita normale
-    elif over <= 1.75:
-
-        return {
-            "home": "1-3",
-            "away": "1-2"
-        }
-
-    # partita equilibrata
-    elif over <= 1.90:
-
-        return {
-            "home": "0-3",
-            "away": "0-2"
-        }
-
-    # partita chiusa
     else:
-
-        return {
-            "home": "0-2",
-            "away": "0-1"
-        }
+        return {"home": "0-2", "away": "0-1"}
 
 
 def estimate_odds(match):
@@ -81,11 +51,11 @@ def estimate_odds(match):
 
     if over <= 1.55:
         return 1.55
-    elif over <= 1.65:
+    elif over <= 1.70:
         return 1.60
-    elif over <= 1.75:
+    elif over <= 1.85:
         return 1.65
-    elif over <= 1.90:
+    elif over <= 2.00:
         return 1.70
     else:
         return 1.75
@@ -103,7 +73,6 @@ def create_bets(matches):
 
             quota = m1["odds"] * m2["odds"]
 
-            # quota target circa 3
             if 2.8 <= quota <= 3.4:
 
                 bets.append({
@@ -116,8 +85,7 @@ def create_bets(matches):
                     "mg2_home": m2["multigol_home"],
                     "mg2_away": m2["multigol_away"],
 
-                    "quota": round(quota, 2)
-
+                    "quota": round(quota,2)
                 })
 
     return bets[:5]
@@ -130,9 +98,7 @@ def analyze_matches(matches):
     for match in matches:
 
         score = calculate_score(match)
-
         multigol = generate_multigol(match)
-
         odds = estimate_odds(match)
 
         results.append({
@@ -143,25 +109,23 @@ def analyze_matches(matches):
             "score": score,
 
             "over25": match["over25"],
-            "under25": match["under25"],
+            "goal": match["goal"],
 
             "multigol_home": multigol["home"],
             "multigol_away": multigol["away"],
 
             "odds": odds
-
         })
 
     results = sorted(results, key=lambda x: x["score"], reverse=True)
 
-    top_matches = results[:6]
-
-    playable_matches = results[6:]
+    top = results[:6]
+    playable = results[6:]
 
     bets = create_bets(results)
 
     return {
-        "top": top_matches,
-        "playable": playable_matches,
+        "top": top,
+        "playable": playable,
         "bets": bets
     }
