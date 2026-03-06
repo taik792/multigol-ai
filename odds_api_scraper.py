@@ -1,7 +1,8 @@
 import requests
+import streamlit as st
 from datetime import datetime, timezone, timedelta
 
-API_KEY = "LA_TUA_API_KEY"
+API_KEY = st.secrets["ODDS_API_KEY"]
 
 sports = [
 "soccer_epl",
@@ -83,5 +84,6 @@ def get_matches():
                     "over25": over25,
                     "goal": goal if goal else 1.90
                 })
+
 
     return matches
