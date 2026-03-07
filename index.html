@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Multigol AI Scanner</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#111;
+color:white;
+text-align:center;
+}
+
+h1{
+color:#00ff9c;
+}
+
+table{
+margin:auto;
+border-collapse:collapse;
+width:80%;
+}
+
+th,td{
+padding:12px;
+border-bottom:1px solid #444;
+}
+
+th{
+background:#00ff9c;
+color:black;
+}
+
+tr:hover{
+background:#222;
+}
+
+.badge{
+background:#00ff9c;
+color:black;
+padding:4px 8px;
+border-radius:6px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>⚽ MULTIGOL AI</h1>
+<p>Pronostici aggiornati automaticamente</p>
+
+<table id="table">
+
+<tr>
+<th>Partita</th>
+<th>Campionato</th>
+<th>Expected Goals</th>
+<th>Multigol</th>
+<th>Confidenza</th>
+</tr>
+
+</table>
+
+<script>
+
+fetch("output/multigol_predictions.json")
+.then(res=>res.json())
+.then(data=>{
+
+let table=document.getElementById("table");
+
+data.forEach(match=>{
+
+let row=`
+<tr>
+<td>${match.match}</td>
+<td>${match.league}</td>
+<td>${match.expected_goals}</td>
+<td><span class="badge">${match.multigol}</span></td>
+<td>${match.confidence}%</td>
+</tr>
+`;
+
+table.innerHTML+=row;
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
