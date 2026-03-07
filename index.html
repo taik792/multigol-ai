@@ -8,17 +8,34 @@
 <style>
 
 body{
-background:#0f172a;
+background: linear-gradient(135deg,#0f172a,#1e293b);
+font-family: Arial;
 color:white;
-font-family:Arial;
 padding:40px;
 }
 
+h1{
+font-size:32px;
+margin-bottom:30px;
+}
+
 .match{
-background:#1e293b;
-padding:15px;
-margin-bottom:12px;
-border-radius:8px;
+background:rgba(255,255,255,0.05);
+padding:20px;
+margin-bottom:15px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.1);
+transition:0.2s;
+}
+
+.match:hover{
+transform:scale(1.02);
+background:rgba(255,255,255,0.08);
+}
+
+.match h3{
+margin-bottom:10px;
+color:#38bdf8;
 }
 
 </style>
@@ -37,11 +54,11 @@ fetch("output/predictions.json")
 .then(res=>res.json())
 .then(data=>{
 
-let container = document.getElementById("matches")
+let container=document.getElementById("matches")
 
 data.forEach(m=>{
 
-container.innerHTML += `
+container.innerHTML+=`
 
 <div class="match">
 
