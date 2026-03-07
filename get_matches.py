@@ -28,8 +28,8 @@ for m in data.get("matches", []):
         "away": away
     })
 
-# SOVRASCRIVE COMPLETAMENTE IL FILE
+# RISCRIVE COMPLETAMENTE IL FILE
 with open("data/matches_today.json", "w") as f:
     json.dump(matches, f, indent=4)
 
-print("Matches salvate:", len(matches))
+print("Matches trovate:", len(matches))
