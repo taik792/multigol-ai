@@ -2,39 +2,32 @@ name: Multigol AI
 
 on:
 workflow_dispatch:
-schedule:
-- cron: "0 */6 * * *"
 
 jobs:
-
-build:
+run-engine:
 
 ```
 runs-on: ubuntu-latest
 
 steps:
 
-  - uses: actions/checkout@v3
+  - name: Checkout repository
+    uses: actions/checkout@v3
 
-  - uses: actions/setup-python@v4
+  - name: Setup Python
+    uses: actions/setup-python@v4
     with:
       python-version: "3.10"
 
-  - run: pip install -r requirements.txt
+  - name: Install dependencies
+    run: pip install -r requirements.txt
 
-  - run: python get_matches.py
+  - name: Get matches
+    run: python get_matches.py
 
-  - run: python odds_api_scraper.py
+  - name: Get odds
+    run: python odds_api_scraper.py
 
-  - run: python multigol_engine.py
-
-  - name: Commit predictions
-    run: |
-      git config --local user.email "action@github.com"
-      git config --local user.name "GitHub Action"
-      git add data/matches_today.json
-      git add quotes/odds.json
-      git add output/multigol_predictions.json
-      git commit -m "update predictions" || echo "no changes"
-      git push
+  - name: Run Multigol Engine
+    run: python multigol_engine.py
 ```
