@@ -11,8 +11,8 @@ for m in matches:
     home = m["home"]
     away = m["away"]
 
-    home_avg = random.uniform(0.8, 2.2)
-    away_avg = random.uniform(0.6, 1.8)
+    home_avg = random.uniform(0.8,2.2)
+    away_avg = random.uniform(0.6,1.8)
 
     total = home_avg + away_avg
 
@@ -37,18 +37,18 @@ for m in matches:
     else:
         away_goals = "0-1"
 
-    confidence = round(random.uniform(70, 90), 1)
+    confidence = round(random.uniform(70,90),1)
 
     predictions.append({
-        "home": home,
-        "away": away,
-        "multigol": multigol,
-        "home_goals": home_goals,
-        "away_goals": away_goals,
-        "confidence": confidence
+        "home":home,
+        "away":away,
+        "multigol":multigol,
+        "home_goals":home_goals,
+        "away_goals":away_goals,
+        "confidence":confidence
     })
 
-with open("output/predictions.json", "w") as f:
-    json.dump(predictions, f, indent=4)
+with open("output/predictions.json","w") as f:
+    json.dump(predictions,f,indent=4)
 
-print("Predictions created:", len(predictions))
+print("Pronostici creati:",len(predictions))
