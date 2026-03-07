@@ -1,20 +1,28 @@
 import requests
 import json
-import os
 from datetime import datetime
 
-# DATA DI OGGI
+# API football (partite)
+API_KEY = "b90932e65c14be06a870fd50fcd20ddc"
+
+url = "https://v3.football.api-sports.io/fixtures"
+
 today = datetime.today().strftime('%Y-%m-%d')
 
-url = f"https://api-football-v1.p.rapidapi.com/v3/fixtures?date={today}"
-
 headers = {
-    "X-RapidAPI-Key": "b90932e65c14be06a870fd50fcd20ddc",
-    "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
+    "x-apisports-key": API_KEY
 }
 
-response = requests.get(url, headers=headers)
+params = {
+    "date": today
+}
+
+response = requests.get(url, headers=headers, params=params)
 data = response.json()
+
+if "response" not in data:
+    print("Errore API:", data)
+    exit()
 
 matches = []
 
@@ -34,9 +42,7 @@ for game in data["response"]:
 
     matches.append(match)
 
-os.makedirs("data", exist_ok=True)
-
 with open("data/matches_today.json", "w") as f:
     json.dump(matches, f, indent=4)
 
-print("Partite aggiornate")
+print("Matches salvati:", len(matches))
