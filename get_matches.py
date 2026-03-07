@@ -1,10 +1,8 @@
 import requests
 import json
 
-
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
-Endpoint API Football
 
 url = "https://v3.football.api-sports.io/fixtures?next=20"
 
