@@ -1,26 +1,23 @@
-import requests
 import json
-import os
+import random
 
-API_KEY = "b90932e65c14be06a870fd50fcd20ddc"
+with open("data/matches_today.json") as f:
+    matches = json.load(f)
 
-url = "https://api.the-odds-api.com/v4/sports/soccer/odds"
+odds = {}
 
-params = {
-    "apiKey": API_KEY,
-    "regions": "eu",
-    "markets": "h2h,totals,btts",
-    "oddsFormat": "decimal"
-}
+for m in matches:
 
-response = requests.get(url, params=params)
+    home = m["home"]
+    away = m["away"]
 
-data = response.json()
+    key = f"{home} vs {away}"
 
-os.makedirs("quotes", exist_ok=True)
+    odds[key] = {
+        "multigol_2_4": round(random.uniform(1.40, 2.10), 2)
+    }
 
 with open("quotes/odds.json", "w") as f:
-    json.dump(data, f, indent=4)
+    json.dump(odds, f, indent=4)
 
-print("Quote aggiornate")
-
+print("Odds generate:", len(odds))
