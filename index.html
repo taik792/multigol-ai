@@ -1,31 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multigol AI Scanner</title>
+
+<style>
+body{
+background:#0f172a;
+font-family:Arial;
+color:white;
+padding:40px;
+}
+
+h1{
+margin-bottom:30px;
+}
+
+.match{
+background:#1e293b;
+padding:15px;
+margin-bottom:12px;
+border-radius:8px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Multigol AI Scanner</h1>
+
+<div id="matches">Caricamento partite...</div>
+
 <script>
 
-fetch("./output/predictions.json")
-.then(res => res.json())
-.then(data => {
+async function loadMatches(){
 
-let container = document.getElementById("matches")
+try{
 
-data.forEach(m => {
+const response = await fetch("./output/predictions.json");
 
-container.innerHTML += `
+if(!response.ok){
+document.getElementById("matches").innerHTML="Errore caricamento JSON";
+return;
+}
 
+const data = await response.json();
+
+let html="";
+
+data.forEach(m=>{
+
+html+=`
 <div class="match">
-
-<h3>${m.home} vs ${m.away}</h3>
-
+<b>${m.home} vs ${m.away}</b><br>
 Multigol: ${m.multigol}<br>
 Casa: ${m.home_goals}<br>
 Ospite: ${m.away_goals}<br>
-Quota media: ${m.quota}<br>
 Confidence: ${m.confidence}%
-
 </div>
+`;
 
-`
+});
 
-})
+document.getElementById("matches").innerHTML=html;
 
-})
+}catch(e){
+
+document.getElementById("matches").innerHTML="Errore script";
+
+}
+
+}
+
+loadMatches();
 
 </script>
+
+</body>
+</html>
