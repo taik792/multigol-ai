@@ -7,7 +7,6 @@ jobs:
 build:
 runs-on: ubuntu-latest
 
-```
 steps:
   - uses: actions/checkout@v3
 
@@ -18,4 +17,3 @@ steps:
   - run: pip install -r requirements.txt
 
   - run: python multigol_engine.py
-```
