@@ -48,4 +48,3 @@ with open("quotes/odds.json", "w") as f:
     json.dump(odds, f, indent=4)
 
 print("Odds scaricate:", len(odds))
-
