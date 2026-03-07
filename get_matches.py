@@ -19,16 +19,15 @@ data = response.json()
 matches = []
 
 if "matches" in data:
-
     for m in data["matches"]:
 
         home = m["homeTeam"]["name"]
         away = m["awayTeam"]["name"]
-        status = m["status"]
 
-        # prendiamo solo partite non ancora giocate
-        if status != "FINISHED":
+        # prendiamo la data della partita
+        match_date = m["utcDate"][:10]
 
+        if match_date == str(today) or match_date == str(tomorrow):
             matches.append({
                 "home": home,
                 "away": away,
@@ -36,7 +35,7 @@ if "matches" in data:
                 "competition": m["competition"]["name"]
             })
 
-with open("data/matches_today.json","w") as f:
-    json.dump(matches,f,indent=4)
+with open("data/matches_today.json", "w") as f:
+    json.dump(matches, f, indent=4)
 
-print("Partite trovate:",len(matches))
+print("Partite trovate:", len(matches))
