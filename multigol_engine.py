@@ -1,131 +1,117 @@
-def calculate_score(match):
-
-    over = match["over25"]
-    goal = match["goal"]
-
-    score = 0
-
-    if over <= 1.55:
-        score += 40
-    elif over <= 1.70:
-        score += 30
-    elif over <= 1.85:
-        score += 20
-    else:
-        score += 10
-
-    if goal <= 1.70:
-        score += 30
-    elif goal <= 1.90:
-        score += 20
-    else:
-        score += 10
-
-    return score
+import json
+import os
 
 
-def generate_multigol(match):
+def load_matches():
 
-    over = match["over25"]
-    goal = match["goal"]
+    with open("data/matches_today.json", "r") as f:
+        return json.load(f)
 
-    if over <= 1.55 and goal <= 1.70:
-        return {"home": "2-4", "away": "1-3"}
 
-    elif over <= 1.65 and goal <= 1.80:
-        return {"home": "1-4", "away": "1-3"}
+def load_odds():
 
-    elif over <= 1.80:
-        return {"home": "1-3", "away": "1-2"}
+    with open("quotes/odds.json", "r") as f:
+        return json.load(f)
 
-    elif over <= 1.95:
-        return {"home": "0-3", "away": "0-2"}
+
+def calculate_expected_goals(home_avg, away_avg, home_con, away_con):
+
+    return (home_avg + away_avg + home_con + away_con) / 2
+
+
+def multigol_range(xg):
+
+    if xg < 1.5:
+        return "0-2"
+
+    elif xg < 2.5:
+        return "1-3"
+
+    elif xg < 3.5:
+        return "2-4"
 
     else:
-        return {"home": "0-2", "away": "0-1"}
+        return "2-5"
 
 
-def estimate_odds(match):
+def confidence_score(xg):
 
-    over = match["over25"]
+    score = (xg / 4) * 100
 
-    if over <= 1.55:
-        return 1.55
-    elif over <= 1.70:
-        return 1.60
-    elif over <= 1.85:
-        return 1.65
-    elif over <= 2.00:
-        return 1.70
-    else:
-        return 1.75
+    if score > 100:
+        score = 100
+
+    return round(score, 1)
 
 
-def create_bets(matches):
+def run_engine():
 
-    bets = []
+    matches = load_matches()
+    odds = load_odds()
 
-    for i in range(len(matches)):
-        for j in range(i + 1, len(matches)):
+    predictions = []
 
-            m1 = matches[i]
-            m2 = matches[j]
+    for m in matches:
 
-            quota = m1["odds"] * m2["odds"]
+        home = m["home"]
+        away = m["away"]
 
-            if 2.8 <= quota <= 3.4:
+        home_avg = m["home_goals_avg"]
+        away_avg = m["away_goals_avg"]
 
-                bets.append({
+        home_con = m["home_conceded"]
+        away_con = m["away_conceded"]
 
-                    "match1": f"{m1['home']} vs {m1['away']}",
-                    "mg1_home": m1["multigol_home"],
-                    "mg1_away": m1["multigol_away"],
+        xg = calculate_expected_goals(
+            home_avg,
+            away_avg,
+            home_con,
+            away_con
+        )
 
-                    "match2": f"{m2['home']} vs {m2['away']}",
-                    "mg2_home": m2["multigol_home"],
-                    "mg2_away": m2["multigol_away"],
+        multigol = multigol_range(xg)
 
-                    "quota": round(quota,2)
-                })
+        confidence = confidence_score(xg)
 
-    return bets[:5]
+        match_key = f"{home}-{away}"
+
+        q = odds.get(match_key, {})
+
+        prediction = {
+
+            "match": match_key,
+
+            "expected_goals": round(xg,2),
+
+            "multigol": multigol,
+
+            "confidence": confidence,
+
+            "odds":{
+
+                "1": q.get("1"),
+                "X": q.get("X"),
+                "2": q.get("2"),
+
+                "over25": q.get("over25"),
+                "under25": q.get("under25"),
+
+                "btts_yes": q.get("btts_yes"),
+                "btts_no": q.get("btts_no")
+
+            }
+
+        }
+
+        predictions.append(prediction)
+
+    os.makedirs("output", exist_ok=True)
+
+    with open("output/multigol_predictions.json","w") as f:
+        json.dump(predictions, f, indent=4)
+
+    print("Multigol Engine completato")
 
 
-def analyze_matches(matches):
-
-    results = []
-
-    for match in matches:
-
-        score = calculate_score(match)
-        multigol = generate_multigol(match)
-        odds = estimate_odds(match)
-
-        results.append({
-
-            "home": match["home"],
-            "away": match["away"],
-
-            "score": score,
-
-            "over25": match["over25"],
-            "goal": match["goal"],
-
-            "multigol_home": multigol["home"],
-            "multigol_away": multigol["away"],
-
-            "odds": odds
-        })
-
-    results = sorted(results, key=lambda x: x["score"], reverse=True)
-
-    top = results[:6]
-    playable = results[6:]
-
-    bets = create_bets(results)
-
-    return {
-        "top": top,
-        "playable": playable,
-        "bets": bets
-    }
+if __name__ == "__main__":
+    run_engine()
