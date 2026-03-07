@@ -94,11 +94,14 @@ let table = document.getElementById("matches");
 
 data.forEach(match => {
 
-let date = new Date(match.date);
+let rawDate = match.date;
+
+// corregge formato data
+let date = new Date(rawDate.replace(" ", "T"));
 
 let formattedDate =
-date.toLocaleDateString() + " " +
-date.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+date.toLocaleDateString('it-IT') + " " +
+date.toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'});
 
 let row = `
 <tr>
