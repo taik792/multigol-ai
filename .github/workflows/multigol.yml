@@ -7,7 +7,7 @@ jobs:
 build:
 runs-on: ubuntu-latest
 
-```
+
 steps:
   - name: Checkout
     uses: actions/checkout@v3
@@ -28,5 +28,5 @@ steps:
 
   - name: Run engine
     run: python multigol_engine.py
-```
+
 
