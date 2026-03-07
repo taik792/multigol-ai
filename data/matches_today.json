@@ -1,0 +1,18 @@
+[
+  {
+    "home": "Inter",
+    "away": "Bologna",
+    "home_goals_avg": 2.1,
+    "away_goals_avg": 1.2,
+    "home_conceded": 0.9,
+    "away_conceded": 1.4
+  },
+  {
+    "home": "Napoli",
+    "away": "Torino",
+    "home_goals_avg": 1.8,
+    "away_goals_avg": 1.0,
+    "home_conceded": 1.1,
+    "away_conceded": 1.5
+  }
+]
