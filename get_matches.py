@@ -1,55 +1,42 @@
 import requests
 import json
-import os
 from datetime import datetime, timedelta
 
+API_URL = "https://api.football-data.org/v4/matches"
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
-today = datetime.today().strftime('%Y-%m-%d')
-tomorrow = (datetime.today() + timedelta(days=1)).strftime('%Y-%m-%d')
-
 headers = {
-    "x-apisports-key": API_KEY
+    "X-Auth-Token": API_KEY
 }
 
-matches = []
+response = requests.get(API_URL, headers=headers)
+data = response.json()
 
-def get_fixtures(date):
+matches = data["matches"]
 
-    url = f"https://v3.football.api-sports.io/fixtures?date={date}"
+today = datetime.utcnow().date()
+tomorrow = today + timedelta(days=1)
 
-    response = requests.get(url, headers=headers)
-    data = response.json()
+filtered_matches = []
 
-    if "response" not in data:
-        return
+for m in matches:
 
-    for game in data["response"]:
+    status = m["status"]
 
-        home = game["teams"]["home"]["name"]
-        away = game["teams"]["away"]["name"]
-        league = game["league"]["name"]
+    match_date = datetime.fromisoformat(
+        m["utcDate"].replace("Z", "+00:00")
+    ).date()
 
-        match_date = game["fixture"]["date"]
+    if status != "FINISHED" and (match_date == today or match_date == tomorrow):
 
-        matches.append({
-            "date": match_date,
-            "home": home,
-            "away": away,
-            "league": league,
-            "home_goals_avg": 1.5,
-            "away_goals_avg": 1.3,
-            "home_conceded": 1.1,
-            "away_conceded": 1.2
+        filtered_matches.append({
+            "home": m["homeTeam"]["name"],
+            "away": m["awayTeam"]["name"],
+            "date": m["utcDate"],
+            "competition": m["competition"]["name"]
         })
 
-
-get_fixtures(today)
-get_fixtures(tomorrow)
-
-os.makedirs("data", exist_ok=True)
-
 with open("data/matches_today.json", "w") as f:
-    json.dump(matches, f, indent=4)
+    json.dump(filtered_matches, f, indent=4)
 
-print("Matches aggiornati (oggi + domani)")
+print("Matches saved:", len(filtered_matches))
