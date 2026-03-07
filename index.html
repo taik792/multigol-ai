@@ -3,134 +3,64 @@
 
 <head>
 
-<meta charset="UTF-8">
-<title>Multigol AI</title>
+<title>Multigol AI Scanner</title>
 
 <style>
 
 body{
-background:#0f0f0f;
+background:#0f172a;
 color:white;
 font-family:Arial;
-text-align:center;
+padding:40px;
 }
 
-h1{
-color:#33ff99;
-}
-
-table{
-width:90%;
-margin:auto;
-border-collapse:collapse;
-margin-top:30px;
-}
-
-th{
-background:#33ff99;
-color:black;
-padding:10px;
-}
-
-td{
-padding:8px;
-border-bottom:1px solid #444;
-}
-
-.loading{
-margin-top:40px;
-font-size:20px;
-color:#33ff99;
+.match{
+background:#1e293b;
+padding:15px;
+margin-bottom:12px;
+border-radius:8px;
 }
 
 </style>
 
 </head>
 
-
 <body>
 
-<h1>⚽ MULTIGOL AI</h1>
-<p>Pronostici aggiornati automaticamente</p>
+<h1>Multigol AI Scanner</h1>
 
-<div id="loading" class="loading">
-Caricamento partite...
-</div>
-
-<table id="table" style="display:none">
-
-<thead>
-
-<tr>
-
-<th>Data</th>
-<th>Partita</th>
-<th>Campionato</th>
-<th>Expected Goals</th>
-<th>Multigol</th>
-<th>Confidenza</th>
-
-</tr>
-
-</thead>
-
-<tbody id="matches"></tbody>
-
-</table>
-
+<div id="matches"></div>
 
 <script>
 
-fetch("output/multigol_predictions.json")
+fetch("/api/predictions")
+.then(res=>res.json())
+.then(data=>{
 
-.then(response => response.json())
+let container = document.getElementById("matches")
 
-.then(data => {
+data.forEach(m=>{
 
-document.getElementById("loading").style.display="none";
-document.getElementById("table").style.display="table";
+container.innerHTML += `
 
-let table = document.getElementById("matches");
+<div class="match">
 
-data.forEach(match => {
+<h3>${m.home} vs ${m.away}</h3>
 
-let rawDate = match.date;
+Multigol: ${m.multigol}<br>
+Casa: ${m.home_goals}<br>
+Ospite: ${m.away_goals}<br>
+Confidence: ${m.confidence}%
 
-// corregge formato data
-let date = new Date(rawDate.replace(" ", "T"));
+</div>
 
-let formattedDate =
-date.toLocaleDateString('it-IT') + " " +
-date.toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'});
-
-let row = `
-<tr>
-
-<td>${formattedDate}</td>
-<td>${match.match}</td>
-<td>${match.league}</td>
-<td>${match.expected_goals}</td>
-<td>${match.multigol}</td>
-<td>${match.confidence}%</td>
-
-</tr>
-`;
-
-table.innerHTML += row;
-
-});
+`
 
 })
 
-.catch(error => {
-
-document.getElementById("loading").innerHTML =
-"Errore nel caricamento dati";
-
-});
+})
 
 </script>
 
 </body>
-
 </html>
