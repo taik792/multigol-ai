@@ -9,33 +9,23 @@ tomorrow = today + timedelta(days=1)
 
 URL = f"https://api.football-data.org/v4/matches?dateFrom={today}&dateTo={tomorrow}"
 
-headers = {
-    "X-Auth-Token": API_KEY
-}
+headers = {"X-Auth-Token": API_KEY}
 
 response = requests.get(URL, headers=headers)
 data = response.json()
 
-if "matches" not in data:
-    print("Errore API:", data)
-    exit()
+matches = []
 
-matches = data["matches"]
-
-filtered = []
-
-for m in matches:
-
-    if m["status"] in ["SCHEDULED","TIMED"]:
-
-        filtered.append({
+for m in data.get("matches", []):
+    if m["status"] in ["SCHEDULED", "TIMED"]:
+        matches.append({
             "home": m["homeTeam"]["name"],
             "away": m["awayTeam"]["name"],
             "date": m["utcDate"],
             "competition": m["competition"]["name"]
         })
 
-with open("data/matches_today.json","w") as f:
-    json.dump(filtered,f,indent=4)
+with open("data/matches_today.json", "w") as f:
+    json.dump(matches, f, indent=4)
 
-print("Partite salvate:",len(filtered))
+print("Partite salvate:", len(matches))
