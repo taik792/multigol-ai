@@ -4,30 +4,22 @@ on:
 workflow_dispatch:
 
 jobs:
-build:
-
-```
+multigol:
 runs-on: ubuntu-latest
 
+```
 steps:
+  - uses: actions/checkout@v3
 
-  - name: Checkout repository
-    uses: actions/checkout@v3
-
-  - name: Setup Python
-    uses: actions/setup-python@v4
+  - uses: actions/setup-python@v4
     with:
       python-version: "3.10"
 
-  - name: Install dependencies
-    run: pip install -r requirements.txt
+  - run: pip install -r requirements.txt
 
-  - name: Get matches
-    run: python get_matches.py
+  - run: python get_matches.py
 
-  - name: Get odds
-    run: python odds_api_scraper.py
+  - run: python odds_api_scraper.py
 
-  - name: Run Multigol Engine
-    run: python multigol_engine.py
+  - run: python multigol_engine.py
 ```
