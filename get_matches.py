@@ -1,23 +1,21 @@
 import requests
 import json
 
-# API Football endpoint
+API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
 url = "https://v3.football.api-sports.io/fixtures?next=20"
 
 headers = {
-"x-apisports-key": "37ddec86e8578a1ff3127d5c394da749"
+"x-apisports-key": API_KEY
 }
 
 response = requests.get(url, headers=headers)
-
 data = response.json()
 
-# Controllo errore API
+print("API response:", data)
 
 if "response" not in data:
-print("Errore API:")
-print(data)
+print("Errore API")
 exit()
 
 matches = []
