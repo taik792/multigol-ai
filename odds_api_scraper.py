@@ -2,7 +2,7 @@ import json
 import requests
 from datetime import datetime
 
-API_KEY = "b90932e65c14be06a870fd50fcd20ddc"
+API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
 headers = {
     "x-apisports-key": API_KEY
@@ -48,3 +48,4 @@ with open("quotes/odds.json", "w") as f:
     json.dump(odds, f, indent=4)
 
 print("Odds scaricate:", len(odds))
+
