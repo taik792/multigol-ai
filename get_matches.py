@@ -9,7 +9,7 @@ today = datetime.today().strftime('%Y-%m-%d')
 url = f"https://api-football-v1.p.rapidapi.com/v3/fixtures?date={today}"
 
 headers = {
-    "X-RapidAPI-Key": "INSERISCI_LA_TUA_API_KEY",
+    "X-RapidAPI-Key": "b90932e65c14be06a870fd50fcd20ddc",
     "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
 }
 
