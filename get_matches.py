@@ -1,7 +1,6 @@
 import requests
 import json
 
-Inserisci qui la tua API KEY
 
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
