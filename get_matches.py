@@ -1,48 +1,40 @@
 import requests
 import json
-from datetime import datetime
 
-# API football (partite)
-API_KEY = "b90932e65c14be06a870fd50fcd20ddc"
+# API Football endpoint
 
-url = "https://v3.football.api-sports.io/fixtures"
-
-today = datetime.today().strftime('%Y-%m-%d')
+url = "https://v3.football.api-sports.io/fixtures?next=20"
 
 headers = {
-    "x-apisports-key": API_KEY
+"x-apisports-key": "37ddec86e8578a1ff3127d5c394da749"
 }
 
-params = {
-    "date": today
-}
+response = requests.get(url, headers=headers)
 
-response = requests.get(url, headers=headers, params=params)
 data = response.json()
 
+# Controllo errore API
+
 if "response" not in data:
-    print("Errore API:", data)
-    exit()
+print("Errore API:")
+print(data)
+exit()
 
 matches = []
 
 for game in data["response"]:
 
-    home = game["teams"]["home"]["name"]
-    away = game["teams"]["away"]["name"]
+```
+home = game["teams"]["home"]["name"]
+away = game["teams"]["away"]["name"]
 
-    match = {
-        "home": home,
-        "away": away,
-        "home_goals_avg": 1.5,
-        "away_goals_avg": 1.3,
-        "home_conceded": 1.1,
-        "away_conceded": 1.2
-    }
-
-    matches.append(match)
+matches.append({
+    "home": home,
+    "away": away
+})
+```
 
 with open("data/matches_today.json", "w") as f:
-    json.dump(matches, f, indent=4)
+json.dump(matches, f, indent=4)
 
-print("Matches salvati:", len(matches))
+print("Matches salvati")
