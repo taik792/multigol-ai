@@ -20,15 +20,13 @@ matches = []
 
 for m in data.get("matches", []):
 
-    home = m["homeTeam"]["name"]
-    away = m["awayTeam"]["name"]
+    if m["status"] != "FINISHED":
 
-    matches.append({
-        "home": home,
-        "away": away
-    })
+        matches.append({
+            "home": m["homeTeam"]["name"],
+            "away": m["awayTeam"]["name"]
+        })
 
-# RISCRIVE COMPLETAMENTE IL FILE
 with open("data/matches_today.json", "w") as f:
     json.dump(matches, f, indent=4)
 
