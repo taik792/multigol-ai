@@ -1,18 +1,1 @@
-[
-    {
-        "home": "Inter",
-        "away": "Bologna",
-        "multigol": "2-4",
-        "home_goals": "1-3",
-        "away_goals": "1-2",
-        "confidence": 83.7
-    },
-    {
-        "home": "Napoli",
-        "away": "Torino",
-        "multigol": "2-3",
-        "home_goals": "1-2",
-        "away_goals": "1-2",
-        "confidence": 84.4
-    }
-]
+[]
