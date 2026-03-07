@@ -2,7 +2,7 @@ import requests
 import json
 import os
 
-API_KEY = "37ddec86e8578a1ff3127d5c394da749"
+API_KEY = "b90932e65c14be06a870fd50fcd20ddc"
 
 url = "https://api.the-odds-api.com/v4/sports/soccer/odds"
 
@@ -23,3 +23,4 @@ with open("quotes/odds.json", "w") as f:
     json.dump(data, f, indent=4)
 
 print("Quote aggiornate")
+
