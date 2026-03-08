@@ -30,7 +30,7 @@ for date in dates:
     response = requests.get(url, headers=headers, params=params)
     data = response.json()
 
-    for game in data.get("response", []):
+    for game in data["response"]:
 
         home = game["teams"]["home"]["name"]
         away = game["teams"]["away"]["name"]
@@ -43,4 +43,4 @@ for date in dates:
 with open("data/matches_today.json","w") as f:
     json.dump(matches,f,indent=4)
 
-print("Partite trovate:",len(matches))
+print("Matches reali:",len(matches))
