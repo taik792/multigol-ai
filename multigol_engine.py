@@ -1,50 +1,48 @@
 import json
+import random
 
+# carica partite trovate
 with open("data/matches_today.json") as f:
     matches = json.load(f)
 
+# carica quote
 with open("quotes/odds.json") as f:
     odds = json.load(f)
 
 predictions = []
 
-for m in matches:
+for match in matches:
 
-    home = m["home"]
-    away = m["away"]
+    home = match["home"]
+    away = match["away"]
 
-    key = f"{home} vs {away}"
+    key = f"{home}-{away}"
 
-    quote = odds.get(key, {}).get("multigol_2_4", None)
+    quote_data = odds.get(key, {})
 
-    if quote:
+    over25 = quote_data.get("over25", 2.0)
 
-        if quote < 1.50:
-            multigol = "2-4"
-            confidence = 85
+    if over25 < 1.60:
+        multigol = "2-4"
+        confidence = random.randint(80,90)
 
-        elif quote < 1.80:
-            multigol = "2-3"
-            confidence = 80
-
-        else:
-            multigol = "1-3"
-            confidence = 75
+    elif over25 < 1.80:
+        multigol = "2-3"
+        confidence = random.randint(75,85)
 
     else:
-
         multigol = "1-3"
-        confidence = 70
+        confidence = random.randint(70,80)
 
     predictions.append({
         "home": home,
         "away": away,
         "multigol": multigol,
-        "quote": quote,
         "confidence": confidence
     })
 
-with open("output/predictions.json", "w") as f:
-    json.dump(predictions, f, indent=4)
+# SALVA NEL FILE CHE IL SITO LEGGE
+with open("output/predictions.json","w") as f:
+    json.dump(predictions,f,indent=4)
 
-print("Predictions create:", len(predictions))
+print("Predictions generate:",len(predictions))
