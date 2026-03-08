@@ -10,7 +10,6 @@ headers = {
 url = "https://v3.football.api-sports.io/odds"
 
 response = requests.get(url, headers=headers)
-
 data = response.json()
 
 odds = {}
@@ -26,7 +25,6 @@ for game in data.get("response", []):
     under25 = None
 
     for bookmaker in game.get("bookmakers", []):
-
         for bet in bookmaker.get("bets", []):
 
             if bet["name"] == "Goals Over/Under":
@@ -39,12 +37,14 @@ for game in data.get("response", []):
                     if value["value"] == "Under 2.5":
                         under25 = float(value["odd"])
 
-    odds[key] = {
-        "over25": over25,
-        "under25": under25
-    }
+    if over25 is not None:
 
-with open("quotes/odds.json", "w") as f:
-    json.dump(odds, f, indent=4)
+        odds[key] = {
+            "over25": over25,
+            "under25": under25
+        }
 
-print("Quote reali trovate:", len(odds))
+with open("quotes/odds.json","w") as f:
+    json.dump(odds,f,indent=4)
+
+print("Quote reali trovate:",len(odds))
