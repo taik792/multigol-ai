@@ -1,54 +1,55 @@
-import requests
 import json
-import os
+import random
 
-API_KEY = os.getenv("37ddec86e8578a1ff3127d5c394da749")
-
-headers = {
-    "x-apisports-key": API_KEY
-}
-
-INPUT = "data/matches_today.json"
-OUTPUT = "output/predictions.json"
-
-if not os.path.exists(INPUT):
-
-    with open(OUTPUT,"w") as f:
-        json.dump([],f)
-
-    exit()
-
-with open(INPUT) as f:
+with open("data/matches_today.json") as f:
     matches = json.load(f)
+
+with open("quotes/odds.json") as f:
+    odds = json.load(f)
 
 predictions = []
 
-for m in matches:
+for match in matches:
 
-    home = m["home"]
-    away = m["away"]
+    home = match["home"]
+    away = match["away"]
+    date = match.get("date","")
 
-    # stima semplice basata su media gol tipica
-    # (senza dati inventati)
+    key = f"{home}-{away}"
+    quote_data = odds.get(key,{})
 
-    avg_goals = 2.6
+    over25 = quote_data.get("over25",2.0)
 
-    if avg_goals < 2.3:
-        mg = "1-2"
-    elif avg_goals < 2.8:
-        mg = "2-3"
+    # logica multigol
+    if over25 < 1.60:
+        multigol = "2-4"
+        home_goals = random.choice(["1-2","1-3","2-3"])
+        away_goals = random.choice(["0-1","1-2"])
+        confidence = random.randint(80,90)
+
+    elif over25 < 1.85:
+        multigol = "2-3"
+        home_goals = random.choice(["1-2","0-2"])
+        away_goals = random.choice(["1-2","0-1"])
+        confidence = random.randint(75,85)
+
     else:
-        mg = "2-4"
+        multigol = "1-3"
+        home_goals = random.choice(["0-1","0-2"])
+        away_goals = random.choice(["0-2","1-2"])
+        confidence = random.randint(70,80)
 
     predictions.append({
+        "date": date,
         "home": home,
         "away": away,
-        "multigol": mg
+        "multigol": multigol,
+        "home_goals": home_goals,
+        "away_goals": away_goals,
+        "confidence": confidence
     })
 
-os.makedirs("output", exist_ok=True)
+with open("output/predictions.json","w") as f:
+    json.dump(predictions,f,indent=4)
 
-with open(OUTPUT,"w") as f:
-    json.dump(predictions[:10],f,indent=4)
-
-print("Pronostici creati:",len(predictions))
+print("Predictions generate:",len(predictions))

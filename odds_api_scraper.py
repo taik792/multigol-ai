@@ -1,64 +1,51 @@
 import requests
 import json
-import os
 
-API_KEY = os.getenv("b90932e65c14be06a870fd50fcd20ddc")
+API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
-url = "https://api.the-odds-api.com/v4/sports/soccer/odds"
-
-params = {
-    "apiKey": API_KEY,
-    "regions": "eu",
-    "markets": "totals",
-    "oddsFormat": "decimal"
+headers = {
+    "x-apisports-key": API_KEY
 }
 
-response = requests.get(url, params=params)
+url = "https://v3.football.api-sports.io/odds"
 
-if response.status_code != 200:
-    print("Errore API")
-    exit()
-
+response = requests.get(url, headers=headers)
 data = response.json()
 
-matches = []
+odds = {}
 
-for game in data:
+for game in data["response"]:
 
-    home = game["home_team"]
-    away = game["away_team"]
+    home = game["teams"]["home"]["name"]
+    away = game["teams"]["away"]["name"]
+
+    key = f"{home}-{away}"
 
     over25 = None
-    over35 = None
+    under25 = None
 
-    for bookmaker in game.get("bookmakers", []):
+    for bookmaker in game["bookmakers"]:
 
-        for market in bookmaker.get("markets", []):
+        for bet in bookmaker["bets"]:
 
-            if market["key"] == "totals":
+            if bet["name"] == "Goals Over/Under":
 
-                for outcome in market["outcomes"]:
+                for value in bet["values"]:
 
-                    if outcome["name"] == "Over":
+                    if value["value"] == "Over 2.5":
+                        over25 = float(value["odd"])
 
-                        if outcome["point"] == 2.5:
-                            over25 = outcome["price"]
+                    if value["value"] == "Under 2.5":
+                        under25 = float(value["odd"])
 
-                        if outcome["point"] == 3.5:
-                            over35 = outcome["price"]
+    if over25:
 
-    if over25 and over35:
-
-        matches.append({
-            "home": home,
-            "away": away,
+        odds[key] = {
             "over25": over25,
-            "over35": over35
-        })
+            "under25": under25
+        }
 
-os.makedirs("quotes", exist_ok=True)
+with open("quotes/odds.json","w") as f:
+    json.dump(odds,f,indent=4)
 
-with open("quotes/odds_today.json", "w") as f:
-    json.dump(matches, f, indent=4)
-
-print("Partite trovate:", len(matches))
+print("Quote bookmaker trovate:",len(odds))

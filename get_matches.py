@@ -1,46 +1,43 @@
 import requests
 import json
-import os
 from datetime import datetime
 
-API_KEY = os.getenv("37ddec86e8578a1ff3127d5c394da749")
-
-url = "https://v3.football.api-sports.io/fixtures"
+API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
 headers = {
     "x-apisports-key": API_KEY
 }
 
-today = datetime.utcnow().strftime("%Y-%m-%d")
+url = "https://v3.football.api-sports.io/fixtures"
+
+today = datetime.today().strftime('%Y-%m-%d')
 
 params = {
-    "date": today
+    "date": today,
+    "status": "NS"
 }
 
 response = requests.get(url, headers=headers, params=params)
+
 data = response.json()
 
 matches = []
 
-if "response" in data:
+for game in data["response"]:
 
-    for match in data["response"]:
+    home = game["teams"]["home"]["name"]
+    away = game["teams"]["away"]["name"]
+    date_match = game["fixture"]["date"]
+    league = game["league"]["name"]
 
-        home = match["teams"]["home"]["name"]
-        away = match["teams"]["away"]["name"]
-        league = match["league"]["name"]
-
-        matches.append({
-            "home": home,
-            "away": away,
-            "league": league
-        })
-
-matches = matches[:20]
-
-os.makedirs("data", exist_ok=True)
+    matches.append({
+        "home": home,
+        "away": away,
+        "date": date_match,
+        "league": league
+    })
 
 with open("data/matches_today.json", "w") as f:
     json.dump(matches, f, indent=4)
 
-print("Partite trovate:", len(matches))
+print("Matches trovate:", len(matches))
