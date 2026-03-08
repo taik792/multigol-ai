@@ -2,7 +2,7 @@ import requests
 import json
 import os
 
-API_KEY = "37ddec86e8578a1ff3127d5c394da749"
+API_KEY = "b90932e65c14be06a870fd50fcd20ddc"
 
 sports = [
 "soccer_italy_serie_a",
