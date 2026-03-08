@@ -1,4 +1,5 @@
 import json
+import random
 
 with open("data/matches_today.json") as f:
     matches = json.load(f)
@@ -16,53 +17,56 @@ for match in matches:
 
     key = f"{home}-{away}"
 
-    quote = odds.get(key, {})
+    quote = odds.get(key,{})
 
     over15 = float(quote.get("over15",2.0))
     over25 = float(quote.get("over25",2.0))
     under25 = float(quote.get("under25",2.0))
     btts = float(quote.get("btts_yes",2.0))
 
-    # stimiamo i gol attesi
-    if over25 < 1.55:
-        expected_goals = 3.2
-    elif over25 < 1.75:
-        expected_goals = 2.8
-    elif over25 < 2.00:
-        expected_goals = 2.4
-    elif under25 < 1.70:
-        expected_goals = 2.0
-    else:
-        expected_goals = 2.3
+    # stima gol
+    goal_score = 0
+
+    if over15 < 1.35:
+        goal_score += 1
+
+    if over25 < 1.70:
+        goal_score += 1
+
+    if btts < 1.75:
+        goal_score += 1
+
+    if under25 < 1.65:
+        goal_score -= 1
 
     # scelta multigol
-    if expected_goals >= 3.1:
+    if goal_score >= 2:
 
         multigol = "2-4"
-        home_goals = "1-3"
-        away_goals = "1-2"
-        confidence = 86
+        home_goals = random.choice(["1-2","1-3","2-3"])
+        away_goals = random.choice(["1-2","0-2"])
+        confidence = 85
 
-    elif expected_goals >= 2.6:
+    elif goal_score == 1:
 
         multigol = "2-3"
-        home_goals = "1-2"
-        away_goals = "1-2"
+        home_goals = random.choice(["1-2","1-3"])
+        away_goals = random.choice(["1-2"])
         confidence = 82
 
-    elif expected_goals >= 2.2:
+    elif goal_score == 0:
 
         multigol = "1-3"
-        home_goals = "1-2"
-        away_goals = "0-2"
-        confidence = 79
+        home_goals = random.choice(["0-2","1-2"])
+        away_goals = random.choice(["0-2","1-2"])
+        confidence = 78
 
     else:
 
         multigol = "0-2"
-        home_goals = "0-1"
-        away_goals = "0-1"
-        confidence = 76
+        home_goals = random.choice(["0-1"])
+        away_goals = random.choice(["0-1"])
+        confidence = 75
 
     predictions.append({
         "date": date,
