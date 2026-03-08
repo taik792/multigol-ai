@@ -1,6 +1,6 @@
 import requests
 import json
-from datetime import datetime, timedelta
+from datetime import datetime
 
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
@@ -8,39 +8,36 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-today = datetime.today()
-tomorrow = today + timedelta(days=1)
+url = "https://v3.football.api-sports.io/fixtures"
 
-dates = [
-    today.strftime("%Y-%m-%d"),
-    tomorrow.strftime("%Y-%m-%d")
-]
+today = datetime.today().strftime('%Y-%m-%d')
+
+params = {
+    "date": today,
+    "status": "NS"
+}
+
+response = requests.get(url, headers=headers, params=params)
+
+data = response.json()
 
 matches = []
 
-for date in dates:
+for game in data["response"]:
 
-    url = "https://v3.football.api-sports.io/fixtures"
+    home = game["teams"]["home"]["name"]
+    away = game["teams"]["away"]["name"]
+    date_match = game["fixture"]["date"]
+    league = game["league"]["name"]
 
-    params = {
-        "date": date,
-        "status": "NS"
-    }
+    matches.append({
+        "home": home,
+        "away": away,
+        "date": date_match,
+        "league": league
+    })
 
-    response = requests.get(url, headers=headers, params=params)
-    data = response.json()
+with open("data/matches_today.json", "w") as f:
+    json.dump(matches, f, indent=4)
 
-    for game in data["response"]:
-
-        home = game["teams"]["home"]["name"]
-        away = game["teams"]["away"]["name"]
-
-        matches.append({
-            "home": home,
-            "away": away
-        })
-
-with open("data/matches_today.json","w") as f:
-    json.dump(matches,f,indent=4)
-
-print("Matches reali:",len(matches))
+print("Matches trovate:", len(matches))
