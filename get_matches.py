@@ -3,7 +3,7 @@ import json
 import os
 from datetime import datetime
 
-API_KEY = os.getenv("API_FOOTBALL_KEY")
+API_KEY = os.getenv("37ddec86e8578a1ff3127d5c394da749")
 
 url = "https://v3.football.api-sports.io/fixtures"
 
@@ -29,13 +29,11 @@ if "response" in data:
         home = match["teams"]["home"]["name"]
         away = match["teams"]["away"]["name"]
         league = match["league"]["name"]
-        status = match["fixture"]["status"]["short"]
 
         matches.append({
             "home": home,
             "away": away,
-            "league": league,
-            "status": status
+            "league": league
         })
 
 matches = matches[:20]
