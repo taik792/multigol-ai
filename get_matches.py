@@ -14,28 +14,32 @@ headers = {
 today = datetime.utcnow().strftime("%Y-%m-%d")
 
 params = {
-    "date": today
+    "date": today,
+    "status": "NS"
 }
 
-r = requests.get(url, headers=headers, params=params)
-data = r.json()
+response = requests.get(url, headers=headers, params=params)
+data = response.json()
 
 matches = []
 
 for m in data.get("response", []):
 
+    home = m["teams"]["home"]["name"]
+    away = m["teams"]["away"]["name"]
+    league = m["league"]["name"]
+
     matches.append({
-        "fixture_id": m["fixture"]["id"],
-        "home": m["teams"]["home"]["name"],
-        "away": m["teams"]["away"]["name"],
-        "league": m["league"]["name"],
-        "season": m["league"]["season"],
-        "home_id": m["teams"]["home"]["id"],
-        "away_id": m["teams"]["away"]["id"],
-        "league_id": m["league"]["id"]
+        "home": home,
+        "away": away,
+        "league": league
     })
 
-with open("data/matches_today.json","w") as f:
-    json.dump(matches[:20],f,indent=4)
+matches = matches[:10]
 
-print("matches:",len(matches))
+os.makedirs("data", exist_ok=True)
+
+with open("data/matches_today.json", "w") as f:
+    json.dump(matches, f, indent=4)
+
+print("Matches found:", len(matches))
