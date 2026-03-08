@@ -11,86 +11,44 @@ predictions = []
 
 for match in matches:
 
-    home = match["home"]
-    away = match["away"]
-    date = match.get("date","")
+    key = match["home"] + " vs " + match["away"]
 
-    key = f"{home}-{away}"
+    if key not in odds:
+        continue
 
-    quote = odds.get(key,{})
+    over15 = odds[key].get("Over 1.5", 2)
+    over25 = odds[key].get("Over 2.5", 2)
+    under25 = odds[key].get("Under 2.5", 2)
 
-    home_win = float(quote.get("1",2.5))
-    away_win = float(quote.get("2",2.8))
-    over25 = float(quote.get("over25",2.0))
-    btts = float(quote.get("btts_yes",2.0))
+    expected_goals = 2.5
 
-    # stima gol totali
-    if over25 < 1.55:
-        total_goals = 3.3
-    elif over25 < 1.75:
-        total_goals = 2.8
-    elif over25 < 1.95:
-        total_goals = 2.5
+    if over25 < 1.80:
+        multigol = "2-4"
+        expected_goals = 3
+    elif under25 < 1.80:
+        multigol = "0-2"
+        expected_goals = 1.8
     else:
-        total_goals = 2.2
+        multigol = "1-3"
 
-    # distribuzione casa / ospite
-    if home_win < away_win:
-        home_expected = total_goals * 0.6
-        away_expected = total_goals * 0.4
-    else:
-        home_expected = total_goals * 0.4
-        away_expected = total_goals * 0.6
+    home_goals = random.choice(["0-1", "0-2", "1-2"])
+    away_goals = random.choice(["0-1", "0-2", "1-2"])
 
-    # scelta multigol
-    if total_goals >= 3.1:
-        multigol = random.choice(["2-4","2-5"])
-    elif total_goals >= 2.6:
-        multigol = random.choice(["2-3","1-4"])
-    elif total_goals >= 2.3:
-        multigol = random.choice(["1-3","1-2"])
-    else:
-        multigol = random.choice(["0-2","1-2"])
-
-    # casa
-    if home_expected > 1.7:
-        home_goals = random.choice(["1-3","2-3"])
-    elif home_expected > 1.2:
-        home_goals = random.choice(["1-2","0-2"])
-    else:
-        home_goals = random.choice(["0-1","0-2"])
-
-    # ospite
-    if away_expected > 1.7:
-        away_goals = random.choice(["1-3","2-3"])
-    elif away_expected > 1.2:
-        away_goals = random.choice(["1-2","0-2"])
-    else:
-        away_goals = random.choice(["0-1","0-2"])
-
-    confidence = random.randint(75,90)
+    confidence = random.randint(70, 85)
 
     predictions.append({
-        "date": date,
-        "home": home,
-        "away": away,
+        "date": match["date"],
+        "match": key,
+        "league": match["league"],
         "multigol": multigol,
-        "home_goals": home_goals,
-        "away_goals": away_goals,
+        "home_range": home_goals,
+        "away_range": away_goals,
         "confidence": confidence
     })
 
-# filtro confidence alta
-predictions = [p for p in predictions if p["confidence"] >= 70]
+predictions = sorted(predictions, key=lambda x: x["confidence"], reverse=True)[:10]
 
-# ordina per confidence
-predictions = sorted(predictions,key=lambda x:x["confidence"],reverse=True)
+with open("output/multigol_predictions.json", "w") as f:
+    json.dump(predictions, f, indent=4)
 
-# massimo 15 partite
-predictions = predictions[:15]
-
-with open("output/predictions.json","w") as f:
-    json.dump(predictions,f,indent=4)
-
-print("Top predictions:",len(predictions))
-
+print("Predizioni generate:", len(predictions))
