@@ -1,80 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
+<meta charset="UTF-8">
 <title>Multigol AI Scanner</title>
 
 <style>
+
 body{
-background:#0f172a;
-font-family:Arial;
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#0f172a,#1e293b);
 color:white;
+margin:0;
 padding:40px;
 }
 
 h1{
-margin-bottom:30px;
+text-align:center;
+margin-bottom:40px;
+font-size:36px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
 }
 
 .match{
 background:#1e293b;
-padding:15px;
-margin-bottom:12px;
-border-radius:8px;
+border-radius:10px;
+padding:18px;
+margin-bottom:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
+transition:0.2s;
 }
 
-</style>
-</head>
-
-<body>
-
-<h1>Multigol AI Scanner</h1>
-
-<div id="matches">Caricamento partite...</div>
-
-<script>
-
-async function loadMatches(){
-
-try{
-
-const response = await fetch("./output/predictions.json");
-
-if(!response.ok){
-document.getElementById("matches").innerHTML="Errore caricamento JSON";
-return;
+.match:hover{
+transform:scale(1.02);
+background:#273449;
 }
 
-const data = await response.json();
-
-let html="";
-
-data.forEach(m=>{
-
-html+=`
-<div class="match">
-<b>${m.home} vs ${m.away}</b><br>
-Multigol: ${m.multigol}<br>
-Casa: ${m.home_goals}<br>
-Ospite: ${m.away_goals}<br>
-Confidence: ${m.confidence}%
-</div>
-`;
-
-});
-
-document.getElementById("matches").innerHTML=html;
-
-}catch(e){
-
-document.getElementById("matches").innerHTML="Errore script";
-
+.teams{
+font-size:20px;
+font-weight:bold;
+margin-bottom:6px;
 }
 
-}
-
-loadMatches();
-
-</script>
-
-</body>
-</html>
+.date{
+color:#94a3b8;
+font-size:14px;
+m
