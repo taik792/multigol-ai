@@ -1,8 +1,9 @@
 import requests
 import json
+import os
 from datetime import datetime
 
-API_KEY = "37ddec86e8578a1ff3127d5c394da749"
+API_KEY = os.getenv("37ddec86e8578a1ff3127d5c394da749")
 
 url = "https://v3.football.api-sports.io/fixtures"
 
@@ -25,25 +26,23 @@ if "response" in data:
 
     for match in data["response"]:
 
+        home = match["teams"]["home"]["name"]
+        away = match["teams"]["away"]["name"]
+        league = match["league"]["name"]
         status = match["fixture"]["status"]["short"]
 
-        if status == "NS":
+        matches.append({
+            "home": home,
+            "away": away,
+            "league": league,
+            "status": status
+        })
 
-            home = match["teams"]["home"]["name"]
-            away = match["teams"]["away"]["name"]
-            league = match["league"]["name"]
-            time = match["fixture"]["date"]
+matches = matches[:20]
 
-            matches.append({
-                "home": home,
-                "away": away,
-                "league": league,
-                "date": time
-            })
-
-matches = matches[:10]
+os.makedirs("data", exist_ok=True)
 
 with open("data/matches_today.json", "w") as f:
     json.dump(matches, f, indent=4)
 
-print("Partite salvate:", len(matches))
+print("Partite trovate:", len(matches))
