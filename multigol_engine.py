@@ -1,54 +1,72 @@
 import json
-import random
+import os
 
-with open("data/matches_today.json") as f:
-    matches = json.load(f)
+INPUT_FILE = "quotes/odds_today.json"
+OUTPUT_FILE = "output/predictions.json"
 
-with open("quotes/odds.json") as f:
-    odds = json.load(f)
+def calculate_multigol(odds):
 
-predictions = []
+    o15 = odds.get("over_1_5")
+    o25 = odds.get("over_2_5")
+    o35 = odds.get("over_3_5")
+    o45 = odds.get("over_4_5")
 
-for match in matches:
+    if not o25 or not o35:
+        return None
 
-    key = match["home"] + " vs " + match["away"]
+    # probabilità implicite
+    p25 = 1 / o25
+    p35 = 1 / o35
 
-    if key not in odds:
-        continue
+    diff = p25 - p35
 
-    over15 = odds[key].get("Over 1.5", 2)
-    over25 = odds[key].get("Over 2.5", 2)
-    under25 = odds[key].get("Under 2.5", 2)
+    if diff > 0.18:
+        return "1-3"
 
-    expected_goals = 2.5
+    if diff > 0.12:
+        return "2-4"
 
-    if over25 < 1.80:
-        multigol = "2-4"
-        expected_goals = 3
-    elif under25 < 1.80:
-        multigol = "0-2"
-        expected_goals = 1.8
-    else:
-        multigol = "1-3"
+    if diff > 0.07:
+        return "2-5"
 
-    home_goals = random.choice(["0-1", "0-2", "1-2"])
-    away_goals = random.choice(["0-1", "0-2", "1-2"])
+    return "3-6"
 
-    confidence = random.randint(70, 85)
 
-    predictions.append({
-        "date": match["date"],
-        "match": key,
-        "league": match["league"],
-        "multigol": multigol,
-        "home_range": home_goals,
-        "away_range": away_goals,
-        "confidence": confidence
-    })
+def main():
 
-predictions = sorted(predictions, key=lambda x: x["confidence"], reverse=True)[:10]
+    if not os.path.exists(INPUT_FILE):
+        print("File quote non trovato")
+        return
 
-with open("output/multigol_predictions.json", "w") as f:
-    json.dump(predictions, f, indent=4)
+    with open(INPUT_FILE) as f:
+        matches = json.load(f)
 
-print("Predizioni generate:", len(predictions))
+    predictions = []
+
+    for match in matches:
+
+        home = match["home"]
+        away = match["away"]
+        odds = match["odds"]
+
+        multigol = calculate_multigol(odds)
+
+        if multigol is None:
+            continue
+
+        predictions.append({
+            "home": home,
+            "away": away,
+            "multigol": multigol
+        })
+
+    predictions = predictions[:10]
+
+    with open(OUTPUT_FILE, "w") as f:
+        json.dump(predictions, f, indent=4)
+
+    print("Pronostici generati:", len(predictions))
+
+
+if __name__ == "__main__":
+    main()
