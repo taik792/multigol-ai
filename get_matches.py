@@ -1,46 +1,99 @@
-import requests
 import json
-from datetime import datetime
+import random
 
-API_KEY = "37ddec86e8578a1ff3127d5c394da749"
+with open("data/matches_today.json") as f:
+    matches = json.load(f)
 
-headers = {
-    "x-apisports-key": API_KEY
-}
+with open("quotes/odds.json") as f:
+    odds = json.load(f)
 
-url = "https://v3.football.api-sports.io/fixtures"
+predictions = []
 
-today = datetime.today().strftime("%Y-%m-%d")
+for match in matches:
 
-params = {
-    "date": today
-}
+    home = match["home"]
+    away = match["away"]
+    date = match.get("date","")
 
-response = requests.get(url, headers=headers, params=params)
-data = response.json()
+    key = f"{home}-{away}"
 
-matches = []
-
-for game in data["response"]:
-
-    status = game["fixture"]["status"]["short"]
-
-    # SOLO partite non iniziate
-    if status != "NS":
+    # SALTA partite senza quote
+    if key not in odds:
         continue
 
-    home = game["teams"]["home"]["name"]
-    away = game["teams"]["away"]["name"]
+    quote = odds[key]
 
-    date = game["fixture"]["date"]
+    home_win = float(quote.get("1",2.5))
+    away_win = float(quote.get("2",2.8))
+    over25 = float(quote.get("over25",2.0))
+    btts = float(quote.get("btts_yes",2.0))
 
-    matches.append({
+    # stimiamo i gol totali
+    if over25 < 1.55:
+        total_goals = 3.3
+    elif over25 < 1.75:
+        total_goals = 2.8
+    elif over25 < 2.0:
+        total_goals = 2.5
+    else:
+        total_goals = 2.2
+
+    # distribuzione gol
+    if home_win < away_win:
+        home_expected = total_goals * 0.6
+        away_expected = total_goals * 0.4
+    else:
+        home_expected = total_goals * 0.4
+        away_expected = total_goals * 0.6
+
+    # multigol variabile
+    if total_goals >= 3.2:
+        multigol = random.choice(["2-4","2-5"])
+    elif total_goals >= 2.7:
+        multigol = random.choice(["2-3","1-4"])
+    elif total_goals >= 2.3:
+        multigol = random.choice(["1-3","1-2"])
+    else:
+        multigol = random.choice(["0-2","1-2"])
+
+    # casa
+    if home_expected > 1.7:
+        home_goals = random.choice(["1-3","2-3"])
+    elif home_expected > 1.2:
+        home_goals = random.choice(["1-2","0-2"])
+    else:
+        home_goals = random.choice(["0-1","0-2"])
+
+    # ospite
+    if away_expected > 1.7:
+        away_goals = random.choice(["1-3","2-3"])
+    elif away_expected > 1.2:
+        away_goals = random.choice(["1-2","0-2"])
+    else:
+        away_goals = random.choice(["0-1","0-2"])
+
+    confidence = random.randint(75,90)
+
+    predictions.append({
+        "date": date,
         "home": home,
         "away": away,
-        "date": date
+        "multigol": multigol,
+        "home_goals": home_goals,
+        "away_goals": away_goals,
+        "confidence": confidence
     })
 
-with open("data/matches_today.json", "w") as f:
-    json.dump(matches, f, indent=4)
+# FILTRO confidence
+predictions = [p for p in predictions if p["confidence"] >= 80]
 
-print("Partite trovate:", len(matches))
+# ORDINA
+predictions = sorted(predictions, key=lambda x: x["confidence"], reverse=True)
+
+# MAX 10 PARTITE
+predictions = predictions[:10]
+
+with open("output/predictions.json","w") as f:
+    json.dump(predictions, f, indent=4)
+
+print("Top partite:", len(predictions))
