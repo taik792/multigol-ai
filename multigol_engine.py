@@ -1,7 +1,14 @@
+import requests
 import json
 import os
 
-INPUT = "quotes/odds_today.json"
+API_KEY = os.getenv("37ddec86e8578a1ff3127d5c394da749")
+
+headers = {
+    "x-apisports-key": API_KEY
+}
+
+INPUT = "data/matches_today.json"
 OUTPUT = "output/predictions.json"
 
 if not os.path.exists(INPUT):
@@ -18,26 +25,24 @@ predictions = []
 
 for m in matches:
 
-    o25 = m["over25"]
-    o35 = m["over35"]
+    home = m["home"]
+    away = m["away"]
 
-    p25 = 1 / o25
-    p35 = 1 / o35
+    # stima semplice basata su media gol tipica
+    # (senza dati inventati)
 
-    diff = p25 - p35
+    avg_goals = 2.6
 
-    if diff > 0.18:
-        mg = "1-3"
-    elif diff > 0.12:
-        mg = "2-4"
-    elif diff > 0.07:
-        mg = "2-5"
+    if avg_goals < 2.3:
+        mg = "1-2"
+    elif avg_goals < 2.8:
+        mg = "2-3"
     else:
-        mg = "3-6"
+        mg = "2-4"
 
     predictions.append({
-        "home": m["home"],
-        "away": m["away"],
+        "home": home,
+        "away": away,
         "multigol": mg
     })
 
@@ -46,4 +51,4 @@ os.makedirs("output", exist_ok=True)
 with open(OUTPUT,"w") as f:
     json.dump(predictions[:10],f,indent=4)
 
-print("Pronostici generati:",len(predictions))
+print("Pronostici creati:",len(predictions))
