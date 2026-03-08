@@ -18,7 +18,7 @@ for m in matches:
     home = m["home"]
     away = m["away"]
 
-    # stimatore base realistico
+    # stima base reale calcio
     expected_goals = 2.6
 
     if expected_goals < 2:
@@ -29,6 +29,7 @@ for m in matches:
         multigol = "2-4"
 
     over = "Over 2.5" if expected_goals >= 2.5 else "Under 2.5"
+
     btts = "Yes" if expected_goals >= 2.2 else "No"
 
     predictions.append({
