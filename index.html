@@ -1,12 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Multigol AI Scanner</title>
+
+<style>
+
+body{
+background:#0f172a;
+font-family:Arial;
+color:white;
+text-align:center;
+}
+
+.card{
+background:#1e293b;
+margin:20px auto;
+padding:20px;
+border-radius:10px;
+width:300px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>⚽ Multigol AI Scanner</h1>
+
+<div id="matches"></div>
+
 <script>
-fetch("output/predictions.json")
-.then(r => r.json())
+
+fetch("./output/predictions.json")
+.then(res => res.json())
 .then(data => {
 
 const container = document.getElementById("matches")
 
-if(data.length === 0){
-container.innerHTML = "<p style='color:red'>Nessuna partita trovata</p>"
+if(!data || data.length === 0){
+
+container.innerHTML = "<h3>Nessuna partita trovata</h3>"
 return
 }
 
@@ -14,14 +50,29 @@ data.forEach(m => {
 
 container.innerHTML += `
 <div class="card">
-<h3>${m.home} vs ${m.away}</h3>
+
+<h2>${m.home} vs ${m.away}</h2>
+
 <p>Multigol: ${m.multigol}</p>
+
 <p>${m.over_under}</p>
+
 <p>BTTS: ${m.btts}</p>
+
 </div>
 `
 
 })
 
 })
+.catch(err => {
+
+document.getElementById("matches").innerHTML =
+"<h3>Errore caricamento dati</h3>"
+
+})
+
 </script>
+
+</body>
+</html>
