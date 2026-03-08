@@ -6,15 +6,12 @@ OUTPUT_FILE = "output/predictions.json"
 
 def calculate_multigol(odds):
 
-    o15 = odds.get("over_1_5")
     o25 = odds.get("over_2_5")
     o35 = odds.get("over_3_5")
-    o45 = odds.get("over_4_5")
 
     if not o25 or not o35:
         return None
 
-    # probabilità implicite
     p25 = 1 / o25
     p35 = 1 / o35
 
@@ -32,41 +29,40 @@ def calculate_multigol(odds):
     return "3-6"
 
 
-def main():
-
-    if not os.path.exists(INPUT_FILE):
-        print("File quote non trovato")
-        return
-
-    with open(INPUT_FILE) as f:
-        matches = json.load(f)
-
-    predictions = []
-
-    for match in matches:
-
-        home = match["home"]
-        away = match["away"]
-        odds = match["odds"]
-
-        multigol = calculate_multigol(odds)
-
-        if multigol is None:
-            continue
-
-        predictions.append({
-            "home": home,
-            "away": away,
-            "multigol": multigol
-        })
-
-    predictions = predictions[:10]
+if not os.path.exists(INPUT_FILE):
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(predictions, f, indent=4)
+        json.dump([], f)
 
-    print("Pronostici generati:", len(predictions))
+    exit()
 
+with open(INPUT_FILE) as f:
+    matches = json.load(f)
 
-if __name__ == "__main__":
-    main()
+predictions = []
+
+for match in matches:
+
+    home = match["home"]
+    away = match["away"]
+    odds = match["odds"]
+
+    multigol = calculate_multigol(odds)
+
+    if multigol is None:
+        continue
+
+    predictions.append({
+        "home": home,
+        "away": away,
+        "multigol": multigol
+    })
+
+predictions = predictions[:10]
+
+os.makedirs("output", exist_ok=True)
+
+with open(OUTPUT_FILE, "w") as f:
+    json.dump(predictions, f, indent=4)
+
+print("Pronostici generati:", len(predictions))
