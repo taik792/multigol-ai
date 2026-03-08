@@ -2,17 +2,17 @@ import requests
 import json
 import os
 
-API_KEY = "b90932e65c14be06a870fd50fcd20ddc"
+API_KEY = os.getenv("37ddec86e8578a1ff3127d5c394da749")
 
 sports = [
-"soccer_epl",
 "soccer_italy_serie_a",
+"soccer_epl",
 "soccer_spain_la_liga",
 "soccer_germany_bundesliga",
 "soccer_france_ligue_one"
 ]
 
-all_odds = []
+matches = []
 
 for sport in sports:
 
@@ -26,24 +26,24 @@ for sport in sports:
     }
 
     response = requests.get(url, params=params)
-    data = response.json()
 
-    if isinstance(data, dict):
+    if response.status_code != 200:
         continue
 
-    for match in data:
+    data = response.json()
 
-        home = match.get("home_team")
-        away = match.get("away_team")
+    if not isinstance(data, list):
+        continue
 
-        odds = {
-            "over_1_5": None,
-            "over_2_5": None,
-            "over_3_5": None,
-            "over_4_5": None
-        }
+    for game in data:
 
-        for bookmaker in match.get("bookmakers", []):
+        home = game["home_team"]
+        away = game["away_team"]
+
+        over25 = None
+        over35 = None
+
+        for bookmaker in game.get("bookmakers", []):
 
             for market in bookmaker.get("markets", []):
 
@@ -53,30 +53,24 @@ for sport in sports:
 
                         if outcome["name"] == "Over":
 
-                            point = outcome["point"]
-                            price = outcome["price"]
+                            if outcome["point"] == 2.5:
+                                over25 = outcome["price"]
 
-                            if point == 1.5:
-                                odds["over_1_5"] = price
+                            if outcome["point"] == 3.5:
+                                over35 = outcome["price"]
 
-                            if point == 2.5:
-                                odds["over_2_5"] = price
+        if over25 and over35:
 
-                            if point == 3.5:
-                                odds["over_3_5"] = price
-
-                            if point == 4.5:
-                                odds["over_4_5"] = price
-
-        all_odds.append({
-            "home": home,
-            "away": away,
-            "odds": odds
-        })
+            matches.append({
+                "home": home,
+                "away": away,
+                "over25": over25,
+                "over35": over35
+            })
 
 os.makedirs("quotes", exist_ok=True)
 
 with open("quotes/odds_today.json", "w") as f:
-    json.dump(all_odds, f, indent=4)
+    json.dump(matches, f, indent=4)
 
-print("Quote salvate:", len(all_odds))
+print("Partite con quote trovate:", len(matches))
