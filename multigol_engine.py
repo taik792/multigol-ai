@@ -1,4 +1,5 @@
 import json
+import random
 
 with open("data/matches_today.json") as f:
     matches = json.load(f)
@@ -12,36 +13,43 @@ for match in matches:
 
     home = match["home"]
     away = match["away"]
+    date = match.get("date","")
 
     key = f"{home}-{away}"
+    quote_data = odds.get(key,{})
 
-    quote = odds.get(key)
+    over25 = quote_data.get("over25",2.0)
 
-    if not quote:
-        continue
-
-    over25 = quote["over25"]
-
+    # logica multigol
     if over25 < 1.60:
         multigol = "2-4"
-        confidence = 85
+        home_goals = random.choice(["1-2","1-3","2-3"])
+        away_goals = random.choice(["0-1","1-2"])
+        confidence = random.randint(80,90)
 
-    elif over25 < 1.80:
+    elif over25 < 1.85:
         multigol = "2-3"
-        confidence = 80
+        home_goals = random.choice(["1-2","0-2"])
+        away_goals = random.choice(["1-2","0-1"])
+        confidence = random.randint(75,85)
 
     else:
         multigol = "1-3"
-        confidence = 75
+        home_goals = random.choice(["0-1","0-2"])
+        away_goals = random.choice(["0-2","1-2"])
+        confidence = random.randint(70,80)
 
     predictions.append({
+        "date": date,
         "home": home,
         "away": away,
         "multigol": multigol,
+        "home_goals": home_goals,
+        "away_goals": away_goals,
         "confidence": confidence
     })
 
 with open("output/predictions.json","w") as f:
     json.dump(predictions,f,indent=4)
 
-print("Pronostici generati:",len(predictions))
+print("Predictions generate:",len(predictions))
