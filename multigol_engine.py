@@ -1,5 +1,4 @@
 import json
-import random
 
 with open("data/matches_today.json") as f:
     matches = json.load(f)
@@ -16,40 +15,30 @@ for match in matches:
 
     key = f"{home}-{away}"
 
-    quote = odds.get(key,{})
+    quote = odds.get(key)
 
-    over25 = quote.get("over25",2.0)
+    if not quote:
+        continue
+
+    over25 = quote["over25"]
 
     if over25 < 1.60:
-
         multigol = "2-4"
-        home_goals = "1-3"
-        away_goals = "1-2"
-        confidence = random.randint(80,90)
+        confidence = 85
 
     elif over25 < 1.80:
-
         multigol = "2-3"
-        home_goals = "1-2"
-        away_goals = "1-2"
-        confidence = random.randint(75,85)
+        confidence = 80
 
     else:
-
         multigol = "1-3"
-        home_goals = "0-2"
-        away_goals = "0-2"
-        confidence = random.randint(70,80)
+        confidence = 75
 
     predictions.append({
-
         "home": home,
         "away": away,
         "multigol": multigol,
-        "home_goals": home_goals,
-        "away_goals": away_goals,
         "confidence": confidence
-
     })
 
 with open("output/predictions.json","w") as f:
