@@ -3,23 +3,23 @@ import json
 import os
 
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
-
-SPORT = "soccer"
-REGIONS = "eu"
-MARKETS = "totals"
-ODDS_FORMAT = "decimal"
-
-URL = f"https://api.the-odds-api.com/v4/sports/{SPORT}/odds"
+URL = "https://api.the-odds-api.com/v4/sports/soccer_epl/odds"
 
 params = {
     "apiKey": API_KEY,
-    "regions": REGIONS,
-    "markets": MARKETS,
-    "oddsFormat": ODDS_FORMAT
+    "regions": "eu",
+    "markets": "totals",
+    "oddsFormat": "decimal"
 }
 
 response = requests.get(URL, params=params)
+
 data = response.json()
+
+# controllo errore API
+if isinstance(data, dict) and "message" in data:
+    print("Errore API:", data["message"])
+    exit()
 
 matches_odds = []
 
@@ -35,19 +35,18 @@ for match in data:
         "over_4_5": None
     }
 
-    for bookmaker in match["bookmakers"]:
+    for bookmaker in match.get("bookmakers", []):
 
-        for market in bookmaker["markets"]:
+        for market in bookmaker.get("markets", []):
 
             if market["key"] == "totals":
 
                 for outcome in market["outcomes"]:
 
-                    name = outcome["name"]
-                    point = outcome["point"]
-                    price = outcome["price"]
+                    if outcome["name"] == "Over":
 
-                    if name == "Over":
+                        point = outcome["point"]
+                        price = outcome["price"]
 
                         if point == 1.5:
                             odds["over_1_5"] = price
@@ -66,6 +65,8 @@ for match in data:
         "away": away,
         "odds": odds
     })
+
+os.makedirs("quotes", exist_ok=True)
 
 with open("quotes/odds_today.json", "w") as f:
     json.dump(matches_odds, f, indent=4)
