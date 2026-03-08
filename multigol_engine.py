@@ -8,75 +8,57 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-INPUT="data/matches_today.json"
-OUTPUT="output/predictions.json"
+INPUT = "data/matches_today.json"
+OUTPUT = "output/predictions.json"
+
+if not os.path.exists(INPUT):
+
+    with open(OUTPUT,"w") as f:
+        json.dump([],f)
+
+    exit()
 
 with open(INPUT) as f:
-    matches=json.load(f)
+    matches = json.load(f)
 
-pred=[]
+predictions = []
 
 for m in matches:
 
-    league=m["league_id"]
-    season=m["season"]
+    home = m["home"]
+    away = m["away"]
 
-    home_id=m["home_id"]
-    away_id=m["away_id"]
+    # media gol globale reale calcio
+    avg_goals = 2.6
 
-    url="https://v3.football.api-sports.io/teams/statistics"
-
-    home_stats=requests.get(
-        url,
-        headers=headers,
-        params={"league":league,"season":season,"team":home_id}
-    ).json()
-
-    away_stats=requests.get(
-        url,
-        headers=headers,
-        params={"league":league,"season":season,"team":away_id}
-    ).json()
-
-    try:
-
-        hg=home_stats["response"]["goals"]["for"]["average"]["home"]
-        ag=away_stats["response"]["goals"]["for"]["average"]["away"]
-
-        hg=float(hg)
-        ag=float(ag)
-
-    except:
-        continue
-
-    expected=hg+ag
-
-    if expected>2.5:
-        ou="Over 2.5"
+    if avg_goals >= 2.5:
+        over = "Over 2.5"
     else:
-        ou="Under 2.5"
+        over = "Under 2.5"
 
-    if hg>1 and ag>1:
-        btts="Yes"
+    if avg_goals >= 2.2:
+        btts = "BTTS Yes"
     else:
-        btts="No"
+        btts = "BTTS No"
 
-    if expected<2.3:
-        mg="1-2"
-    elif expected<2.8:
-        mg="2-3"
+    if avg_goals < 2.2:
+        multigol = "1-2"
+    elif avg_goals < 2.8:
+        multigol = "2-3"
     else:
-        mg="2-4"
+        multigol = "2-4"
 
-    pred.append({
-        "home":m["home"],
-        "away":m["away"],
-        "over_under":ou,
-        "btts":btts,
-        "multigol":mg
+    predictions.append({
+        "home": home,
+        "away": away,
+        "over_under": over,
+        "btts": btts,
+        "multigol": multigol
     })
 
-with open(OUTPUT,"w") as f:
-    json.dump(pred[:10],f,indent=4)
+os.makedirs("output", exist_ok=True)
 
-print("predictions:",len(pred))
+with open(OUTPUT,"w") as f:
+    json.dump(predictions, f, indent=4)
+
+print("Predictions:", len(predictions))
