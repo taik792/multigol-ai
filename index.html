@@ -2,130 +2,136 @@
 <html lang="it">
 
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Multigol AI Scanner</title>
 
 <style>
 
 body{
+background:#0f172a;
 font-family:Arial;
-background:linear-gradient(135deg,#0f172a,#1e293b);
-margin:0;
-padding:40px;
 color:white;
+text-align:center;
+padding:30px;
 }
 
 h1{
-text-align:center;
 margin-bottom:40px;
-font-size:36px;
 }
 
 .container{
-max-width:900px;
+max-width:700px;
 margin:auto;
 }
 
 .card{
 background:#1e293b;
-padding:18px;
-margin-bottom:16px;
-border-radius:10px;
-box-shadow:0 4px 15px rgba(0,0,0,0.4);
-transition:0.2s;
+padding:20px;
+margin-bottom:20px;
+border-radius:12px;
+box-shadow:0 0 10px rgba(0,0,0,0.4);
 }
 
-.card:hover{
-transform:scale(1.02);
-background:#273449;
-}
-
-.teams{
-font-size:20px;
-font-weight:bold;
-margin-bottom:6px;
-}
-
-.date{
-color:#94a3b8;
-font-size:14px;
-margin-bottom:8px;
+.match{
+font-size:22px;
+margin-bottom:10px;
 }
 
 .multigol{
 color:#22c55e;
-font-weight:bold;
-font-size:18px;
+font-size:20px;
 }
 
-.goals{
-margin-top:6px;
-}
-
-.conf{
-margin-top:6px;
-color:#facc15;
-font-weight:bold;
+.error{
+color:#f87171;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <h1>⚽ Multigol AI Scanner</h1>
 
-<div class="container" id="matches"></div>
+<div class="container" id="matches">
+
+Caricamento partite...
+
+</div>
 
 <script>
 
-fetch("output/predictions.json")
-.then(res=>res.json())
-.then(data=>{
+async function loadMatches(){
 
-const container=document.getElementById("matches");
+try{
 
-data.forEach(match=>{
+const response = await fetch("output/predictions.json")
 
-const card=document.createElement("div");
-card.className="card";
+if(!response.ok){
 
-const dateText = match.date
-? new Date(match.date).toLocaleString()
-: "";
+document.getElementById("matches").innerHTML =
+"<p class='error'>Nessuna partita disponibile</p>"
 
-card.innerHTML=`
+return
+}
 
-<div class="teams">
+const data = await response.json()
+
+if(data.length === 0){
+
+document.getElementById("matches").innerHTML =
+"<p class='error'>Nessuna partita trovata</p>"
+
+return
+}
+
+const container = document.getElementById("matches")
+
+container.innerHTML = ""
+
+data.forEach(match => {
+
+container.innerHTML += `
+
+<div class="card">
+
+<div class="match">
+
 ${match.home} vs ${match.away}
-</div>
 
-<div class="date">
-${dateText}
 </div>
 
 <div class="multigol">
+
 Multigol: ${match.multigol}
+
 </div>
 
-<div class="goals">
-Casa: ${match.home_goals}<br>
-Ospite: ${match.away_goals}
 </div>
 
-<div class="conf">
-Confidence: ${match.confidence}%
-</div>
+`
 
-`;
+})
 
-container.appendChild(card);
+}
 
-});
+catch(error){
 
-});
+document.getElementById("matches").innerHTML =
+"<p class='error'>Errore caricamento dati</p>"
+
+}
+
+}
+
+loadMatches()
 
 </script>
 
 </body>
+
 </html>
