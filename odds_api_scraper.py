@@ -1,48 +1,73 @@
 import requests
 import json
+import os
 
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
-headers = {
-    "x-apisports-key": API_KEY
+SPORT = "soccer"
+REGIONS = "eu"
+MARKETS = "totals"
+ODDS_FORMAT = "decimal"
+
+URL = f"https://api.the-odds-api.com/v4/sports/{SPORT}/odds"
+
+params = {
+    "apiKey": API_KEY,
+    "regions": REGIONS,
+    "markets": MARKETS,
+    "oddsFormat": ODDS_FORMAT
 }
 
-with open("data/matches_today.json") as f:
-    matches = json.load(f)
+response = requests.get(URL, params=params)
+data = response.json()
 
-odds_data = {}
+matches_odds = []
 
-for match in matches:
+for match in data:
 
-    fixture = match["fixture_id"]
+    home = match["home_team"]
+    away = match["away_team"]
 
-    url = "https://v3.football.api-sports.io/odds"
-
-    params = {
-        "fixture": fixture
+    odds = {
+        "over_1_5": None,
+        "over_2_5": None,
+        "over_3_5": None,
+        "over_4_5": None
     }
 
-    response = requests.get(url, headers=headers, params=params)
-    data = response.json()
+    for bookmaker in match["bookmakers"]:
 
-    if not data["response"]:
-        continue
+        for market in bookmaker["markets"]:
 
-    bookmakers = data["response"][0]["bookmakers"][0]["bets"]
+            if market["key"] == "totals":
 
-    odds = {}
+                for outcome in market["outcomes"]:
 
-    for bet in bookmakers:
+                    name = outcome["name"]
+                    point = outcome["point"]
+                    price = outcome["price"]
 
-        if bet["name"] == "Goals Over/Under":
+                    if name == "Over":
 
-            for value in bet["values"]:
+                        if point == 1.5:
+                            odds["over_1_5"] = price
 
-                odds[value["value"]] = float(value["odd"])
+                        if point == 2.5:
+                            odds["over_2_5"] = price
 
-    odds_data[match["home"] + " vs " + match["away"]] = odds
+                        if point == 3.5:
+                            odds["over_3_5"] = price
 
-with open("quotes/odds.json", "w") as f:
-    json.dump(odds_data, f, indent=4)
+                        if point == 4.5:
+                            odds["over_4_5"] = price
 
-print("Quote salvate")
+    matches_odds.append({
+        "home": home,
+        "away": away,
+        "odds": odds
+    })
+
+with open("quotes/odds_today.json", "w") as f:
+    json.dump(matches_odds, f, indent=4)
+
+print("Quote salvate:", len(matches_odds))
