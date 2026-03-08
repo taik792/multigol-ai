@@ -21,27 +21,34 @@ for match in matches:
     over15 = float(quote.get("over15",2.0))
     over25 = float(quote.get("over25",2.0))
     under25 = float(quote.get("under25",2.0))
-    btts_yes = float(quote.get("btts_yes",2.0))
-    btts_no = float(quote.get("btts_no",2.0))
+    btts = float(quote.get("btts_yes",2.0))
 
-    # partita molto aperta
-    if over25 < 1.60 and btts_yes < 1.70:
+    # partita con molti gol
+    if over25 < 1.55 and btts < 1.65:
 
         multigol = "2-4"
         home_goals = "1-3"
         away_goals = "1-2"
-        confidence = 85
+        confidence = 86
 
-    # partita equilibrata
-    elif over25 < 1.85:
+    # partita aperta
+    elif over25 < 1.75:
 
         multigol = "2-3"
         home_goals = "1-2"
         away_goals = "1-2"
+        confidence = 82
+
+    # partita con almeno 2 gol
+    elif over15 < 1.35:
+
+        multigol = "1-4"
+        home_goals = "1-3"
+        away_goals = "0-2"
         confidence = 80
 
     # partita chiusa
-    elif under25 < 1.70 or btts_no < 1.70:
+    elif under25 < 1.70:
 
         multigol = "0-2"
         home_goals = "0-1"
