@@ -3,7 +3,8 @@ import json
 import os
 
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
-URL = "https://api.the-odds-api.com/v4/sports/soccer_epl/odds"
+
+url = "https://api.the-odds-api.com/v4/sports/soccer_epl/odds"
 
 params = {
     "apiKey": API_KEY,
@@ -12,21 +13,20 @@ params = {
     "oddsFormat": "decimal"
 }
 
-response = requests.get(URL, params=params)
-
+response = requests.get(url, params=params)
 data = response.json()
 
-# controllo errore API
-if isinstance(data, dict) and "message" in data:
-    print("Errore API:", data["message"])
+# Se la API restituisce errore
+if isinstance(data, dict):
+    print("Nessuna quota trovata o errore API")
     exit()
 
-matches_odds = []
+matches = []
 
 for match in data:
 
-    home = match["home_team"]
-    away = match["away_team"]
+    home = match.get("home_team")
+    away = match.get("away_team")
 
     odds = {
         "over_1_5": None,
@@ -60,7 +60,7 @@ for match in data:
                         if point == 4.5:
                             odds["over_4_5"] = price
 
-    matches_odds.append({
+    matches.append({
         "home": home,
         "away": away,
         "odds": odds
@@ -69,6 +69,6 @@ for match in data:
 os.makedirs("quotes", exist_ok=True)
 
 with open("quotes/odds_today.json", "w") as f:
-    json.dump(matches_odds, f, indent=4)
+    json.dump(matches, f, indent=4)
 
-print("Quote salvate:", len(matches_odds))
+print("Quote salvate:", len(matches))
