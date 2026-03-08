@@ -81,7 +81,7 @@ for match in matches:
     })
 
 # filtro confidence alta
-predictions = [p for p in predictions if p["confidence"] >= 82]
+predictions = [p for p in predictions if p["confidence"] >= 70]
 
 # ordina per confidence
 predictions = sorted(predictions,key=lambda x:x["confidence"],reverse=True)
@@ -93,3 +93,4 @@ with open("output/predictions.json","w") as f:
     json.dump(predictions,f,indent=4)
 
 print("Top predictions:",len(predictions))
+
