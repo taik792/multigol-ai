@@ -7,64 +7,42 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-url = "https://v3.football.api-sports.io/odds"
+with open("data/matches_today.json") as f:
+    matches = json.load(f)
 
-params = {
-    "league": 39,
-    "season": 2026
-}
+odds_data = {}
 
-response = requests.get(url, headers=headers, params=params)
-data = response.json()
+for match in matches:
 
-odds = {}
+    fixture = match["fixture_id"]
 
-for match in data["response"]:
+    url = "https://v3.football.api-sports.io/odds"
 
-    home = match["teams"]["home"]["name"]
-    away = match["teams"]["away"]["name"]
+    params = {
+        "fixture": fixture
+    }
 
-    key = f"{home}-{away}"
+    response = requests.get(url, headers=headers, params=params)
+    data = response.json()
 
-    odds[key] = {}
+    if not data["response"]:
+        continue
 
-    for bookmaker in match["bookmakers"]:
+    bookmakers = data["response"][0]["bookmakers"][0]["bets"]
 
-        for bet in bookmaker["bets"]:
+    odds = {}
 
-            name = bet["name"]
+    for bet in bookmakers:
 
-            # 1X2
-            if name == "Match Winner":
+        if bet["name"] == "Goals Over/Under":
 
-                for value in bet["values"]:
+            for value in bet["values"]:
 
-                    if value["value"] == "Home":
-                        odds[key]["1"] = float(value["odd"])
+                odds[value["value"]] = float(value["odd"])
 
-                    if value["value"] == "Away":
-                        odds[key]["2"] = float(value["odd"])
+    odds_data[match["home"] + " vs " + match["away"]] = odds
 
-            # OVER/UNDER
-            if name == "Goals Over/Under":
+with open("quotes/odds.json", "w") as f:
+    json.dump(odds_data, f, indent=4)
 
-                for value in bet["values"]:
-
-                    if value["value"] == "Over 2.5":
-                        odds[key]["over25"] = float(value["odd"])
-
-                    if value["value"] == "Under 2.5":
-                        odds[key]["under25"] = float(value["odd"])
-
-            # BTTS
-            if name == "Both Teams Score":
-
-                for value in bet["values"]:
-
-                    if value["value"] == "Yes":
-                        odds[key]["btts_yes"] = float(value["odd"])
-
-with open("quotes/odds.json","w") as f:
-    json.dump(odds,f,indent=4)
-
-print("Quote salvate:",len(odds))
+print("Quote salvate")
