@@ -46,4 +46,4 @@ os.makedirs("output", exist_ok=True)
 with open(OUTPUT,"w") as f:
     json.dump(predictions[:10],f,indent=4)
 
-print("Pronostici creati:",len(predictions))
+print("Pronostici generati:",len(predictions))
