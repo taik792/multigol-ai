@@ -2,73 +2,81 @@ import requests
 import json
 import os
 
-API_KEY = "37ddec86e8578a1ff3127d5c394da749"
+API_KEY = "b90932e65c14be06a870fd50fcd20ddc"
 
-url = "https://api.the-odds-api.com/v4/sports/soccer_epl/odds"
+sports = [
+"soccer_epl",
+"soccer_italy_serie_a",
+"soccer_spain_la_liga",
+"soccer_germany_bundesliga",
+"soccer_france_ligue_one"
+]
 
-params = {
-    "apiKey": API_KEY,
-    "regions": "eu",
-    "markets": "totals",
-    "oddsFormat": "decimal"
-}
+all_odds = []
 
-response = requests.get(url, params=params)
-data = response.json()
+for sport in sports:
 
-# Se la API restituisce errore
-if isinstance(data, dict):
-    print("Nessuna quota trovata o errore API")
-    exit()
+    url = f"https://api.the-odds-api.com/v4/sports/{sport}/odds"
 
-matches = []
-
-for match in data:
-
-    home = match.get("home_team")
-    away = match.get("away_team")
-
-    odds = {
-        "over_1_5": None,
-        "over_2_5": None,
-        "over_3_5": None,
-        "over_4_5": None
+    params = {
+        "apiKey": API_KEY,
+        "regions": "eu",
+        "markets": "totals",
+        "oddsFormat": "decimal"
     }
 
-    for bookmaker in match.get("bookmakers", []):
+    response = requests.get(url, params=params)
+    data = response.json()
 
-        for market in bookmaker.get("markets", []):
+    if isinstance(data, dict):
+        continue
 
-            if market["key"] == "totals":
+    for match in data:
 
-                for outcome in market["outcomes"]:
+        home = match.get("home_team")
+        away = match.get("away_team")
 
-                    if outcome["name"] == "Over":
+        odds = {
+            "over_1_5": None,
+            "over_2_5": None,
+            "over_3_5": None,
+            "over_4_5": None
+        }
 
-                        point = outcome["point"]
-                        price = outcome["price"]
+        for bookmaker in match.get("bookmakers", []):
 
-                        if point == 1.5:
-                            odds["over_1_5"] = price
+            for market in bookmaker.get("markets", []):
 
-                        if point == 2.5:
-                            odds["over_2_5"] = price
+                if market["key"] == "totals":
 
-                        if point == 3.5:
-                            odds["over_3_5"] = price
+                    for outcome in market["outcomes"]:
 
-                        if point == 4.5:
-                            odds["over_4_5"] = price
+                        if outcome["name"] == "Over":
 
-    matches.append({
-        "home": home,
-        "away": away,
-        "odds": odds
-    })
+                            point = outcome["point"]
+                            price = outcome["price"]
+
+                            if point == 1.5:
+                                odds["over_1_5"] = price
+
+                            if point == 2.5:
+                                odds["over_2_5"] = price
+
+                            if point == 3.5:
+                                odds["over_3_5"] = price
+
+                            if point == 4.5:
+                                odds["over_4_5"] = price
+
+        all_odds.append({
+            "home": home,
+            "away": away,
+            "odds": odds
+        })
 
 os.makedirs("quotes", exist_ok=True)
 
 with open("quotes/odds_today.json", "w") as f:
-    json.dump(matches, f, indent=4)
+    json.dump(all_odds, f, indent=4)
 
-print("Quote salvate:", len(matches))
+print("Quote salvate:", len(all_odds))
