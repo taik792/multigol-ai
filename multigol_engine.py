@@ -1,55 +1,82 @@
+import requests
 import json
-import random
+import os
 
-with open("data/matches_today.json") as f:
-    matches = json.load(f)
+API_KEY = os.getenv("37ddec86e8578a1ff3127d5c394da749")
 
-with open("quotes/odds.json") as f:
-    odds = json.load(f)
+headers = {
+    "x-apisports-key": API_KEY
+}
 
-predictions = []
+INPUT="data/matches_today.json"
+OUTPUT="output/predictions.json"
 
-for match in matches:
+with open(INPUT) as f:
+    matches=json.load(f)
 
-    home = match["home"]
-    away = match["away"]
-    date = match.get("date","")
+pred=[]
 
-    key = f"{home}-{away}"
-    quote_data = odds.get(key,{})
+for m in matches:
 
-    over25 = quote_data.get("over25",2.0)
+    league=m["league_id"]
+    season=m["season"]
 
-    # logica multigol
-    if over25 < 1.60:
-        multigol = "2-4"
-        home_goals = random.choice(["1-2","1-3","2-3"])
-        away_goals = random.choice(["0-1","1-2"])
-        confidence = random.randint(80,90)
+    home_id=m["home_id"]
+    away_id=m["away_id"]
 
-    elif over25 < 1.85:
-        multigol = "2-3"
-        home_goals = random.choice(["1-2","0-2"])
-        away_goals = random.choice(["1-2","0-1"])
-        confidence = random.randint(75,85)
+    url="https://v3.football.api-sports.io/teams/statistics"
 
+    home_stats=requests.get(
+        url,
+        headers=headers,
+        params={"league":league,"season":season,"team":home_id}
+    ).json()
+
+    away_stats=requests.get(
+        url,
+        headers=headers,
+        params={"league":league,"season":season,"team":away_id}
+    ).json()
+
+    try:
+
+        hg=home_stats["response"]["goals"]["for"]["average"]["home"]
+        ag=away_stats["response"]["goals"]["for"]["average"]["away"]
+
+        hg=float(hg)
+        ag=float(ag)
+
+    except:
+        continue
+
+    expected=hg+ag
+
+    if expected>2.5:
+        ou="Over 2.5"
     else:
-        multigol = "1-3"
-        home_goals = random.choice(["0-1","0-2"])
-        away_goals = random.choice(["0-2","1-2"])
-        confidence = random.randint(70,80)
+        ou="Under 2.5"
 
-    predictions.append({
-        "date": date,
-        "home": home,
-        "away": away,
-        "multigol": multigol,
-        "home_goals": home_goals,
-        "away_goals": away_goals,
-        "confidence": confidence
+    if hg>1 and ag>1:
+        btts="Yes"
+    else:
+        btts="No"
+
+    if expected<2.3:
+        mg="1-2"
+    elif expected<2.8:
+        mg="2-3"
+    else:
+        mg="2-4"
+
+    pred.append({
+        "home":m["home"],
+        "away":m["away"],
+        "over_under":ou,
+        "btts":btts,
+        "multigol":mg
     })
 
-with open("output/predictions.json","w") as f:
-    json.dump(predictions,f,indent=4)
+with open(OUTPUT,"w") as f:
+    json.dump(pred[:10],f,indent=4)
 
-print("Predictions generate:",len(predictions))
+print("predictions:",len(pred))
