@@ -10,34 +10,37 @@ headers = {
 
 url = "https://v3.football.api-sports.io/fixtures"
 
-today = datetime.today().strftime('%Y-%m-%d')
+today = datetime.today().strftime("%Y-%m-%d")
 
 params = {
-    "date": today,
-    "status": "NS"
+    "date": today
 }
 
 response = requests.get(url, headers=headers, params=params)
-
 data = response.json()
 
 matches = []
 
 for game in data["response"]:
 
+    status = game["fixture"]["status"]["short"]
+
+    # SOLO partite non iniziate
+    if status != "NS":
+        continue
+
     home = game["teams"]["home"]["name"]
     away = game["teams"]["away"]["name"]
-    date_match = game["fixture"]["date"]
-    league = game["league"]["name"]
+
+    date = game["fixture"]["date"]
 
     matches.append({
         "home": home,
         "away": away,
-        "date": date_match,
-        "league": league
+        "date": date
     })
 
 with open("data/matches_today.json", "w") as f:
     json.dump(matches, f, indent=4)
 
-print("Matches trovate:", len(matches))
+print("Partite trovate:", len(matches))
