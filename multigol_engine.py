@@ -1,16 +1,25 @@
 import json
 import os
 
-INPUT_FILE = "quotes/odds_today.json"
-OUTPUT_FILE = "output/predictions.json"
+INPUT = "quotes/odds_today.json"
+OUTPUT = "output/predictions.json"
 
-def calculate_multigol(odds):
+if not os.path.exists(INPUT):
 
-    o25 = odds.get("over_2_5")
-    o35 = odds.get("over_3_5")
+    with open(OUTPUT,"w") as f:
+        json.dump([],f)
 
-    if not o25 or not o35:
-        return None
+    exit()
+
+with open(INPUT) as f:
+    matches = json.load(f)
+
+predictions = []
+
+for m in matches:
+
+    o25 = m["over25"]
+    o35 = m["over35"]
 
     p25 = 1 / o25
     p35 = 1 / o35
@@ -18,51 +27,23 @@ def calculate_multigol(odds):
     diff = p25 - p35
 
     if diff > 0.18:
-        return "1-3"
-
-    if diff > 0.12:
-        return "2-4"
-
-    if diff > 0.07:
-        return "2-5"
-
-    return "3-6"
-
-
-if not os.path.exists(INPUT_FILE):
-
-    with open(OUTPUT_FILE, "w") as f:
-        json.dump([], f)
-
-    exit()
-
-with open(INPUT_FILE) as f:
-    matches = json.load(f)
-
-predictions = []
-
-for match in matches:
-
-    home = match["home"]
-    away = match["away"]
-    odds = match["odds"]
-
-    multigol = calculate_multigol(odds)
-
-    if multigol is None:
-        continue
+        mg = "1-3"
+    elif diff > 0.12:
+        mg = "2-4"
+    elif diff > 0.07:
+        mg = "2-5"
+    else:
+        mg = "3-6"
 
     predictions.append({
-        "home": home,
-        "away": away,
-        "multigol": multigol
+        "home": m["home"],
+        "away": m["away"],
+        "multigol": mg
     })
-
-predictions = predictions[:10]
 
 os.makedirs("output", exist_ok=True)
 
-with open(OUTPUT_FILE, "w") as f:
-    json.dump(predictions, f, indent=4)
+with open(OUTPUT,"w") as f:
+    json.dump(predictions[:10],f,indent=4)
 
-print("Pronostici generati:", len(predictions))
+print("Pronostici creati:",len(predictions))
