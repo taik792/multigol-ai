@@ -1,5 +1,4 @@
 import json
-import random
 
 with open("data/matches_today.json") as f:
     matches = json.load(f)
@@ -16,28 +15,45 @@ for match in matches:
     date = match.get("date","")
 
     key = f"{home}-{away}"
-    quote_data = odds.get(key,{})
 
-    over25 = quote_data.get("over25",2.0)
+    quote = odds.get(key, {})
 
-    # logica multigol
-    if over25 < 1.60:
+    over15 = float(quote.get("over15",2.0))
+    over25 = float(quote.get("over25",2.0))
+    under25 = float(quote.get("under25",2.0))
+    btts_yes = float(quote.get("btts_yes",2.0))
+    btts_no = float(quote.get("btts_no",2.0))
+
+    # partita molto aperta
+    if over25 < 1.60 and btts_yes < 1.70:
+
         multigol = "2-4"
-        home_goals = random.choice(["1-2","1-3","2-3"])
-        away_goals = random.choice(["0-1","1-2"])
-        confidence = random.randint(80,90)
+        home_goals = "1-3"
+        away_goals = "1-2"
+        confidence = 85
 
+    # partita equilibrata
     elif over25 < 1.85:
+
         multigol = "2-3"
-        home_goals = random.choice(["1-2","0-2"])
-        away_goals = random.choice(["1-2","0-1"])
-        confidence = random.randint(75,85)
+        home_goals = "1-2"
+        away_goals = "1-2"
+        confidence = 80
+
+    # partita chiusa
+    elif under25 < 1.70 or btts_no < 1.70:
+
+        multigol = "0-2"
+        home_goals = "0-1"
+        away_goals = "0-1"
+        confidence = 78
 
     else:
+
         multigol = "1-3"
-        home_goals = random.choice(["0-1","0-2"])
-        away_goals = random.choice(["0-2","1-2"])
-        confidence = random.randint(70,80)
+        home_goals = "0-2"
+        away_goals = "0-2"
+        confidence = 75
 
     predictions.append({
         "date": date,
