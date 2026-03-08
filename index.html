@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
 <meta charset="UTF-8">
 <title>Multigol AI Scanner</title>
@@ -7,11 +8,11 @@
 <style>
 
 body{
-font-family: Arial, sans-serif;
-background: linear-gradient(135deg,#0f172a,#1e293b);
-color:white;
+font-family:Arial;
+background:linear-gradient(135deg,#0f172a,#1e293b);
 margin:0;
 padding:40px;
+color:white;
 }
 
 h1{
@@ -25,16 +26,16 @@ max-width:900px;
 margin:auto;
 }
 
-.match{
+.card{
 background:#1e293b;
-border-radius:10px;
 padding:18px;
-margin-bottom:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.4);
+margin-bottom:16px;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.4);
 transition:0.2s;
 }
 
-.match:hover{
+.card:hover{
 transform:scale(1.02);
 background:#273449;
 }
@@ -48,4 +49,83 @@ margin-bottom:6px;
 .date{
 color:#94a3b8;
 font-size:14px;
-m
+margin-bottom:8px;
+}
+
+.multigol{
+color:#22c55e;
+font-weight:bold;
+font-size:18px;
+}
+
+.goals{
+margin-top:6px;
+}
+
+.conf{
+margin-top:6px;
+color:#facc15;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>⚽ Multigol AI Scanner</h1>
+
+<div class="container" id="matches"></div>
+
+<script>
+
+fetch("output/predictions.json")
+.then(res=>res.json())
+.then(data=>{
+
+const container=document.getElementById("matches");
+
+data.forEach(match=>{
+
+const card=document.createElement("div");
+card.className="card";
+
+const dateText = match.date
+? new Date(match.date).toLocaleString()
+: "";
+
+card.innerHTML=`
+
+<div class="teams">
+${match.home} vs ${match.away}
+</div>
+
+<div class="date">
+${dateText}
+</div>
+
+<div class="multigol">
+Multigol: ${match.multigol}
+</div>
+
+<div class="goals">
+Casa: ${match.home_goals}<br>
+Ospite: ${match.away_goals}
+</div>
+
+<div class="conf">
+Confidence: ${match.confidence}%
+</div>
+
+`;
+
+container.appendChild(card);
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
