@@ -24,11 +24,11 @@ data = response.json()
 matches = []
 
 for m in data.get("response", []):
+
     matches.append({
         "home": m["teams"]["home"]["name"],
         "away": m["teams"]["away"]["name"],
-        "league": m["league"]["name"],
-        "fixture_id": m["fixture"]["id"]
+        "league": m["league"]["name"]
     })
 
 matches = matches[:10]
