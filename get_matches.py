@@ -26,16 +26,24 @@ if "response" in data:
 
     for match in data["response"]:
 
-        home = match["teams"]["home"]["name"]
-        away = match["teams"]["away"]["name"]
+        status = match["fixture"]["status"]["short"]
 
-        matches.append({
-            "home": home,
-            "away": away,
-            "multigol": "2-3",
-            "over25": "Yes",
-            "btts": "Yes"
-        })
+        # prendiamo solo partite non iniziate
+        if status == "NS":
+
+            home = match["teams"]["home"]["name"]
+            away = match["teams"]["away"]["name"]
+
+            matches.append({
+                "home": home,
+                "away": away,
+                "multigol": "2-3",
+                "over25": "Yes",
+                "btts": "Yes"
+            })
+
+# prendiamo massimo 10 partite
+matches = matches[:10]
 
 with open("matches.json", "w", encoding="utf-8") as f:
     json.dump(matches, f, indent=4, ensure_ascii=False)
