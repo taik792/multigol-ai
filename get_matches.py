@@ -11,7 +11,8 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-today = datetime.utcnow().strftime("%Y-%m-%d")
+# data di oggi
+today = datetime.now().strftime("%Y-%m-%d")
 
 params = {
     "date": today
@@ -22,20 +23,24 @@ data = response.json()
 
 matches = []
 
-for match in data["response"]:
+# controlla che ci siano partite
+if "response" in data:
 
-    home = match["teams"]["home"]["name"]
-    away = match["teams"]["away"]["name"]
+    for match in data["response"]:
 
-    matches.append({
-        "home": home,
-        "away": away,
-        "multigol": "2-3",
-        "over25": "Yes",
-        "btts": "Yes"
-    })
+        home = match["teams"]["home"]["name"]
+        away = match["teams"]["away"]["name"]
 
-with open("matches.json", "w") as f:
-    json.dump(matches, f, indent=4)
+        matches.append({
+            "home": home,
+            "away": away,
+            "multigol": "2-3",
+            "over25": "Yes",
+            "btts": "Yes"
+        })
 
-print("Matches aggiornati")
+# salva il JSON che il sito legge
+with open("matches.json", "w", encoding="utf-8") as f:
+    json.dump(matches, f, indent=4, ensure_ascii=False)
+
+print("Partite trovate:", len(matches))
