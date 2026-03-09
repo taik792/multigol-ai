@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
+
 <head>
 
 <meta charset="UTF-8">
@@ -8,69 +9,90 @@
 <style>
 
 body{
-background:#0f172a;
-font-family:Arial;
-color:white;
-text-align:center;
+    font-family: Arial;
+    background: linear-gradient(#0f172a,#1e3a8a);
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+h1{
+    margin-bottom:40px;
+}
+
+.container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
 }
 
 .card{
-background:#1e293b;
-margin:20px auto;
-padding:20px;
-border-radius:10px;
-width:300px;
+    background:#1e293b;
+    padding:20px;
+    width:300px;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,0.4);
+}
+
+.card h2{
+    margin:0 0 10px 0;
 }
 
 </style>
 
 </head>
 
+
 <body>
 
 <h1>⚽ Multigol AI Scanner</h1>
 
-<div id="matches"></div>
+<div id="matches" class="container">
+
+Caricamento partite...
+
+</div>
 
 <script>
 
-fetch("./output/predictions.json")
-.then(res => res.json())
+fetch("predictions.json")
+.then(response => response.json())
 .then(data => {
 
-const container = document.getElementById("matches")
+    const container = document.getElementById("matches");
 
-if(!data || data.length === 0){
+    container.innerHTML = "";
 
-container.innerHTML = "<h3>Nessuna partita trovata</h3>"
-return
-}
+    if(data.length === 0){
 
-data.forEach(m => {
+        container.innerHTML = "Nessuna partita trovata";
+        return;
 
-container.innerHTML += `
-<div class="card">
+    }
 
-<h2>${m.home} vs ${m.away}</h2>
+    data.forEach(match => {
 
-<p>Multigol: ${m.multigol}</p>
+        const card = document.createElement("div");
+        card.className = "card";
 
-<p>${m.over_under}</p>
+        card.innerHTML = `
+            <h2>${match.home} vs ${match.away}</h2>
+            <p>Multigol: ${match.multigol}</p>
+            <p>Over 2.5: ${match.over25}</p>
+            <p>BTTS: ${match.btts}</p>
+        `;
 
-<p>BTTS: ${m.btts}</p>
+        container.appendChild(card);
 
-</div>
-`
-
-})
-
-})
-.catch(err => {
-
-document.getElementById("matches").innerHTML =
-"<h3>Errore caricamento dati</h3>"
+    });
 
 })
+.catch(error => {
+
+    document.getElementById("matches").innerHTML = "Errore caricamento dati";
+
+});
 
 </script>
 
