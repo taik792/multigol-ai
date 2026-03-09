@@ -1,102 +1,132 @@
 [
     {
-        "fixture_id": 1516374,
-        "home_id": 17885,
-        "away_id": 16945,
-        "home": "Bangladesh W",
-        "away": "Uzbekistan W",
-        "league": "Asian Cup Women",
-        "league_id": 897,
-        "season": 2026
-    },
-    {
-        "fixture_id": 1516375,
-        "home_id": 21343,
-        "away_id": 1723,
-        "home": "Korea DPR",
-        "away": "China W",
-        "league": "Asian Cup Women",
-        "league_id": 897,
-        "season": 2026
-    },
-    {
-        "fixture_id": 1522062,
-        "home_id": 22823,
-        "away_id": 16781,
-        "home": "Melbourne Victory II",
-        "away": "Bulleen Lions",
-        "league": "Victoria NPL 2",
-        "league_id": 836,
-        "season": 2026
-    },
-    {
-        "fixture_id": 1503473,
-        "home_id": 24091,
-        "away_id": 12532,
-        "home": "Thitsar Arman",
-        "away": "Dagon",
-        "league": "National League",
-        "league_id": 588,
-        "season": 2025
-    },
-    {
-        "fixture_id": 1404565,
-        "home_id": 24736,
-        "away_id": 24742,
-        "home": "Lecce U20",
-        "away": "Torino U20",
-        "league": "Campionato Primavera - 1",
-        "league_id": 705,
-        "season": 2025
-    },
-    {
-        "fixture_id": 1521003,
-        "home_id": 709,
-        "away_id": 3686,
         "home": "Pyunik Yerevan",
         "away": "Shirak",
-        "league": "Premier League",
-        "league_id": 342,
-        "season": 2025
+        "league": "Premier League"
     },
     {
-        "fixture_id": 1522566,
-        "home_id": 2010,
-        "away_id": 1084,
-        "home": "Rotor Volgograd",
-        "away": "Ural",
-        "league": "First League",
-        "league_id": 236,
-        "season": 2025
-    },
-    {
-        "fixture_id": 1525652,
-        "home_id": 26199,
-        "away_id": 26197,
-        "home": "Van II",
-        "away": "Hayq",
-        "league": "First League",
-        "league_id": 343,
-        "season": 2025
-    },
-    {
-        "fixture_id": 1404567,
-        "home_id": 24729,
-        "away_id": 24725,
-        "home": "Cremonese U20",
-        "away": "Atalanta U20",
-        "league": "Campionato Primavera - 1",
-        "league_id": 705,
-        "season": 2025
-    },
-    {
-        "fixture_id": 1522269,
-        "home_id": 4112,
-        "away_id": 26881,
         "home": "Bahardar",
         "away": "Negelle Arsi",
-        "league": "Premier League",
-        "league_id": 363,
-        "season": 2025
+        "league": "Premier League"
+    },
+    {
+        "home": "Suhul Shire",
+        "away": "Fasil Ketema",
+        "league": "Premier League"
+    },
+    {
+        "home": "Hougang United",
+        "away": "Balestier Khalsa",
+        "league": "Premier League"
+    },
+    {
+        "home": "Ruh Lviv",
+        "away": "Metalist 1925 Kharkiv",
+        "league": "Premier League"
+    },
+    {
+        "home": "Lokomotiv",
+        "away": "Akhmat",
+        "league": "Premier League"
+    },
+    {
+        "home": "MC Saida",
+        "away": "WA Tlemcen",
+        "league": "Ligue 2"
+    },
+    {
+        "home": "Dire Dawa Kenema",
+        "away": "Ethiopia Nigd Bank",
+        "league": "Premier League"
+    },
+    {
+        "home": "Ethiopian Medhin",
+        "away": "Hadiya Hosaena",
+        "league": "Premier League"
+    },
+    {
+        "home": "Veres Rivne",
+        "away": "LNZ Cherkasy",
+        "league": "Premier League"
+    },
+    {
+        "home": "Spartak Moscow",
+        "away": "Akron",
+        "league": "Premier League"
+    },
+    {
+        "home": "Majestic",
+        "away": "AJEB",
+        "league": "Ligue 1"
+    },
+    {
+        "home": "SONABEL",
+        "away": "Rahimo",
+        "league": "Ligue 1"
+    },
+    {
+        "home": "Réal du Faso",
+        "away": "USFA",
+        "league": "Ligue 1"
+    },
+    {
+        "home": "CFFEB",
+        "away": "Salitas",
+        "league": "Ligue 1"
+    },
+    {
+        "home": "ASFB",
+        "away": "Vitesse",
+        "league": "Ligue 1"
+    },
+    {
+        "home": "SOL",
+        "away": "SOA",
+        "league": "Ligue 1"
+    },
+    {
+        "home": "Almeria",
+        "away": "Cultural Leonesa",
+        "league": "Segunda División"
+    },
+    {
+        "home": "El Geish",
+        "away": "Al Ahly",
+        "league": "Premier League"
+    },
+    {
+        "home": "National Bank of Egypt",
+        "away": "Pyramids FC",
+        "league": "Premier League"
+    },
+    {
+        "home": "Lazio",
+        "away": "Sassuolo",
+        "league": "Serie A"
+    },
+    {
+        "home": "Dunkerque",
+        "away": "Reims",
+        "league": "Ligue 2"
+    },
+    {
+        "home": "Espanyol",
+        "away": "Oviedo",
+        "league": "La Liga"
+    },
+    {
+        "home": "Tondela",
+        "away": "Rio Ave",
+        "league": "Primeira Liga"
+    },
+    {
+        "home": "Harbour View",
+        "away": "Racing United",
+        "league": "Premier League"
+    },
+    {
+        "home": "Gendrim",
+        "away": "Chemal",
+        "league": "Premier League"
     }
 ]
