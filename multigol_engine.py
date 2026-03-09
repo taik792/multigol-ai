@@ -22,9 +22,10 @@ for match in matches:
     away = match["away"]
     league = match["league"]
     time = match["time"]
-    league_id = match["league_id"]
+
     home_id = match["home_id"]
     away_id = match["away_id"]
+    league_id = match["league_id"]
 
     try:
 
@@ -46,23 +47,25 @@ for match in matches:
     expected_home = (home_scored + away_conceded) / 2
     expected_away = (away_scored + home_conceded) / 2
 
-    home_probs = [poisson(i, expected_home) for i in range(5)]
-    away_probs = [poisson(i, expected_away) for i in range(5)]
+    home_probs = [poisson(i, expected_home) for i in range(6)]
+    away_probs = [poisson(i, expected_away) for i in range(6)]
 
     prob_btts = 1 - (home_probs[0] + away_probs[0] - (home_probs[0] * away_probs[0]))
 
-    prob_over = 0
-    for h in range(5):
-        for a in range(5):
+    prob_over25 = 0
+
+    for h in range(6):
+        for a in range(6):
+
             if h + a >= 3:
-                prob_over += home_probs[h] * away_probs[a]
+                prob_over25 += home_probs[h] * away_probs[a]
 
     multigol_home = "1-3" if expected_home >= 1 else "0-2"
     multigol_away = "1-3" if expected_away >= 1 else "0-2"
 
     combo = "Casa" if expected_home > expected_away else "Ospite"
 
-    probability = round(max(prob_btts, prob_over) * 100)
+    probability = round(max(prob_over25, prob_btts) * 100)
 
     prediction = {
         "home": home,
@@ -72,7 +75,7 @@ for match in matches:
         "combo": combo,
         "multigol_home": multigol_home,
         "multigol_away": multigol_away,
-        "over25": "Yes" if prob_over > 0.5 else "No",
+        "over25": "Yes" if prob_over25 > 0.5 else "No",
         "btts": "Yes" if prob_btts > 0.5 else "No",
         "probability": probability
     }
