@@ -17,12 +17,11 @@ params = {
     "timezone": "Europe/Rome"
 }
 
-response = requests.get(fixtures_url, headers=headers, params=params)
-data = response.json()
+response = requests.get(fixtures_url, headers=headers, params=params).json()
 
 matches = []
 
-for match in data["response"]:
+for match in response["response"]:
 
     if match["fixture"]["status"]["short"] not in ["NS","TBD"]:
         continue
@@ -60,31 +59,39 @@ for match in data["response"]:
 
     try:
 
-        home_goals_for = home_stats["response"]["goals"]["for"]["average"]["total"]
-        home_goals_against = home_stats["response"]["goals"]["against"]["average"]["total"]
+        home_attack = float(home_stats["response"]["goals"]["for"]["average"]["total"])
+        home_def = float(home_stats["response"]["goals"]["against"]["average"]["total"])
 
-        away_goals_for = away_stats["response"]["goals"]["for"]["average"]["total"]
-        away_goals_against = away_stats["response"]["goals"]["against"]["average"]["total"]
-
-        home_attack = float(home_goals_for)
-        home_def = float(home_goals_against)
-
-        away_attack = float(away_goals_for)
-        away_def = float(away_goals_against)
+        away_attack = float(away_stats["response"]["goals"]["for"]["average"]["total"])
+        away_def = float(away_stats["response"]["goals"]["against"]["average"]["total"])
 
     except:
+
         home_attack = 1.5
         home_def = 1.3
         away_attack = 1.4
         away_def = 1.4
 
+    # forma ultime 5 partite
+    form_home = home_stats["response"]["form"]
+    form_away = away_stats["response"]["form"]
+
+    home_form_score = form_home.count("W")*3 + form_home.count("D")
+    away_form_score = form_away.count("W")*3 + form_away.count("D")
+
     matches.append({
+
         "home": home,
         "away": away,
+
         "home_attack": home_attack,
         "home_def": home_def,
+
         "away_attack": away_attack,
-        "away_def": away_def
+        "away_def": away_def,
+
+        "home_form": home_form_score,
+        "away_form": away_form_score
     })
 
 with open("matches.json","w",encoding="utf-8") as f:
