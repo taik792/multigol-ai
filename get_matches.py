@@ -20,56 +20,45 @@ params = {
 response = requests.get(url, headers=headers, params=params)
 data = response.json()
 
-allowed_leagues = [
-    "Serie A",
-    "Serie B",
-    "Premier League",
-    "Championship",
-    "La Liga",
-    "Segunda División",
-    "Bundesliga",
-    "2. Bundesliga",
-    "Ligue 1",
-    "Ligue 2",
-    "Eredivisie",
-    "Primeira Liga",
-    "MLS",
-    "UEFA Champions League",
-    "UEFA Europa League",
-    "UEFA Europa Conference League"
+# campionati TOP + serie inferiori
+TOP_LEAGUES = [
+39,40,       # Premier League + Championship
+140,141,     # La Liga + La Liga 2
+135,136,     # Serie A + Serie B
+78,79,       # Bundesliga + Bundesliga 2
+61,62,       # Ligue 1 + Ligue 2
+2,3,848,     # Champions League / Europa / Conference
 ]
 
 matches = []
 
 for match in data["response"]:
 
+    league_id = match["league"]["id"]
+
+    if league_id not in TOP_LEAGUES:
+        continue
+
+    status = match["fixture"]["status"]["short"]
+
+    if status != "NS":
+        continue
+
+    home = match["teams"]["home"]["name"]
+    away = match["teams"]["away"]["name"]
+
     league = match["league"]["name"]
 
-    if league in allowed_leagues:
+    time = match["fixture"]["date"][11:16]
 
-        status = match["fixture"]["status"]["short"]
+    matches.append({
+        "home": home,
+        "away": away,
+        "league": league,
+        "time": time
+    })
 
-        if status in ["NS","TBD"]:
+with open("matches.json", "w", encoding="utf-8") as f:
+    json.dump(matches, f, indent=4)
 
-            home = match["teams"]["home"]["name"]
-            away = match["teams"]["away"]["name"]
-
-            date = match["fixture"]["date"]
-
-            dt = datetime.fromisoformat(date.replace("Z",""))
-
-            match_date = dt.strftime("%d-%m-%Y")
-            match_time = dt.strftime("%H:%M")
-
-            matches.append({
-                "home": home,
-                "away": away,
-                "league": league,
-                "date": match_date,
-                "time": match_time
-            })
-
-with open("matches.json","w",encoding="utf-8") as f:
-    json.dump(matches,f,indent=4,ensure_ascii=False)
-
-print("Partite salvate:",len(matches))
+print("Partite salvate:", len(matches))
