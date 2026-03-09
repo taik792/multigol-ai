@@ -1,9 +1,8 @@
 import requests
 import json
-import os
 from datetime import datetime
 
-# INSERISCI QUI LA TUA API KEY
+# METTI QUI LA TUA API KEY
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
 url = "https://v3.football.api-sports.io/fixtures"
@@ -14,56 +13,29 @@ headers = {
 
 today = datetime.utcnow().strftime("%Y-%m-%d")
 
-# cartella dati
-os.makedirs("data", exist_ok=True)
+params = {
+    "date": today
+}
 
-file_path = f"data/matches_{today}.json"
+response = requests.get(url, headers=headers, params=params)
+data = response.json()
 
-# controlla se esiste già il file di oggi
-if os.path.exists(file_path):
+matches = []
 
-    print("File partite già esistente. Nessuna chiamata API.")
-    
-    with open(file_path) as f:
-        matches = json.load(f)
+for match in data["response"]:
 
-else:
+    home = match["teams"]["home"]["name"]
+    away = match["teams"]["away"]["name"]
 
-    print("Scarico partite da API-Football...")
+    matches.append({
+        "home": home,
+        "away": away,
+        "multigol": "2-3",
+        "over25": "Yes",
+        "btts": "Yes"
+    })
 
-    params = {
-        "date": today,
-        "status": "NS"
-    }
+with open("matches.json", "w") as f:
+    json.dump(matches, f, indent=4)
 
-    response = requests.get(url, headers=headers, params=params)
-
-    print("Status:", response.status_code)
-
-    if response.status_code != 200:
-        print("Errore API")
-        print(response.text)
-        exit()
-
-    data = response.json()
-
-    matches = []
-
-    for m in data.get("response", []):
-
-        matches.append({
-            "home": m["teams"]["home"]["name"],
-            "away": m["teams"]["away"]["name"],
-            "league": m["league"]["name"]
-        })
-
-    matches = matches[:10]
-
-    with open(file_path, "w") as f:
-        json.dump(matches, f, indent=4)
-
-    print("Partite salvate:", len(matches))
-
-# mostra partite
-for m in matches:
-    print(m["home"], "vs", m["away"], "-", m["league"])
+print("Matches aggiornati")
