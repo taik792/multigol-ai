@@ -2,6 +2,7 @@ import requests
 import json
 from datetime import datetime
 
+# API KEY
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
 url = "https://v3.football.api-sports.io/fixtures"
@@ -28,8 +29,8 @@ if "response" in data:
 
         status = match["fixture"]["status"]["short"]
 
-        # prendiamo partite non iniziate o live
-        if status in ["NS","1H","2H","HT"]:
+        # prendiamo solo partite non iniziate
+        if status in ["NS","TBD"]:
 
             home = match["teams"]["home"]["name"]
             away = match["teams"]["away"]["name"]
@@ -42,6 +43,7 @@ if "response" in data:
                 "btts": "Yes"
             })
 
+# salva file per il sito
 with open("matches.json", "w", encoding="utf-8") as f:
     json.dump(matches, f, indent=4, ensure_ascii=False)
 
