@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
 
 <meta charset="UTF-8">
@@ -30,13 +29,13 @@ h1{
 .card{
     background:#1e293b;
     padding:20px;
-    width:300px;
+    width:320px;
     border-radius:12px;
     box-shadow:0 0 10px rgba(0,0,0,0.4);
 }
 
 .card h2{
-    margin:0 0 10px 0;
+    margin-bottom:10px;
 }
 
 </style>
@@ -65,10 +64,8 @@ fetch("predictions.json")
     container.innerHTML = "";
 
     if(data.length === 0){
-
         container.innerHTML = "Nessuna partita trovata";
         return;
-
     }
 
     data.forEach(match => {
@@ -76,11 +73,14 @@ fetch("predictions.json")
         const card = document.createElement("div");
         card.className = "card";
 
+        const over = match.over25 ? match.over25 : "Yes";
+        const btts = match.btts ? match.btts : "Yes";
+
         card.innerHTML = `
             <h2>${match.home} vs ${match.away}</h2>
             <p>Multigol: ${match.multigol}</p>
-            <p>Over 2.5: ${match.over25}</p>
-            <p>BTTS: ${match.btts}</p>
+            <p>Over 2.5: ${over}</p>
+            <p>BTTS: ${btts}</p>
         `;
 
         container.appendChild(card);
