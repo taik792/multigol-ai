@@ -30,6 +30,7 @@ for match in matches:
 
     try:
 
+        # statistiche squadra
         url_home=f"https://v3.football.api-sports.io/teams/statistics?league={league_id}&season=2024&team={home_id}"
         url_away=f"https://v3.football.api-sports.io/teams/statistics?league={league_id}&season=2024&team={away_id}"
 
@@ -42,6 +43,17 @@ for match in matches:
         away_scored=float(away_stats["response"]["goals"]["for"]["average"]["away"])
         away_conceded=float(away_stats["response"]["goals"]["against"]["average"]["away"])
 
+        # forma ultime partite
+        form_home=home_stats["response"]["form"]
+        form_away=away_stats["response"]["form"]
+
+        home_points=form_home.count("W")*3+form_home.count("D")
+        away_points=form_away.count("W")*3+form_away.count("D")
+
+        form_factor_home=1+(home_points/15)*0.2
+        form_factor_away=1+(away_points/15)*0.2
+
+        # quote bookmaker
         url_odds=f"https://v3.football.api-sports.io/odds?fixture={fixture_id}"
 
         odds=requests.get(url_odds,headers=headers).json()
@@ -72,8 +84,8 @@ for match in matches:
     except:
         continue
 
-    expected_home=(home_scored+away_conceded)/2
-    expected_away=(away_scored+home_conceded)/2
+    expected_home=((home_scored+away_conceded)/2)*form_factor_home
+    expected_away=((away_scored+home_conceded)/2)*form_factor_away
 
     home_probs=[poisson(i,expected_home) for i in range(6)]
     away_probs=[poisson(i,expected_away) for i in range(6)]
@@ -87,7 +99,7 @@ for match in matches:
                 poisson_over+=home_probs[h]*away_probs[a]
 
     final_over=(poisson_over+over_prob)/2
-    final_btts=(btts_prob)/1
+    final_btts=btts_prob
 
     multigol_home="1-3" if expected_home>=1 else "0-2"
     multigol_away="1-3" if expected_away>=1 else "0-2"
