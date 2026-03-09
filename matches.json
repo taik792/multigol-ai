@@ -1,866 +1,434 @@
 [
     {
         "home": "Bangladesh W",
-        "away": "Uzbekistan W",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Uzbekistan W"
     },
     {
         "home": "Korea DPR",
-        "away": "China W",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "China W"
     },
     {
         "home": "Melbourne Victory II",
-        "away": "Bulleen Lions",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Bulleen Lions"
     },
     {
         "home": "Thitsar Arman",
-        "away": "Dagon",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Dagon"
     },
     {
         "home": "Lecce U20",
-        "away": "Torino U20",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Torino U20"
     },
     {
         "home": "Pyunik Yerevan",
-        "away": "Shirak",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Shirak"
     },
     {
         "home": "Rotor Volgograd",
-        "away": "Ural",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Ural"
     },
     {
         "home": "Van II",
-        "away": "Hayq",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Hayq"
     },
     {
         "home": "Cremonese U20",
-        "away": "Atalanta U20",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Atalanta U20"
     },
     {
         "home": "Bahardar",
-        "away": "Negelle Arsi",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Negelle Arsi"
     },
     {
         "home": "Suhul Shire",
-        "away": "Fasil Ketema",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Fasil Ketema"
     },
     {
         "home": "Shinnik Yaroslavl",
-        "away": "FC UFA",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "FC UFA"
     },
     {
         "home": "Ferizaj",
-        "away": "Gjilani",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Gjilani"
     },
     {
         "home": "Llapi",
-        "away": "Ballkani",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Ballkani"
     },
     {
         "home": "Malisheva",
-        "away": "Prishtina",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Prishtina"
     },
     {
         "home": "Hougang United",
-        "away": "Balestier Khalsa",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Balestier Khalsa"
     },
     {
         "home": "Eyüpspor",
-        "away": "Kocaelispor",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Kocaelispor"
     },
     {
         "home": "Grafičar",
-        "away": "Dubočica",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Dubočica"
     },
     {
         "home": "Stepojevac Vaga",
-        "away": "FK Trayal",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "FK Trayal"
     },
     {
         "home": "Shkendija",
-        "away": "Akademija Pandev",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Akademija Pandev"
     },
     {
         "home": "Sileks",
-        "away": "Vardar Skopje",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Vardar Skopje"
     },
     {
         "home": "AFC Bournemouth U21",
-        "away": "Brentford U21",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Brentford U21"
     },
     {
         "home": "Mladost Lješkopolje",
-        "away": "Iskra",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Iskra"
     },
     {
         "home": "BKMA II",
-        "away": "Pyunik II",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Pyunik II"
     },
     {
         "home": "Parana Clube U20",
-        "away": "Cascavel U20",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Cascavel U20"
     },
     {
         "home": "Ruh Lviv",
-        "away": "Metalist 1925 Kharkiv",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Metalist 1925 Kharkiv"
     },
     {
         "home": "Lokomotiv",
-        "away": "Akhmat",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Akhmat"
     },
     {
         "home": "Persib Bandung",
-        "away": "Persik Kediri",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Persik Kediri"
     },
     {
         "home": "PSBS Biak Numfor",
-        "away": "Semen Padang",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Semen Padang"
     },
     {
         "home": "Montana",
-        "away": "Ludogorets",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Ludogorets"
     },
     {
         "home": "CSKA Sofia II",
-        "away": "Pirin Blagoevgrad",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Pirin Blagoevgrad"
     },
     {
         "home": "Jedinstvo Ub",
-        "away": "Semendrija 1924",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Semendrija 1924"
     },
     {
         "home": "Cesena U20",
-        "away": "Milan U20",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Milan U20"
     },
     {
         "home": "Birmingham City U21",
-        "away": "Chelsea U21",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Chelsea U21"
     },
     {
         "home": "Minerva Punjab",
-        "away": "NorthEast United",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "NorthEast United"
     },
     {
         "home": "Arsenal Tula",
-        "away": "Volga Ulyanovsk",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Volga Ulyanovsk"
     },
     {
         "home": "Noah II",
-        "away": "Sardarapat",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Sardarapat"
     },
     {
         "home": "Banants II",
-        "away": "Araks Ararat",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Araks Ararat"
     },
     {
         "home": "MC Saida",
-        "away": "WA Tlemcen",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "WA Tlemcen"
     },
     {
         "home": "Zira",
-        "away": "Kapaz",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Kapaz"
     },
     {
         "home": "ASA Targu Mures",
-        "away": "Chindia Targoviste",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Chindia Targoviste"
     },
     {
         "home": "Estrela U23",
-        "away": "União Leiria U23",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "União Leiria U23"
     },
     {
         "home": "Gil Vicente U23",
-        "away": "Vizela U23",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Vizela U23"
     },
     {
         "home": "Dire Dawa Kenema",
-        "away": "Ethiopia Nigd Bank",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Ethiopia Nigd Bank"
     },
     {
         "home": "Ethiopian Medhin",
-        "away": "Hadiya Hosaena",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Hadiya Hosaena"
     },
     {
         "home": "Veres Rivne",
-        "away": "LNZ Cherkasy",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "LNZ Cherkasy"
     },
     {
         "home": "Macva",
-        "away": "FAP",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "FAP"
     },
     {
         "home": "Spartak Moscow",
-        "away": "Akron",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Akron"
     },
     {
         "home": "Panetolikos",
-        "away": "Kifisia",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Kifisia"
     },
     {
         "home": "Levski Sofia",
-        "away": "Lokomotiv Plovdiv",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Lokomotiv Plovdiv"
     },
     {
         "home": "Majestic",
-        "away": "AJEB",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "AJEB"
     },
     {
         "home": "SONABEL",
-        "away": "Rahimo",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Rahimo"
     },
     {
         "home": "Réal du Faso",
-        "away": "USFA",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "USFA"
     },
     {
         "home": "CFFEB",
-        "away": "Salitas",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Salitas"
     },
     {
         "home": "ASFB",
-        "away": "Vitesse",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Vitesse"
     },
     {
         "home": "SOL",
-        "away": "SOA",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "SOA"
     },
     {
         "home": "Radomlje",
-        "away": "Bravo",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Bravo"
     },
     {
         "home": "Neftchi Baku",
-        "away": "Turan",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Turan"
     },
     {
         "home": "Polonia Warszawa",
-        "away": "ŁKS Łódź",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "ŁKS Łódź"
     },
     {
         "home": "Mladost Lucani",
-        "away": "Novi Pazar",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Novi Pazar"
     },
     {
         "home": "OFK Beograd",
-        "away": "Radnicki 1923",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Radnicki 1923"
     },
     {
         "home": "Alanyaspor",
-        "away": "Gençlerbirliği S.K.",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Gençlerbirliği S.K."
     },
     {
         "home": "Kayserispor",
-        "away": "Trabzonspor",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Trabzonspor"
     },
     {
         "home": "AC Horsens",
-        "away": "Lyngby",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Lyngby"
     },
     {
         "home": "Wisla Plock",
-        "away": "Arka Gdynia",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Arka Gdynia"
     },
     {
         "home": "CFR 1907 Cluj",
-        "away": "Dinamo Bucuresti",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Dinamo Bucuresti"
     },
     {
         "home": "Benfica B",
-        "away": "Feirense",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Feirense"
     },
     {
         "home": "Egnatia Rrogozhinë",
-        "away": "Teuta Durrës",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Teuta Durrës"
     },
     {
         "home": "Dinamo Tirana",
-        "away": "Partizani",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Partizani"
     },
     {
         "home": "Egersund",
-        "away": "Aalesund",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Aalesund"
     },
     {
         "home": "AIK Stockholm",
-        "away": "BK Hacken",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "BK Hacken"
     },
     {
         "home": "Vasteras SK FK",
-        "away": "Oddevold",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Oddevold"
     },
     {
         "home": "América RJ U20",
-        "away": "Sampaio Corrêa U20",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Sampaio Corrêa U20"
     },
     {
         "home": "Police",
-        "away": "Al Merreikh",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Al Merreikh"
     },
     {
         "home": "Jong AZ",
-        "away": "Emmen",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Emmen"
     },
     {
         "home": "Budapest Honved",
-        "away": "Kecskeméti TE",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Kecskeméti TE"
     },
     {
         "home": "Colchester United U21",
-        "away": "Swansea City U21",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Swansea City U21"
     },
     {
         "home": "Stoke City U21",
-        "away": "Burnley U21",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Burnley U21"
     },
     {
         "home": "Sunderland U21",
-        "away": "Leeds United U21",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Leeds United U21"
     },
     {
         "home": "Leicester City U21",
-        "away": "Newcastle United U21",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Newcastle United U21"
     },
     {
         "home": "Reading U21",
-        "away": "Everton U21",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Everton U21"
     },
     {
         "home": "Almeria",
-        "away": "Cultural Leonesa",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Cultural Leonesa"
     },
     {
         "home": "El Geish",
-        "away": "Al Ahly",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Al Ahly"
     },
     {
         "home": "National Bank of Egypt",
-        "away": "Pyramids FC",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Pyramids FC"
     },
     {
         "home": "Campobasso FC",
-        "away": "Arezzo",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Arezzo"
     },
     {
         "home": "Perugia",
-        "away": "Pontedera",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Pontedera"
     },
     {
         "home": "Ascoli",
-        "away": "Ravenna",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Ravenna"
     },
     {
         "home": "SS Monopoli",
-        "away": "Casarano",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Casarano"
     },
     {
         "home": "Catania",
-        "away": "Casertana",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Casertana"
     },
     {
         "home": "Atalanta II",
-        "away": "Audace Cerignola",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Audace Cerignola"
     },
     {
         "home": "West Ham",
-        "away": "Brentford",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Brentford"
     },
     {
         "home": "Lazio",
-        "away": "Sassuolo",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Sassuolo"
     },
     {
         "home": "Dunkerque",
-        "away": "Reims",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Reims"
     },
     {
         "home": "Trethomas Bluebirds",
-        "away": "Newport City",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Newport City"
     },
     {
         "home": "Shelbourne",
-        "away": "Shamrock Rovers",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Shamrock Rovers"
     },
     {
         "home": "Espanyol",
-        "away": "Oviedo",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Oviedo"
     },
     {
         "home": "Leones de Rosario",
-        "away": "El Porvenir",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "El Porvenir"
     },
     {
         "home": "Deportivo Cali W",
-        "away": "La Equidad W",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "La Equidad W"
     },
     {
         "home": "Real Santander W",
-        "away": "Deportivo Pasto W",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Deportivo Pasto W"
     },
     {
         "home": "Santa Fe W",
-        "away": "Atlético Bucaramanga W",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Atlético Bucaramanga W"
     },
     {
         "home": "Tondela",
-        "away": "Rio Ave",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Rio Ave"
     },
     {
         "home": "Harbour View",
-        "away": "Racing United",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Racing United"
     },
     {
         "home": "Santiago Wanderers",
-        "away": "Deportes Santa Cruz",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Deportes Santa Cruz"
     },
     {
         "home": "Sportivo Trinidense",
-        "away": "Nacional Asuncion",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Nacional Asuncion"
     },
     {
         "home": "Cerro Largo",
-        "away": "Atletico Torque",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Atletico Torque"
     },
     {
         "home": "Belgrano U20",
-        "away": "LDU Quito U20",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "LDU Quito U20"
     },
     {
         "home": "Cienciano",
-        "away": "Sport Boys",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Sport Boys"
     },
     {
         "home": "Gendrim",
-        "away": "Chemal",
-        "home_attack": 1.5,
-        "home_def": 1.3,
-        "away_attack": 1.4,
-        "away_def": 1.4
+        "away": "Chemal"
     }
 ]
