@@ -2,7 +2,7 @@ import json
 import requests
 import math
 
-API_KEY = ""37ddec86e8578a1ff3127d5c394da749""
+API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
 headers = {
     "x-apisports-key": API_KEY
