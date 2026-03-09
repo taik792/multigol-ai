@@ -20,7 +20,6 @@ params = {
 response = requests.get(url, headers=headers, params=params)
 data = response.json()
 
-# campionati accettati
 allowed_leagues = [
     "Serie A",
     "Serie B",
@@ -35,9 +34,9 @@ allowed_leagues = [
     "Eredivisie",
     "Primeira Liga",
     "MLS",
-    "Champions League",
-    "Europa League",
-    "Conference League"
+    "UEFA Champions League",
+    "UEFA Europa League",
+    "UEFA Europa Conference League"
 ]
 
 matches = []
@@ -55,10 +54,19 @@ for match in data["response"]:
             home = match["teams"]["home"]["name"]
             away = match["teams"]["away"]["name"]
 
+            date = match["fixture"]["date"]
+
+            dt = datetime.fromisoformat(date.replace("Z",""))
+
+            match_date = dt.strftime("%d-%m-%Y")
+            match_time = dt.strftime("%H:%M")
+
             matches.append({
                 "home": home,
                 "away": away,
-                "league": league
+                "league": league,
+                "date": match_date,
+                "time": match_time
             })
 
 with open("matches.json","w",encoding="utf-8") as f:
