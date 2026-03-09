@@ -28,18 +28,22 @@ if "response" in data:
 
         status = match["fixture"]["status"]["short"]
 
-        # prendiamo solo partite non iniziate
-        if status in ["NS", "TBD"]:
+        if status == "NS":
 
             home = match["teams"]["home"]["name"]
             away = match["teams"]["away"]["name"]
 
+            league = match["league"]["name"]
+
             matches.append({
                 "home": home,
-                "away": away
+                "away": away,
+                "league": league
             })
 
-with open("matches.json", "w", encoding="utf-8") as f:
-    json.dump(matches, f, indent=4, ensure_ascii=False)
+matches = matches[:10]
 
-print("Partite salvate:", len(matches))
+with open("matches.json","w") as f:
+    json.dump(matches,f,indent=4)
+
+print("Partite salvate:",len(matches))
