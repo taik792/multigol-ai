@@ -1,17 +1,5 @@
 [
     {
-        "home": "Lazio",
-        "away": "Sassuolo",
-        "league": "Serie A",
-        "time": "20:45",
-        "combo": "Casa",
-        "multigol_home": "0-2",
-        "multigol_away": "0-2",
-        "over25": "No",
-        "btts": "No",
-        "probability": 29
-    },
-    {
         "home": "Espanyol",
         "away": "Oviedo",
         "league": "La Liga",

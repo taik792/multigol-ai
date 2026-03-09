@@ -1,14 +1,5 @@
 [
     {
-        "home": "Lazio",
-        "away": "Sassuolo",
-        "home_id": 487,
-        "away_id": 488,
-        "league": "Serie A",
-        "league_id": 135,
-        "time": "20:45"
-    },
-    {
         "home": "Espanyol",
         "away": "Oviedo",
         "home_id": 540,
