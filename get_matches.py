@@ -22,7 +22,7 @@ data = response.json()
 
 matches = []
 
-# campionati principali
+# SOLO CAMPIONATI PROFESSIONALI
 TOP_LEAGUES = [
     39,   # Premier League
     140,  # La Liga
@@ -39,8 +39,18 @@ TOP_LEAGUES = [
 for match in data["response"]:
 
     league_id = match["league"]["id"]
+    league_name = match["league"]["name"]
 
     if league_id not in TOP_LEAGUES:
+        continue
+
+    if "Youth" in league_name:
+        continue
+
+    if "U19" in league_name:
+        continue
+
+    if "U18" in league_name:
         continue
 
     if match["fixture"]["status"]["short"] != "NS":
@@ -52,7 +62,7 @@ for match in data["response"]:
     home_id = match["teams"]["home"]["id"]
     away_id = match["teams"]["away"]["id"]
 
-    league = match["league"]["name"]
+    league = league_name
 
     time = match["fixture"]["date"][11:16]
 
