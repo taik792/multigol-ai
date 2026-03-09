@@ -23,13 +23,7 @@ data = response.json()
 matches = []
 
 TOP_LEAGUES = [
-    39,   # Premier League
-    140,  # La Liga
-    135,  # Serie A
-    78,   # Bundesliga
-    61,   # Ligue 1
-    136,  # Serie B
-    40    # Championship
+39,140,135,78,61,136,40
 ]
 
 for match in data["response"]:
@@ -42,27 +36,18 @@ for match in data["response"]:
     if league_id not in TOP_LEAGUES:
         continue
 
-    home = match["teams"]["home"]["name"]
-    away = match["teams"]["away"]["name"]
-
-    home_id = match["teams"]["home"]["id"]
-    away_id = match["teams"]["away"]["id"]
-
-    league = match["league"]["name"]
-
-    time = match["fixture"]["date"][11:16]
-
     matches.append({
-        "home": home,
-        "away": away,
-        "home_id": home_id,
-        "away_id": away_id,
-        "league": league,
+        "home": match["teams"]["home"]["name"],
+        "away": match["teams"]["away"]["name"],
+        "home_id": match["teams"]["home"]["id"],
+        "away_id": match["teams"]["away"]["id"],
+        "league": match["league"]["name"],
         "league_id": league_id,
-        "time": time
+        "fixture_id": match["fixture"]["id"],
+        "time": match["fixture"]["date"][11:16]
     })
 
-with open("matches.json", "w", encoding="utf-8") as f:
-    json.dump(matches, f, indent=4)
+with open("matches.json","w") as f:
+    json.dump(matches,f,indent=4)
 
-print("Partite salvate:", len(matches))
+print("Partite salvate:",len(matches))
