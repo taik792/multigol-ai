@@ -24,32 +24,34 @@ h1{
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:25px;
+    gap:20px;
 }
 
 .card{
     background:#1e293b;
-    padding:25px;
-    width:340px;
-    border-radius:14px;
-    box-shadow:0 0 12px rgba(0,0,0,0.4);
+    padding:20px;
+    width:320px;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,0.4);
+}
+
+.card h2{
+    margin-bottom:10px;
 }
 
 .league{
-    font-size:13px;
-    color:#9ca3af;
-    margin-bottom:6px;
+    color:#cbd5f5;
+    font-size:14px;
 }
 
-.datetime{
+.time{
     font-size:14px;
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .prob{
-    margin-top:12px;
+    color:#00ff9c;
     font-weight:bold;
-    color:#22c55e;
 }
 
 </style>
@@ -71,9 +73,7 @@ Caricamento partite...
 <script>
 
 fetch("predictions.json")
-
 .then(response => response.json())
-
 .then(data => {
 
 const container = document.getElementById("matches");
@@ -83,7 +83,6 @@ container.innerHTML = "";
 if(data.length === 0){
 
 container.innerHTML = "Nessuna partita trovata";
-
 return;
 
 }
@@ -98,23 +97,21 @@ card.innerHTML = `
 
 <h2>${match.home} vs ${match.away}</h2>
 
-<div class="league">${match.league}</div>
+<p class="league">${match.league}</p>
 
-<div class="datetime">
-📅 ${match.date} | ⏰ ${match.time}
-</div>
+<p class="time">⏰ ${match.time}</p>
 
-<p><b>Combo:</b> ${match.combo}</p>
+<p>Combo: ${match.combo}</p>
 
-<p><b>Multigol Casa:</b> ${match.multigol_home}</p>
-<p><b>Multigol Ospite:</b> ${match.multigol_away}</p>
+<p>Multigol Casa: ${match.multigol_home}</p>
 
-<p><b>Over 2.5:</b> ${match.over25}</p>
-<p><b>BTTS:</b> ${match.btts}</p>
+<p>Multigol Ospite: ${match.multigol_away}</p>
 
-<div class="prob">
-Probabilità: ${match.probability}%
-</div>
+<p>Over 2.5: ${match.over25}</p>
+
+<p>BTTS: ${match.btts}</p>
+
+<p class="prob">Probabilità: ${match.probability}%</p>
 
 `;
 
@@ -133,4 +130,5 @@ document.getElementById("matches").innerHTML = "Errore caricamento dati";
 </script>
 
 </body>
+
 </html>
