@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
 
 <meta charset="UTF-8">
@@ -8,8 +9,8 @@
 <style>
 
 body{
-    font-family: Arial;
-    background: linear-gradient(#0f172a,#1e3a8a);
+    font-family:Arial;
+    background:linear-gradient(#0f172a,#1e3a8a);
     color:white;
     text-align:center;
     padding:40px;
@@ -23,24 +24,33 @@ h1{
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:20px;
+    gap:25px;
 }
 
 .card{
     background:#1e293b;
-    padding:20px;
+    padding:25px;
     width:320px;
-    border-radius:12px;
+    border-radius:14px;
     box-shadow:0 0 10px rgba(0,0,0,0.4);
 }
 
-.card h2{
+.league{
+    font-size:13px;
+    color:#9ca3af;
     margin-bottom:10px;
+}
+
+.prob{
+    margin-top:10px;
+    font-weight:bold;
+    color:#22c55e;
 }
 
 </style>
 
 </head>
+
 
 <body>
 
@@ -52,46 +62,62 @@ Caricamento partite...
 
 </div>
 
+
 <script>
 
 fetch("predictions.json")
-.then(response => response.json())
-.then(data => {
 
-    const container = document.getElementById("matches");
+.then(response=>response.json())
 
-    container.innerHTML = "";
+.then(data=>{
 
-    if(data.length === 0){
-        container.innerHTML = "Nessuna partita trovata";
-        return;
-    }
+const container=document.getElementById("matches");
 
-    data.forEach(match => {
+container.innerHTML="";
 
-        const card = document.createElement("div");
-        card.className = "card";
+if(data.length===0){
 
-        const over = match.over25 ? match.over25 : "Yes";
-        const btts = match.btts ? match.btts : "Yes";
-        const combo = match.combo ? match.combo : "Casa";
+container.innerHTML="Nessuna partita trovata";
 
-        card.innerHTML = `
-            <h2>${match.home} vs ${match.away}</h2>
-            <p>Combo: ${combo}</p>
-            <p>Multigol: ${match.multigol}</p>
-            <p>Over 2.5: ${over}</p>
-            <p>BTTS: ${btts}</p>
-        `;
+return;
 
-        container.appendChild(card);
+}
 
-    });
+data.forEach(match=>{
+
+const card=document.createElement("div");
+
+card.className="card";
+
+card.innerHTML=`
+
+<h2>${match.home} vs ${match.away}</h2>
+
+<div class="league">${match.league}</div>
+
+<p><b>Combo:</b> ${match.combo}</p>
+
+<p><b>Multigol Casa:</b> ${match.multigol_home}</p>
+
+<p><b>Multigol Ospite:</b> ${match.multigol_away}</p>
+
+<p><b>Over 2.5:</b> ${match.over25}</p>
+
+<p><b>BTTS:</b> ${match.btts}</p>
+
+<div class="prob">Probabilità: ${match.probability}%</div>
+
+`;
+
+container.appendChild(card);
+
+});
 
 })
-.catch(error => {
 
-    document.getElementById("matches").innerHTML = "Errore caricamento dati";
+.catch(error=>{
+
+document.getElementById("matches").innerHTML="Errore caricamento dati";
 
 });
 
