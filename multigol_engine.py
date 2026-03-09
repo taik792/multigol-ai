@@ -1,48 +1,28 @@
 import json
-import os
 
-INPUT = "data/matches_today.json"
-OUTPUT = "output/predictions.json"
-
-if not os.path.exists(INPUT):
-    print("No matches file")
-    exit()
-
-with open(INPUT) as f:
+# carica partite salvate
+with open("matches.json", "r", encoding="utf-8") as f:
     matches = json.load(f)
 
 predictions = []
 
-for m in matches:
+for match in matches:
 
-    home = m["home"]
-    away = m["away"]
+    home = match["home"]
+    away = match["away"]
 
-    # stima base reale calcio
-    expected_goals = 2.6
-
-    if expected_goals < 2:
-        multigol = "1-2"
-    elif expected_goals < 3:
-        multigol = "2-3"
-    else:
-        multigol = "2-4"
-
-    over = "Over 2.5" if expected_goals >= 2.5 else "Under 2.5"
-
-    btts = "Yes" if expected_goals >= 2.2 else "No"
-
-    predictions.append({
+    prediction = {
         "home": home,
         "away": away,
-        "multigol": multigol,
-        "over_under": over,
-        "btts": btts
-    })
+        "multigol": "2-3",
+        "over25": "Yes",
+        "btts": "Yes"
+    }
 
-os.makedirs("output", exist_ok=True)
+    predictions.append(prediction)
 
-with open(OUTPUT,"w") as f:
-    json.dump(predictions, f, indent=4)
+# salva le previsioni
+with open("predictions.json", "w", encoding="utf-8") as f:
+    json.dump(predictions, f, indent=4, ensure_ascii=False)
 
 print("Predictions created:", len(predictions))
