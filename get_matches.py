@@ -1,4 +1,5 @@
 import requests
+import json
 from datetime import datetime
 
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
@@ -17,10 +18,31 @@ params = {
 }
 
 response = requests.get(url, headers=headers, params=params)
-
-print("STATUS CODE:", response.status_code)
-
 data = response.json()
 
-print("RISPOSTA API:")
-print(data)
+matches = []
+
+if "response" in data:
+
+    for match in data["response"]:
+
+        status = match["fixture"]["status"]["short"]
+
+        # prendiamo partite non iniziate o live
+        if status in ["NS","1H","2H","HT"]:
+
+            home = match["teams"]["home"]["name"]
+            away = match["teams"]["away"]["name"]
+
+            matches.append({
+                "home": home,
+                "away": away,
+                "multigol": "2-3",
+                "over25": "Yes",
+                "btts": "Yes"
+            })
+
+with open("matches.json", "w", encoding="utf-8") as f:
+    json.dump(matches, f, indent=4, ensure_ascii=False)
+
+print("Partite salvate:", len(matches))
