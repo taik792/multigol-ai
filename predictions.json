@@ -31,9 +31,9 @@
         "combo": "Ospite",
         "multigol_home": "0-2",
         "multigol_away": "1-3",
-        "over25": "No",
+        "over25": "Yes",
         "btts": "No",
-        "probability": 39
+        "probability": 55
     },
     {
         "home": "Viareggio U18",
@@ -46,65 +46,5 @@
         "over25": "No",
         "btts": "No",
         "probability": 0
-    },
-    {
-        "home": "Catania",
-        "away": "Casertana",
-        "league": "Serie C - Girone C",
-        "time": "20:30",
-        "combo": "Casa",
-        "multigol_home": "1-3",
-        "multigol_away": "0-2",
-        "over25": "No",
-        "btts": "No",
-        "probability": 39
-    },
-    {
-        "home": "Atalanta II",
-        "away": "Audace Cerignola",
-        "league": "Serie C - Girone C",
-        "time": "20:30",
-        "combo": "Ospite",
-        "multigol_home": "0-2",
-        "multigol_away": "0-2",
-        "over25": "No",
-        "btts": "No",
-        "probability": 17
-    },
-    {
-        "home": "West Ham",
-        "away": "Brentford",
-        "league": "FA Cup",
-        "time": "20:30",
-        "combo": "Ospite",
-        "multigol_home": "0-2",
-        "multigol_away": "0-2",
-        "over25": "No",
-        "btts": "No",
-        "probability": 0
-    },
-    {
-        "home": "Lazio",
-        "away": "Sassuolo",
-        "league": "Serie A",
-        "time": "20:45",
-        "combo": "Casa",
-        "multigol_home": "0-2",
-        "multigol_away": "0-2",
-        "over25": "No",
-        "btts": "No",
-        "probability": 29
-    },
-    {
-        "home": "Dunkerque",
-        "away": "Reims",
-        "league": "Ligue 2",
-        "time": "20:45",
-        "combo": "Casa",
-        "multigol_home": "0-2",
-        "multigol_away": "0-2",
-        "over25": "No",
-        "btts": "No",
-        "probability": 18
     }
 ]
