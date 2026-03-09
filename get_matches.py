@@ -2,44 +2,66 @@ import requests
 import json
 from datetime import datetime
 
-API_KEY="37ddec86e8578a1ff3127d5c394da749"
+API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
-url="https://v3.football.api-sports.io/fixtures"
+url = "https://v3.football.api-sports.io/fixtures"
 
-headers={
-"x-apisports-key":API_KEY
+headers = {
+    "x-apisports-key": API_KEY
 }
 
-today=datetime.now().strftime("%Y-%m-%d")
+today = datetime.now().strftime("%Y-%m-%d")
 
-params={
-"date":today,
-"timezone":"Europe/Rome"
+params = {
+    "date": today,
+    "timezone": "Europe/Rome"
 }
 
-r=requests.get(url,headers=headers,params=params)
-data=r.json()
+response = requests.get(url, headers=headers, params=params)
+data = response.json()
 
-matches=[]
+# campionati accettati
+allowed_leagues = [
+    "Serie A",
+    "Serie B",
+    "Premier League",
+    "Championship",
+    "La Liga",
+    "Segunda División",
+    "Bundesliga",
+    "2. Bundesliga",
+    "Ligue 1",
+    "Ligue 2",
+    "Eredivisie",
+    "Primeira Liga",
+    "MLS",
+    "Champions League",
+    "Europa League",
+    "Conference League"
+]
 
-for m in data["response"]:
+matches = []
 
-    if m["fixture"]["status"]["short"]=="NS":
+for match in data["response"]:
 
-        matches.append({
-            "fixture_id":m["fixture"]["id"],
-            "home_id":m["teams"]["home"]["id"],
-            "away_id":m["teams"]["away"]["id"],
-            "home":m["teams"]["home"]["name"],
-            "away":m["teams"]["away"]["name"],
-            "league":m["league"]["name"],
-            "league_id":m["league"]["id"],
-            "season":m["league"]["season"]
-        })
+    league = match["league"]["name"]
 
-matches=matches[:10]
+    if league in allowed_leagues:
 
-with open("matches.json","w") as f:
-    json.dump(matches,f,indent=4)
+        status = match["fixture"]["status"]["short"]
+
+        if status in ["NS","TBD"]:
+
+            home = match["teams"]["home"]["name"]
+            away = match["teams"]["away"]["name"]
+
+            matches.append({
+                "home": home,
+                "away": away,
+                "league": league
+            })
+
+with open("matches.json","w",encoding="utf-8") as f:
+    json.dump(matches,f,indent=4,ensure_ascii=False)
 
 print("Partite salvate:",len(matches))
