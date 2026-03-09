@@ -1,434 +1,52 @@
 [
     {
         "home": "Bangladesh W",
-        "away": "Uzbekistan W"
+        "away": "Uzbekistan W",
+        "league": "Asian Cup Women"
     },
     {
         "home": "Korea DPR",
-        "away": "China W"
+        "away": "China W",
+        "league": "Asian Cup Women"
     },
     {
         "home": "Melbourne Victory II",
-        "away": "Bulleen Lions"
+        "away": "Bulleen Lions",
+        "league": "Victoria NPL 2"
     },
     {
         "home": "Thitsar Arman",
-        "away": "Dagon"
+        "away": "Dagon",
+        "league": "National League"
     },
     {
         "home": "Lecce U20",
-        "away": "Torino U20"
+        "away": "Torino U20",
+        "league": "Campionato Primavera - 1"
     },
     {
         "home": "Pyunik Yerevan",
-        "away": "Shirak"
+        "away": "Shirak",
+        "league": "Premier League"
     },
     {
         "home": "Rotor Volgograd",
-        "away": "Ural"
+        "away": "Ural",
+        "league": "First League"
     },
     {
         "home": "Van II",
-        "away": "Hayq"
+        "away": "Hayq",
+        "league": "First League"
     },
     {
         "home": "Cremonese U20",
-        "away": "Atalanta U20"
+        "away": "Atalanta U20",
+        "league": "Campionato Primavera - 1"
     },
     {
         "home": "Bahardar",
-        "away": "Negelle Arsi"
-    },
-    {
-        "home": "Suhul Shire",
-        "away": "Fasil Ketema"
-    },
-    {
-        "home": "Shinnik Yaroslavl",
-        "away": "FC UFA"
-    },
-    {
-        "home": "Ferizaj",
-        "away": "Gjilani"
-    },
-    {
-        "home": "Llapi",
-        "away": "Ballkani"
-    },
-    {
-        "home": "Malisheva",
-        "away": "Prishtina"
-    },
-    {
-        "home": "Hougang United",
-        "away": "Balestier Khalsa"
-    },
-    {
-        "home": "Eyüpspor",
-        "away": "Kocaelispor"
-    },
-    {
-        "home": "Grafičar",
-        "away": "Dubočica"
-    },
-    {
-        "home": "Stepojevac Vaga",
-        "away": "FK Trayal"
-    },
-    {
-        "home": "Shkendija",
-        "away": "Akademija Pandev"
-    },
-    {
-        "home": "Sileks",
-        "away": "Vardar Skopje"
-    },
-    {
-        "home": "AFC Bournemouth U21",
-        "away": "Brentford U21"
-    },
-    {
-        "home": "Mladost Lješkopolje",
-        "away": "Iskra"
-    },
-    {
-        "home": "BKMA II",
-        "away": "Pyunik II"
-    },
-    {
-        "home": "Parana Clube U20",
-        "away": "Cascavel U20"
-    },
-    {
-        "home": "Ruh Lviv",
-        "away": "Metalist 1925 Kharkiv"
-    },
-    {
-        "home": "Lokomotiv",
-        "away": "Akhmat"
-    },
-    {
-        "home": "Persib Bandung",
-        "away": "Persik Kediri"
-    },
-    {
-        "home": "PSBS Biak Numfor",
-        "away": "Semen Padang"
-    },
-    {
-        "home": "Montana",
-        "away": "Ludogorets"
-    },
-    {
-        "home": "CSKA Sofia II",
-        "away": "Pirin Blagoevgrad"
-    },
-    {
-        "home": "Jedinstvo Ub",
-        "away": "Semendrija 1924"
-    },
-    {
-        "home": "Cesena U20",
-        "away": "Milan U20"
-    },
-    {
-        "home": "Birmingham City U21",
-        "away": "Chelsea U21"
-    },
-    {
-        "home": "Minerva Punjab",
-        "away": "NorthEast United"
-    },
-    {
-        "home": "Arsenal Tula",
-        "away": "Volga Ulyanovsk"
-    },
-    {
-        "home": "Noah II",
-        "away": "Sardarapat"
-    },
-    {
-        "home": "Banants II",
-        "away": "Araks Ararat"
-    },
-    {
-        "home": "MC Saida",
-        "away": "WA Tlemcen"
-    },
-    {
-        "home": "Zira",
-        "away": "Kapaz"
-    },
-    {
-        "home": "ASA Targu Mures",
-        "away": "Chindia Targoviste"
-    },
-    {
-        "home": "Estrela U23",
-        "away": "União Leiria U23"
-    },
-    {
-        "home": "Gil Vicente U23",
-        "away": "Vizela U23"
-    },
-    {
-        "home": "Dire Dawa Kenema",
-        "away": "Ethiopia Nigd Bank"
-    },
-    {
-        "home": "Ethiopian Medhin",
-        "away": "Hadiya Hosaena"
-    },
-    {
-        "home": "Veres Rivne",
-        "away": "LNZ Cherkasy"
-    },
-    {
-        "home": "Macva",
-        "away": "FAP"
-    },
-    {
-        "home": "Spartak Moscow",
-        "away": "Akron"
-    },
-    {
-        "home": "Panetolikos",
-        "away": "Kifisia"
-    },
-    {
-        "home": "Levski Sofia",
-        "away": "Lokomotiv Plovdiv"
-    },
-    {
-        "home": "Majestic",
-        "away": "AJEB"
-    },
-    {
-        "home": "SONABEL",
-        "away": "Rahimo"
-    },
-    {
-        "home": "Réal du Faso",
-        "away": "USFA"
-    },
-    {
-        "home": "CFFEB",
-        "away": "Salitas"
-    },
-    {
-        "home": "ASFB",
-        "away": "Vitesse"
-    },
-    {
-        "home": "SOL",
-        "away": "SOA"
-    },
-    {
-        "home": "Radomlje",
-        "away": "Bravo"
-    },
-    {
-        "home": "Neftchi Baku",
-        "away": "Turan"
-    },
-    {
-        "home": "Polonia Warszawa",
-        "away": "ŁKS Łódź"
-    },
-    {
-        "home": "Mladost Lucani",
-        "away": "Novi Pazar"
-    },
-    {
-        "home": "OFK Beograd",
-        "away": "Radnicki 1923"
-    },
-    {
-        "home": "Alanyaspor",
-        "away": "Gençlerbirliği S.K."
-    },
-    {
-        "home": "Kayserispor",
-        "away": "Trabzonspor"
-    },
-    {
-        "home": "AC Horsens",
-        "away": "Lyngby"
-    },
-    {
-        "home": "Wisla Plock",
-        "away": "Arka Gdynia"
-    },
-    {
-        "home": "CFR 1907 Cluj",
-        "away": "Dinamo Bucuresti"
-    },
-    {
-        "home": "Benfica B",
-        "away": "Feirense"
-    },
-    {
-        "home": "Egnatia Rrogozhinë",
-        "away": "Teuta Durrës"
-    },
-    {
-        "home": "Dinamo Tirana",
-        "away": "Partizani"
-    },
-    {
-        "home": "Egersund",
-        "away": "Aalesund"
-    },
-    {
-        "home": "AIK Stockholm",
-        "away": "BK Hacken"
-    },
-    {
-        "home": "Vasteras SK FK",
-        "away": "Oddevold"
-    },
-    {
-        "home": "América RJ U20",
-        "away": "Sampaio Corrêa U20"
-    },
-    {
-        "home": "Police",
-        "away": "Al Merreikh"
-    },
-    {
-        "home": "Jong AZ",
-        "away": "Emmen"
-    },
-    {
-        "home": "Budapest Honved",
-        "away": "Kecskeméti TE"
-    },
-    {
-        "home": "Colchester United U21",
-        "away": "Swansea City U21"
-    },
-    {
-        "home": "Stoke City U21",
-        "away": "Burnley U21"
-    },
-    {
-        "home": "Sunderland U21",
-        "away": "Leeds United U21"
-    },
-    {
-        "home": "Leicester City U21",
-        "away": "Newcastle United U21"
-    },
-    {
-        "home": "Reading U21",
-        "away": "Everton U21"
-    },
-    {
-        "home": "Almeria",
-        "away": "Cultural Leonesa"
-    },
-    {
-        "home": "El Geish",
-        "away": "Al Ahly"
-    },
-    {
-        "home": "National Bank of Egypt",
-        "away": "Pyramids FC"
-    },
-    {
-        "home": "Campobasso FC",
-        "away": "Arezzo"
-    },
-    {
-        "home": "Perugia",
-        "away": "Pontedera"
-    },
-    {
-        "home": "Ascoli",
-        "away": "Ravenna"
-    },
-    {
-        "home": "SS Monopoli",
-        "away": "Casarano"
-    },
-    {
-        "home": "Catania",
-        "away": "Casertana"
-    },
-    {
-        "home": "Atalanta II",
-        "away": "Audace Cerignola"
-    },
-    {
-        "home": "West Ham",
-        "away": "Brentford"
-    },
-    {
-        "home": "Lazio",
-        "away": "Sassuolo"
-    },
-    {
-        "home": "Dunkerque",
-        "away": "Reims"
-    },
-    {
-        "home": "Trethomas Bluebirds",
-        "away": "Newport City"
-    },
-    {
-        "home": "Shelbourne",
-        "away": "Shamrock Rovers"
-    },
-    {
-        "home": "Espanyol",
-        "away": "Oviedo"
-    },
-    {
-        "home": "Leones de Rosario",
-        "away": "El Porvenir"
-    },
-    {
-        "home": "Deportivo Cali W",
-        "away": "La Equidad W"
-    },
-    {
-        "home": "Real Santander W",
-        "away": "Deportivo Pasto W"
-    },
-    {
-        "home": "Santa Fe W",
-        "away": "Atlético Bucaramanga W"
-    },
-    {
-        "home": "Tondela",
-        "away": "Rio Ave"
-    },
-    {
-        "home": "Harbour View",
-        "away": "Racing United"
-    },
-    {
-        "home": "Santiago Wanderers",
-        "away": "Deportes Santa Cruz"
-    },
-    {
-        "home": "Sportivo Trinidense",
-        "away": "Nacional Asuncion"
-    },
-    {
-        "home": "Cerro Largo",
-        "away": "Atletico Torque"
-    },
-    {
-        "home": "Belgrano U20",
-        "away": "LDU Quito U20"
-    },
-    {
-        "home": "Cienciano",
-        "away": "Sport Boys"
-    },
-    {
-        "home": "Gendrim",
-        "away": "Chemal"
+        "away": "Negelle Arsi",
+        "league": "Premier League"
     }
 ]
