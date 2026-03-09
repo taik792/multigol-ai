@@ -10,7 +10,7 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-today = datetime.now().strftime("%Y-%m-%d")
+today = datetime.utcnow().strftime("%Y-%m-%d")
 
 params = {
     "date": today,
@@ -20,41 +20,31 @@ params = {
 response = requests.get(url, headers=headers, params=params)
 data = response.json()
 
-# campionati TOP + serie inferiori
-TOP_LEAGUES = [
-39,40,       # Premier League + Championship
-140,141,     # La Liga + La Liga 2
-135,136,     # Serie A + Serie B
-78,79,       # Bundesliga + Bundesliga 2
-61,62,       # Ligue 1 + Ligue 2
-2,3,848,     # Champions League / Europa / Conference
-]
-
 matches = []
 
 for match in data["response"]:
 
-    league_id = match["league"]["id"]
-
-    if league_id not in TOP_LEAGUES:
-        continue
-
-    status = match["fixture"]["status"]["short"]
-
-    if status != "NS":
+    if match["fixture"]["status"]["short"] != "NS":
         continue
 
     home = match["teams"]["home"]["name"]
     away = match["teams"]["away"]["name"]
 
+    home_id = match["teams"]["home"]["id"]
+    away_id = match["teams"]["away"]["id"]
+
     league = match["league"]["name"]
+    league_id = match["league"]["id"]
 
     time = match["fixture"]["date"][11:16]
 
     matches.append({
         "home": home,
         "away": away,
+        "home_id": home_id,
+        "away_id": away_id,
         "league": league,
+        "league_id": league_id,
         "time": time
     })
 
