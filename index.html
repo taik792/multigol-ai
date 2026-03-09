@@ -42,7 +42,6 @@ h1{
 
 </head>
 
-
 <body>
 
 <h1>⚽ Multigol AI Scanner</h1>
@@ -75,9 +74,11 @@ fetch("predictions.json")
 
         const over = match.over25 ? match.over25 : "Yes";
         const btts = match.btts ? match.btts : "Yes";
+        const combo = match.combo ? match.combo : "Casa";
 
         card.innerHTML = `
             <h2>${match.home} vs ${match.away}</h2>
+            <p>Combo: ${combo}</p>
             <p>Multigol: ${match.multigol}</p>
             <p>Over 2.5: ${over}</p>
             <p>BTTS: ${btts}</p>
