@@ -4,12 +4,12 @@
         "away": "Cultural Leonesa",
         "league": "Segunda Divisi\u00f3n",
         "time": "20:30",
-        "combo": "Casa",
-        "multigol_home": "2-3",
-        "multigol_away": "1-2",
+        "combo": "Ospite",
+        "multigol_home": "1-3",
+        "multigol_away": "1-3",
         "over25": "No",
         "btts": "Yes",
-        "probability": 68
+        "probability": 70
     },
     {
         "home": "Lazio",
@@ -18,10 +18,10 @@
         "time": "20:45",
         "combo": "Casa",
         "multigol_home": "1-2",
-        "multigol_away": "1-3",
+        "multigol_away": "0-1",
         "over25": "No",
         "btts": "No",
-        "probability": 82
+        "probability": 68
     },
     {
         "home": "Dunkerque",
@@ -30,10 +30,10 @@
         "time": "20:45",
         "combo": "Ospite",
         "multigol_home": "1-3",
-        "multigol_away": "0-1",
-        "over25": "Yes",
+        "multigol_away": "1-3",
+        "over25": "No",
         "btts": "Yes",
-        "probability": 64
+        "probability": 80
     },
     {
         "home": "Espanyol",
@@ -41,10 +41,10 @@
         "league": "La Liga",
         "time": "21:00",
         "combo": "Ospite",
-        "multigol_home": "2-3",
-        "multigol_away": "1-2",
+        "multigol_home": "1-2",
+        "multigol_away": "1-3",
         "over25": "No",
         "btts": "Yes",
-        "probability": 77
+        "probability": 82
     }
 ]
