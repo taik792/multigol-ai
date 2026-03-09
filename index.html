@@ -9,8 +9,8 @@
 <style>
 
 body{
-    font-family:Arial;
-    background:linear-gradient(#0f172a,#1e3a8a);
+    font-family: Arial;
+    background: linear-gradient(#0f172a,#1e3a8a);
     color:white;
     text-align:center;
     padding:40px;
@@ -30,19 +30,24 @@ h1{
 .card{
     background:#1e293b;
     padding:25px;
-    width:320px;
+    width:340px;
     border-radius:14px;
-    box-shadow:0 0 10px rgba(0,0,0,0.4);
+    box-shadow:0 0 12px rgba(0,0,0,0.4);
 }
 
 .league{
     font-size:13px;
     color:#9ca3af;
-    margin-bottom:10px;
+    margin-bottom:6px;
+}
+
+.datetime{
+    font-size:14px;
+    margin-bottom:12px;
 }
 
 .prob{
-    margin-top:10px;
+    margin-top:12px;
     font-weight:bold;
     color:#22c55e;
 }
@@ -67,45 +72,49 @@ Caricamento partite...
 
 fetch("predictions.json")
 
-.then(response=>response.json())
+.then(response => response.json())
 
-.then(data=>{
+.then(data => {
 
-const container=document.getElementById("matches");
+const container = document.getElementById("matches");
 
-container.innerHTML="";
+container.innerHTML = "";
 
-if(data.length===0){
+if(data.length === 0){
 
-container.innerHTML="Nessuna partita trovata";
+container.innerHTML = "Nessuna partita trovata";
 
 return;
 
 }
 
-data.forEach(match=>{
+data.forEach(match => {
 
-const card=document.createElement("div");
+const card = document.createElement("div");
 
-card.className="card";
+card.className = "card";
 
-card.innerHTML=`
+card.innerHTML = `
 
 <h2>${match.home} vs ${match.away}</h2>
 
 <div class="league">${match.league}</div>
 
+<div class="datetime">
+📅 ${match.date} | ⏰ ${match.time}
+</div>
+
 <p><b>Combo:</b> ${match.combo}</p>
 
 <p><b>Multigol Casa:</b> ${match.multigol_home}</p>
-
 <p><b>Multigol Ospite:</b> ${match.multigol_away}</p>
 
 <p><b>Over 2.5:</b> ${match.over25}</p>
-
 <p><b>BTTS:</b> ${match.btts}</p>
 
-<div class="prob">Probabilità: ${match.probability}%</div>
+<div class="prob">
+Probabilità: ${match.probability}%
+</div>
 
 `;
 
@@ -115,9 +124,9 @@ container.appendChild(card);
 
 })
 
-.catch(error=>{
+.catch(error => {
 
-document.getElementById("matches").innerHTML="Errore caricamento dati";
+document.getElementById("matches").innerHTML = "Errore caricamento dati";
 
 });
 
