@@ -2,131 +2,183 @@
     {
         "home": "Pyunik Yerevan",
         "away": "Shirak",
-        "league": "Premier League"
+        "league": "Premier League",
+        "date": "09-03-2026",
+        "time": "12:00"
     },
     {
         "home": "Bahardar",
         "away": "Negelle Arsi",
-        "league": "Premier League"
+        "league": "Premier League",
+        "date": "09-03-2026",
+        "time": "13:00"
     },
     {
         "home": "Suhul Shire",
         "away": "Fasil Ketema",
-        "league": "Premier League"
+        "league": "Premier League",
+        "date": "09-03-2026",
+        "time": "13:00"
     },
     {
         "home": "Hougang United",
         "away": "Balestier Khalsa",
-        "league": "Premier League"
+        "league": "Premier League",
+        "date": "09-03-2026",
+        "time": "13:30"
     },
     {
         "home": "Ruh Lviv",
         "away": "Metalist 1925 Kharkiv",
-        "league": "Premier League"
+        "league": "Premier League",
+        "date": "09-03-2026",
+        "time": "14:30"
     },
     {
         "home": "Lokomotiv",
         "away": "Akhmat",
-        "league": "Premier League"
+        "league": "Premier League",
+        "date": "09-03-2026",
+        "time": "14:30"
     },
     {
         "home": "MC Saida",
         "away": "WA Tlemcen",
-        "league": "Ligue 2"
+        "league": "Ligue 2",
+        "date": "09-03-2026",
+        "time": "15:00"
     },
     {
         "home": "Dire Dawa Kenema",
         "away": "Ethiopia Nigd Bank",
-        "league": "Premier League"
+        "league": "Premier League",
+        "date": "09-03-2026",
+        "time": "16:00"
     },
     {
         "home": "Ethiopian Medhin",
         "away": "Hadiya Hosaena",
-        "league": "Premier League"
+        "league": "Premier League",
+        "date": "09-03-2026",
+        "time": "16:00"
     },
     {
         "home": "Veres Rivne",
         "away": "LNZ Cherkasy",
-        "league": "Premier League"
+        "league": "Premier League",
+        "date": "09-03-2026",
+        "time": "17:00"
     },
     {
         "home": "Spartak Moscow",
         "away": "Akron",
-        "league": "Premier League"
+        "league": "Premier League",
+        "date": "09-03-2026",
+        "time": "17:00"
     },
     {
         "home": "Majestic",
         "away": "AJEB",
-        "league": "Ligue 1"
+        "league": "Ligue 1",
+        "date": "09-03-2026",
+        "time": "17:00"
     },
     {
         "home": "SONABEL",
         "away": "Rahimo",
-        "league": "Ligue 1"
+        "league": "Ligue 1",
+        "date": "09-03-2026",
+        "time": "17:00"
     },
     {
         "home": "Réal du Faso",
         "away": "USFA",
-        "league": "Ligue 1"
+        "league": "Ligue 1",
+        "date": "09-03-2026",
+        "time": "17:00"
     },
     {
         "home": "CFFEB",
         "away": "Salitas",
-        "league": "Ligue 1"
+        "league": "Ligue 1",
+        "date": "09-03-2026",
+        "time": "17:00"
     },
     {
         "home": "ASFB",
         "away": "Vitesse",
-        "league": "Ligue 1"
+        "league": "Ligue 1",
+        "date": "09-03-2026",
+        "time": "17:00"
     },
     {
         "home": "SOL",
         "away": "SOA",
-        "league": "Ligue 1"
+        "league": "Ligue 1",
+        "date": "09-03-2026",
+        "time": "17:00"
     },
     {
         "home": "Almeria",
         "away": "Cultural Leonesa",
-        "league": "Segunda División"
+        "league": "Segunda División",
+        "date": "09-03-2026",
+        "time": "20:30"
     },
     {
         "home": "El Geish",
         "away": "Al Ahly",
-        "league": "Premier League"
+        "league": "Premier League",
+        "date": "09-03-2026",
+        "time": "20:30"
     },
     {
         "home": "National Bank of Egypt",
         "away": "Pyramids FC",
-        "league": "Premier League"
+        "league": "Premier League",
+        "date": "09-03-2026",
+        "time": "20:30"
     },
     {
         "home": "Lazio",
         "away": "Sassuolo",
-        "league": "Serie A"
+        "league": "Serie A",
+        "date": "09-03-2026",
+        "time": "20:45"
     },
     {
         "home": "Dunkerque",
         "away": "Reims",
-        "league": "Ligue 2"
+        "league": "Ligue 2",
+        "date": "09-03-2026",
+        "time": "20:45"
     },
     {
         "home": "Espanyol",
         "away": "Oviedo",
-        "league": "La Liga"
+        "league": "La Liga",
+        "date": "09-03-2026",
+        "time": "21:00"
     },
     {
         "home": "Tondela",
         "away": "Rio Ave",
-        "league": "Primeira Liga"
+        "league": "Primeira Liga",
+        "date": "09-03-2026",
+        "time": "21:15"
     },
     {
         "home": "Harbour View",
         "away": "Racing United",
-        "league": "Premier League"
+        "league": "Premier League",
+        "date": "09-03-2026",
+        "time": "21:30"
     },
     {
         "home": "Gendrim",
         "away": "Chemal",
-        "league": "Premier League"
+        "league": "Premier League",
+        "date": "09-03-2026",
+        "time": "23:30"
     }
 ]
