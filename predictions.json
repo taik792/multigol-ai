@@ -1,15 +1,87 @@
 [
     {
-        "home": "Almeria",
-        "away": "Cultural Leonesa",
-        "league": "Segunda Divisi\u00f3n",
-        "time": "20:30",
-        "combo": "Ospite",
+        "home": "Fiorentina U19",
+        "away": "Enugu Rangers Viareggio Team",
+        "league": "Youth Viareggio Cup",
+        "time": "14:30",
+        "combo": "Casa",
         "multigol_home": "1-3",
+        "multigol_away": "0-2",
+        "over25": "No",
+        "btts": "No",
+        "probability": 37
+    },
+    {
+        "home": "Sassuolo U18",
+        "away": "Nexus U18",
+        "league": "Youth Viareggio Cup",
+        "time": "14:30",
+        "combo": "Ospite",
+        "multigol_home": "0-2",
+        "multigol_away": "0-2",
+        "over25": "No",
+        "btts": "No",
+        "probability": 0
+    },
+    {
+        "home": "UYSS New York U18",
+        "away": "RBM U18",
+        "league": "Youth Viareggio Cup",
+        "time": "14:30",
+        "combo": "Ospite",
+        "multigol_home": "0-2",
         "multigol_away": "1-3",
         "over25": "No",
-        "btts": "Yes",
-        "probability": 70
+        "btts": "No",
+        "probability": 39
+    },
+    {
+        "home": "Viareggio U18",
+        "away": "One Touch U18",
+        "league": "Youth Viareggio Cup",
+        "time": "14:30",
+        "combo": "Ospite",
+        "multigol_home": "0-2",
+        "multigol_away": "0-2",
+        "over25": "No",
+        "btts": "No",
+        "probability": 0
+    },
+    {
+        "home": "Catania",
+        "away": "Casertana",
+        "league": "Serie C - Girone C",
+        "time": "20:30",
+        "combo": "Casa",
+        "multigol_home": "1-3",
+        "multigol_away": "0-2",
+        "over25": "No",
+        "btts": "No",
+        "probability": 39
+    },
+    {
+        "home": "Atalanta II",
+        "away": "Audace Cerignola",
+        "league": "Serie C - Girone C",
+        "time": "20:30",
+        "combo": "Ospite",
+        "multigol_home": "0-2",
+        "multigol_away": "0-2",
+        "over25": "No",
+        "btts": "No",
+        "probability": 17
+    },
+    {
+        "home": "West Ham",
+        "away": "Brentford",
+        "league": "FA Cup",
+        "time": "20:30",
+        "combo": "Ospite",
+        "multigol_home": "0-2",
+        "multigol_away": "0-2",
+        "over25": "No",
+        "btts": "No",
+        "probability": 0
     },
     {
         "home": "Lazio",
@@ -17,34 +89,22 @@
         "league": "Serie A",
         "time": "20:45",
         "combo": "Casa",
-        "multigol_home": "1-2",
-        "multigol_away": "0-1",
+        "multigol_home": "0-2",
+        "multigol_away": "0-2",
         "over25": "No",
         "btts": "No",
-        "probability": 68
+        "probability": 29
     },
     {
         "home": "Dunkerque",
         "away": "Reims",
         "league": "Ligue 2",
         "time": "20:45",
-        "combo": "Ospite",
-        "multigol_home": "1-3",
-        "multigol_away": "1-3",
+        "combo": "Casa",
+        "multigol_home": "0-2",
+        "multigol_away": "0-2",
         "over25": "No",
-        "btts": "Yes",
-        "probability": 80
-    },
-    {
-        "home": "Espanyol",
-        "away": "Oviedo",
-        "league": "La Liga",
-        "time": "21:00",
-        "combo": "Ospite",
-        "multigol_home": "1-2",
-        "multigol_away": "1-3",
-        "over25": "No",
-        "btts": "Yes",
-        "probability": 82
+        "btts": "No",
+        "probability": 18
     }
 ]
