@@ -100,7 +100,7 @@ for match in matches:
         probability = 5
 
     # filtro partite migliori
-    if probability >= 45:
+    if probability >= 40:
 
         predictions.append({
 
