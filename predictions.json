@@ -5,11 +5,11 @@
         "league": "Championship",
         "time": "20:45",
         "combo": "Casa",
-        "multigol_home": "1-3",
+        "multigol_home": "0-2",
         "multigol_away": "0-1",
         "over25": "No",
         "btts": "No",
-        "probability": 37
+        "probability": 35
     },
     {
         "home": "Wrexham",
@@ -34,5 +34,17 @@
         "over25": "No",
         "btts": "No",
         "probability": 0
+    },
+    {
+        "home": "Millwall",
+        "away": "Derby",
+        "league": "Championship",
+        "time": "20:45",
+        "combo": "Casa",
+        "multigol_home": "1-3",
+        "multigol_away": "0-1",
+        "over25": "No",
+        "btts": "No",
+        "probability": 39
     }
 ]
