@@ -4,17 +4,16 @@ from datetime import datetime
 
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
+url = "https://v3.football.api-sports.io/fixtures"
+
 headers = {
     "x-apisports-key": API_KEY
 }
 
 today = datetime.utcnow().strftime("%Y-%m-%d")
 
-url = "https://v3.football.api-sports.io/fixtures"
-
 params = {
-    "date": today,
-    "timezone": "Europe/Rome"
+    "date": today
 }
 
 response = requests.get(url, headers=headers, params=params)
@@ -22,32 +21,27 @@ data = response.json()
 
 matches = []
 
-TOP_LEAGUES = [
-39,140,135,78,61,136,40
-]
+for game in data["response"]:
 
-for match in data["response"]:
+    fixture = game["fixture"]
+    teams = game["teams"]
+    league = game["league"]
 
-    if match["fixture"]["status"]["short"] != "NS":
-        continue
+    match = {
 
-    league_id = match["league"]["id"]
+        "home": teams["home"]["name"],
+        "away": teams["away"]["name"],
+        "home_id": teams["home"]["id"],
+        "away_id": teams["away"]["id"],
+        "league": league["name"],
+        "league_id": league["id"],
+        "time": fixture["date"][11:16]
 
-    if league_id not in TOP_LEAGUES:
-        continue
+    }
 
-    matches.append({
-        "home": match["teams"]["home"]["name"],
-        "away": match["teams"]["away"]["name"],
-        "home_id": match["teams"]["home"]["id"],
-        "away_id": match["teams"]["away"]["id"],
-        "league": match["league"]["name"],
-        "league_id": league_id,
-        "fixture_id": match["fixture"]["id"],
-        "time": match["fixture"]["date"][11:16]
-    })
+    matches.append(match)
 
-with open("matches.json","w") as f:
-    json.dump(matches,f,indent=4)
+with open("matches.json", "w") as f:
+    json.dump(matches, f, indent=4)
 
-print("Partite salvate:",len(matches))
+print("Matches found:", len(matches))
