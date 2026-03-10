@@ -11,7 +11,7 @@ headers = {
 def poisson(k, lam):
     return (lam ** k * math.exp(-lam)) / math.factorial(k)
 
-with open("matches.json", "r") as f:
+with open("matches.json") as f:
     matches = json.load(f)
 
 predictions = []
@@ -73,6 +73,13 @@ for match in matches:
             if h >= 1 and a >= 1:
                 btts += p
 
+    if expected_home > expected_away:
+        combo = "Casa"
+    elif expected_away > expected_home:
+        combo = "Ospite"
+    else:
+        combo = "Pareggio"
+
     if expected_home < 0.8:
         multigol_home = "0-1"
     elif expected_home < 1.5:
@@ -82,4 +89,32 @@ for match in matches:
 
     if expected_away < 0.8:
         multigol_away = "0-1"
-    elif
+    elif expected_away < 1.5:
+        multigol_away = "0-2"
+    else:
+        multigol_away = "1-3"
+
+    probability = int(max(over25, btts) * 100)
+
+    if probability < 5:
+        probability = 5
+
+    if probability >= 25:
+
+        predictions.append({
+            "home": home,
+            "away": away,
+            "league": league,
+            "time": time,
+            "combo": combo,
+            "multigol_home": multigol_home,
+            "multigol_away": multigol_away,
+            "over25": "Yes" if over25 > 0.5 else "No",
+            "btts": "Yes" if btts > 0.5 else "No",
+            "probability": probability
+        })
+
+with open("predictions.json", "w") as f:
+    json.dump(predictions, f, indent=4)
+
+print("Predictions created:", len(predictions))
