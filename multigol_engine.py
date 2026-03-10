@@ -9,7 +9,7 @@ headers = {
 }
 
 def poisson(k,lam):
-    return (lam**k*math.exp(-lam))/math.factorial(k)
+    return (lam**k * math.exp(-lam)) / math.factorial(k)
 
 with open("matches.json","r") as f:
     matches=json.load(f)
@@ -29,6 +29,7 @@ for match in matches:
 
     try:
 
+        # statistiche squadre
         url_home=f"https://v3.football.api-sports.io/teams/statistics?league={league_id}&season=2024&team={home_id}"
         url_away=f"https://v3.football.api-sports.io/teams/statistics?league={league_id}&season=2024&team={away_id}"
 
@@ -41,11 +42,39 @@ for match in matches:
         away_scored=float(away_stats["response"]["goals"]["for"]["average"]["away"])
         away_conceded=float(away_stats["response"]["goals"]["against"]["average"]["away"])
 
+        # media gol campionato
+        url_league=f"https://v3.football.api-sports.io/fixtures?league={league_id}&season=2024"
+
+        league_data=requests.get(url_league,headers=headers).json()
+
+        total_goals=0
+        total_games=0
+
+        for g in league_data["response"]:
+
+            if g["goals"]["home"] != None and g["goals"]["away"] != None:
+
+                total_goals+=g["goals"]["home"]+g["goals"]["away"]
+                total_games+=1
+
+        league_avg_goals=total_goals/total_games
+
     except:
         continue
 
-    expected_home=(home_scored+away_conceded)/2
-    expected_away=(away_scored+home_conceded)/2
+    league_avg_home=league_avg_goals/2
+    league_avg_away=league_avg_goals/2
+
+    # forza attacco e difesa
+    attack_home=home_scored/league_avg_home
+    defense_home=home_conceded/league_avg_away
+
+    attack_away=away_scored/league_avg_away
+    defense_away=away_conceded/league_avg_home
+
+    # expected goals
+    expected_home=attack_home*defense_away*league_avg_home
+    expected_away=attack_away*defense_home*league_avg_away
 
     home_probs=[poisson(i,expected_home) for i in range(6)]
     away_probs=[poisson(i,expected_away) for i in range(6)]
@@ -64,7 +93,7 @@ for match in matches:
             if h>=1 and a>=1:
                 btts+=p
 
-    # multigol casa
+    # multigol
     if expected_home<0.8:
         multigol_home="0-1"
     elif expected_home<1.5:
@@ -72,7 +101,6 @@ for match in matches:
     else:
         multigol_home="1-3"
 
-    # multigol ospite
     if expected_away<0.8:
         multigol_away="0-1"
     elif expected_away<1.5:
@@ -80,7 +108,6 @@ for match in matches:
     else:
         multigol_away="1-3"
 
-    # combo
     if expected_home>expected_away:
         combo="Casa"
     elif expected_away>expected_home:
