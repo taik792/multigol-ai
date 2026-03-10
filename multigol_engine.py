@@ -27,6 +27,12 @@ for match in matches:
     away_id = match["away_id"]
     league_id = match["league_id"]
 
+    # valori di sicurezza se API non risponde
+    home_scored = 1.2
+    home_conceded = 1.2
+    away_scored = 1.2
+    away_conceded = 1.2
+
     try:
 
         url_home = f"https://v3.football.api-sports.io/teams/statistics?league={league_id}&season=2024&team={home_id}"
@@ -42,19 +48,10 @@ for match in matches:
         away_conceded = float(away_stats["response"]["goals"]["against"]["average"]["away"])
 
     except:
-        continue
+        pass
 
-    league_avg_home = 1.35
-    league_avg_away = 1.15
-
-    attack_home = home_scored / league_avg_home
-    attack_away = away_scored / league_avg_away
-
-    defense_home = home_conceded / league_avg_away
-    defense_away = away_conceded / league_avg_home
-
-    expected_home = attack_home * defense_away * league_avg_home
-    expected_away = attack_away * defense_home * league_avg_away
+    expected_home = (home_scored + away_conceded) / 2
+    expected_away = (away_scored + home_conceded) / 2
 
     home_probs = [poisson(i, expected_home) for i in range(6)]
     away_probs = [poisson(i, expected_away) for i in range(6)]
@@ -96,23 +93,20 @@ for match in matches:
 
     probability = int(max(over25, btts) * 100)
 
-    if probability < 5:
-        probability = 5
+    predictions.append({
 
-    if probability >= 7:
+        "home": home,
+        "away": away,
+        "league": league,
+        "time": time,
+        "combo": combo,
+        "multigol_home": multigol_home,
+        "multigol_away": multigol_away,
+        "over25": "Yes" if over25 > 0.5 else "No",
+        "btts": "Yes" if btts > 0.5 else "No",
+        "probability": probability
 
-        predictions.append({
-            "home": home,
-            "away": away,
-            "league": league,
-            "time": time,
-            "combo": combo,
-            "multigol_home": multigol_home,
-            "multigol_away": multigol_away,
-            "over25": "Yes" if over25 > 0.5 else "No",
-            "btts": "Yes" if btts > 0.5 else "No",
-            "probability": probability
-        })
+    })
 
 with open("predictions.json", "w") as f:
     json.dump(predictions, f, indent=4)
