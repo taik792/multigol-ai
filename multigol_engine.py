@@ -29,7 +29,6 @@ for match in matches:
 
     try:
 
-        # statistiche squadre
         url_home=f"https://v3.football.api-sports.io/teams/statistics?league={league_id}&season=2024&team={home_id}"
         url_away=f"https://v3.football.api-sports.io/teams/statistics?league={league_id}&season=2024&team={away_id}"
 
@@ -42,34 +41,19 @@ for match in matches:
         away_scored=float(away_stats["response"]["goals"]["for"]["average"]["away"])
         away_conceded=float(away_stats["response"]["goals"]["against"]["average"]["away"])
 
-        # media gol campionato
-        url_league=f"https://v3.football.api-sports.io/fixtures?league={league_id}&season=2024"
-
-        league_data=requests.get(url_league,headers=headers).json()
-
-        total_goals=0
-        total_games=0
-
-        for g in league_data["response"]:
-
-            if g["goals"]["home"] != None and g["goals"]["away"] != None:
-
-                total_goals+=g["goals"]["home"]+g["goals"]["away"]
-                total_games+=1
-
-        league_avg_goals=total_goals/total_games
-
     except:
         continue
 
-    league_avg_home=league_avg_goals/2
-    league_avg_away=league_avg_goals/2
+    # media gol campionato (media standard calcio)
+    league_avg_home=1.35
+    league_avg_away=1.15
 
-    # forza attacco e difesa
+    # forza attacco
     attack_home=home_scored/league_avg_home
-    defense_home=home_conceded/league_avg_away
-
     attack_away=away_scored/league_avg_away
+
+    # forza difesa
+    defense_home=home_conceded/league_avg_away
     defense_away=away_conceded/league_avg_home
 
     # expected goals
@@ -93,7 +77,6 @@ for match in matches:
             if h>=1 and a>=1:
                 btts+=p
 
-    # multigol
     if expected_home<0.8:
         multigol_home="0-1"
     elif expected_home<1.5:
