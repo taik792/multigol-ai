@@ -44,19 +44,15 @@ for match in matches:
     except:
         continue
 
-    # media gol campionato standard
     league_avg_home = 1.35
     league_avg_away = 1.15
 
-    # forza attacco
     attack_home = home_scored / league_avg_home
     attack_away = away_scored / league_avg_away
 
-    # forza difesa
     defense_home = home_conceded / league_avg_away
     defense_away = away_conceded / league_avg_home
 
-    # expected goals
     expected_home = attack_home * defense_away * league_avg_home
     expected_away = attack_away * defense_home * league_avg_away
 
@@ -77,7 +73,6 @@ for match in matches:
             if h >= 1 and a >= 1:
                 btts += p
 
-    # multigol casa
     if expected_home < 0.8:
         multigol_home = "0-1"
     elif expected_home < 1.5:
@@ -85,7 +80,6 @@ for match in matches:
     else:
         multigol_home = "1-3"
 
-    # multigol ospite
     if expected_away < 0.8:
         multigol_away = "0-1"
     elif expected_away < 1.5:
@@ -93,7 +87,6 @@ for match in matches:
     else:
         multigol_away = "1-3"
 
-    # combo
     if expected_home > expected_away:
         combo = "Casa"
     elif expected_away > expected_home:
@@ -101,26 +94,28 @@ for match in matches:
     else:
         combo = "Pareggio"
 
-    # probabilità corretta
     probability = int(max(over25, btts) * 100)
 
     if probability < 5:
         probability = 5
 
-    predictions.append({
+    # filtro partite migliori
+    if probability >= 45:
 
-        "home": home,
-        "away": away,
-        "league": league,
-        "time": time,
-        "combo": combo,
-        "multigol_home": multigol_home,
-        "multigol_away": multigol_away,
-        "over25": "Yes" if over25 > 0.5 else "No",
-        "btts": "Yes" if btts > 0.5 else "No",
-        "probability": probability
+        predictions.append({
 
-    })
+            "home": home,
+            "away": away,
+            "league": league,
+            "time": time,
+            "combo": combo,
+            "multigol_home": multigol_home,
+            "multigol_away": multigol_away,
+            "over25": "Yes" if over25 > 0.5 else "No",
+            "btts": "Yes" if btts > 0.5 else "No",
+            "probability": probability
+
+        })
 
 with open("predictions.json", "w") as f:
     json.dump(predictions, f, indent=4)
