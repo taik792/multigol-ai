@@ -21,7 +21,7 @@
         "multigol_away": "0-1",
         "over25": "No",
         "btts": "No",
-        "probability": 0
+        "probability": 5
     },
     {
         "home": "Leicester",
@@ -33,7 +33,7 @@
         "multigol_away": "0-1",
         "over25": "No",
         "btts": "No",
-        "probability": 0
+        "probability": 5
     },
     {
         "home": "Millwall",
@@ -45,6 +45,6 @@
         "multigol_away": "0-1",
         "over25": "No",
         "btts": "No",
-        "probability": 39
+        "probability": 38
     }
 ]
