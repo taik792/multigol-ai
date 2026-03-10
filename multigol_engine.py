@@ -99,7 +99,7 @@ for match in matches:
     if probability < 5:
         probability = 5
 
-    if probability >= 25:
+    if probability >= 7:
 
         predictions.append({
             "home": home,
