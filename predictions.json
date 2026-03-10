@@ -5,58 +5,34 @@
         "league": "Championship",
         "time": "20:45",
         "combo": "Casa",
-        "multigol_home": "0-2",
-        "multigol_away": "0-2",
+        "multigol_home": "1-3",
+        "multigol_away": "0-1",
         "over25": "No",
         "btts": "No",
-        "probability": 43
+        "probability": 37
     },
     {
         "home": "Wrexham",
         "away": "Hull City",
         "league": "Championship",
         "time": "20:45",
-        "combo": "Casa",
+        "combo": "Pareggio",
         "multigol_home": "0-1",
         "multigol_away": "0-1",
         "over25": "No",
         "btts": "No",
-        "probability": 15
+        "probability": 0
     },
     {
         "home": "Leicester",
         "away": "Bristol City",
         "league": "Championship",
         "time": "20:45",
-        "combo": "Casa",
-        "multigol_home": "0-2",
+        "combo": "Pareggio",
+        "multigol_home": "0-1",
         "multigol_away": "0-1",
         "over25": "No",
         "btts": "No",
-        "probability": 22
-    },
-    {
-        "home": "Millwall",
-        "away": "Derby",
-        "league": "Championship",
-        "time": "20:45",
-        "combo": "Casa",
-        "multigol_home": "0-2",
-        "multigol_away": "0-2",
-        "over25": "No",
-        "btts": "No",
-        "probability": 45
-    },
-    {
-        "home": "Sheffield Wednesday",
-        "away": "Watford",
-        "league": "Championship",
-        "time": "20:45",
-        "combo": "Casa",
-        "multigol_home": "1-3",
-        "multigol_away": "0-2",
-        "over25": "Yes",
-        "btts": "Yes",
-        "probability": 55
+        "probability": 0
     }
 ]
