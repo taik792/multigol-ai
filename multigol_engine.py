@@ -5,7 +5,7 @@ import math
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
 headers = {
-"x-apisports-key": API_KEY
+    "x-apisports-key": API_KEY
 }
 
 def poisson(k,lam):
@@ -26,11 +26,9 @@ for match in matches:
     home_id=match["home_id"]
     away_id=match["away_id"]
     league_id=match["league_id"]
-    fixture_id=match["fixture_id"]
 
     try:
 
-        # statistiche squadra
         url_home=f"https://v3.football.api-sports.io/teams/statistics?league={league_id}&season=2024&team={home_id}"
         url_away=f"https://v3.football.api-sports.io/teams/statistics?league={league_id}&season=2024&team={away_id}"
 
@@ -43,70 +41,54 @@ for match in matches:
         away_scored=float(away_stats["response"]["goals"]["for"]["average"]["away"])
         away_conceded=float(away_stats["response"]["goals"]["against"]["average"]["away"])
 
-        # forma ultime partite
-        form_home=home_stats["response"]["form"]
-        form_away=away_stats["response"]["form"]
-
-        home_points=form_home.count("W")*3+form_home.count("D")
-        away_points=form_away.count("W")*3+form_away.count("D")
-
-        form_factor_home=1+(home_points/15)*0.2
-        form_factor_away=1+(away_points/15)*0.2
-
-        # quote bookmaker
-        url_odds=f"https://v3.football.api-sports.io/odds?fixture={fixture_id}"
-
-        odds=requests.get(url_odds,headers=headers).json()
-
-        over_prob=0
-        btts_prob=0
-
-        for bookmaker in odds["response"]:
-
-            for bet in bookmaker["bookmakers"][0]["bets"]:
-
-                if bet["name"]=="Over/Under":
-
-                    for value in bet["values"]:
-
-                        if value["value"]=="Over 2.5":
-
-                            over_prob=1/float(value["odd"])
-
-                if bet["name"]=="Both Teams Score":
-
-                    for value in bet["values"]:
-
-                        if value["value"]=="Yes":
-
-                            btts_prob=1/float(value["odd"])
-
     except:
         continue
 
-    expected_home=((home_scored+away_conceded)/2)*form_factor_home
-    expected_away=((away_scored+home_conceded)/2)*form_factor_away
+    expected_home=(home_scored+away_conceded)/2
+    expected_away=(away_scored+home_conceded)/2
 
     home_probs=[poisson(i,expected_home) for i in range(6)]
     away_probs=[poisson(i,expected_away) for i in range(6)]
 
-    poisson_over=0
+    over25=0
+    btts=0
 
     for h in range(6):
         for a in range(6):
 
+            p=home_probs[h]*away_probs[a]
+
             if h+a>=3:
-                poisson_over+=home_probs[h]*away_probs[a]
+                over25+=p
 
-    final_over=(poisson_over+over_prob)/2
-    final_btts=btts_prob
+            if h>=1 and a>=1:
+                btts+=p
 
-    multigol_home="1-3" if expected_home>=1 else "0-2"
-    multigol_away="1-3" if expected_away>=1 else "0-2"
+    # multigol casa
+    if expected_home<0.8:
+        multigol_home="0-1"
+    elif expected_home<1.5:
+        multigol_home="0-2"
+    else:
+        multigol_home="1-3"
 
-    combo="Casa" if expected_home>expected_away else "Ospite"
+    # multigol ospite
+    if expected_away<0.8:
+        multigol_away="0-1"
+    elif expected_away<1.5:
+        multigol_away="0-2"
+    else:
+        multigol_away="1-3"
 
-    probability=round(max(final_over,final_btts)*100)
+    # combo
+    if expected_home>expected_away:
+        combo="Casa"
+    elif expected_away>expected_home:
+        combo="Ospite"
+    else:
+        combo="Pareggio"
+
+    probability=round(max(over25,btts)*100)
 
     predictions.append({
 
@@ -117,8 +99,8 @@ for match in matches:
         "combo":combo,
         "multigol_home":multigol_home,
         "multigol_away":multigol_away,
-        "over25":"Yes" if final_over>0.5 else "No",
-        "btts":"Yes" if final_btts>0.5 else "No",
+        "over25":"Yes" if over25>0.5 else "No",
+        "btts":"Yes" if btts>0.5 else "No",
         "probability":probability
 
     })
