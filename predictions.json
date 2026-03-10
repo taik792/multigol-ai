@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "home": "Portsmouth",
+        "away": "Swansea",
+        "league": "Championship",
+        "time": "20:45",
+        "combo": "Casa",
+        "multigol_home": "1-3",
+        "multigol_away": "1-3",
+        "over25": "No",
+        "btts": "Yes",
+        "probability": 52
+    },
+    {
+        "home": "Millwall",
+        "away": "Derby",
+        "league": "Championship",
+        "time": "20:45",
+        "combo": "Casa",
+        "multigol_home": "1-3",
+        "multigol_away": "1-3",
+        "over25": "No",
+        "btts": "No",
+        "probability": 37
+    }
+]
