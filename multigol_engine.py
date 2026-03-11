@@ -1,13 +1,12 @@
 import json
+import os
 
-MATCHES_FILE = "data/matches_today.json"
-STATS_FILE = "data/teams_stats.json"
-OUTPUT_FILE = "data/predictions.json"
-
-with open(MATCHES_FILE) as f:
+# carica partite
+with open("data/matches_today.json") as f:
     matches = json.load(f)
 
-with open(STATS_FILE) as f:
+# carica statistiche squadre
+with open("data/teams_stats.json") as f:
     stats = json.load(f)
 
 predictions = []
@@ -17,80 +16,51 @@ for m in matches:
     home = m["home"]
     away = m["away"]
 
-    if home not in stats or away not in stats:
+    home_stats = stats.get(home)
+    away_stats = stats.get(away)
+
+    if not home_stats or not away_stats:
         continue
 
-    home_scored = stats[home]["scored"]
-    home_conceded = stats[home]["conceded"]
+    home_scored = home_stats["scored"]
+    away_scored = away_stats["scored"]
 
-    away_scored = stats[away]["scored"]
-    away_conceded = stats[away]["conceded"]
+    home_conceded = home_stats["conceded"]
+    away_conceded = away_stats["conceded"]
 
-    # expected goals
-    home_xg = (home_scored + away_conceded) / 2
-    away_xg = (away_scored + home_conceded) / 2
+    expected_home = (home_scored + away_conceded) / 2
+    expected_away = (away_scored + home_conceded) / 2
 
-    xg_total = home_xg + away_xg
+    expected_goals = expected_home + expected_away
 
-    # probabilità
-    probability = int((xg_total / 4) * 100)
+    probability = round(min(90, expected_goals * 25))
 
-    if probability < 50:
-        probability = 50
+    prediction = {
 
-    if probability > 85:
-        probability = 85
-
-    # over
-    over25 = "Possibile" if xg_total > 2.4 else "Rischioso"
-
-    # btts
-    btts = "Possibile" if home_xg > 1 and away_xg > 1 else "Rischioso"
-
-    # multigol casa
-    if home_xg < 1:
-        multigol_home = "0-2"
-    elif home_xg < 2:
-        multigol_home = "1-3"
-    else:
-        multigol_home = "2-4"
-
-    # multigol ospite
-    if away_xg < 1:
-        multigol_away = "0-2"
-    elif away_xg < 2:
-        multigol_away = "1-3"
-    else:
-        multigol_away = "2-4"
-
-    # combo
-    if home_xg > away_xg:
-        combo = "Casa o Over 1.5"
-    elif away_xg > home_xg:
-        combo = "Ospite o Over 1.5"
-    else:
-        combo = "Over 1.5"
-
-    predictions.append({
         "home": home,
         "away": away,
+
         "league": m["league"],
+        "country": m.get("country",""),
+
         "time": m["time"],
-        "combo": combo,
-        "multigol_home": multigol_home,
-        "multigol_away": multigol_away,
-        "over25": over25,
-        "btts": btts,
+
+        "combo": "Casa o Over 1.5",
+
+        "multigol_home": "1-3",
+        "multigol_away": "1-3",
+
+        "over25": "Possibile",
+        "btts": "Possibile",
+
         "probability": probability
-    })
+    }
 
-# ordina per probabilità
-predictions = sorted(predictions, key=lambda x: x["probability"], reverse=True)
+    predictions.append(prediction)
 
-# prende le 30 migliori
-predictions = predictions[:30]
+os.makedirs("data", exist_ok=True)
 
-with open(OUTPUT_FILE, "w") as f:
-    json.dump(predictions, f, indent=2)
+with open("data/predictions.json","w") as f:
+    json.dump(predictions,f,indent=2)
 
-print("Predictions generated:", len(predictions))
+print("Predictions generate:",len(predictions))
