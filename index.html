@@ -1,74 +1,69 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-
 <meta charset="UTF-8">
 <title>Multigol AI Scanner</title>
 
 <style>
 
 body{
-    font-family: Arial;
-    background: linear-gradient(#0f172a,#1e3a8a);
-    color:white;
-    text-align:center;
-    padding:40px;
-}
-
-h1{
-    margin-bottom:40px;
+font-family:Arial;
+background:#111;
+color:white;
+text-align:center;
 }
 
 .container{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:20px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+margin-top:30px;
 }
 
 .card{
-    background:#1e293b;
-    padding:20px;
-    width:320px;
-    border-radius:12px;
-    box-shadow:0 0 10px rgba(0,0,0,0.4);
+background:#1e1e1e;
+padding:20px;
+border-radius:10px;
+width:260px;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
 }
 
-.card h2{
-    margin-bottom:10px;
+.team{
+font-size:18px;
+font-weight:bold;
+margin-bottom:5px;
 }
 
 .league{
-    color:#cbd5f5;
-    font-size:14px;
+color:#aaa;
+margin-bottom:10px;
 }
 
 .time{
-    font-size:14px;
-    margin-bottom:10px;
+color:#0ff;
+margin-bottom:10px;
+}
+
+.stat{
+margin:4px 0;
 }
 
 .prob{
-    color:#00ff9c;
-    font-weight:bold;
+margin-top:10px;
+font-weight:bold;
+color:#00ff90;
 }
 
 </style>
 
 </head>
 
-
 <body>
 
-<h1>⚽ Multigol AI Scanner</h1>
+<h1>Multigol AI Scanner</h1>
 
-<div id="matches" class="container">
-
-Caricamento partite...
-
-</div>
-
+<div class="container" id="matches"></div>
 
 <script>
 
@@ -76,59 +71,65 @@ fetch("data/predictions.json")
 .then(response => response.json())
 .then(data => {
 
-const container = document.getElementById("matches");
-
-container.innerHTML = "";
+const container = document.getElementById("matches")
 
 if(data.length === 0){
-
-container.innerHTML = "Nessuna partita trovata";
-return;
-
+container.innerHTML = "<h2>Nessuna partita trovata</h2>"
+return
 }
 
 data.forEach(match => {
 
-const card = document.createElement("div");
-
-card.className = "card";
+const card = document.createElement("div")
+card.className = "card"
 
 card.innerHTML = `
 
-<h2>${match.home} vs ${match.away}</h2>
+<div class="team">
+${match.home} vs ${match.away}
+</div>
 
-<p class="league">${match.league}</p>
+<div class="league">
+${match.country} • ${match.league}
+</div>
 
-<p class="time">⏰ ${match.time}</p>
+<div class="time">
+${match.time}
+</div>
 
-<p>Combo: ${match.combo}</p>
+<div class="stat">
+Combo: ${match.combo}
+</div>
 
-<p>Multigol Casa: ${match.multigol_home}</p>
+<div class="stat">
+Multigol Casa: ${match.multigol_home}
+</div>
 
-<p>Multigol Ospite: ${match.multigol_away}</p>
+<div class="stat">
+Multigol Ospite: ${match.multigol_away}
+</div>
 
-<p>Over 2.5: ${match.over25}</p>
+<div class="stat">
+Over 2.5: ${match.over25}
+</div>
 
-<p>BTTS: ${match.btts}</p>
+<div class="stat">
+BTTS: ${match.btts}
+</div>
 
-<p class="prob">Probabilità: ${match.probability}%</p>
+<div class="prob">
+Probabilità: ${match.probability}%
+</div>
 
-`;
+`
 
-container.appendChild(card);
-
-});
+container.appendChild(card)
 
 })
 
-.catch(error => {
-
-document.getElementById("matches").innerHTML = "Errore caricamento dati";
-
-});
+})
 
 </script>
 
 </body>
-
 </html>
