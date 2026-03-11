@@ -1,9 +1,11 @@
 import json
 import math
 
+# carica partite
 with open("matches.json") as f:
     matches = json.load(f)
 
+# carica statistiche squadre
 with open("teams_stats.json") as f:
     stats = json.load(f)
 
@@ -34,22 +36,22 @@ for m in matches:
 
             p = poisson(home_xg,h) * poisson(away_xg,a)
 
-            if h+a >=3:
+            if h + a >= 3:
                 over25 += p
 
-            if h>0 and a>0:
+            if h > 0 and a > 0:
                 btts += p
 
-    over25 = round(over25*100)
-    btts = round(btts*100)
+    over25 = round(over25 * 100)
+    btts = round(btts * 100)
 
-    probability = round((over25+btts)/2)
+    probability = round((over25 + btts) / 2)
 
-    # filtro partite migliori
-    if over25 < 55:
+    # filtro partite
+    if over25 < 50:
         continue
 
-    if btts < 50:
+    if btts < 45:
         continue
 
     predictions.append({
@@ -66,5 +68,6 @@ for m in matches:
 
     })
 
+# salva risultati
 with open("predictions.json","w") as f:
     json.dump(predictions,f,indent=2)
