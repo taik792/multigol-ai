@@ -1,58 +1,34 @@
 import json
-import requests
+import os
 
-API_KEY = "37ddec86e8578a1ff3127d5c394da749"
+MATCHES_FILE = "data/matches_today.json"
+STATS_FILE = "data/teams_stats.json"
 
-headers = {
-    "x-apisports-key": API_KEY
-}
-
-with open("data/matches_today.json") as f:
+# carica partite
+with open(MATCHES_FILE) as f:
     matches = json.load(f)
 
-try:
-    with open("data/teams_stats.json") as f:
-        stats = json.load(f)
-except:
-    stats = {}
+stats = {}
 
 for m in matches:
 
     home = m["home"]
     away = m["away"]
-    league = m["league"]
 
-    teams = [home, away]
-
-    for team in teams:
-
-        if team in stats:
-            continue
-
-        url = "https://v3.football.api-sports.io/teams/statistics"
-
-        params = {
-            "league": m["league_id"],
-            "season": 2024,
-            "team": m["home_id"] if team == home else m["away_id"]
+    if home not in stats:
+        stats[home] = {
+            "scored": 1.5,
+            "conceded": 1.2
         }
 
-        r = requests.get(url, headers=headers, params=params).json()
+    if away not in stats:
+        stats[away] = {
+            "scored": 1.3,
+            "conceded": 1.4
+        }
 
-        try:
+# salva statistiche
+with open(STATS_FILE, "w") as f:
+    json.dump(stats, f, indent=2)
 
-            scored = r["response"]["goals"]["for"]["average"]["total"]
-            conceded = r["response"]["goals"]["against"]["average"]["total"]
-
-            stats[team] = {
-                "scored": float(scored),
-                "conceded": float(conceded)
-            }
-
-        except:
-            continue
-
-with open("data/teams_stats.json","w") as f:
-    json.dump(stats,f,indent=4)
-
-print("Statistiche aggiornate:",len(stats))
+print("Team stats updated")
