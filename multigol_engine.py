@@ -41,7 +41,7 @@ for m in matches:
         "away": away,
 
         "league": m["league"],
-        "country": m.get("country",""),
+        "country": m["country"],
 
         "time": m["time"],
 
