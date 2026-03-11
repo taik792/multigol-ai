@@ -1,44 +1,5 @@
 [
   {
-    "home": "Tona",
-    "away": "L'Hospitalet",
-    "league": "Tercera Divisi\u00f3n RFEF - Group 5",
-    "country": "Spain",
-    "time": "15:00",
-    "combo": "Casa o Over 1.5",
-    "multigol_home": "1-3",
-    "multigol_away": "1-3",
-    "over25": "Possibile",
-    "btts": "Possibile",
-    "probability": 68
-  },
-  {
-    "home": "Mercadal",
-    "away": "Rotlet Molinar",
-    "league": "Tercera Divisi\u00f3n RFEF - Group 11",
-    "country": "Spain",
-    "time": "15:00",
-    "combo": "Casa o Over 1.5",
-    "multigol_home": "1-3",
-    "multigol_away": "1-3",
-    "over25": "Possibile",
-    "btts": "Possibile",
-    "probability": 68
-  },
-  {
-    "home": "Dinamo Tbilisi",
-    "away": "Rustavi",
-    "league": "Erovnuli Liga",
-    "country": "Georgia",
-    "time": "15:00",
-    "combo": "Casa o Over 1.5",
-    "multigol_home": "1-3",
-    "multigol_away": "1-3",
-    "over25": "Possibile",
-    "btts": "Possibile",
-    "probability": 68
-  },
-  {
     "home": "Paris FC W",
     "away": "Strasbourg W",
     "league": "Feminine Division 1",
