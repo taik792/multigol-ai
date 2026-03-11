@@ -1,6 +1,6 @@
 import requests
 import json
-from datetime import datetime, timedelta
+from datetime import datetime
 
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
@@ -16,38 +16,27 @@ params = {
     "date": today
 }
 
-r = requests.get(url, headers=headers, params=params)
-
-data = r.json()
+response = requests.get(url, headers=headers, params=params).json()
 
 matches = []
 
-now = datetime.utcnow()
+for m in response["response"]:
 
-for m in data["response"]:
-
-    match_time = datetime.strptime(m["fixture"]["date"][:19], "%Y-%m-%dT%H:%M:%S")
-
-    # mostra partite 1 ora prima
-    if match_time < now - timedelta(hours=1):
-        continue
-
-    matches.append({
-
+    match = {
+        "fixture_id": m["fixture"]["id"],
         "home": m["teams"]["home"]["name"],
         "away": m["teams"]["away"]["name"],
-
         "home_id": m["teams"]["home"]["id"],
         "away_id": m["teams"]["away"]["id"],
-
         "league": m["league"]["name"],
-        "league_id": m["league"]["id"],
-
         "country": m["league"]["country"],
+        "league_id": m["league"]["id"],
+        "time": m["fixture"]["date"][11:16]
+    }
 
-        "time": match_time.strftime("%H:%M")
+    matches.append(match)
 
-    })
+matches = matches[:30]
 
 with open("data/matches_today.json","w") as f:
-    json.dump(matches,f)
+    json.dump(matches,f,indent=2)
