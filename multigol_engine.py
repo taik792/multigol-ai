@@ -1,11 +1,9 @@
 import json
 import math
 
-# carica partite
 with open("matches.json") as f:
     matches = json.load(f)
 
-# carica statistiche squadre
 with open("teams_stats.json") as f:
     stats = json.load(f)
 
@@ -19,11 +17,9 @@ for m in matches:
     home = m["home"]
     away = m["away"]
 
-    if home not in stats or away not in stats:
-        continue
-
-    home_stats = stats[home]
-    away_stats = stats[away]
+    # se mancano statistiche usa medie calcio
+    home_stats = stats.get(home,{"scored":1.5,"conceded":1.3})
+    away_stats = stats.get(away,{"scored":1.5,"conceded":1.3})
 
     home_xg = (home_stats["scored"] + away_stats["conceded"]) / 2
     away_xg = (away_stats["scored"] + home_stats["conceded"]) / 2
@@ -36,18 +32,17 @@ for m in matches:
 
             p = poisson(home_xg,h) * poisson(away_xg,a)
 
-            if h + a >= 3:
+            if h+a >=3:
                 over25 += p
 
-            if h > 0 and a > 0:
+            if h>0 and a>0:
                 btts += p
 
-    over25 = round(over25 * 100)
-    btts = round(btts * 100)
+    over25 = round(over25*100)
+    btts = round(btts*100)
 
-    probability = round((over25 + btts) / 2)
+    probability = round((over25+btts)/2)
 
-    # filtro partite
     if over25 < 50:
         continue
 
@@ -56,18 +51,17 @@ for m in matches:
 
     predictions.append({
 
-        "home": home,
-        "away": away,
-        "league": m["league"],
-        "country": m["country"],
-        "time": m["time"],
+        "home":home,
+        "away":away,
+        "league":m["league"],
+        "country":m["country"],
+        "time":m["time"],
 
-        "over25": over25,
-        "btts": btts,
-        "probability": probability
+        "over25":over25,
+        "btts":btts,
+        "probability":probability
 
     })
 
-# salva risultati
 with open("predictions.json","w") as f:
     json.dump(predictions,f,indent=2)
