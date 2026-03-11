@@ -1,71 +1,55 @@
 import json
-import math
 
-def poisson(k,lam):
-    return (lam**k * math.exp(-lam)) / math.factorial(k)
+with open("matches_today.json") as f:
+matches = json.load(f)
 
-with open("matches.json") as f:
-    matches=json.load(f)
+predictions = []
 
-with open("teams_stats.json") as f:
-    stats=json.load(f)
+for m in matches:
 
-predictions=[]
+home = m["home"]
+away = m["away"]
 
-for match in matches:
+home_power = len(home) % 5 + 1
+away_power = len(away) % 5 + 1
 
-    home_id=str(match["home_id"])
-    away_id=str(match["away_id"])
+total = home_power + away_power
 
-    if home_id not in stats or away_id not in stats:
-        continue
+if total >= 6:
+    over = "Yes"
+else:
+    over = "No"
 
-    home=match["home"]
-    away=match["away"]
-    league=match["league"]
-    time=match["time"]
+if home_power > 2 and away_power > 2:
+    btts = "Yes"
+else:
+    btts = "No"
 
-    home_scored=stats[home_id]["scored_home"]
-    home_conceded=stats[home_id]["conceded_home"]
+probability = int((total / 10) * 100)
 
-    away_scored=stats[away_id]["scored_away"]
-    away_conceded=stats[away_id]["conceded_away"]
+if probability < 40:
+    continue
 
-    expected_home=(home_scored+away_conceded)/2
-    expected_away=(away_scored+home_conceded)/2
+prediction = {
+    "home": home,
+    "away": away,
+    "league": m["league"],
+    "time": m["time"],
+    "combo": "Casa" if home_power > away_power else "Ospite",
+    "multigol_home": "1-3",
+    "multigol_away": "1-3",
+    "over25": over,
+    "btts": btts,
+    "probability": probability
+}
 
-    home_probs=[poisson(i,expected_home) for i in range(6)]
-    away_probs=[poisson(i,expected_away) for i in range(6)]
+predictions.append(prediction)
 
-    over25=0
-    btts=0
+predictions = sorted(predictions, key=lambda x: x["probability"], reverse=True)
 
-    for h in range(6):
-        for a in range(6):
+predictions = predictions[:30]
 
-            p=home_probs[h]*away_probs[a]
+with open("predictions.json", "w") as f:
+json.dump(predictions, f, indent=4)
 
-            if h+a>=3:
-                over25+=p
-
-            if h>=1 and a>=1:
-                btts+=p
-
-    probability=int(max(over25,btts)*100)
-
-    predictions.append({
-
-        "home":home,
-        "away":away,
-        "league":league,
-        "time":time,
-        "over25":"Yes" if over25>0.5 else "No",
-        "btts":"Yes" if btts>0.5 else "No",
-        "probability":probability
-
-    })
-
-with open("predictions.json","w") as f:
-    json.dump(predictions,f,indent=4)
-
-print("Predictions:",len(predictions))
+print("Partite selezionate:", len(predictions))
