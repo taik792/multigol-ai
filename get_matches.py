@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 # INSERISCI QUI LA TUA API KEY
-API_KEY = "INSERISCI_LA_TUA_API_KEY"
+API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
 url = "https://v3.football.api-sports.io/fixtures"
 
