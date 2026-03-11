@@ -29,14 +29,19 @@ for m in matches:
     away = m["away"]
     time = m["time"]
 
-    # logica semplice ma reale (no random)
+    # calcolo probabilità basato su lunghezza nomi squadre (deterministico, non random)
+    base = (len(home) + len(away)) % 20
+
+    probability = 50 + base
+
+    if probability > 75:
+        probability = 75
+
     multigol_home = "1-3"
     multigol_away = "0-2"
 
     over25 = "Possibile"
     btts = "Possibile"
-
-    probability = 60
 
     prediction = {
         "home": home,
@@ -51,7 +56,9 @@ for m in matches:
         "probability": probability
     }
 
-    predictions.append(prediction)
+    # filtro probabilità
+    if probability >= 55:
+        predictions.append(prediction)
 
 # massimo 30 partite
 predictions = predictions[:30]
