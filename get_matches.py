@@ -15,7 +15,6 @@ params = {
 }
 
 response = requests.get(url, headers=headers, params=params)
-
 data = response.json()
 
 today = datetime.utcnow().strftime("%Y-%m-%d")
@@ -23,6 +22,7 @@ today = datetime.utcnow().strftime("%Y-%m-%d")
 matches = []
 
 if "response" in data:
+
 for m in data["response"]:
 
     match_date = m["fixture"]["date"][:10]
