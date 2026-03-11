@@ -28,6 +28,7 @@ for m in data["response"]:
 
     status = m["fixture"]["status"]["short"]
 
+    # solo partite non iniziate
     if status != "NS":
         continue
 
@@ -35,6 +36,7 @@ for m in data["response"]:
 
     match_time = datetime.fromisoformat(match_time_str.replace("Z","+00:00"))
 
+    # filtro partite che iniziano tra almeno 1 ora
     if match_time - now < timedelta(hours=1):
         continue
 
@@ -43,6 +45,9 @@ for m in data["response"]:
 
     league = m["league"]["name"]
     country = m["league"]["country"]
+
+    # correzione ora italiana (+1 ora)
+    match_time = match_time + timedelta(hours=1)
 
     time = match_time.strftime("%H:%M")
 
