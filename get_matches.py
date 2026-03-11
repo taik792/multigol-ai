@@ -32,9 +32,9 @@ for m in data["response"]:
         continue
 
     match_time_str = m["fixture"]["date"]
+
     match_time = datetime.fromisoformat(match_time_str.replace("Z","+00:00"))
 
-    # solo partite che iniziano tra almeno 1 ora
     if match_time - now < timedelta(hours=1):
         continue
 
@@ -56,7 +56,7 @@ for m in data["response"]:
 
 os.makedirs("data", exist_ok=True)
 
-with open("data/matches_today.json", "w") as f:
-    json.dump(matches, f, indent=2)
+with open("data/matches_today.json","w") as f:
+    json.dump(matches,f,indent=2)
 
-print("Partite salvate:", len(matches))
+print("Matches salvati:",len(matches))
