@@ -12,93 +12,9 @@
     "time": "10:00"
   },
   {
-    "home": "Hatayspor",
-    "away": "Sivasspor",
-    "league": "1. Lig",
-    "time": "10:30"
-  },
-  {
-    "home": "\u0130stanbulspor",
-    "away": "Amed",
-    "league": "1. Lig",
-    "time": "10:30"
-  },
-  {
-    "home": "Batman Petrolspor",
-    "away": "Karacabey Belediyespor",
-    "league": "2. Lig",
-    "time": "10:30"
-  },
-  {
-    "home": "24 Erzincanspor",
-    "away": "Tuzlaspor",
-    "league": "2. Lig",
-    "time": "10:30"
-  },
-  {
-    "home": "Adana 1954 FK",
-    "away": "Ankaraspor",
-    "league": "2. Lig",
-    "time": "10:30"
-  },
-  {
-    "home": "12 Bing\u00f6lspor",
-    "away": "A\u011fr\u0131 1970",
-    "league": "3. Lig - Group 2",
-    "time": "10:30"
-  },
-  {
-    "home": "Tabora United",
-    "away": "Namungo",
-    "league": "Ligi kuu Bara",
-    "time": "11:00"
-  },
-  {
-    "home": "\u015eimal",
-    "away": "Safa Baku",
-    "league": "Birinci Dasta",
-    "time": "11:00"
-  },
-  {
-    "home": "Taguig",
-    "away": "Stallion",
-    "league": "PFL",
-    "time": "11:00"
-  },
-  {
-    "home": "Wis\u0142a Krak\u00f3w U19",
-    "away": "Resovia U19",
-    "league": "Central Youth League",
-    "time": "11:00"
-  },
-  {
     "home": "Royal Vision",
     "away": "Rukinzo",
     "league": "Ligue A",
-    "time": "11:00"
-  },
-  {
-    "home": "Sioni",
-    "away": "Shturmi",
-    "league": "Erovnuli Liga 2",
-    "time": "11:00"
-  },
-  {
-    "home": "Gareji",
-    "away": "Aragvi Dusheti",
-    "league": "Erovnuli Liga 2",
-    "time": "11:00"
-  },
-  {
-    "home": "Merani Martvili",
-    "away": "Odishi 1919",
-    "league": "Erovnuli Liga 2",
-    "time": "11:00"
-  },
-  {
-    "home": "Samtredia",
-    "away": "Gori",
-    "league": "Erovnuli Liga 2",
     "time": "11:00"
   },
   {
@@ -108,28 +24,10 @@
     "time": "11:00"
   },
   {
-    "home": "Visakha",
-    "away": "NagaWorld",
-    "league": "Hun Sen Cup",
-    "time": "11:00"
-  },
-  {
-    "home": "Boeung Ket",
-    "away": "National Defense",
-    "league": "Hun Sen Cup",
-    "time": "11:00"
-  },
-  {
     "home": "LMPS",
     "away": "Lioli",
     "league": "Premier League",
     "time": "11:00"
-  },
-  {
-    "home": "Surkhon",
-    "away": "Bunyodkor",
-    "league": "Super League",
-    "time": "11:30"
   },
   {
     "home": "Fiorentina U19",
@@ -144,64 +42,10 @@
     "time": "12:00"
   },
   {
-    "home": "Elche II",
-    "away": "Getafe II",
-    "league": "Segunda Divisi\u00f3n RFEF - Group 5",
-    "time": "12:00"
-  },
-  {
-    "home": "Warriors",
-    "away": "Wofoo Tai Po",
-    "league": "League Cup",
-    "time": "12:00"
-  },
-  {
-    "home": "Kolkheti Poti",
-    "away": "Telavi",
-    "league": "Erovnuli Liga 2",
-    "time": "12:00"
-  },
-  {
-    "home": "Hegelmann Litauen",
-    "away": "\u0160iauliai",
-    "league": "A Lyga",
-    "time": "12:00"
-  },
-  {
-    "home": "Al Karama",
-    "away": "Khan Shaykhun SC",
-    "league": "Premier League",
-    "time": "12:00"
-  },
-  {
-    "home": "Al Wahda",
-    "away": "Shorta",
-    "league": "Premier League",
-    "time": "12:00"
-  },
-  {
     "home": "Liphakoe",
     "away": "Maroala",
     "league": "Premier League",
     "time": "12:00"
-  },
-  {
-    "home": "Ratchaburi",
-    "away": "Gamba Osaka",
-    "league": "AFC Cup",
-    "time": "12:15"
-  },
-  {
-    "home": "Ankarag\u00fcc\u00fc",
-    "away": "Kastamonuspor 1966",
-    "league": "2. Lig",
-    "time": "12:30"
-  },
-  {
-    "home": "Sevilla III",
-    "away": "Ceuta II",
-    "league": "Tercera Divisi\u00f3n RFEF - Group 10",
-    "time": "12:30"
   },
   {
     "home": "\u00dcmraniyespor",
@@ -1118,12 +962,6 @@
   {
     "home": "AD Cofutpa",
     "away": "Santa Cruz FC",
-    "league": "Liga de Ascenso",
-    "time": "21:00"
-  },
-  {
-    "home": "CS Uruguay",
-    "away": "Lim\u00f3n Black Star",
     "league": "Liga de Ascenso",
     "time": "21:00"
   },
