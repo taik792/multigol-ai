@@ -34,5 +34,45 @@
   "139": {
     "scored": 0.0,
     "conceded": 0.0
+  },
+  "1616": {
+    "scored": 0.0,
+    "conceded": 0.0
+  },
+  "822": {
+    "scored": 0.5,
+    "conceded": 2.5
+  },
+  "21578": {
+    "scored": 1.1,
+    "conceded": 2.9
+  },
+  "21573": {
+    "scored": 1.1,
+    "conceded": 6.1
+  },
+  "12525": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "12527": {
+    "scored": 1.0,
+    "conceded": 2.8
+  },
+  "12526": {
+    "scored": 1.4,
+    "conceded": 1.4
+  },
+  "24090": {
+    "scored": 1.7,
+    "conceded": 3.0
+  },
+  "16191": {
+    "scored": 1.6,
+    "conceded": 3.8
+  },
+  "22754": {
+    "scored": 2.8,
+    "conceded": 0.4
   }
 }
