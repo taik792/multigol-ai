@@ -1,1 +1,242 @@
-[]
+{
+  "Real Cartagena": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Internacional Palmira": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Independiente Medell\u00edn U20": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Estudiantes de M\u00e9rida U20": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Mirassol": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Santos": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Botafogo": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Barcelona SC": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Ponte Preta": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Guarany de Bag\u00e9": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Newells Old Boys": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Platense": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Sarmiento Junin": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Racing Club": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Rio Negro RR": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Bar\u00e9": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "UWI Blackbirds": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "St. Andrew Lions": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "El Roble": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Firpo": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Monterrey": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Cruz Azul": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Guadalajara W": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Am\u00e9rica W": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Junior": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Atletico Nacional": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Atl\u00e9tico Choloma": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "CD Marathon": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Los Angeles FC": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "LD Alajuelense": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Philippine Army": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Garelli United": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Hantharwady United": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Rakhine United": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "I.S.P.E": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Dagon Port": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Maharlika": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Davao Aguilas": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Elaz\u0131\u011fspor": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Mu\u011flaspor": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Erbaaspor": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Kepez Belediyespor": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Sparta Praha U19": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Pardubice U19": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Sanfrecce Hiroshima": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Johor Darul Takzim FC": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Vissel Kobe": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "FC Seoul": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Machokha": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Members": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Hatayspor": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Sivasspor": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "\u0130stanbulspor": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Amed": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Batman Petrolspor": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Karacabey Belediyespor": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "24 Erzincanspor": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Tuzlaspor": {
+    "scored": 1.3,
+    "conceded": 1.4
+  },
+  "Adana 1954 FK": {
+    "scored": 1.5,
+    "conceded": 1.2
+  },
+  "Ankaraspor": {
+    "scored": 1.3,
+    "conceded": 1.4
+  }
+}
