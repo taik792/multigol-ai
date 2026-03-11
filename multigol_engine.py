@@ -23,9 +23,6 @@ for m in matches:
     home_stats = stats[home]
     away_stats = stats[away]
 
-    if home_stats["scored"] == 0 or away_stats["scored"] == 0:
-        continue
-
     home_xg = (home_stats["scored"] + away_stats["conceded"]) / 2
     away_xg = (away_stats["scored"] + home_stats["conceded"]) / 2
 
@@ -47,6 +44,13 @@ for m in matches:
     btts = round(btts*100)
 
     probability = round((over25+btts)/2)
+
+    # filtro partite migliori
+    if over25 < 55:
+        continue
+
+    if btts < 50:
+        continue
 
     predictions.append({
 
