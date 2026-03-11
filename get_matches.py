@@ -1,8 +1,10 @@
 import requests
 import json
-from datetime import datetime, timedelta
+import os
+from datetime import datetime
 
-API_KEY = "37ddec86e8578a1ff3127d5c394da749"
+# INSERISCI QUI LA TUA API KEY
+API_KEY = "INSERISCI_LA_TUA_API_KEY"
 
 url = "https://v3.football.api-sports.io/fixtures"
 
@@ -17,38 +19,35 @@ params = {
 }
 
 response = requests.get(url, headers=headers, params=params)
-
 data = response.json()
 
 matches = []
 
 for m in data["response"]:
 
+    status = m["fixture"]["status"]["short"]
+
+    # Prende solo partite non iniziate
+    if status != "NS":
+        continue
+
     home = m["teams"]["home"]["name"]
     away = m["teams"]["away"]["name"]
     league = m["league"]["name"]
 
-    # ORARIO PARTITA
-    utc_time = m["fixture"]["date"]
+    time = m["fixture"]["date"][11:16]
 
-    dt = datetime.fromisoformat(utc_time.replace("Z", ""))
-    dt = dt + timedelta(hours=1)
-
-    time = dt.strftime("%H:%M")
-
-    match = {
+    matches.append({
         "home": home,
         "away": away,
         "league": league,
         "time": time
-    }
+    })
 
-    matches.append(match)
-
-# massimo 30 partite
-matches = matches[:30]
+# crea cartella data se non esiste
+os.makedirs("data", exist_ok=True)
 
 with open("data/matches_today.json", "w") as f:
-    json.dump(matches, f, indent=4)
+    json.dump(matches, f, indent=2)
 
-print("Partite salvate:", len(matches))
+print("Matches salvati:", len(matches))
