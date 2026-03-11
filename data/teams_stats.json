@@ -1,1 +1,38 @@
-{"Argentinos JRS": {"scored": 0.81, "conceded": 1.04}, "Rosario Central": {"scored": 1.0, "conceded": 1.11}, "Banfield": {"scored": 0.81, "conceded": 1.33}, "Gimnasia L.P.": {"scored": 0.78, "conceded": 0.85}, "Leones FC": {"scored": 1.22, "conceded": 1.53}, "AD Cofutpa": {"scored": 1.38, "conceded": 1.94}, "Municipal Grecia": {"scored": 1.75, "conceded": 2.16}}
+{
+  "1459": {
+    "scored": 1.3,
+    "conceded": 0.8
+  },
+  "23326": {
+    "scored": 1.0,
+    "conceded": 1.0
+  },
+  "27568": {
+    "scored": 0.0,
+    "conceded": 0.0
+  },
+  "27567": {
+    "scored": 0.0,
+    "conceded": 0.0
+  },
+  "7848": {
+    "scored": 0.0,
+    "conceded": 0.0
+  },
+  "128": {
+    "scored": 0.0,
+    "conceded": 0.0
+  },
+  "120": {
+    "scored": 1.8,
+    "conceded": 1.0
+  },
+  "1152": {
+    "scored": 1.0,
+    "conceded": 1.5
+  },
+  "139": {
+    "scored": 0.0,
+    "conceded": 0.0
+  }
+}
