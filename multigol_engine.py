@@ -57,7 +57,7 @@ for m in matches:
 
     probability = int(multigol13 * 100)
 
-    if probability < 55:
+    if probability < 35:
         continue
 
     prediction = {
