@@ -3,32 +3,41 @@ import json
 
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
-url = "https://v3.football.api-sports.io/fixtures"
-
 headers = {
     "x-apisports-key": API_KEY
 }
 
-params = {
-    "live": "all"
-}
+url = "https://v3.football.api-sports.io/fixtures"
 
-response = requests.get(url, headers=headers, params=params)
+# leghe principali
+leagues = [39, 135, 140, 78, 61]
 
-print("HTTP STATUS:", response.status_code)
-
-data = response.json()
+season = 2024
 
 matches = []
 
-for m in data.get("response", []):
+for league in leagues:
 
-    matches.append({
-        "home": m["teams"]["home"]["name"],
-        "away": m["teams"]["away"]["name"],
-        "league": m["league"]["name"],
-        "time": m["fixture"]["date"]
-    })
+    params = {
+        "league": league,
+        "season": season
+    }
+
+    response = requests.get(url, headers=headers, params=params)
+
+    print("LEAGUE:", league)
+    print("HTTP STATUS:", response.status_code)
+
+    data = response.json()
+
+    for m in data.get("response", []):
+
+        matches.append({
+            "home": m["teams"]["home"]["name"],
+            "away": m["teams"]["away"]["name"],
+            "league": m["league"]["name"],
+            "time": m["fixture"]["date"]
+        })
 
 print("Partite trovate:", len(matches))
 
