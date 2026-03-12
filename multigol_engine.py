@@ -13,14 +13,11 @@ for m in matches:
     home = m["home"]
     away = m["away"]
 
-    if home not in stats or away not in stats:
-        continue
+    home_scored = stats.get(home, {}).get("scored", 1.3)
+    home_conceded = stats.get(home, {}).get("conceded", 1.3)
 
-    home_scored = stats[home]["scored"]
-    home_conceded = stats[home]["conceded"]
-
-    away_scored = stats[away]["scored"]
-    away_conceded = stats[away]["conceded"]
+    away_scored = stats.get(away, {}).get("scored", 1.3)
+    away_conceded = stats.get(away, {}).get("conceded", 1.3)
 
     expected_home = (home_scored + away_conceded) / 2
     expected_away = (away_scored + home_conceded) / 2
