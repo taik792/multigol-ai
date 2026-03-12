@@ -34,7 +34,7 @@ for m in matches:
         params = {
             "team": team_id,
             "league": league_id,
-            "season": 2024
+            "season": 2025
         }
 
         r = requests.get(url, headers=headers, params=params)
