@@ -8,24 +8,25 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-# carica partite
 with open("data/matches.json") as f:
     matches = json.load(f)
 
-teams = set()
+teams = {}
 
 for m in matches:
-    teams.add(m["home"])
-    teams.add(m["away"])
+    teams[m["home"]] = m["home_id"]
+    teams[m["away"]] = m["away_id"]
 
 stats = {}
 
-for team in teams:
+for team, team_id in teams.items():
 
-    url = "https://v3.football.api-sports.io/teams"
+    url = "https://v3.football.api-sports.io/teams/statistics"
 
     params = {
-        "search": team
+        "team": team_id,
+        "league": 39,
+        "season": 2024
     }
 
     r = requests.get(url, headers=headers, params=params)
@@ -38,27 +39,7 @@ for team in teams:
     if not data["response"]:
         continue
 
-    team_id = data["response"][0]["team"]["id"]
-
-    url_stats = "https://v3.football.api-sports.io/teams/statistics"
-
-    params_stats = {
-        "team": team_id,
-        "league": 39,
-        "season": 2023
-    }
-
-    r2 = requests.get(url_stats, headers=headers, params=params_stats)
-
-    if r2.status_code != 200:
-        continue
-
-    data2 = r2.json()
-
-    if not data2["response"]:
-        continue
-
-    d = data2["response"]
+    d = data["response"]
 
     goals_for = d["goals"]["for"]["total"]["total"]
     goals_against = d["goals"]["against"]["total"]["total"]
