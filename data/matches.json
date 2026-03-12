@@ -1,139 +1,11 @@
 [
     {
-        "home": "Dynamo Kyiv U19",
-        "away": "Obolon' Kyiv U19",
-        "home_id": 7898,
-        "away_id": 23080,
-        "league": "U19 League",
-        "league_id": 1065
-    },
-    {
-        "home": "Difai A\u011fsu",
-        "away": "Baku Sportinq",
-        "home_id": 22280,
-        "away_id": 22788,
-        "league": "Birinci Dasta",
-        "league_id": 418
-    },
-    {
-        "home": "\u015eahda\u011f",
-        "away": "MOIK",
-        "home_id": 5576,
-        "away_id": 5492,
-        "league": "Birinci Dasta",
-        "league_id": 418
-    },
-    {
-        "home": "Ming\u0259\u00e7evir",
-        "away": "S\u0259bail",
-        "home_id": 5573,
-        "away_id": 4199,
-        "league": "Birinci Dasta",
-        "league_id": 418
-    },
-    {
-        "home": "Gardabani",
-        "away": "Irao",
-        "home_id": 13851,
-        "away_id": 16507,
-        "league": "Liga 3",
-        "league_id": 1104
-    },
-    {
-        "home": "Guria",
-        "away": "Merani Tbilisi",
-        "home_id": 3506,
-        "away_id": 3508,
-        "league": "Liga 3",
-        "league_id": 1104
-    },
-    {
-        "home": "Kolkheti Khobi",
-        "away": "Varketili",
-        "home_id": 13853,
-        "away_id": 14866,
-        "league": "Liga 3",
-        "league_id": 1104
-    },
-    {
-        "home": "Margveti 2006",
-        "away": "WIT Georgia",
-        "home_id": 16511,
-        "away_id": 3504,
-        "league": "Liga 3",
-        "league_id": 1104
-    },
-    {
-        "home": "Syunik",
-        "away": "Andranik",
-        "home_id": 20087,
-        "away_id": 21877,
-        "league": "First League",
-        "league_id": 343
-    },
-    {
-        "home": "\u0141KS \u0141\u00f3d\u017a II",
-        "away": "Kalisz",
-        "home_id": 17397,
-        "away_id": 12801,
-        "league": "II Liga - East",
-        "league_id": 109
-    },
-    {
-        "home": "Svay Rieng",
-        "away": "Phnom Penh Crown",
-        "home_id": 5396,
-        "away_id": 5394,
-        "league": "AFC Challenge League",
-        "league_id": 1132
-    },
-    {
         "home": "Inter Star",
         "away": "Kayanza United",
         "home_id": 12180,
         "away_id": 12181,
         "league": "Ligue A",
         "league_id": 566
-    },
-    {
-        "home": "Betlemi",
-        "away": "Didube 2014",
-        "home_id": 13860,
-        "away_id": 14857,
-        "league": "Liga 3",
-        "league_id": 1104
-    },
-    {
-        "home": "Tampines Rovers",
-        "away": "Bangkok United",
-        "home_id": 4206,
-        "away_id": 2770,
-        "league": "AFC Cup",
-        "league_id": 18
-    },
-    {
-        "home": "Beyo\u011flu Yeni \u00c7ar\u015f\u0131",
-        "away": "\u015eanl\u0131urfaspor",
-        "home_id": 7406,
-        "away_id": 3613,
-        "league": "2. Lig",
-        "league_id": 205
-    },
-    {
-        "home": "Alt\u0131nordu",
-        "away": "Karaman Belediyespor",
-        "home_id": 3567,
-        "away_id": 6526,
-        "league": "2. Lig",
-        "league_id": 205
-    },
-    {
-        "home": "Boluspor",
-        "away": "\u00c7orum FK",
-        "home_id": 3569,
-        "away_id": 6343,
-        "league": "1. Lig",
-        "league_id": 204
     },
     {
         "home": "Green Buffaloes",
@@ -160,14 +32,6 @@
         "league_id": 400
     },
     {
-        "home": "Le Messager Ngozi",
-        "away": "Musongati",
-        "home_id": 8104,
-        "away_id": 12184,
-        "league": "Ligue A",
-        "league_id": 566
-    },
-    {
         "home": "Olympic Star",
         "away": "Aigle Noir",
         "home_id": 8092,
@@ -190,14 +54,6 @@
         "away_id": 20977,
         "league": "Premier League",
         "league_id": 962
-    },
-    {
-        "home": "Flamengo U20",
-        "away": "Maric\u00e1 U20",
-        "home_id": 11054,
-        "away_id": 25595,
-        "league": "Copa Rio U20",
-        "league_id": 1082
     },
     {
         "home": "Persis Solo",
@@ -926,14 +782,6 @@
         "away_id": 7847,
         "league": "Amapaense",
         "league_id": 521
-    },
-    {
-        "home": "Zacatecoluca",
-        "away": "Alianza",
-        "home_id": 26155,
-        "away_id": 4299,
-        "league": "Copa Presidente",
-        "league_id": 1219
     },
     {
         "home": "Monte Roraima U17",
