@@ -2,73 +2,59 @@ import requests
 import json
 import os
 
-API_KEY = os.getenv("37ddec86e8578a1ff3127d5c394da749")
+API_KEY = os.getenv("API_KEY")
 
 headers = {
     "x-apisports-key": API_KEY
 }
 
 # carica partite
-with open("matches.json", "r", encoding="utf-8") as f:
+with open("data/matches.json") as f:
     matches = json.load(f)
 
-teams = set()
+teams = {}
 
 for m in matches:
-    teams.add(m["home"])
-    teams.add(m["away"])
+    teams[m["home"]] = m["home_id"]
+    teams[m["away"]] = m["away_id"]
 
 stats = {}
 
-for team in teams:
-    try:
-        url = "https://v3.football.api-sports.io/teams"
-        r = requests.get(url, headers=headers, params={"search": team})
-        data = r.json()
+for team, team_id in teams.items():
 
-        team_id = data["response"][0]["team"]["id"]
+    url = "https://v3.football.api-sports.io/teams/statistics"
 
-        url = "https://v3.football.api-sports.io/fixtures"
-        r = requests.get(url, headers=headers, params={
-            "team": team_id,
-            "last": 10
-        })
+    params = {
+        "team": team_id,
+        "league": 39,
+        "season": 2024
+    }
 
-        fixtures = r.json()["response"]
+    r = requests.get(url, headers=headers, params=params)
 
-        goals_for = 0
-        goals_against = 0
-        games = 0
-
-        for f in fixtures:
-            home = f["teams"]["home"]["name"]
-            away = f["teams"]["away"]["name"]
-
-            gh = f["goals"]["home"]
-            ga = f["goals"]["away"]
-
-            if gh is None or ga is None:
-                continue
-
-            if home == team:
-                goals_for += gh
-                goals_against += ga
-            else:
-                goals_for += ga
-                goals_against += gh
-
-            games += 1
-
-        if games > 0:
-            stats[team] = {
-                "scored": round(goals_for / games, 2),
-                "conceded": round(goals_against / games, 2)
-            }
-
-    except:
+    if r.status_code != 200:
         continue
 
-with open("teams_stats.json", "w", encoding="utf-8") as f:
-    json.dump(stats, f, indent=2)
+    data = r.json()
+
+    if not data["response"]:
+        continue
+
+    d = data["response"]
+
+    goals_for = d["goals"]["for"]["total"]["total"]
+    goals_against = d["goals"]["against"]["total"]["total"]
+    games = d["fixtures"]["played"]["total"]
+
+    if games == 0:
+        continue
+
+    stats[team] = {
+        "goals_for": goals_for / games,
+        "goals_against": goals_against / games
+    }
 
 print("Statistiche squadre aggiornate:", len(stats))
+
+with open("data/team_stats.json","w") as f:
+    json.dump(stats,f,indent=4)
