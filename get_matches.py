@@ -1,8 +1,9 @@
 import requests
 import json
-from datetime import datetime
+import os
+from datetime import datetime, timedelta
 
-API_KEY = "37ddec86e8578a1ff3127d5c394da749"
+API_KEY = os.getenv("37ddec86e8578a1ff3127d5c394da749")
 
 url = "https://v3.football.api-sports.io/fixtures"
 
@@ -11,35 +12,39 @@ headers = {
 }
 
 today = datetime.utcnow().strftime("%Y-%m-%d")
+tomorrow = (datetime.utcnow() + timedelta(days=1)).strftime("%Y-%m-%d")
 
-params = {
-    "date": today
-}
+dates = [today, tomorrow]
 
-response = requests.get(url, headers=headers, params=params)
-data = response.json()
+now = datetime.utcnow()
+limit = now + timedelta(hours=24)
 
 matches = []
 
-for m in data["response"]:
+for date in dates:
 
-    home = m["teams"]["home"]["name"]
-    away = m["teams"]["away"]["name"]
+    params = {"date": date}
 
-    league = m["league"]["name"]
-    country = m["league"]["country"]
+    response = requests.get(url, headers=headers, params=params)
+    data = response.json()
 
-    time = m["fixture"]["date"][11:16]
+    for m in data.get("response", []):
 
-    matches.append({
-        "home": home,
-        "away": away,
-        "league": league,
-        "country": country,
-        "time": time
-    })
+        match_time = datetime.fromisoformat(m["fixture"]["date"].replace("Z",""))
 
-with open("matches.json", "w") as f:
+        if now <= match_time <= limit:
+
+            match = {
+                "home": m["teams"]["home"]["name"],
+                "away": m["teams"]["away"]["name"],
+                "league": m["league"]["name"],
+                "country": m["league"]["country"],
+                "time": match_time.strftime("%H:%M")
+            }
+
+            matches.append(match)
+
+with open("matches.json", "w", encoding="utf-8") as f:
     json.dump(matches, f, indent=2)
 
 print("Partite trovate:", len(matches))
