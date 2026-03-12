@@ -10,29 +10,17 @@ headers = {
 }
 
 params = {
-    "next": 100
+    "next": 20
 }
 
-response = requests.get(url, headers=headers, params=params)
+r = requests.get(url, headers=headers, params=params)
 
-print("HTTP STATUS:", response.status_code)
+print("HTTP STATUS:", r.status_code)
 
-data = response.json()
+data = r.json()
 
-matches = []
+print("RISPOSTA API COMPLETA:")
+print(json.dumps(data, indent=2))
 
-if "response" in data:
-
-    for m in data["response"]:
-
-        matches.append({
-            "home": m["teams"]["home"]["name"],
-            "away": m["teams"]["away"]["name"],
-            "league": m["league"]["name"],
-            "time": m["fixture"]["date"]
-        })
-
-print("Partite trovate:", len(matches))
-
-with open("matches.json", "w") as f:
-    json.dump(matches, f, indent=4)
+with open("debug_api.json","w") as f:
+    json.dump(data,f,indent=2)
