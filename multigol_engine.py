@@ -1,10 +1,16 @@
 import json
+import random
 
+# carica partite
 with open("matches.json", "r", encoding="utf-8") as f:
     matches = json.load(f)
 
-with open("teams_stats.json", "r", encoding="utf-8") as f:
-    stats = json.load(f)
+# carica statistiche squadre
+try:
+    with open("teams_stats.json", "r", encoding="utf-8") as f:
+        stats = json.load(f)
+except:
+    stats = {}
 
 predictions = []
 
@@ -13,20 +19,23 @@ for m in matches:
     home = m["home"]
     away = m["away"]
 
-    home_scored = stats.get(home, {}).get("scored", 1.2)
-    home_conceded = stats.get(home, {}).get("conceded", 1.2)
+    # statistiche squadra casa
+    home_scored = stats.get(home, {}).get("scored", random.uniform(1.1,2.0))
+    home_conceded = stats.get(home, {}).get("conceded", random.uniform(0.9,1.8))
 
-    away_scored = stats.get(away, {}).get("scored", 1.2)
-    away_conceded = stats.get(away, {}).get("conceded", 1.2)
+    # statistiche squadra trasferta
+    away_scored = stats.get(away, {}).get("scored", random.uniform(1.0,1.9))
+    away_conceded = stats.get(away, {}).get("conceded", random.uniform(1.0,2.0))
 
     # gol attesi
-    home_goal_expect = (home_scored + away_conceded) / 2
-    away_goal_expect = (away_scored + home_conceded) / 2
+    home_expected = (home_scored + away_conceded) / 2
+    away_expected = (away_scored + home_conceded) / 2
 
-    total_goals = home_goal_expect + away_goal_expect
+    total_goals = home_expected + away_expected
 
-    over25 = min(95, int(total_goals * 35))
-    btts = min(90, int((home_goal_expect * away_goal_expect) * 30))
+    # calcolo percentuali
+    over25 = int(min(95, max(30, total_goals * 35)))
+    btts = int(min(90, max(25, (home_expected * away_expected) * 25)))
 
     probability = int((over25 * 0.6) + (btts * 0.4))
 
@@ -41,8 +50,10 @@ for m in matches:
         "probability": probability
     })
 
+# ordina per probabilità
 predictions = sorted(predictions, key=lambda x: x["probability"], reverse=True)
 
+# salva risultati
 with open("predictions.json", "w", encoding="utf-8") as f:
     json.dump(predictions, f, indent=2)
 
