@@ -1,7 +1,9 @@
 import requests
 import json
+import os
+from datetime import datetime
 
-API_KEY = "40572e72264824f9cc61d5376bbc7ab0"
+API_KEY = os.getenv("API_KEY")
 
 url = "https://v3.football.api-sports.io/fixtures"
 
@@ -9,38 +11,32 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-# leghe principali
-leagues = [39, 135, 140, 78, 61]
+today = datetime.utcnow().strftime("%Y-%m-%d")
+
+params = {
+    "date": today
+}
+
+response = requests.get(url, headers=headers, params=params)
+data = response.json()
 
 matches = []
 
-for league in leagues:
+if "response" in data:
+    for match in data["response"]:
+        if match["fixture"]["status"]["short"] == "NS":
+            matches.append({
+                "fixture_id": match["fixture"]["id"],
+                "league": match["league"]["name"],
+                "country": match["league"]["country"],
+                "home": match["teams"]["home"]["name"],
+                "away": match["teams"]["away"]["name"],
+                "date": match["fixture"]["date"]
+            })
 
-    params = {
-        "league": league,
-        "season": 2025,
-        "status": "NS"
-    }
+os.makedirs("data", exist_ok=True)
 
-    response = requests.get(url, headers=headers, params=params)
-
-    print("LEAGUE:", league)
-    print("HTTP STATUS:", response.status_code)
-
-    data = response.json()
-
-    for m in data.get("response", []):
-
-        matches.append({
-            "home": m["teams"]["home"]["name"],
-            "away": m["teams"]["away"]["name"],
-            "league": m["league"]["name"],
-            "time": m["fixture"]["date"],
-            "home_id": m["teams"]["home"]["id"],
-            "away_id": m["teams"]["away"]["id"]
-        })
+with open("data/matches.json", "w") as f:
+    json.dump(matches, f)
 
 print("Partite trovate:", len(matches))
-
-with open("matches.json", "w") as f:
-    json.dump(matches, f, indent=4)
