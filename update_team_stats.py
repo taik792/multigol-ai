@@ -12,22 +12,20 @@ headers = {
 with open("data/matches.json") as f:
     matches = json.load(f)
 
-teams = {}
+teams = set()
 
 for m in matches:
-    teams[m["home"]] = m["home_id"]
-    teams[m["away"]] = m["away_id"]
+    teams.add(m["home"])
+    teams.add(m["away"])
 
 stats = {}
 
-for team, team_id in teams.items():
+for team in teams:
 
-    url = "https://v3.football.api-sports.io/teams/statistics"
+    url = "https://v3.football.api-sports.io/teams"
 
     params = {
-        "team": team_id,
-        "league": 39,
-        "season": 2024
+        "search": team
     }
 
     r = requests.get(url, headers=headers, params=params)
@@ -40,7 +38,27 @@ for team, team_id in teams.items():
     if not data["response"]:
         continue
 
-    d = data["response"]
+    team_id = data["response"][0]["team"]["id"]
+
+    url_stats = "https://v3.football.api-sports.io/teams/statistics"
+
+    params_stats = {
+        "team": team_id,
+        "league": 39,
+        "season": 2024
+    }
+
+    r2 = requests.get(url_stats, headers=headers, params=params_stats)
+
+    if r2.status_code != 200:
+        continue
+
+    data2 = r2.json()
+
+    if not data2["response"]:
+        continue
+
+    d = data2["response"]
 
     goals_for = d["goals"]["for"]["total"]["total"]
     goals_against = d["goals"]["against"]["total"]["total"]
