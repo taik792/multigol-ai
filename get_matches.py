@@ -1,7 +1,7 @@
 import requests
 import json
 
-API_KEY = "37ddec86e8578a1ff3127d5c394da749"
+API_KEY = "40572e72264824f9cc61d5376bbc7ab0"
 
 url = "https://v3.football.api-sports.io/fixtures"
 
