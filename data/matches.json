@@ -1,1 +1,884 @@
-[{"fixture_id": 1421709, "league": "U19 League", "country": "Ukraine", "home": "SK Poltava U19", "away": "Karpaty Lviv U19", "date": "2026-03-12T10:00:00+00:00"}, {"fixture_id": 1507285, "league": "Liga 3", "country": "Georgia", "home": "Iberia 2010", "away": "Dinamo Tbilisi II", "date": "2026-03-12T10:00:00+00:00"}, {"fixture_id": 1507288, "league": "Liga 3", "country": "Georgia", "home": "Lokomotivi Tbilisi", "away": "Saburtalo II", "date": "2026-03-12T10:00:00+00:00"}, {"fixture_id": 1531146, "league": "Youth Viareggio Cup", "country": "World", "home": "Spezia U19", "away": "Westchester United U18", "date": "2026-03-12T10:00:00+00:00"}, {"fixture_id": 1398608, "league": "1. Lig", "country": "Turkey", "home": "I\u011fd\u0131r FK", "away": "Bodrum FK", "date": "2026-03-12T10:30:00+00:00"}, {"fixture_id": 1416371, "league": "U19 League", "country": "Ukraine", "home": "Dynamo Kyiv U19", "away": "Obolon' Kyiv U19", "date": "2026-03-12T11:00:00+00:00"}, {"fixture_id": 1466934, "league": "Birinci Dasta", "country": "Azerbaijan", "home": "Difai A\u011fsu", "away": "Baku Sportinq", "date": "2026-03-12T11:00:00+00:00"}, {"fixture_id": 1466935, "league": "Birinci Dasta", "country": "Azerbaijan", "home": "\u015eahda\u011f", "away": "MOIK", "date": "2026-03-12T11:00:00+00:00"}, {"fixture_id": 1466938, "league": "Birinci Dasta", "country": "Azerbaijan", "home": "Ming\u0259\u00e7evir", "away": "S\u0259bail", "date": "2026-03-12T11:00:00+00:00"}, {"fixture_id": 1507283, "league": "Liga 3", "country": "Georgia", "home": "Gardabani", "away": "Irao", "date": "2026-03-12T11:00:00+00:00"}, {"fixture_id": 1507284, "league": "Liga 3", "country": "Georgia", "home": "Guria", "away": "Merani Tbilisi", "date": "2026-03-12T11:00:00+00:00"}, {"fixture_id": 1507287, "league": "Liga 3", "country": "Georgia", "home": "Kolkheti Khobi", "away": "Varketili", "date": "2026-03-12T11:00:00+00:00"}, {"fixture_id": 1507289, "league": "Liga 3", "country": "Georgia", "home": "Margveti 2006", "away": "WIT Georgia", "date": "2026-03-12T11:00:00+00:00"}, {"fixture_id": 1525656, "league": "First League", "country": "Armenia", "home": "Syunik", "away": "Andranik", "date": "2026-03-12T11:30:00+00:00"}, {"fixture_id": 1396013, "league": "II Liga - East", "country": "Poland", "home": "\u0141KS \u0141\u00f3d\u017a II", "away": "Kalisz", "date": "2026-03-12T12:00:00+00:00"}, {"fixture_id": 1485227, "league": "AFC Challenge League", "country": "World", "home": "Svay Rieng", "away": "Phnom Penh Crown", "date": "2026-03-12T12:00:00+00:00"}, {"fixture_id": 1500319, "league": "Ligue A", "country": "Burundi", "home": "Inter Star", "away": "Kayanza United", "date": "2026-03-12T12:00:00+00:00"}, {"fixture_id": 1507282, "league": "Liga 3", "country": "Georgia", "home": "Betlemi", "away": "Didube 2014", "date": "2026-03-12T12:00:00+00:00"}, {"fixture_id": 1525669, "league": "AFC Cup", "country": "World", "home": "Tampines Rovers", "away": "Bangkok United", "date": "2026-03-12T12:15:00+00:00"}, {"fixture_id": 1441938, "league": "2. Lig", "country": "Turkey", "home": "Beyo\u011flu Yeni \u00c7ar\u015f\u0131", "away": "\u015eanl\u0131urfaspor", "date": "2026-03-12T12:30:00+00:00"}, {"fixture_id": 1441940, "league": "2. Lig", "country": "Turkey", "home": "Alt\u0131nordu", "away": "Karaman Belediyespor", "date": "2026-03-12T12:30:00+00:00"}, {"fixture_id": 1398605, "league": "1. Lig", "country": "Turkey", "home": "Boluspor", "away": "\u00c7orum FK", "date": "2026-03-12T13:00:00+00:00"}, {"fixture_id": 1416117, "league": "Super League", "country": "Zambia", "home": "Green Buffaloes", "away": "Zanaco", "date": "2026-03-12T13:00:00+00:00"}, {"fixture_id": 1416118, "league": "Super League", "country": "Zambia", "home": "NAPSA Stars", "away": "Nchanga Rangers", "date": "2026-03-12T13:00:00+00:00"}, {"fixture_id": 1416124, "league": "Super League", "country": "Zambia", "home": "Power Dynamos", "away": "Man Utd Zambia Academy", "date": "2026-03-12T13:00:00+00:00"}, {"fixture_id": 1500320, "league": "Ligue A", "country": "Burundi", "home": "Le Messager Ngozi", "away": "Musongati", "date": "2026-03-12T13:00:00+00:00"}, {"fixture_id": 1500321, "league": "Ligue A", "country": "Burundi", "home": "Olympic Star", "away": "Aigle Noir", "date": "2026-03-12T13:00:00+00:00"}, {"fixture_id": 1527455, "league": "I-League", "country": "India", "home": "Chanmari", "away": "Dempo", "date": "2026-03-12T13:00:00+00:00"}, {"fixture_id": 1530528, "league": "Premier League", "country": "Lesotho", "home": "Lifofane", "away": "LDF", "date": "2026-03-12T13:00:00+00:00"}, {"fixture_id": 1530677, "league": "Copa Rio U20", "country": "Brazil", "home": "Flamengo U20", "away": "Maric\u00e1 U20", "date": "2026-03-12T13:00:00+00:00"}, {"fixture_id": 1403786, "league": "Liga 1", "country": "Indonesia", "home": "Persis Solo", "away": "Bali United", "date": "2026-03-12T13:30:00+00:00"}, {"fixture_id": 1485226, "league": "AFC Challenge League", "country": "World", "home": "Dewa United", "away": "Manila Digger", "date": "2026-03-12T13:30:00+00:00"}, {"fixture_id": 1531147, "league": "Youth Viareggio Cup", "country": "World", "home": "Crvena Zvezda U18", "away": "HNK Rijeka U18", "date": "2026-03-12T13:30:00+00:00"}, {"fixture_id": 1531148, "league": "Youth Viareggio Cup", "country": "World", "home": "Ojodu City U18", "away": "Club Olympic Thiessois Viareggio Team", "date": "2026-03-12T13:30:00+00:00"}, {"fixture_id": 1531149, "league": "Youth Viareggio Cup", "country": "World", "home": "Serie D Viareggio Team", "away": "Academy Potey Keahson Viareggio Team", "date": "2026-03-12T13:30:00+00:00"}, {"fixture_id": 1531150, "league": "Youth Viareggio Cup", "country": "World", "home": "Future U18", "away": "Palermo U18", "date": "2026-03-12T13:30:00+00:00"}, {"fixture_id": 1500317, "league": "Ligue A", "country": "Burundi", "home": "Bumamuru", "away": "Dynamik", "date": "2026-03-12T13:45:00+00:00"}, {"fixture_id": 1503377, "league": "Ligue 1", "country": "Congo-DR", "home": "FC Mk de Kinshasa", "away": "FC Renaissance", "date": "2026-03-12T14:00:00+00:00"}, {"fixture_id": 1515992, "league": "Super League", "country": "Uzbekistan", "home": "Olmaliq", "away": "Sogdiana", "date": "2026-03-12T14:30:00+00:00"}, {"fixture_id": 1446747, "league": "NPFL", "country": "Nigeria", "home": "Shooting Stars", "away": "Rivers United", "date": "2026-03-12T15:00:00+00:00"}, {"fixture_id": 1507286, "league": "Liga 3", "country": "Georgia", "home": "Iveria Khashuri", "away": "Gonio", "date": "2026-03-12T15:00:00+00:00"}, {"fixture_id": 1509071, "league": "Erovnuli Liga", "country": "Georgia", "home": "Samgurali", "away": "Dinamo Batumi", "date": "2026-03-12T15:00:00+00:00"}, {"fixture_id": 1515991, "league": "Super League", "country": "Uzbekistan", "home": "Dinamo Samarqand", "away": "Nasaf", "date": "2026-03-12T15:00:00+00:00"}, {"fixture_id": 1529060, "league": "Super Cup", "country": "Armenia", "home": "FC Noah", "away": "Ararat-Armenia", "date": "2026-03-12T15:00:00+00:00"}, {"fixture_id": 1509068, "league": "Erovnuli Liga", "country": "Georgia", "home": "Dila", "away": "Meshakhte", "date": "2026-03-12T16:00:00+00:00"}, {"fixture_id": 1519507, "league": "Esiliiga A", "country": "Estonia", "home": "Maardu", "away": "Elva", "date": "2026-03-12T16:00:00+00:00"}, {"fixture_id": 1531151, "league": "Youth Viareggio Cup", "country": "World", "home": "Magic Stars U18", "away": "Koforidua U18", "date": "2026-03-12T16:00:00+00:00"}, {"fixture_id": 1489357, "league": "Cup", "country": "Slovenia", "home": "Bravo", "away": "Nafta", "date": "2026-03-12T16:30:00+00:00"}, {"fixture_id": 1398606, "league": "1. Lig", "country": "Turkey", "home": "Esenler Erokspor", "away": "Band\u0131rmaspor", "date": "2026-03-12T17:00:00+00:00"}, {"fixture_id": 1457637, "league": "Ligi kuu Bara", "country": "Tanzania", "home": "Tanzania Prisons", "away": "Young Africans", "date": "2026-03-12T17:00:00+00:00"}, {"fixture_id": 1521237, "league": "Pro League", "country": "United-Arab-Emirates", "home": "Al Ain", "away": "Al-Wasl FC", "date": "2026-03-12T17:30:00+00:00"}, {"fixture_id": 1521240, "league": "Pro League", "country": "United-Arab-Emirates", "home": "Baniyas SC", "away": "Al Wahda FC", "date": "2026-03-12T17:30:00+00:00"}, {"fixture_id": 1521252, "league": "Pro League U23", "country": "United-Arab-Emirates", "home": "Al Nasr U23", "away": "Al Sharjah U23", "date": "2026-03-12T17:30:00+00:00"}, {"fixture_id": 1521256, "league": "Pro League U23", "country": "United-Arab-Emirates", "home": "Dibba Al Fujairah U23", "away": "Khorfakkan U23", "date": "2026-03-12T17:30:00+00:00"}, {"fixture_id": 1521257, "league": "Pro League U23", "country": "United-Arab-Emirates", "home": "Ittihad Kalba U23", "away": "Shabab Al-Ahli Dubai U23", "date": "2026-03-12T17:30:00+00:00"}, {"fixture_id": 1453221, "league": "Eredivisie Women", "country": "Netherlands", "home": "Excelsior W", "away": "PSV/Eindhoven W", "date": "2026-03-12T17:45:00+00:00"}, {"fixture_id": 1528334, "league": "UEFA Europa League", "country": "World", "home": "Lille", "away": "Aston Villa", "date": "2026-03-12T17:45:00+00:00"}, {"fixture_id": 1528335, "league": "UEFA Europa League", "country": "World", "home": "Bologna", "away": "AS Roma", "date": "2026-03-12T17:45:00+00:00"}, {"fixture_id": 1528336, "league": "UEFA Europa League", "country": "World", "home": "VfB Stuttgart", "away": "FC Porto", "date": "2026-03-12T17:45:00+00:00"}, {"fixture_id": 1528337, "league": "UEFA Europa League", "country": "World", "home": "Panathinaikos", "away": "Real Betis", "date": "2026-03-12T17:45:00+00:00"}, {"fixture_id": 1528352, "league": "UEFA Europa Conference League", "country": "World", "home": "AZ Alkmaar", "away": "Sparta Praha", "date": "2026-03-12T17:45:00+00:00"}, {"fixture_id": 1528353, "league": "UEFA Europa Conference League", "country": "World", "home": "Samsunspor", "away": "Rayo Vallecano", "date": "2026-03-12T17:45:00+00:00"}, {"fixture_id": 1528354, "league": "UEFA Europa Conference League", "country": "World", "home": "HNK Rijeka", "away": "Strasbourg", "date": "2026-03-12T17:45:00+00:00"}, {"fixture_id": 1528355, "league": "UEFA Europa Conference League", "country": "World", "home": "Lech Poznan", "away": "Shakhtar Donetsk", "date": "2026-03-12T17:45:00+00:00"}, {"fixture_id": 1521233, "league": "Professional League", "country": "Oman", "home": "Al Seeb", "away": "Al Nasr", "date": "2026-03-12T18:00:00+00:00"}, {"fixture_id": 1521235, "league": "Professional League", "country": "Oman", "home": "Al-Nahda", "away": "Al-Khabourah", "date": "2026-03-12T18:00:00+00:00"}, {"fixture_id": 1522594, "league": "Svenska Cupen - Women", "country": "Sweden", "home": "Hammarby", "away": "V\u00e4xj\u00f6", "date": "2026-03-12T18:00:00+00:00"}, {"fixture_id": 1528385, "league": "Copa do Brasil U17", "country": "Brazil", "home": "Bahia U17", "away": "Fortaleza U17", "date": "2026-03-12T18:00:00+00:00"}, {"fixture_id": 1528535, "league": "Iraqi League", "country": "Iraq", "home": "Al Kahrabaa", "away": "Al Talaba", "date": "2026-03-12T18:00:00+00:00"}, {"fixture_id": 1528536, "league": "Iraqi League", "country": "Iraq", "home": "Baghdad", "away": "Newroz", "date": "2026-03-12T18:00:00+00:00"}, {"fixture_id": 1491639, "league": "Stars League", "country": "Qatar", "home": "Al-Sailiya", "away": "Al-Duhail SC", "date": "2026-03-12T18:30:00+00:00"}, {"fixture_id": 1491640, "league": "Stars League", "country": "Qatar", "home": "Al Wakrah", "away": "Al Shamal", "date": "2026-03-12T18:30:00+00:00"}, {"fixture_id": 1491641, "league": "Stars League", "country": "Qatar", "home": "Qatar SC", "away": "Al-Gharafa", "date": "2026-03-12T18:30:00+00:00"}, {"fixture_id": 1506711, "league": "Premier League", "country": "Bahrain", "home": "Al Riffa", "away": "Muharraq", "date": "2026-03-12T18:30:00+00:00"}, {"fixture_id": 1506716, "league": "Premier League", "country": "Bahrain", "home": "Sitra", "away": "Budaiya", "date": "2026-03-12T18:30:00+00:00"}, {"fixture_id": 1499035, "league": "Division 1", "country": "Saudi-Arabia", "home": "Al Diriyah", "away": "Al Baten", "date": "2026-03-12T18:45:00+00:00"}, {"fixture_id": 1392777, "league": "Challenger Pro League", "country": "Belgium", "home": "Francs Borains", "away": "Lokeren-Temse", "date": "2026-03-12T19:00:00+00:00"}, {"fixture_id": 1436139, "league": "Pro League", "country": "Saudi-Arabia", "home": "Al-Hazm", "away": "Al Kholood", "date": "2026-03-12T19:00:00+00:00"}, {"fixture_id": 1436140, "league": "Pro League", "country": "Saudi-Arabia", "home": "Al Najma", "away": "Damac", "date": "2026-03-12T19:00:00+00:00"}, {"fixture_id": 1436145, "league": "Pro League", "country": "Saudi-Arabia", "home": "NEOM", "away": "Al Taawon", "date": "2026-03-12T19:00:00+00:00"}, {"fixture_id": 1506563, "league": "1. Deild", "country": "Faroe-Islands", "home": "V\u00edkingur II", "away": "B71", "date": "2026-03-12T19:00:00+00:00"}, {"fixture_id": 1529034, "league": "League", "country": "Jordan", "home": "Al Ahli", "away": "Al Salt", "date": "2026-03-12T19:00:00+00:00"}, {"fixture_id": 1529035, "league": "League", "country": "Jordan", "home": "Al Faisaly", "away": "Shabab Al Ordon", "date": "2026-03-12T19:00:00+00:00"}, {"fixture_id": 1440921, "league": "Second League", "country": "Egypt", "home": "Abu Qair Semad", "away": "El Dakhleya", "date": "2026-03-12T19:30:00+00:00"}, {"fixture_id": 1440922, "league": "Second League", "country": "Egypt", "home": "Asyut Petrol", "away": "Aswan Sc", "date": "2026-03-12T19:30:00+00:00"}, {"fixture_id": 1440923, "league": "Second League", "country": "Egypt", "home": "El Mansura", "away": "Proxy", "date": "2026-03-12T19:30:00+00:00"}, {"fixture_id": 1445389, "league": "Second League", "country": "Egypt", "home": "Tanta SC", "away": "Maleyet Kafr El Zayiat", "date": "2026-03-12T19:30:00+00:00"}, {"fixture_id": 1445390, "league": "Second League", "country": "Egypt", "home": "El Seka El Hadid", "away": "Masar", "date": "2026-03-12T19:30:00+00:00"}, {"fixture_id": 1445391, "league": "Second League", "country": "Egypt", "home": "El Entag EL Harby", "away": "Olympic El Qanah", "date": "2026-03-12T19:30:00+00:00"}, {"fixture_id": 1505733, "league": "Copa Constituci\u00f3", "country": "Andorra", "home": "Casa de Portugal", "away": "Inter Club d'Escaldes", "date": "2026-03-12T19:30:00+00:00"}, {"fixture_id": 1505735, "league": "Copa Constituci\u00f3", "country": "Andorra", "home": "UE Santa Coloma", "away": "Ordino", "date": "2026-03-12T19:30:00+00:00"}, {"fixture_id": 1476892, "league": "Liga de Ascenso", "country": "Costa-Rica", "home": "Cariari Pococi", "away": "AD Carmelita", "date": "2026-03-12T20:00:00+00:00"}, {"fixture_id": 1491957, "league": "Liga Profesional Argentina", "country": "Argentina", "home": "Defensa Y Justicia", "away": "Central Cordoba de Santiago", "date": "2026-03-12T20:00:00+00:00"}, {"fixture_id": 1491958, "league": "Liga Profesional Argentina", "country": "Argentina", "home": "Deportivo Riestra", "away": "Gimnasia M.", "date": "2026-03-12T20:00:00+00:00"}, {"fixture_id": 1528338, "league": "UEFA Europa League", "country": "World", "home": "Celta Vigo", "away": "Lyon", "date": "2026-03-12T20:00:00+00:00"}, {"fixture_id": 1528339, "league": "UEFA Europa League", "country": "World", "home": "Nottingham Forest", "away": "FC Midtjylland", "date": "2026-03-12T20:00:00+00:00"}, {"fixture_id": 1528340, "league": "UEFA Europa League", "country": "World", "home": "Ferencvarosi TC", "away": "SC Braga", "date": "2026-03-12T20:00:00+00:00"}, {"fixture_id": 1528341, "league": "UEFA Europa League", "country": "World", "home": "Genk", "away": "SC Freiburg", "date": "2026-03-12T20:00:00+00:00"}, {"fixture_id": 1528350, "league": "UEFA Europa Conference League", "country": "World", "home": "Crystal Palace", "away": "AEK Larnaca", "date": "2026-03-12T20:00:00+00:00"}, {"fixture_id": 1528351, "league": "UEFA Europa Conference League", "country": "World", "home": "Fiorentina", "away": "Rak\u00f3w Cz\u0119stochowa", "date": "2026-03-12T20:00:00+00:00"}, {"fixture_id": 1528356, "league": "UEFA Europa Conference League", "country": "World", "home": "Celje", "away": "AEK Athens FC", "date": "2026-03-12T20:00:00+00:00"}, {"fixture_id": 1528357, "league": "UEFA Europa Conference League", "country": "World", "home": "Sigma Olomouc", "away": "FSV Mainz 05", "date": "2026-03-12T20:00:00+00:00"}, {"fixture_id": 1528537, "league": "Iraqi League", "country": "Iraq", "home": "Al-Karma", "away": "Gharraf", "date": "2026-03-12T20:15:00+00:00"}, {"fixture_id": 1528538, "league": "Iraqi League", "country": "Iraq", "home": "Mosul", "away": "Al Shorta", "date": "2026-03-12T20:15:00+00:00"}, {"fixture_id": 1521465, "league": "Copa Presidente", "country": "El-Salvador", "home": "Izalco", "away": "H\u00e9rcules", "date": "2026-03-12T21:00:00+00:00"}, {"fixture_id": 1521468, "league": "Copa Presidente", "country": "El-Salvador", "home": "Racing de Gualuca", "away": "\u00c1guila", "date": "2026-03-12T21:00:00+00:00"}, {"fixture_id": 1521469, "league": "Copa Presidente", "country": "El-Salvador", "home": "Vendaval", "away": "Batanecos", "date": "2026-03-12T21:00:00+00:00"}, {"fixture_id": 1528142, "league": "Copa Do Brasil", "country": "Brazil", "home": "Madureira", "away": "\u00c1guia de Marab\u00e1", "date": "2026-03-12T21:00:00+00:00"}, {"fixture_id": 1493353, "league": "Liga MX Femenil", "country": "Mexico", "home": "Cruz Azul W", "away": "Necaxa W", "date": "2026-03-12T21:45:00+00:00"}, {"fixture_id": 1492157, "league": "Serie A", "country": "Brazil", "home": "remo", "away": "Fluminense", "date": "2026-03-12T22:00:00+00:00"}, {"fixture_id": 1529482, "league": "Copa Do Brasil", "country": "Brazil", "home": "Vila Nova", "away": "Operario Ferroviario", "date": "2026-03-12T22:00:00+00:00"}, {"fixture_id": 1530171, "league": "CONMEBOL Libertadores U20", "country": "World", "home": "Nacional U20", "away": "LDU Quito U20", "date": "2026-03-12T22:00:00+00:00"}, {"fixture_id": 1491960, "league": "Liga Profesional Argentina", "country": "Argentina", "home": "Estudiantes de Rio Cuarto", "away": "Belgrano Cordoba", "date": "2026-03-12T22:15:00+00:00"}, {"fixture_id": 1491966, "league": "Liga Profesional Argentina", "country": "Argentina", "home": "Talleres Cordoba", "away": "Instituto Cordoba", "date": "2026-03-12T22:15:00+00:00"}, {"fixture_id": 1492159, "league": "Serie A", "country": "Brazil", "home": "Vasco DA Gama", "away": "Palmeiras", "date": "2026-03-12T22:30:00+00:00"}, {"fixture_id": 1528313, "league": "Copa Do Brasil", "country": "Brazil", "home": "Maranh\u00e3o", "away": "Ceara", "date": "2026-03-12T22:30:00+00:00"}, {"fixture_id": 1529479, "league": "Copa Do Brasil", "country": "Brazil", "home": "Operario-PR", "away": "Capital Brasilia", "date": "2026-03-12T22:30:00+00:00"}, {"fixture_id": 1530084, "league": "Copa Do Brasil", "country": "Brazil", "home": "Sousa", "away": "CRB", "date": "2026-03-12T22:30:00+00:00"}, {"fixture_id": 1446193, "league": "USL Super League", "country": "USA", "home": "DC Power W", "away": "Dallas Trinity W", "date": "2026-03-12T23:00:00+00:00"}, {"fixture_id": 1492158, "league": "Serie A", "country": "Brazil", "home": "Sao Paulo", "away": "Chapecoense-sc", "date": "2026-03-12T23:00:00+00:00"}, {"fixture_id": 1501172, "league": "Amapaense", "country": "Brazil", "home": "Santos AP", "away": "Macap\u00e1", "date": "2026-03-12T23:00:00+00:00"}, {"fixture_id": 1528391, "league": "Copa do Brasil U17", "country": "Brazil", "home": "Monte Roraima U17", "away": "Vilhena EC U17", "date": "2026-03-12T23:00:00+00:00"}, {"fixture_id": 1529059, "league": "Copa Do Brasil", "country": "Brazil", "home": "Amazonas", "away": "Figueirense", "date": "2026-03-12T23:00:00+00:00"}, {"fixture_id": 1514527, "league": "Rondoniense", "country": "Brazil", "home": "Guapor\u00e9", "away": "Rondoniense", "date": "2026-03-12T23:30:00+00:00"}, {"fixture_id": 1514528, "league": "Rondoniense", "country": "Brazil", "home": "Ji-Paran\u00e1", "away": "Genus", "date": "2026-03-12T23:30:00+00:00"}, {"fixture_id": 1528144, "league": "Copa Do Brasil", "country": "Brazil", "home": "Mixto", "away": "Novorizontino", "date": "2026-03-12T23:30:00+00:00"}]
+[
+    {
+        "home": "SK Poltava U19",
+        "away": "Karpaty Lviv U19",
+        "home_id": 26237,
+        "away_id": 24177,
+        "league": "U19 League"
+    },
+    {
+        "home": "Iberia 2010",
+        "away": "Dinamo Tbilisi II",
+        "home_id": 16505,
+        "away_id": 13865,
+        "league": "Liga 3"
+    },
+    {
+        "home": "Lokomotivi Tbilisi",
+        "away": "Saburtalo II",
+        "home_id": 3500,
+        "away_id": 14863,
+        "league": "Liga 3"
+    },
+    {
+        "home": "Spezia U19",
+        "away": "Westchester United U18",
+        "home_id": 15682,
+        "away_id": 18829,
+        "league": "Youth Viareggio Cup"
+    },
+    {
+        "home": "I\u011fd\u0131r FK",
+        "away": "Bodrum FK",
+        "home_id": 17259,
+        "away_id": 3583,
+        "league": "1. Lig"
+    },
+    {
+        "home": "Dynamo Kyiv U19",
+        "away": "Obolon' Kyiv U19",
+        "home_id": 7898,
+        "away_id": 23080,
+        "league": "U19 League"
+    },
+    {
+        "home": "Difai A\u011fsu",
+        "away": "Baku Sportinq",
+        "home_id": 22280,
+        "away_id": 22788,
+        "league": "Birinci Dasta"
+    },
+    {
+        "home": "\u015eahda\u011f",
+        "away": "MOIK",
+        "home_id": 5576,
+        "away_id": 5492,
+        "league": "Birinci Dasta"
+    },
+    {
+        "home": "Ming\u0259\u00e7evir",
+        "away": "S\u0259bail",
+        "home_id": 5573,
+        "away_id": 4199,
+        "league": "Birinci Dasta"
+    },
+    {
+        "home": "Gardabani",
+        "away": "Irao",
+        "home_id": 13851,
+        "away_id": 16507,
+        "league": "Liga 3"
+    },
+    {
+        "home": "Guria",
+        "away": "Merani Tbilisi",
+        "home_id": 3506,
+        "away_id": 3508,
+        "league": "Liga 3"
+    },
+    {
+        "home": "Kolkheti Khobi",
+        "away": "Varketili",
+        "home_id": 13853,
+        "away_id": 14866,
+        "league": "Liga 3"
+    },
+    {
+        "home": "Margveti 2006",
+        "away": "WIT Georgia",
+        "home_id": 16511,
+        "away_id": 3504,
+        "league": "Liga 3"
+    },
+    {
+        "home": "Syunik",
+        "away": "Andranik",
+        "home_id": 20087,
+        "away_id": 21877,
+        "league": "First League"
+    },
+    {
+        "home": "\u0141KS \u0141\u00f3d\u017a II",
+        "away": "Kalisz",
+        "home_id": 17397,
+        "away_id": 12801,
+        "league": "II Liga - East"
+    },
+    {
+        "home": "Svay Rieng",
+        "away": "Phnom Penh Crown",
+        "home_id": 5396,
+        "away_id": 5394,
+        "league": "AFC Challenge League"
+    },
+    {
+        "home": "Inter Star",
+        "away": "Kayanza United",
+        "home_id": 12180,
+        "away_id": 12181,
+        "league": "Ligue A"
+    },
+    {
+        "home": "Betlemi",
+        "away": "Didube 2014",
+        "home_id": 13860,
+        "away_id": 14857,
+        "league": "Liga 3"
+    },
+    {
+        "home": "Tampines Rovers",
+        "away": "Bangkok United",
+        "home_id": 4206,
+        "away_id": 2770,
+        "league": "AFC Cup"
+    },
+    {
+        "home": "Beyo\u011flu Yeni \u00c7ar\u015f\u0131",
+        "away": "\u015eanl\u0131urfaspor",
+        "home_id": 7406,
+        "away_id": 3613,
+        "league": "2. Lig"
+    },
+    {
+        "home": "Alt\u0131nordu",
+        "away": "Karaman Belediyespor",
+        "home_id": 3567,
+        "away_id": 6526,
+        "league": "2. Lig"
+    },
+    {
+        "home": "Boluspor",
+        "away": "\u00c7orum FK",
+        "home_id": 3569,
+        "away_id": 6343,
+        "league": "1. Lig"
+    },
+    {
+        "home": "Green Buffaloes",
+        "away": "Zanaco",
+        "home_id": 5199,
+        "away_id": 5215,
+        "league": "Super League"
+    },
+    {
+        "home": "NAPSA Stars",
+        "away": "Nchanga Rangers",
+        "home_id": 5207,
+        "away_id": 5511,
+        "league": "Super League"
+    },
+    {
+        "home": "Power Dynamos",
+        "away": "Man Utd Zambia Academy",
+        "home_id": 5211,
+        "away_id": 5205,
+        "league": "Super League"
+    },
+    {
+        "home": "Le Messager Ngozi",
+        "away": "Musongati",
+        "home_id": 8104,
+        "away_id": 12184,
+        "league": "Ligue A"
+    },
+    {
+        "home": "Olympic Star",
+        "away": "Aigle Noir",
+        "home_id": 8092,
+        "away_id": 4447,
+        "league": "Ligue A"
+    },
+    {
+        "home": "Chanmari",
+        "away": "Dempo",
+        "home_id": 25923,
+        "away_id": 21131,
+        "league": "I-League"
+    },
+    {
+        "home": "Lifofane",
+        "away": "LDF",
+        "home_id": 20979,
+        "away_id": 20977,
+        "league": "Premier League"
+    },
+    {
+        "home": "Flamengo U20",
+        "away": "Maric\u00e1 U20",
+        "home_id": 11054,
+        "away_id": 25595,
+        "league": "Copa Rio U20"
+    },
+    {
+        "home": "Persis Solo",
+        "away": "Bali United",
+        "home_id": 4243,
+        "away_id": 2448,
+        "league": "Liga 1"
+    },
+    {
+        "home": "Dewa United",
+        "away": "Manila Digger",
+        "home_id": 17902,
+        "away_id": 21576,
+        "league": "AFC Challenge League"
+    },
+    {
+        "home": "Crvena Zvezda U18",
+        "away": "HNK Rijeka U18",
+        "home_id": 23030,
+        "away_id": 27594,
+        "league": "Youth Viareggio Cup"
+    },
+    {
+        "home": "Ojodu City U18",
+        "away": "Club Olympic Thiessois Viareggio Team",
+        "home_id": 23037,
+        "away_id": 27591,
+        "league": "Youth Viareggio Cup"
+    },
+    {
+        "home": "Serie D Viareggio Team",
+        "away": "Academy Potey Keahson Viareggio Team",
+        "home_id": 27598,
+        "away_id": 27590,
+        "league": "Youth Viareggio Cup"
+    },
+    {
+        "home": "Future U18",
+        "away": "Palermo U18",
+        "home_id": 27593,
+        "away_id": 27601,
+        "league": "Youth Viareggio Cup"
+    },
+    {
+        "home": "Bumamuru",
+        "away": "Dynamik",
+        "home_id": 12177,
+        "away_id": 12178,
+        "league": "Ligue A"
+    },
+    {
+        "home": "FC Mk de Kinshasa",
+        "away": "FC Renaissance",
+        "home_id": 26885,
+        "away_id": 27229,
+        "league": "Ligue 1"
+    },
+    {
+        "home": "Olmaliq",
+        "away": "Sogdiana",
+        "home_id": 4219,
+        "away_id": 4223,
+        "league": "Super League"
+    },
+    {
+        "home": "Shooting Stars",
+        "away": "Rivers United",
+        "home_id": 5504,
+        "away_id": 5192,
+        "league": "NPFL"
+    },
+    {
+        "home": "Iveria Khashuri",
+        "away": "Gonio",
+        "home_id": 27370,
+        "away_id": 18973,
+        "league": "Liga 3"
+    },
+    {
+        "home": "Samgurali",
+        "away": "Dinamo Batumi",
+        "home_id": 10017,
+        "away_id": 705,
+        "league": "Erovnuli Liga"
+    },
+    {
+        "home": "Dinamo Samarqand",
+        "away": "Nasaf",
+        "home_id": 4224,
+        "away_id": 4215,
+        "league": "Super League"
+    },
+    {
+        "home": "FC Noah",
+        "away": "Ararat-Armenia",
+        "home_id": 3684,
+        "away_id": 3683,
+        "league": "Super Cup"
+    },
+    {
+        "home": "Dila",
+        "away": "Meshakhte",
+        "home_id": 3499,
+        "away_id": 13847,
+        "league": "Erovnuli Liga"
+    },
+    {
+        "home": "Maardu",
+        "away": "Elva",
+        "home_id": 3527,
+        "away_id": 3516,
+        "league": "Esiliiga A"
+    },
+    {
+        "home": "Magic Stars U18",
+        "away": "Koforidua U18",
+        "home_id": 25832,
+        "away_id": 27595,
+        "league": "Youth Viareggio Cup"
+    },
+    {
+        "home": "Bravo",
+        "away": "Nafta",
+        "home_id": 4359,
+        "away_id": 4376,
+        "league": "Cup"
+    },
+    {
+        "home": "Esenler Erokspor",
+        "away": "Band\u0131rmaspor",
+        "home_id": 7402,
+        "away_id": 3584,
+        "league": "1. Lig"
+    },
+    {
+        "home": "Tanzania Prisons",
+        "away": "Young Africans",
+        "home_id": 12202,
+        "away_id": 5370,
+        "league": "Ligi kuu Bara"
+    },
+    {
+        "home": "Al Ain",
+        "away": "Al-Wasl FC",
+        "home_id": 2865,
+        "away_id": 2872,
+        "league": "Pro League"
+    },
+    {
+        "home": "Baniyas SC",
+        "away": "Al Wahda FC",
+        "home_id": 2877,
+        "away_id": 2875,
+        "league": "Pro League"
+    },
+    {
+        "home": "Al Nasr U23",
+        "away": "Al Sharjah U23",
+        "home_id": 27489,
+        "away_id": 27490,
+        "league": "Pro League U23"
+    },
+    {
+        "home": "Dibba Al Fujairah U23",
+        "away": "Khorfakkan U23",
+        "home_id": 27494,
+        "away_id": 27496,
+        "league": "Pro League U23"
+    },
+    {
+        "home": "Ittihad Kalba U23",
+        "away": "Shabab Al-Ahli Dubai U23",
+        "home_id": 27495,
+        "away_id": 27497,
+        "league": "Pro League U23"
+    },
+    {
+        "home": "Excelsior W",
+        "away": "PSV/Eindhoven W",
+        "home_id": 1902,
+        "away_id": 1895,
+        "league": "Eredivisie Women"
+    },
+    {
+        "home": "Lille",
+        "away": "Aston Villa",
+        "home_id": 79,
+        "away_id": 66,
+        "league": "UEFA Europa League"
+    },
+    {
+        "home": "Bologna",
+        "away": "AS Roma",
+        "home_id": 500,
+        "away_id": 497,
+        "league": "UEFA Europa League"
+    },
+    {
+        "home": "VfB Stuttgart",
+        "away": "FC Porto",
+        "home_id": 172,
+        "away_id": 212,
+        "league": "UEFA Europa League"
+    },
+    {
+        "home": "Panathinaikos",
+        "away": "Real Betis",
+        "home_id": 617,
+        "away_id": 543,
+        "league": "UEFA Europa League"
+    },
+    {
+        "home": "AZ Alkmaar",
+        "away": "Sparta Praha",
+        "home_id": 201,
+        "away_id": 628,
+        "league": "UEFA Europa Conference League"
+    },
+    {
+        "home": "Samsunspor",
+        "away": "Rayo Vallecano",
+        "home_id": 3603,
+        "away_id": 728,
+        "league": "UEFA Europa Conference League"
+    },
+    {
+        "home": "HNK Rijeka",
+        "away": "Strasbourg",
+        "home_id": 561,
+        "away_id": 95,
+        "league": "UEFA Europa Conference League"
+    },
+    {
+        "home": "Lech Poznan",
+        "away": "Shakhtar Donetsk",
+        "home_id": 347,
+        "away_id": 550,
+        "league": "UEFA Europa Conference League"
+    },
+    {
+        "home": "Al Seeb",
+        "away": "Al Nasr",
+        "home_id": 7504,
+        "away_id": 2878,
+        "league": "Professional League"
+    },
+    {
+        "home": "Al-Nahda",
+        "away": "Al-Khabourah",
+        "home_id": 5327,
+        "away_id": 11380,
+        "league": "Professional League"
+    },
+    {
+        "home": "Hammarby",
+        "away": "V\u00e4xj\u00f6",
+        "home_id": 15630,
+        "away_id": 11084,
+        "league": "Svenska Cupen - Women"
+    },
+    {
+        "home": "Bahia U17",
+        "away": "Fortaleza U17",
+        "home_id": 24472,
+        "away_id": 24480,
+        "league": "Copa do Brasil U17"
+    },
+    {
+        "home": "Al Kahrabaa",
+        "away": "Al Talaba",
+        "home_id": 11064,
+        "away_id": 11067,
+        "league": "Iraqi League"
+    },
+    {
+        "home": "Baghdad",
+        "away": "Newroz",
+        "home_id": 11069,
+        "away_id": 25062,
+        "league": "Iraqi League"
+    },
+    {
+        "home": "Al-Sailiya",
+        "away": "Al-Duhail SC",
+        "home_id": 2898,
+        "away_id": 2904,
+        "league": "Stars League"
+    },
+    {
+        "home": "Al Wakrah",
+        "away": "Al Shamal",
+        "home_id": 2900,
+        "away_id": 2916,
+        "league": "Stars League"
+    },
+    {
+        "home": "Qatar SC",
+        "away": "Al-Gharafa",
+        "home_id": 2907,
+        "away_id": 2903,
+        "league": "Stars League"
+    },
+    {
+        "home": "Al Riffa",
+        "away": "Muharraq",
+        "home_id": 5482,
+        "away_id": 5488,
+        "league": "Premier League"
+    },
+    {
+        "home": "Sitra",
+        "away": "Budaiya",
+        "home_id": 10238,
+        "away_id": 5484,
+        "league": "Premier League"
+    },
+    {
+        "home": "Al Diriyah",
+        "away": "Al Baten",
+        "home_id": 26738,
+        "away_id": 2926,
+        "league": "Division 1"
+    },
+    {
+        "home": "Francs Borains",
+        "away": "Lokeren-Temse",
+        "home_id": 5805,
+        "away_id": 14128,
+        "league": "Challenger Pro League"
+    },
+    {
+        "home": "Al-Hazm",
+        "away": "Al Kholood",
+        "home_id": 2945,
+        "away_id": 10509,
+        "league": "Pro League"
+    },
+    {
+        "home": "Al Najma",
+        "away": "Damac",
+        "home_id": 2992,
+        "away_id": 2956,
+        "league": "Pro League"
+    },
+    {
+        "home": "NEOM",
+        "away": "Al Taawon",
+        "home_id": 10513,
+        "away_id": 2936,
+        "league": "Pro League"
+    },
+    {
+        "home": "V\u00edkingur II",
+        "away": "B71",
+        "home_id": 4183,
+        "away_id": 4176,
+        "league": "1. Deild"
+    },
+    {
+        "home": "Al Ahli",
+        "away": "Al Salt",
+        "home_id": 4529,
+        "away_id": 4535,
+        "league": "League"
+    },
+    {
+        "home": "Al Faisaly",
+        "away": "Shabab Al Ordon",
+        "home_id": 4531,
+        "away_id": 4539,
+        "league": "League"
+    },
+    {
+        "home": "Abu Qair Semad",
+        "away": "El Dakhleya",
+        "home_id": 15731,
+        "away_id": 1032,
+        "league": "Second League"
+    },
+    {
+        "home": "Asyut Petrol",
+        "away": "Aswan Sc",
+        "home_id": 18021,
+        "away_id": 1048,
+        "league": "Second League"
+    },
+    {
+        "home": "El Mansura",
+        "away": "Proxy",
+        "home_id": 16432,
+        "away_id": 20461,
+        "league": "Second League"
+    },
+    {
+        "home": "Tanta SC",
+        "away": "Maleyet Kafr El Zayiat",
+        "home_id": 1045,
+        "away_id": 25467,
+        "league": "Second League"
+    },
+    {
+        "home": "El Seka El Hadid",
+        "away": "Masar",
+        "home_id": 18031,
+        "away_id": 25468,
+        "league": "Second League"
+    },
+    {
+        "home": "El Entag EL Harby",
+        "away": "Olympic El Qanah",
+        "home_id": 1034,
+        "away_id": 13822,
+        "league": "Second League"
+    },
+    {
+        "home": "Casa de Portugal",
+        "away": "Inter Club d'Escaldes",
+        "home_id": 27343,
+        "away_id": 3342,
+        "league": "Copa Constituci\u00f3"
+    },
+    {
+        "home": "UE Santa Coloma",
+        "away": "Ordino",
+        "home_id": 703,
+        "away_id": 3344,
+        "league": "Copa Constituci\u00f3"
+    },
+    {
+        "home": "Cariari Pococi",
+        "away": "AD Carmelita",
+        "home_id": 2052,
+        "away_id": 814,
+        "league": "Liga de Ascenso"
+    },
+    {
+        "home": "Defensa Y Justicia",
+        "away": "Central Cordoba de Santiago",
+        "home_id": 442,
+        "away_id": 1065,
+        "league": "Liga Profesional Argentina"
+    },
+    {
+        "home": "Deportivo Riestra",
+        "away": "Gimnasia M.",
+        "home_id": 476,
+        "away_id": 1066,
+        "league": "Liga Profesional Argentina"
+    },
+    {
+        "home": "Celta Vigo",
+        "away": "Lyon",
+        "home_id": 538,
+        "away_id": 80,
+        "league": "UEFA Europa League"
+    },
+    {
+        "home": "Nottingham Forest",
+        "away": "FC Midtjylland",
+        "home_id": 65,
+        "away_id": 397,
+        "league": "UEFA Europa League"
+    },
+    {
+        "home": "Ferencvarosi TC",
+        "away": "SC Braga",
+        "home_id": 651,
+        "away_id": 217,
+        "league": "UEFA Europa League"
+    },
+    {
+        "home": "Genk",
+        "away": "SC Freiburg",
+        "home_id": 742,
+        "away_id": 160,
+        "league": "UEFA Europa League"
+    },
+    {
+        "home": "Crystal Palace",
+        "away": "AEK Larnaca",
+        "home_id": 52,
+        "away_id": 614,
+        "league": "UEFA Europa Conference League"
+    },
+    {
+        "home": "Fiorentina",
+        "away": "Rak\u00f3w Cz\u0119stochowa",
+        "home_id": 502,
+        "away_id": 3491,
+        "league": "UEFA Europa Conference League"
+    },
+    {
+        "home": "Celje",
+        "away": "AEK Athens FC",
+        "home_id": 4360,
+        "away_id": 575,
+        "league": "UEFA Europa Conference League"
+    },
+    {
+        "home": "Sigma Olomouc",
+        "away": "FSV Mainz 05",
+        "home_id": 2250,
+        "away_id": 164,
+        "league": "UEFA Europa Conference League"
+    },
+    {
+        "home": "Al-Karma",
+        "away": "Gharraf",
+        "home_id": 25063,
+        "away_id": 26600,
+        "league": "Iraqi League"
+    },
+    {
+        "home": "Mosul",
+        "away": "Al Shorta",
+        "home_id": 26598,
+        "away_id": 5242,
+        "league": "Iraqi League"
+    },
+    {
+        "home": "Izalco",
+        "away": "H\u00e9rcules",
+        "home_id": 27505,
+        "away_id": 4666,
+        "league": "Copa Presidente"
+    },
+    {
+        "home": "Racing de Gualuca",
+        "away": "\u00c1guila",
+        "home_id": 27506,
+        "away_id": 4310,
+        "league": "Copa Presidente"
+    },
+    {
+        "home": "Vendaval",
+        "away": "Batanecos",
+        "home_id": 27509,
+        "away_id": 27501,
+        "league": "Copa Presidente"
+    },
+    {
+        "home": "Madureira",
+        "away": "\u00c1guia de Marab\u00e1",
+        "home_id": 7780,
+        "away_id": 7879,
+        "league": "Copa Do Brasil"
+    },
+    {
+        "home": "Cruz Azul W",
+        "away": "Necaxa W",
+        "home_id": 14875,
+        "away_id": 14880,
+        "league": "Liga MX Femenil"
+    },
+    {
+        "home": "remo",
+        "away": "Fluminense",
+        "home_id": 1198,
+        "away_id": 124,
+        "league": "Serie A"
+    },
+    {
+        "home": "Vila Nova",
+        "away": "Operario Ferroviario",
+        "home_id": 142,
+        "away_id": 2217,
+        "league": "Copa Do Brasil"
+    },
+    {
+        "home": "Nacional U20",
+        "away": "LDU Quito U20",
+        "home_id": 11058,
+        "away_id": 18370,
+        "league": "CONMEBOL Libertadores U20"
+    },
+    {
+        "home": "Estudiantes de Rio Cuarto",
+        "away": "Belgrano Cordoba",
+        "home_id": 2424,
+        "away_id": 440,
+        "league": "Liga Profesional Argentina"
+    },
+    {
+        "home": "Talleres Cordoba",
+        "away": "Instituto Cordoba",
+        "home_id": 456,
+        "away_id": 478,
+        "league": "Liga Profesional Argentina"
+    },
+    {
+        "home": "Vasco DA Gama",
+        "away": "Palmeiras",
+        "home_id": 133,
+        "away_id": 121,
+        "league": "Serie A"
+    },
+    {
+        "home": "Maranh\u00e3o",
+        "away": "Ceara",
+        "home_id": 7832,
+        "away_id": 129,
+        "league": "Copa Do Brasil"
+    },
+    {
+        "home": "Operario-PR",
+        "away": "Capital Brasilia",
+        "home_id": 1223,
+        "away_id": 12921,
+        "league": "Copa Do Brasil"
+    },
+    {
+        "home": "Sousa",
+        "away": "CRB",
+        "home_id": 7864,
+        "away_id": 146,
+        "league": "Copa Do Brasil"
+    },
+    {
+        "home": "DC Power W",
+        "away": "Dallas Trinity W",
+        "home_id": 24659,
+        "away_id": 24660,
+        "league": "USL Super League"
+    },
+    {
+        "home": "Sao Paulo",
+        "away": "Chapecoense-sc",
+        "home_id": 126,
+        "away_id": 132,
+        "league": "Serie A"
+    },
+    {
+        "home": "Santos AP",
+        "away": "Macap\u00e1",
+        "home_id": 7785,
+        "away_id": 7847,
+        "league": "Amapaense"
+    },
+    {
+        "home": "Monte Roraima U17",
+        "away": "Vilhena EC U17",
+        "home_id": 25799,
+        "away_id": 27536,
+        "league": "Copa do Brasil U17"
+    },
+    {
+        "home": "Amazonas",
+        "away": "Figueirense",
+        "home_id": 10862,
+        "away_id": 137,
+        "league": "Copa Do Brasil"
+    },
+    {
+        "home": "Guapor\u00e9",
+        "away": "Rondoniense",
+        "home_id": 12944,
+        "away_id": 7877,
+        "league": "Rondoniense"
+    },
+    {
+        "home": "Ji-Paran\u00e1",
+        "away": "Genus",
+        "home_id": 10675,
+        "away_id": 1229,
+        "league": "Rondoniense"
+    },
+    {
+        "home": "Mixto",
+        "away": "Novorizontino",
+        "home_id": 2215,
+        "away_id": 7834,
+        "league": "Copa Do Brasil"
+    }
+]
