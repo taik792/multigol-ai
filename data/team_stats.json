@@ -1,1 +1,46 @@
-{}
+{
+    "Westchester United U18": {
+        "goals_for": 1.0,
+        "goals_against": 3.25
+    },
+    "I\u011fd\u0131r FK": {
+        "goals_for": 1.5,
+        "goals_against": 0.868421052631579
+    },
+    "Dynamo Kyiv U19": {
+        "goals_for": 3.466666666666667,
+        "goals_against": 0.4
+    },
+    "Obolon' Kyiv U19": {
+        "goals_for": 1.3,
+        "goals_against": 1.5666666666666667
+    },
+    "Difai A\u011fsu": {
+        "goals_for": 1.3333333333333333,
+        "goals_against": 1.9259259259259258
+    },
+    "Baku Sportinq": {
+        "goals_for": 0.7777777777777778,
+        "goals_against": 1.5925925925925926
+    },
+    "Nasaf": {
+        "goals_for": 1.3461538461538463,
+        "goals_against": 0.6923076923076923
+    },
+    "Ararat-Armenia": {
+        "goals_for": 4.0,
+        "goals_against": 0.0
+    },
+    "Dila": {
+        "goals_for": 1.6111111111111112,
+        "goals_against": 0.8333333333333334
+    },
+    "Elva": {
+        "goals_for": 1.4736842105263157,
+        "goals_against": 1.631578947368421
+    },
+    "Bravo": {
+        "goals_for": 3.2,
+        "goals_against": 1.0
+    }
+}

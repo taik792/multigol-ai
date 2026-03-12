@@ -1,1 +1,18 @@
-[]
+[
+    {
+        "home": "Dynamo Kyiv U19",
+        "away": "Obolon' Kyiv U19",
+        "league": "U19 League",
+        "over25": 65.4,
+        "btts": 52.6,
+        "multigol_1_4": 71.6
+    },
+    {
+        "home": "Difai A\u011fsu",
+        "away": "Baku Sportinq",
+        "league": "Birinci Dasta",
+        "over25": 53.4,
+        "btts": 57.0,
+        "multigol_1_4": 78.5
+    }
+]
