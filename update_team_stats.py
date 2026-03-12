@@ -1,66 +1,74 @@
 import requests
 import json
+import os
 
-API_KEY = "37ddec86e8578a1ff3127d5c394da749"
+API_KEY = os.getenv("37ddec86e8578a1ff3127d5c394da749")
 
 headers = {
     "x-apisports-key": API_KEY
 }
 
-with open("matches.json") as f:
+# carica partite
+with open("matches.json", "r", encoding="utf-8") as f:
     matches = json.load(f)
 
-try:
-    with open("teams_stats.json") as f:
-        stats = json.load(f)
-except:
-    stats = {}
+teams = set()
 
 for m in matches:
+    teams.add(m["home"])
+    teams.add(m["away"])
 
-    for team in [m["home"], m["away"]]:
+stats = {}
 
-        if team in stats:
-            continue
-
-        # cerca team id
+for team in teams:
+    try:
         url = "https://v3.football.api-sports.io/teams"
-        params = {"search": team}
-
-        r = requests.get(url, headers=headers, params=params)
+        r = requests.get(url, headers=headers, params={"search": team})
         data = r.json()
-
-        if not data["response"]:
-            continue
 
         team_id = data["response"][0]["team"]["id"]
 
-        # usa una league globale per stats
-        url = "https://v3.football.api-sports.io/teams/statistics"
-
-        params = {
+        url = "https://v3.football.api-sports.io/fixtures"
+        r = requests.get(url, headers=headers, params={
             "team": team_id,
-            "league": 71,
-            "season": 2024
-        }
+            "last": 10
+        })
 
-        r = requests.get(url, headers=headers, params=params)
-        data = r.json()
+        fixtures = r.json()["response"]
 
-        if not data["response"]:
-            continue
+        goals_for = 0
+        goals_against = 0
+        games = 0
 
-        g = data["response"]["goals"]
+        for f in fixtures:
+            home = f["teams"]["home"]["name"]
+            away = f["teams"]["away"]["name"]
 
-        scored = g["for"]["average"]["total"]
-        conceded = g["against"]["average"]["total"]
+            gh = f["goals"]["home"]
+            ga = f["goals"]["away"]
 
-        stats[team] = {
-            "scored": float(scored),
-            "conceded": float(conceded)
-        }
+            if gh is None or ga is None:
+                continue
 
-        print("Statistiche salvate:", team)
+            if home == team:
+                goals_for += gh
+                goals_against += ga
+            else:
+                goals_for += ga
+                goals_against += gh
 
-with open("teams_stats.json", "w") as f:
+            games += 1
+
+        if games > 0:
+            stats[team] = {
+                "scored": round(goals_for / games, 2),
+                "conceded": round(goals_against / games, 2)
+            }
+
+    except:
+        continue
+
+with open("teams_stats.json", "w", encoding="utf-8") as f:
     json.dump(stats, f, indent=2)
+
+print("Statistiche squadre aggiornate:", len(stats))
