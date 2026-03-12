@@ -11,7 +11,6 @@ headers = {
 with open("data/matches.json") as f:
     matches = json.load(f)
 
-# prendiamo solo prime 20 partite
 matches = matches[:20]
 
 stats = {}
