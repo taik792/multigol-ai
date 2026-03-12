@@ -23,6 +23,7 @@ for m in matches:
         if team in stats:
             continue
 
+        # cerca team id
         url = "https://v3.football.api-sports.io/teams"
         params = {"search": team}
 
@@ -34,10 +35,12 @@ for m in matches:
 
         team_id = data["response"][0]["team"]["id"]
 
+        # usa una league globale per stats
         url = "https://v3.football.api-sports.io/teams/statistics"
+
         params = {
             "team": team_id,
-            "league": 39,
+            "league": 71,
             "season": 2024
         }
 
@@ -57,7 +60,7 @@ for m in matches:
             "conceded": float(conceded)
         }
 
-        print("Stats salvate:", team)
+        print("Statistiche salvate:", team)
 
 with open("teams_stats.json", "w") as f:
     json.dump(stats, f, indent=2)
