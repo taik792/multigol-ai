@@ -36,4 +36,10 @@ for m in data["response"]:
         "away": away,
         "league": league,
         "country": country,
-        "
+        "time": time
+    })
+
+with open("matches.json", "w") as f:
+    json.dump(matches, f, indent=2)
+
+print("Partite trovate:", len(matches))
