@@ -1,9 +1,9 @@
 import json
 
-with open("matches.json") as f:
+with open("matches.json", "r", encoding="utf-8") as f:
     matches = json.load(f)
 
-with open("teams_stats.json") as f:
+with open("teams_stats.json", "r", encoding="utf-8") as f:
     stats = json.load(f)
 
 predictions = []
@@ -13,21 +13,22 @@ for m in matches:
     home = m["home"]
     away = m["away"]
 
-    home_scored = stats.get(home, {}).get("scored", 1.3)
-    home_conceded = stats.get(home, {}).get("conceded", 1.3)
+    home_scored = stats.get(home, {}).get("scored", 1.2)
+    home_conceded = stats.get(home, {}).get("conceded", 1.2)
 
-    away_scored = stats.get(away, {}).get("scored", 1.3)
-    away_conceded = stats.get(away, {}).get("conceded", 1.3)
+    away_scored = stats.get(away, {}).get("scored", 1.2)
+    away_conceded = stats.get(away, {}).get("conceded", 1.2)
 
-    expected_home = (home_scored + away_conceded) / 2
-    expected_away = (away_scored + home_conceded) / 2
+    # gol attesi
+    home_goal_expect = (home_scored + away_conceded) / 2
+    away_goal_expect = (away_scored + home_conceded) / 2
 
-    total = expected_home + expected_away
+    total_goals = home_goal_expect + away_goal_expect
 
-    over25 = int(min(100, total * 30))
-    btts = int(min(100, (expected_home * expected_away) * 25))
+    over25 = min(95, int(total_goals * 35))
+    btts = min(90, int((home_goal_expect * away_goal_expect) * 30))
 
-    probability = int((over25 + btts) / 2)
+    probability = int((over25 * 0.6) + (btts * 0.4))
 
     predictions.append({
         "home": home,
@@ -42,9 +43,7 @@ for m in matches:
 
 predictions = sorted(predictions, key=lambda x: x["probability"], reverse=True)
 
-predictions = predictions[:30]
-
-with open("predictions.json", "w") as f:
+with open("predictions.json", "w", encoding="utf-8") as f:
     json.dump(predictions, f, indent=2)
 
 print("Pronostici generati:", len(predictions))
