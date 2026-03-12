@@ -1,6 +1,5 @@
 import requests
 import json
-from datetime import datetime, timedelta
 
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
@@ -10,12 +9,8 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-now = datetime.utcnow()
-tomorrow = now + timedelta(days=1)
-
 params = {
-    "from": now.strftime("%Y-%m-%d"),
-    "to": tomorrow.strftime("%Y-%m-%d")
+    "next": 200
 }
 
 response = requests.get(url, headers=headers, params=params)
@@ -26,20 +21,16 @@ data = response.json()
 
 matches = []
 
-if "response" in data:
+for m in data["response"]:
 
-    for m in data["response"]:
+    if m["fixture"]["status"]["short"] == "NS":
 
-        status = m["fixture"]["status"]["short"]
-
-        if status == "NS":
-
-            matches.append({
-                "home": m["teams"]["home"]["name"],
-                "away": m["teams"]["away"]["name"],
-                "league": m["league"]["name"],
-                "time": m["fixture"]["date"]
-            })
+        matches.append({
+            "home": m["teams"]["home"]["name"],
+            "away": m["teams"]["away"]["name"],
+            "league": m["league"]["name"],
+            "time": m["fixture"]["date"]
+        })
 
 print("Partite trovate:", len(matches))
 
