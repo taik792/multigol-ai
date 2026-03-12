@@ -11,6 +11,9 @@ headers = {
 with open("data/matches.json") as f:
     matches = json.load(f)
 
+# prendiamo solo prime 20 partite
+matches = matches[:20]
+
 stats = {}
 
 for m in matches:
@@ -39,30 +42,27 @@ for m in matches:
 
         data = r.json()["response"]
 
-        if not data:
-            continue
-
         goals_for = 0
         goals_against = 0
         games = 0
 
         for f in data:
 
-            home_id = f["teams"]["home"]["id"]
-            away_id = f["teams"]["away"]["id"]
+            home = f["teams"]["home"]["id"]
+            away = f["teams"]["away"]["id"]
 
-            home_goals = f["goals"]["home"]
-            away_goals = f["goals"]["away"]
+            hg = f["goals"]["home"]
+            ag = f["goals"]["away"]
 
-            if home_goals is None or away_goals is None:
+            if hg is None or ag is None:
                 continue
 
-            if home_id == team_id:
-                goals_for += home_goals
-                goals_against += away_goals
+            if home == team_id:
+                goals_for += hg
+                goals_against += ag
             else:
-                goals_for += away_goals
-                goals_against += home_goals
+                goals_for += ag
+                goals_against += hg
 
             games += 1
 
@@ -70,8 +70,8 @@ for m in matches:
             continue
 
         stats[team_name] = {
-            "goals_for": goals_for / games,
-            "goals_against": goals_against / games
+            "goals_for": goals_for/games,
+            "goals_against": goals_against/games
         }
 
 print("Statistiche squadre aggiornate:", len(stats))
