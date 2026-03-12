@@ -1,25 +1,19 @@
 import requests
 import json
-from datetime import datetime, timedelta
 
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
 url = "https://v3.football.api-sports.io/fixtures"
 
 headers = {
-"x-apisports-key": API_KEY
+    "x-apisports-key": API_KEY
 }
 
-today = datetime.utcnow().strftime("%Y-%m-%d")
-tomorrow = (datetime.utcnow() + timedelta(days=1)).strftime("%Y-%m-%d")
-
 params = {
-"from": today,
-"to": tomorrow
+    "live": "all"
 }
 
 response = requests.get(url, headers=headers, params=params)
-
 data = response.json()
 
 matches = []
