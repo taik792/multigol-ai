@@ -45,7 +45,7 @@ for team in teams:
     params_stats = {
         "team": team_id,
         "league": 39,
-        "season": 2024
+        "season": 2023
     }
 
     r2 = requests.get(url_stats, headers=headers, params=params_stats)
