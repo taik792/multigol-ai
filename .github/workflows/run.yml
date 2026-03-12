@@ -3,7 +3,7 @@ name: Run Multigol
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "0 */6 * * *"
 
 jobs:
   build:
@@ -24,9 +24,13 @@ jobs:
 
     - name: Get matches
       run: python get_matches.py
+      env:
+        API_KEY: ${{ secrets.API_KEY }}
 
     - name: Update team stats
       run: python update_team_stats.py
+      env:
+        API_KEY: ${{ secrets.API_KEY }}
 
     - name: Run engine
       run: python multigol_engine.py
