@@ -12,7 +12,7 @@ url = "https://v3.football.api-sports.io/fixtures"
 # leghe principali
 leagues = [39, 135, 140, 78, 61]
 
-season = 2024
+season = 2026
 
 matches = []
 
