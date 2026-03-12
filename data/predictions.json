@@ -14,5 +14,37 @@
         "over25": 53.4,
         "btts": 57.0,
         "multigol_1_4": 78.5
+    },
+    {
+        "home": "Olmaliq",
+        "away": "Sogdiana",
+        "league": "Super League",
+        "over25": 50.0,
+        "btts": 54.4,
+        "multigol_1_4": 79.8
+    },
+    {
+        "home": "Shooting Stars",
+        "away": "Rivers United",
+        "league": "NPFL",
+        "over25": 40.5,
+        "btts": 46.7,
+        "multigol_1_4": 81.6
+    },
+    {
+        "home": "Samgurali",
+        "away": "Dinamo Batumi",
+        "league": "Erovnuli Liga",
+        "over25": 46.7,
+        "btts": 51.8,
+        "multigol_1_4": 80.7
+    },
+    {
+        "home": "Dinamo Samarqand",
+        "away": "Nasaf",
+        "league": "Super League",
+        "over25": 43.6,
+        "btts": 48.2,
+        "multigol_1_4": 81.3
     }
 ]
