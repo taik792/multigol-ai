@@ -18,25 +18,35 @@ params = {
 }
 
 response = requests.get(url, headers=headers, params=params)
+
 data = response.json()
 
 matches = []
 
-if "response" in data:
-    for match in data["response"]:
-        if match["fixture"]["status"]["short"] == "NS":
-            matches.append({
-                "fixture_id": match["fixture"]["id"],
-                "league": match["league"]["name"],
-                "country": match["league"]["country"],
-                "home": match["teams"]["home"]["name"],
-                "away": match["teams"]["away"]["name"],
-                "date": match["fixture"]["date"]
-            })
+for m in data["response"]:
+
+    if m["fixture"]["status"]["short"] != "NS":
+        continue
+
+    home = m["teams"]["home"]["name"]
+    away = m["teams"]["away"]["name"]
+
+    home_id = m["teams"]["home"]["id"]
+    away_id = m["teams"]["away"]["id"]
+
+    league = m["league"]["name"]
+
+    matches.append({
+        "home": home,
+        "away": away,
+        "home_id": home_id,
+        "away_id": away_id,
+        "league": league
+    })
+
+print("Partite trovate:", len(matches))
 
 os.makedirs("data", exist_ok=True)
 
 with open("data/matches.json", "w") as f:
-    json.dump(matches, f)
-
-print("Partite trovate:", len(matches))
+    json.dump(matches, f, indent=4)
