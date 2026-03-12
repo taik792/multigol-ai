@@ -5,20 +5,19 @@ from datetime import datetime
 
 API_KEY = os.getenv("API_KEY")
 
-url = "https://v3.football.api-sports.io/fixtures"
-
 headers = {
     "x-apisports-key": API_KEY
 }
 
 today = datetime.utcnow().strftime("%Y-%m-%d")
 
+url = "https://v3.football.api-sports.io/fixtures"
+
 params = {
     "date": today
 }
 
 response = requests.get(url, headers=headers, params=params)
-
 data = response.json()
 
 matches = []
@@ -35,13 +34,15 @@ for m in data["response"]:
     away_id = m["teams"]["away"]["id"]
 
     league = m["league"]["name"]
+    league_id = m["league"]["id"]
 
     matches.append({
         "home": home,
         "away": away,
         "home_id": home_id,
         "away_id": away_id,
-        "league": league
+        "league": league,
+        "league_id": league_id
     })
 
 print("Partite trovate:", len(matches))
