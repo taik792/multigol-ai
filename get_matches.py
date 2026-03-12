@@ -1,5 +1,6 @@
 import requests
 import json
+from datetime import datetime, timedelta
 
 API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
@@ -9,18 +10,36 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-params = {
-    "next": 20
-}
+matches = []
 
-r = requests.get(url, headers=headers, params=params)
+# oggi + domani + dopodomani
+for i in range(3):
 
-print("HTTP STATUS:", r.status_code)
+    date = (datetime.utcnow() + timedelta(days=i)).strftime("%Y-%m-%d")
 
-data = r.json()
+    params = {
+        "date": date
+    }
 
-print("RISPOSTA API COMPLETA:")
-print(json.dumps(data, indent=2))
+    r = requests.get(url, headers=headers, params=params)
 
-with open("debug_api.json","w") as f:
-    json.dump(data,f,indent=2)
+    print("DATA:", date)
+    print("HTTP STATUS:", r.status_code)
+
+    data = r.json()
+
+    if "response" in data:
+
+        for m in data["response"]:
+
+            matches.append({
+                "home": m["teams"]["home"]["name"],
+                "away": m["teams"]["away"]["name"],
+                "league": m["league"]["name"],
+                "time": m["fixture"]["date"]
+            })
+
+print("Partite trovate:", len(matches))
+
+with open("matches.json","w") as f:
+    json.dump(matches,f,indent=4)
