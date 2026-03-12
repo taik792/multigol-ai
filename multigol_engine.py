@@ -1,23 +1,24 @@
 import json
 import math
 
-# funzione Poisson
-def poisson_prob(lmbda, k):
-    return (lmbda ** k * math.exp(-lmbda)) / math.factorial(k)
-
-# carica dati
+# carica partite
 with open("data/matches.json") as f:
     matches = json.load(f)
 
+# carica statistiche squadre
 with open("data/team_stats.json") as f:
     stats = json.load(f)
 
 predictions = []
 
+def poisson(lmbda, k):
+    return (lmbda ** k * math.exp(-lmbda)) / math.factorial(k)
+
 for match in matches:
 
     home = match["home"]
     away = match["away"]
+    league = match["league"]
 
     if home not in stats or away not in stats:
         continue
@@ -25,70 +26,78 @@ for match in matches:
     home_stats = stats[home]
     away_stats = stats[away]
 
-    # medie gol
-    home_scored = home_stats["goals_scored"]
-    home_conceded = home_stats["goals_conceded"]
+    home_scored = home_stats["goals_for"]
+    home_conceded = home_stats["goals_against"]
 
-    away_scored = away_stats["goals_scored"]
-    away_conceded = away_stats["goals_conceded"]
+    away_scored = away_stats["goals_for"]
+    away_conceded = away_stats["goals_against"]
 
-    # expected goals
-    xg_home = (home_scored + away_conceded) / 2
-    xg_away = (away_scored + home_conceded) / 2
+    home_attack = (home_scored + away_conceded) / 2
+    away_attack = (away_scored + home_conceded) / 2
 
-    # probabilità gol
-    home_probs = [poisson_prob(xg_home, i) for i in range(6)]
-    away_probs = [poisson_prob(xg_away, i) for i in range(6)]
+    probs = {}
 
-    # Over 2.5
-    over25 = 0
     for i in range(6):
         for j in range(6):
-            if i + j >= 3:
-                over25 += home_probs[i] * away_probs[j]
+            p = poisson(home_attack, i) * poisson(away_attack, j)
+            probs[(i,j)] = p
 
-    # BTTS
-    btts = 0
-    for i in range(1,6):
-        for j in range(1,6):
-            btts += home_probs[i] * away_probs[j]
+    over15 = sum(p for (i,j),p in probs.items() if i+j >= 2)
+    over25 = sum(p for (i,j),p in probs.items() if i+j >= 3)
+    btts = sum(p for (i,j),p in probs.items() if i>0 and j>0)
 
-    # Multigol casa
-    mg_home_13 = sum(home_probs[1:4])
-    mg_home_14 = sum(home_probs[1:5])
-    mg_home_24 = sum(home_probs[2:5])
+    home_goals = [0]*6
+    away_goals = [0]*6
 
-    # Multigol ospite
-    mg_away_02 = sum(away_probs[0:3])
-    mg_away_13 = sum(away_probs[1:4])
-    mg_away_14 = sum(away_probs[1:5])
+    for (i,j),p in probs.items():
+        home_goals[i] += p
+        away_goals[j] += p
 
-    # selezione migliore
-    mg_home = max([
-        ("1-3", mg_home_13),
-        ("1-4", mg_home_14),
-        ("2-4", mg_home_24)
-    ], key=lambda x: x[1])
+    def multigol_range(goals):
 
-    mg_away = max([
-        ("0-2", mg_away_02),
-        ("1-3", mg_away_13),
-        ("1-4", mg_away_14)
-    ], key=lambda x: x[1])
+        mg = {
+            "0-1": goals[0] + goals[1],
+            "1-3": goals[1] + goals[2] + goals[3],
+            "2-4": goals[2] + goals[3] + goals[4],
+            "2-5": goals[2] + goals[3] + goals[4] + goals[5],
+            "3-6": goals[3] + goals[4] + goals[5]
+        }
 
-    predictions.append({
+        best = max(mg, key=mg.get)
+        prob = mg[best]
+
+        return best, round(prob*100,1)
+
+    mg_home, prob_home = multigol_range(home_goals)
+    mg_away, prob_away = multigol_range(away_goals)
+
+    prediction = {
+        "league": league,
         "home": home,
         "away": away,
+        "over15": round(over15*100,1),
         "over25": round(over25*100,1),
         "btts": round(btts*100,1),
-        "multigol_home": mg_home[0],
-        "multigol_home_prob": round(mg_home[1]*100,1),
-        "multigol_away": mg_away[0],
-        "multigol_away_prob": round(mg_away[1]*100,1)
-    })
+        "multigol_home": mg_home,
+        "multigol_home_prob": prob_home,
+        "multigol_away": mg_away,
+        "multigol_away_prob": prob_away
+    }
 
-# salva pronostici
-with open("data/predictions.json", "w") as f:
-    json.dump(predictions[:30], f, indent=2)
+    predictions.append(prediction)
 
-print("Pronostici generati:", len(predictions[:30]))
+# ordina per probabilità
+predictions = sorted(
+    predictions,
+    key=lambda x: x["multigol_home_prob"] + x["multigol_away_prob"],
+    reverse=True
+)
+
+# prende le migliori 30
+predictions = predictions[:30]
+
+# salva nel posto corretto per il sito
+with open("data/predictions.json","w") as f:
+    json.dump(predictions, f, indent=4)
+
+print("Pronostici generati:", len(predictions))
