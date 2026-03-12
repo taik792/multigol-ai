@@ -20,47 +20,10 @@ for m in matches:
         (m["away"], m["away_id"])
     ]
 
-    league_id = m["league_id"]
-
     for team_name, team_id in teams:
 
         if team_name in stats:
             continue
-
-        # --- TENTATIVO 1: statistiche campionato ---
-
-        url = "https://v3.football.api-sports.io/teams/statistics"
-
-        params = {
-            "team": team_id,
-            "league": league_id,
-            "season": 2025
-        }
-
-        r = requests.get(url, headers=headers, params=params)
-
-        if r.status_code == 200:
-
-            data = r.json()
-
-            if data["response"]:
-
-                d = data["response"]
-
-                goals_for = d["goals"]["for"]["total"]["total"]
-                goals_against = d["goals"]["against"]["total"]["total"]
-                games = d["fixtures"]["played"]["total"]
-
-                if games > 0:
-
-                    stats[team_name] = {
-                        "goals_for": goals_for / games,
-                        "goals_against": goals_against / games
-                    }
-
-                    continue
-
-        # --- TENTATIVO 2: ultime 10 partite squadra ---
 
         url = "https://v3.football.api-sports.io/fixtures"
 
@@ -74,18 +37,16 @@ for m in matches:
         if r.status_code != 200:
             continue
 
-        data = r.json()
+        data = r.json()["response"]
 
-        fixtures = data["response"]
-
-        if not fixtures:
+        if not data:
             continue
 
         goals_for = 0
         goals_against = 0
         games = 0
 
-        for f in fixtures:
+        for f in data:
 
             home_id = f["teams"]["home"]["id"]
             away_id = f["teams"]["away"]["id"]
@@ -97,12 +58,9 @@ for m in matches:
                 continue
 
             if home_id == team_id:
-
                 goals_for += home_goals
                 goals_against += away_goals
-
             else:
-
                 goals_for += away_goals
                 goals_against += home_goals
 
