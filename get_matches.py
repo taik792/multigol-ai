@@ -10,7 +10,7 @@ headers = {
 }
 
 params = {
-    "next": 50
+    "live": "all"
 }
 
 response = requests.get(url, headers=headers, params=params)
