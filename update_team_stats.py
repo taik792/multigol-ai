@@ -12,18 +12,19 @@ headers = {
 with open("data/matches.json") as f:
     matches = json.load(f)
 
-# prendiamo solo le prime 40 partite
-matches = matches[:40]
+teams = set()
 
-teams = {}
+# prendiamo solo le prime 20 partite (40 squadre max)
+for m in matches[:20]:
 
-for m in matches:
+    home = m.get("home_id")
+    away = m.get("away_id")
 
-    home_id = str(m["teams"]["home"]["id"])
-    away_id = str(m["teams"]["away"]["id"])
+    if home:
+        teams.add(home)
 
-    teams[home_id] = m["teams"]["home"]["name"]
-    teams[away_id] = m["teams"]["away"]["name"]
+    if away:
+        teams.add(away)
 
 stats = {}
 
@@ -37,7 +38,6 @@ for team_id in teams:
     }
 
     r = requests.get(url, headers=headers, params=params)
-
     data = r.json()
 
     goals_for = 0
@@ -48,7 +48,7 @@ for team_id in teams:
 
         home = f["teams"]["home"]["id"]
 
-        if home == int(team_id):
+        if home == team_id:
             gf = f["goals"]["home"]
             ga = f["goals"]["away"]
         else:
@@ -69,7 +69,7 @@ for team_id in teams:
             "conceded": goals_against / games
         }
 
-    time.sleep(0.3)
+    time.sleep(0.25)
 
 with open("data/team_stats.json", "w") as f:
     json.dump(stats, f, indent=2)
