@@ -1,77 +1,36 @@
 <!DOCTYPE html>
-<html lang="it">
+<html>
 
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Multigol AI Scanner</title>
 
 <style>
 
 body{
-background:#0b1d3a;
+background:#0f2747;
 font-family:Arial;
 color:white;
 text-align:center;
-margin:0;
-padding:0;
 }
 
-h1{
-margin-top:30px;
-font-size:32px;
-}
-
-#matches{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
 gap:20px;
 padding:20px;
 }
 
 .card{
-
-background:#1c2e4a;
-
+background:#163a63;
 padding:20px;
-
-border-radius:15px;
-
-width:280px;
-
-box-shadow:0 5px 15px rgba(0,0,0,0.4);
-
+border-radius:10px;
 }
 
-.card h3{
-margin:0;
-font-size:18px;
-}
-
-.league{
-color:#9fb3d1;
-font-size:14px;
-margin-top:5px;
-}
-
-.time{
-color:#33d1ff;
+.green{
+color:#00ff9c;
 font-weight:bold;
-margin:10px 0;
-}
-
-.stat{
-margin:4px 0;
-}
-
-.prob{
-color:#00ff90;
-font-size:18px;
-font-weight:bold;
-margin-top:10px;
 }
 
 </style>
@@ -82,63 +41,43 @@ margin-top:10px;
 
 <h1>⚽ Multigol AI Scanner</h1>
 
-<div id="matches">
-
-Caricamento partite...
-
-</div>
+<div class="container" id="matches"></div>
 
 <script>
 
 fetch("data/predictions.json")
-
-.then(response => response.json())
-
+.then(res => res.json())
 .then(data => {
 
-let container = document.getElementById("matches")
+const container=document.getElementById("matches")
 
-container.innerHTML = ""
+data.forEach(m=>{
 
-if(data.length === 0){
+container.innerHTML+=`
 
-container.innerHTML = "<h2>Nessuna partita trovata</h2>"
-
-return
-
-}
-
-data.forEach(m => {
-
-let card = document.createElement("div")
-
-card.className = "card"
-
-card.innerHTML = `
+<div class="card">
 
 <h3>${m.home} vs ${m.away}</h3>
 
-<div class="league">${m.country} • ${m.league}</div>
+<p>${m.league}</p>
 
-<div class="time">⏰ ${m.time}</div>
+<p>🎯 Multigol: <b>${m.multigol}</b></p>
 
-<div class="stat">Over 2.5: ${m.over25}%</div>
+<p>🏠 Casa multigol: <b>${m.multigol_home}</b></p>
 
-<div class="stat">BTTS: ${m.btts}%</div>
+<p>✈️ Ospite multigol: <b>${m.multigol_away}</b></p>
 
-<div class="prob">Probabilità: ${m.probability}%</div>
+<p>📈 Over 2.5: ${m.over25}%</p>
+
+<p>🤝 BTTS: ${m.btts}%</p>
+
+<p class="green">Probabilità: ${m.probability}%</p>
+
+</div>
 
 `
 
-container.appendChild(card)
-
 })
-
-})
-
-.catch(error => {
-
-document.getElementById("matches").innerHTML = "Errore caricamento partite"
 
 })
 
