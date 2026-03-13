@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+from datetime import datetime
 
 API_KEY = os.getenv("API_KEY")
 
@@ -10,12 +11,13 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
+today = datetime.utcnow().strftime("%Y-%m-%d")
+
 params = {
-    "next": 100
+    "date": today
 }
 
 response = requests.get(url, headers=headers, params=params)
-
 data = response.json()
 
 matches = []
@@ -32,13 +34,4 @@ for m in data.get("response", []):
         "away_id": m["teams"]["away"]["id"],
         "league": m["league"]["name"],
         "country": m["league"]["country"],
-        "league_id": m["league"]["id"],
-        "date": m["fixture"]["date"]
-    })
-
-os.makedirs("data", exist_ok=True)
-
-with open("data/matches_today.json", "w") as f:
-    json.dump(matches, f, indent=2)
-
-print("Partite trovate:", len(matches))
+        "league_id": m["league"]["
