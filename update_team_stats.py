@@ -8,57 +8,46 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-with open("data/matches.json") as f:
+with open("data/matches_today.json") as f:
     matches = json.load(f)
 
-stats = {}
+team_stats = {}
 
-for m in matches[:40]:
+for match in matches[:40]:  # limitiamo per non consumare API
 
-    home_id = m["home_id"]
-    away_id = m["away_id"]
-    league_id = m["league_id"]
+    league_id = match["league_id"]
+    home_id = match["home_id"]
+    away_id = match["away_id"]
 
     for team_id in [home_id, away_id]:
 
-        team_id = str(team_id)
-
-        if team_id in stats:
+        if str(team_id) in team_stats:
             continue
 
         url = "https://v3.football.api-sports.io/teams/statistics"
 
         params = {
-            "team": team_id,
             "league": league_id,
-            "season": 2025
+            "season": 2025,
+            "team": team_id
         }
 
-        r = requests.get(url, headers=headers, params=params)
+        response = requests.get(url, headers=headers, params=params)
+        data = response.json()
 
-        data = r.json()
+        if data["response"]:
+            stats = data["response"]
 
-        try:
-
-            games = data["response"]["fixtures"]["played"]["total"]
-
-            scored = data["response"]["goals"]["for"]["total"]["total"]
-            conceded = data["response"]["goals"]["against"]["total"]["total"]
-
-            if games == 0:
-                continue
-
-            stats[team_id] = {
-                "scored": scored / games,
-                "conceded": conceded / games
+            team_stats[str(team_id)] = {
+                "goals_for": stats["goals"]["for"]["total"]["average"],
+                "goals_against": stats["goals"]["against"]["total"]["average"],
+                "over25": stats["goals"]["for"]["total"]["total"],
+                "btts": stats["both_teams_score"]["percentage"]
             }
 
-        except:
-            continue
+print("Statistiche squadre aggiornate:", len(team_stats))
 
 os.makedirs("data", exist_ok=True)
 
 with open("data/team_stats.json", "w") as f:
-    json.dump(stats, f, indent=2)
-
-print("Statistiche squadre aggiornate:", len(stats))
+    json.dump(team_stats, f, indent=2)
