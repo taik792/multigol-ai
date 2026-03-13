@@ -1,50 +1,82 @@
 import json
 import math
 
+# carica partite
 with open("data/matches.json") as f:
     matches = json.load(f)
 
+# carica statistiche
 with open("data/team_stats.json") as f:
     stats = json.load(f)
 
-matches = matches[:20]
-
 predictions = []
 
-def poisson(lmbda,k):
-    return (lmbda**k * math.exp(-lmbda)) / math.factorial(k)
+def poisson(avg, goals):
+    return (avg ** goals * math.exp(-avg)) / math.factorial(goals)
 
 for m in matches:
 
-    home = m["home"]
-    away = m["away"]
+    home_id = str(m["home_id"])
+    away_id = str(m["away_id"])
 
-    if home not in stats or away not in stats:
+    if home_id not in stats or away_id not in stats:
         continue
 
-    home_attack = stats[home]["goals_for"]
-    home_def = stats[home]["goals_against"]
+    home = stats[home_id]
+    away = stats[away_id]
 
-    away_attack = stats[away]["goals_for"]
-    away_def = stats[away]["goals_against"]
+    home_attack = home["scored"]
+    home_defense = home["conceded"]
 
-    home_exp = (home_attack + away_def)/2
-    away_exp = (away_attack + home_def)/2
+    away_attack = away["scored"]
+    away_defense = away["conceded"]
 
-    total = home_exp + away_exp
+    expected_home = (home_attack + away_defense) / 2
+    expected_away = (away_attack + home_defense) / 2
 
-    over25 = 1 - sum(poisson(total,i) for i in range(3))
-    btts = 1 - (poisson(home_exp,0) + poisson(away_exp,0) - poisson(home_exp,0)*poisson(away_exp,0))
+    # calcolo over 2.5
+    prob_under = 0
+    for i in range(3):
+        for j in range(3):
+            if i + j <= 2:
+                prob_under += poisson(expected_home, i) * poisson(expected_away, j)
+
+    prob_over = 1 - prob_under
+
+    # calcolo BTTS
+    prob_home0 = poisson(expected_home, 0)
+    prob_away0 = poisson(expected_away, 0)
+
+    prob_btts = 1 - (prob_home0 + prob_away0 - (prob_home0 * prob_away0))
+
+    # multigol range
+    total_goals = expected_home + expected_away
+
+    if total_goals <= 2:
+        multigol = "0-2"
+    elif total_goals <= 3:
+        multigol = "1-3"
+    elif total_goals <= 4:
+        multigol = "2-4"
+    else:
+        multigol = "2-5"
 
     predictions.append({
-        "home": home,
-        "away": away,
+        "home": m["home"],
+        "away": m["away"],
         "league": m["league"],
-        "over25": round(over25*100,1),
-        "btts": round(btts*100,1)
+        "over25": round(prob_over * 100),
+        "btts": round(prob_btts * 100),
+        "multigol": multigol
     })
 
-print("Pronostici generati:", len(predictions))
+# ordina per probabilità over
+predictions = sorted(predictions, key=lambda x: x["over25"], reverse=True)
 
-with open("data/predictions.json","w") as f:
-    json.dump(predictions,f,indent=4)
+# prendi le migliori 30
+predictions = predictions[:30]
+
+with open("data/predictions.json", "w") as f:
+    json.dump(predictions, f, indent=2)
+
+print("Pronostici generati:", len(predictions))
