@@ -1,7 +1,6 @@
 import requests
 import json
 import os
-from datetime import datetime
 
 API_KEY = os.getenv("API_KEY")
 
@@ -11,11 +10,8 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-today = datetime.utcnow().strftime("%Y-%m-%d")
-
 params = {
-    "date": today,
-    "season": 2025
+    "next": 200
 }
 
 response = requests.get(url, headers=headers, params=params)
