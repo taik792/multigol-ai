@@ -1,88 +1,36 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-
-<meta charset="UTF-8">
-<title>Multigol AI Scanner</title>
-
-<style>
-
-body{
-background:#0f2747;
-font-family:Arial;
-color:white;
-text-align:center;
-}
-
-.container{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
-gap:20px;
-padding:20px;
-}
-
-.card{
-background:#163a63;
-padding:20px;
-border-radius:10px;
-}
-
-.green{
-color:#00ff9c;
-font-weight:bold;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<h1>⚽ Multigol AI Scanner</h1>
-
-<div class="container" id="matches"></div>
-
 <script>
-
 fetch("data/predictions.json")
-.then(res => res.json())
-.then(data => {
+  .then(res => res.json())
+  .then(data => {
 
-const container=document.getElementById("matches")
+    const container = document.getElementById("matches");
 
-data.forEach(m=>{
+    data.slice(0,30).forEach(match => {
 
-container.innerHTML+=`
+      const card = document.createElement("div");
+      card.className = "card";
 
-<div class="card">
+      card.innerHTML = `
+        <h3>${match.home} vs ${match.away}</h3>
 
-<h3>${m.home} vs ${m.away}</h3>
+        <p>${match.country} - ${match.league}</p>
+        <p>📅 ${match.date} 🕒 ${match.time}</p>
 
-<p>${m.league}</p>
+        <p>🎯 Multigol: ${match.multigol}</p>
+        <p>🏠 Casa multigol: ${match.home_multigol}</p>
+        <p>✈️ Ospite multigol: ${match.away_multigol}</p>
 
-<p>🎯 Multigol: <b>${m.multigol}</b></p>
+        <p>⬆️ Over 2.5: ${match.over25}%</p>
+        <p>🤝 BTTS: ${match.btts}%</p>
 
-<p>🏠 Casa multigol: <b>${m.multigol_home}</b></p>
+        <p style="color:#00ff9c;font-weight:bold">
+        Probabilità: ${match.probability}%
+        </p>
+      `;
 
-<p>✈️ Ospite multigol: <b>${m.multigol_away}</b></p>
+      container.appendChild(card);
 
-<p>📈 Over 2.5: ${m.over25}%</p>
+    });
 
-<p>🤝 BTTS: ${m.btts}%</p>
-
-<p class="green">Probabilità: ${m.probability}%</p>
-
-</div>
-
-`
-
-})
-
-})
-
+  });
 </script>
-
-</body>
-
-</html>
