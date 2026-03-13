@@ -30,7 +30,7 @@ for match in matches[:20]:
 
         params = {
             "league": league_id,
-            "season": 2025,
+            "season": 2023,
             "team": team_id
         }
 
