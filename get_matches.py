@@ -22,16 +22,26 @@ data = response.json()
 
 matches = []
 
-for m in data.get("response", []):
+for m in data["response"]:
 
     if m["fixture"]["status"]["short"] != "NS":
         continue
 
-    matches.append({
+    match = {
         "home": m["teams"]["home"]["name"],
         "away": m["teams"]["away"]["name"],
         "home_id": m["teams"]["home"]["id"],
         "away_id": m["teams"]["away"]["id"],
         "league": m["league"]["name"],
         "country": m["league"]["country"],
-        "league_id": m["league"]["
+        "date": m["fixture"]["date"]
+    }
+
+    matches.append(match)
+
+os.makedirs("data", exist_ok=True)
+
+with open("data/matches_today.json", "w") as f:
+    json.dump(matches, f, indent=2)
+
+print("Partite trovate:", len(matches))
