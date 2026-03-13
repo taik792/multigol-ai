@@ -8,12 +8,14 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
+# carica partite trovate
 with open("data/matches_today.json") as f:
     matches = json.load(f)
 
 team_stats = {}
 
-for match in matches[:40]:  # limitiamo per non consumare API
+# limitiamo per non consumare API
+for match in matches[:20]:
 
     league_id = match["league_id"]
     home_id = match["home_id"]
@@ -32,18 +34,27 @@ for match in matches[:40]:  # limitiamo per non consumare API
             "team": team_id
         }
 
-        response = requests.get(url, headers=headers, params=params)
-        data = response.json()
+        try:
+            response = requests.get(url, headers=headers, params=params)
+            data = response.json()
 
-        if data["response"]:
+            if not data.get("response"):
+                continue
+
             stats = data["response"]
 
+            goals_for = stats["goals"]["for"]["average"]["total"]
+            goals_against = stats["goals"]["against"]["average"]["total"]
+            btts = stats["both_teams_score"]["percentage"]
+
             team_stats[str(team_id)] = {
-                "goals_for": stats["goals"]["for"]["total"]["average"],
-                "goals_against": stats["goals"]["against"]["total"]["average"],
-                "over25": stats["goals"]["for"]["total"]["total"],
-                "btts": stats["both_teams_score"]["percentage"]
+                "goals_for": goals_for,
+                "goals_against": goals_against,
+                "btts": btts
             }
+
+        except:
+            continue
 
 print("Statistiche squadre aggiornate:", len(team_stats))
 
