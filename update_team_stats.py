@@ -14,17 +14,11 @@ with open("data/matches.json") as f:
 
 teams = set()
 
-# prendiamo solo le prime 20 partite (40 squadre max)
+# prendiamo solo le prime 20 partite per limitare le API
 for m in matches[:20]:
 
-    home = m.get("home_id")
-    away = m.get("away_id")
-
-    if home:
-        teams.add(home)
-
-    if away:
-        teams.add(away)
+    teams.add(m["home_id"])
+    teams.add(m["away_id"])
 
 stats = {}
 
@@ -38,6 +32,7 @@ for team_id in teams:
     }
 
     r = requests.get(url, headers=headers, params=params)
+
     data = r.json()
 
     goals_for = 0
