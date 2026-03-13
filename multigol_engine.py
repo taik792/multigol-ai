@@ -17,8 +17,12 @@ for m in matches[:30]:
     home_id = str(m["home_id"])
     away_id = str(m["away_id"])
 
-    if home_id not in stats or away_id not in stats:
-        continue
+    # se non esistono stats usa media
+    if home_id not in stats:
+        stats[home_id] = {"scored": 1.4, "conceded": 1.4}
+
+    if away_id not in stats:
+        stats[away_id] = {"scored": 1.4, "conceded": 1.4}
 
     home_attack = stats[home_id]["scored"]
     home_def = stats[home_id]["conceded"]
@@ -26,7 +30,6 @@ for m in matches[:30]:
     away_attack = stats[away_id]["scored"]
     away_def = stats[away_id]["conceded"]
 
-    # goal attesi
     home_xg = (home_attack + away_def) / 2
     away_xg = (away_attack + home_def) / 2
 
