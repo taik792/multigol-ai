@@ -11,28 +11,29 @@ headers = {
 }
 
 params = {
-    "next": 300
+    "next": 100
 }
 
 response = requests.get(url, headers=headers, params=params)
+
 data = response.json()
 
 matches = []
 
-for match in data["response"]:
+for m in data.get("response", []):
 
-    if match["fixture"]["status"]["short"] != "NS":
+    if m["fixture"]["status"]["short"] != "NS":
         continue
 
     matches.append({
-        "home": match["teams"]["home"]["name"],
-        "away": match["teams"]["away"]["name"],
-        "home_id": match["teams"]["home"]["id"],
-        "away_id": match["teams"]["away"]["id"],
-        "league": match["league"]["name"],
-        "country": match["league"]["country"],
-        "league_id": match["league"]["id"],
-        "date": match["fixture"]["date"]
+        "home": m["teams"]["home"]["name"],
+        "away": m["teams"]["away"]["name"],
+        "home_id": m["teams"]["home"]["id"],
+        "away_id": m["teams"]["away"]["id"],
+        "league": m["league"]["name"],
+        "country": m["league"]["country"],
+        "league_id": m["league"]["id"],
+        "date": m["fixture"]["date"]
     })
 
 os.makedirs("data", exist_ok=True)
