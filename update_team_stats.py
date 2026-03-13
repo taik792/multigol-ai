@@ -10,13 +10,12 @@ headers = {
 
 url = "https://v3.football.api-sports.io/teams/statistics"
 
-# carica partite del giorno
 with open("data/matches_today.json") as f:
     matches = json.load(f)
 
 team_stats = {}
 
-for match in matches[:40]:   # limitiamo per non consumare troppe API
+for match in matches[:40]:
 
     league_id = match["league_id"]
     home_id = match["home_id"]
@@ -34,6 +33,7 @@ for match in matches[:40]:   # limitiamo per non consumare troppe API
         }
 
         try:
+
             response = requests.get(url, headers=headers, params=params)
             data = response.json()
 
@@ -45,11 +45,12 @@ for match in matches[:40]:   # limitiamo per non consumare troppe API
             if not stats:
                 continue
 
+            goals_for = stats["goals"]["for"]["average"]["total"]
+            goals_against = stats["goals"]["against"]["average"]["total"]
+
             team_stats[str(team_id)] = {
-                "goals_for": stats["goals"]["for"]["average"]["total"],
-                "goals_against": stats["goals"]["against"]["average"]["total"],
-                "over25": stats["goals"]["for"]["total"]["total"],
-                "btts": stats["fixtures"]["both_teams_score"]["percentage"]
+                "goals_for": goals_for,
+                "goals_against": goals_against
             }
 
         except Exception as e:
