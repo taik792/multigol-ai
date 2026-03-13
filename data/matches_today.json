@@ -1,45 +1,5 @@
 [
   {
-    "home": "Broadmeadow Magic",
-    "away": "Adamstown Rosebuds",
-    "home_id": 10202,
-    "away_id": 10201,
-    "league": "Northern NSW NPL",
-    "league_id": 481,
-    "country": "Australia",
-    "date": "2026-03-13T09:00:00+00:00"
-  },
-  {
-    "home": "Belmont Swansea",
-    "away": "Weston Bears",
-    "home_id": 23500,
-    "away_id": 10210,
-    "league": "Northern NSW NPL",
-    "league_id": 481,
-    "country": "Australia",
-    "date": "2026-03-13T09:00:00+00:00"
-  },
-  {
-    "home": "Adelaide Olympic",
-    "away": "Eastern United",
-    "home_id": 3787,
-    "away_id": 16766,
-    "league": "South Australia State League 1",
-    "league_id": 834,
-    "country": "Australia",
-    "date": "2026-03-13T09:00:00+00:00"
-  },
-  {
-    "home": "Dordoi Bishkek",
-    "away": "Bishkek City",
-    "home_id": 8026,
-    "away_id": 25766,
-    "league": "Premier League",
-    "league_id": 569,
-    "country": "Kyrgyzstan",
-    "date": "2026-03-13T09:00:00+00:00"
-  },
-  {
     "home": "West Wallsend",
     "away": "Lake Macquarie",
     "home_id": 11195,
@@ -48,76 +8,6 @@
     "league_id": 1090,
     "country": "Australia",
     "date": "2026-03-13T09:00:00+00:00"
-  },
-  {
-    "home": "Oakleigh Cannons",
-    "away": "Heidelberg United",
-    "home_id": 3808,
-    "away_id": 3803,
-    "league": "Victoria NPL",
-    "league_id": 195,
-    "country": "Australia",
-    "date": "2026-03-13T09:15:00+00:00"
-  },
-  {
-    "home": "Ayeyawady United",
-    "away": "Yarmanya United",
-    "home_id": 12523,
-    "away_id": 26331,
-    "league": "National League",
-    "league_id": 588,
-    "country": "Myanmar",
-    "date": "2026-03-13T09:30:00+00:00"
-  },
-  {
-    "home": "Preston Lions",
-    "away": "Sunshine Georgies",
-    "home_id": 19705,
-    "away_id": 21921,
-    "league": "Victoria NPL",
-    "league_id": 195,
-    "country": "Australia",
-    "date": "2026-03-13T09:30:00+00:00"
-  },
-  {
-    "home": "Brunswick City",
-    "away": "Melbourne Victory II",
-    "home_id": 16780,
-    "away_id": 22823,
-    "league": "Victoria NPL 2",
-    "league_id": 836,
-    "country": "Australia",
-    "date": "2026-03-13T09:30:00+00:00"
-  },
-  {
-    "home": "Melbourne Knights",
-    "away": "Melbourne Srbija",
-    "home_id": 3807,
-    "away_id": 24077,
-    "league": "Victoria NPL 2",
-    "league_id": 836,
-    "country": "Australia",
-    "date": "2026-03-13T09:30:00+00:00"
-  },
-  {
-    "home": "WDSC Wolves",
-    "away": "Peninsula Power",
-    "home_id": 11184,
-    "away_id": 10221,
-    "league": "Queensland NPL",
-    "league_id": 482,
-    "country": "Australia",
-    "date": "2026-03-13T09:30:00+00:00"
-  },
-  {
-    "home": "West Torrens Birkalla",
-    "away": "Campbelltown City",
-    "home_id": 16769,
-    "away_id": 3791,
-    "league": "South Australia NPL",
-    "league_id": 194,
-    "country": "Australia",
-    "date": "2026-03-13T09:30:00+00:00"
   },
   {
     "home": "White City Woodville",
