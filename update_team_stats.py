@@ -4,16 +4,24 @@ import os
 
 API_KEY = os.getenv("API_KEY")
 
+url = "https://v3.football.api-sports.io/teams/statistics"
+
 headers = {
     "x-apisports-key": API_KEY
 }
 
-url = "https://v3.football.api-sports.io/teams/statistics"
-
+# carica partite
 with open("data/matches_today.json") as f:
     matches = json.load(f)
 
-team_stats = {}
+# carica statistiche già salvate (cache)
+if os.path.exists("data/team_stats.json"):
+    with open("data/team_stats.json") as f:
+        team_stats = json.load(f)
+else:
+    team_stats = {}
+
+updated = 0
 
 for match in matches[:40]:
 
@@ -23,7 +31,10 @@ for match in matches[:40]:
 
     for team_id in [home_id, away_id]:
 
-        if str(team_id) in team_stats:
+        team_id = str(team_id)
+
+        # se già esiste → skip API
+        if team_id in team_stats:
             continue
 
         params = {
@@ -37,26 +48,24 @@ for match in matches[:40]:
             response = requests.get(url, headers=headers, params=params)
             data = response.json()
 
-            if "response" not in data:
+            if not data.get("response"):
                 continue
 
             stats = data["response"]
 
-            if not stats:
-                continue
+            team_stats[team_id] = {
 
-            goals_for = stats["goals"]["for"]["average"]["total"]
-            goals_against = stats["goals"]["against"]["average"]["total"]
+                "goals_for": stats["goals"]["for"]["average"]["total"],
+                "goals_against": stats["goals"]["against"]["average"]["total"]
 
-            team_stats[str(team_id)] = {
-                "goals_for": goals_for,
-                "goals_against": goals_against
             }
+
+            updated += 1
 
         except Exception as e:
             print("Errore squadra:", team_id)
 
-print("Statistiche squadre aggiornate:", len(team_stats))
+print("Statistiche squadre aggiornate:", updated)
 
 os.makedirs("data", exist_ok=True)
 
