@@ -5,6 +5,7 @@
     "home_id": 10202,
     "away_id": 10201,
     "league": "Northern NSW NPL",
+    "league_id": 481,
     "country": "Australia",
     "date": "2026-03-13T09:00:00+00:00"
   },
@@ -14,6 +15,7 @@
     "home_id": 23500,
     "away_id": 10210,
     "league": "Northern NSW NPL",
+    "league_id": 481,
     "country": "Australia",
     "date": "2026-03-13T09:00:00+00:00"
   },
@@ -23,6 +25,7 @@
     "home_id": 3787,
     "away_id": 16766,
     "league": "South Australia State League 1",
+    "league_id": 834,
     "country": "Australia",
     "date": "2026-03-13T09:00:00+00:00"
   },
@@ -32,6 +35,7 @@
     "home_id": 8026,
     "away_id": 25766,
     "league": "Premier League",
+    "league_id": 569,
     "country": "Kyrgyzstan",
     "date": "2026-03-13T09:00:00+00:00"
   },
@@ -41,6 +45,7 @@
     "home_id": 11195,
     "away_id": 10206,
     "league": "NNSW League 1",
+    "league_id": 1090,
     "country": "Australia",
     "date": "2026-03-13T09:00:00+00:00"
   },
@@ -50,6 +55,7 @@
     "home_id": 3808,
     "away_id": 3803,
     "league": "Victoria NPL",
+    "league_id": 195,
     "country": "Australia",
     "date": "2026-03-13T09:15:00+00:00"
   },
@@ -59,6 +65,7 @@
     "home_id": 12523,
     "away_id": 26331,
     "league": "National League",
+    "league_id": 588,
     "country": "Myanmar",
     "date": "2026-03-13T09:30:00+00:00"
   },
@@ -68,6 +75,7 @@
     "home_id": 19705,
     "away_id": 21921,
     "league": "Victoria NPL",
+    "league_id": 195,
     "country": "Australia",
     "date": "2026-03-13T09:30:00+00:00"
   },
@@ -77,6 +85,7 @@
     "home_id": 16780,
     "away_id": 22823,
     "league": "Victoria NPL 2",
+    "league_id": 836,
     "country": "Australia",
     "date": "2026-03-13T09:30:00+00:00"
   },
@@ -86,6 +95,7 @@
     "home_id": 3807,
     "away_id": 24077,
     "league": "Victoria NPL 2",
+    "league_id": 836,
     "country": "Australia",
     "date": "2026-03-13T09:30:00+00:00"
   },
@@ -95,6 +105,7 @@
     "home_id": 11184,
     "away_id": 10221,
     "league": "Queensland NPL",
+    "league_id": 482,
     "country": "Australia",
     "date": "2026-03-13T09:30:00+00:00"
   },
@@ -104,6 +115,7 @@
     "home_id": 16769,
     "away_id": 3791,
     "league": "South Australia NPL",
+    "league_id": 194,
     "country": "Australia",
     "date": "2026-03-13T09:30:00+00:00"
   },
@@ -113,6 +125,7 @@
     "home_id": 16770,
     "away_id": 3794,
     "league": "South Australia NPL",
+    "league_id": 194,
     "country": "Australia",
     "date": "2026-03-13T09:45:00+00:00"
   },
@@ -122,6 +135,7 @@
     "home_id": 23084,
     "away_id": 23076,
     "league": "U19 League",
+    "league_id": 1065,
     "country": "Ukraine",
     "date": "2026-03-13T10:00:00+00:00"
   },
@@ -131,6 +145,7 @@
     "home_id": 26235,
     "away_id": 20240,
     "league": "U19 League",
+    "league_id": 1065,
     "country": "Ukraine",
     "date": "2026-03-13T10:00:00+00:00"
   },
@@ -140,6 +155,7 @@
     "home_id": 25022,
     "away_id": 26603,
     "league": "V.League 2",
+    "league_id": 637,
     "country": "Vietnam",
     "date": "2026-03-13T10:00:00+00:00"
   },
@@ -149,6 +165,7 @@
     "home_id": 3677,
     "away_id": 9161,
     "league": "V.League 2",
+    "league_id": 637,
     "country": "Vietnam",
     "date": "2026-03-13T10:00:00+00:00"
   },
@@ -158,6 +175,7 @@
     "home_id": 15176,
     "away_id": 9231,
     "league": "Youth Championship",
+    "league_id": 238,
     "country": "Russia",
     "date": "2026-03-13T10:00:00+00:00"
   },
@@ -167,6 +185,7 @@
     "home_id": 27236,
     "away_id": 19295,
     "league": "Youth Championship",
+    "league_id": 238,
     "country": "Russia",
     "date": "2026-03-13T10:00:00+00:00"
   },
@@ -176,6 +195,7 @@
     "home_id": 16595,
     "away_id": 7985,
     "league": "Youth Championship",
+    "league_id": 238,
     "country": "Russia",
     "date": "2026-03-13T10:00:00+00:00"
   },
@@ -185,6 +205,7 @@
     "home_id": 15175,
     "away_id": 27473,
     "league": "Youth Championship",
+    "league_id": 238,
     "country": "Russia",
     "date": "2026-03-13T10:00:00+00:00"
   },
@@ -194,6 +215,7 @@
     "home_id": 3796,
     "away_id": 3786,
     "league": "South Australia NPL",
+    "league_id": 194,
     "country": "Australia",
     "date": "2026-03-13T10:00:00+00:00"
   },
@@ -203,6 +225,7 @@
     "home_id": 27266,
     "away_id": 12271,
     "league": "Vysshaya Liga",
+    "league_id": 571,
     "country": "Tajikistan",
     "date": "2026-03-13T10:00:00+00:00"
   },
@@ -212,6 +235,7 @@
     "home_id": 1722,
     "away_id": 21343,
     "league": "Asian Cup Women",
+    "league_id": 897,
     "country": "World",
     "date": "2026-03-13T10:00:00+00:00"
   },
@@ -221,6 +245,7 @@
     "home_id": 18009,
     "away_id": 22596,
     "league": "I-League",
+    "league_id": 324,
     "country": "India",
     "date": "2026-03-13T10:30:00+00:00"
   },
@@ -230,6 +255,7 @@
     "home_id": 17165,
     "away_id": 3617,
     "league": "Premier League",
+    "league_id": 333,
     "country": "Ukraine",
     "date": "2026-03-13T11:00:00+00:00"
   },
@@ -239,6 +265,7 @@
     "home_id": 23077,
     "away_id": 23081,
     "league": "U19 League",
+    "league_id": 1065,
     "country": "Ukraine",
     "date": "2026-03-13T11:00:00+00:00"
   },
@@ -248,6 +275,7 @@
     "home_id": 26236,
     "away_id": 23082,
     "league": "U19 League",
+    "league_id": 1065,
     "country": "Ukraine",
     "date": "2026-03-13T11:00:00+00:00"
   },
@@ -257,6 +285,7 @@
     "home_id": 22789,
     "away_id": 5500,
     "league": "Birinci Dasta",
+    "league_id": 418,
     "country": "Azerbaijan",
     "date": "2026-03-13T11:00:00+00:00"
   },
@@ -266,6 +295,7 @@
     "home_id": 8571,
     "away_id": 15285,
     "league": "Ligue 1",
+    "league_id": 424,
     "country": "Congo-DR",
     "date": "2026-03-13T11:00:00+00:00"
   },
@@ -275,6 +305,7 @@
     "home_id": 26887,
     "away_id": 8112,
     "league": "Ligue 1",
+    "league_id": 424,
     "country": "Congo-DR",
     "date": "2026-03-13T11:00:00+00:00"
   },
@@ -284,6 +315,7 @@
     "home_id": 24107,
     "away_id": 15285,
     "league": "Ligue 1",
+    "league_id": 424,
     "country": "Congo-DR",
     "date": "2026-03-13T11:00:00+00:00"
   },
@@ -293,6 +325,7 @@
     "home_id": 3669,
     "away_id": 3673,
     "league": "V.League 1",
+    "league_id": 340,
     "country": "Vietnam",
     "date": "2026-03-13T11:00:00+00:00"
   },
@@ -302,6 +335,7 @@
     "home_id": 3674,
     "away_id": 3680,
     "league": "V.League 1",
+    "league_id": 340,
     "country": "Vietnam",
     "date": "2026-03-13T11:00:00+00:00"
   },
@@ -311,6 +345,7 @@
     "home_id": 24965,
     "away_id": 3689,
     "league": "First League",
+    "league_id": 343,
     "country": "Armenia",
     "date": "2026-03-13T11:30:00+00:00"
   },
@@ -320,6 +355,7 @@
     "home_id": 5695,
     "away_id": 21263,
     "league": "Super League",
+    "league_id": 169,
     "country": "China",
     "date": "2026-03-13T11:35:00+00:00"
   },
@@ -329,6 +365,7 @@
     "home_id": 2459,
     "away_id": 8560,
     "league": "FKF Premier League",
+    "league_id": 276,
     "country": "Kenya",
     "date": "2026-03-13T12:00:00+00:00"
   },
@@ -338,6 +375,7 @@
     "home_id": 10086,
     "away_id": 6578,
     "league": "Thai League 2",
+    "league_id": 297,
     "country": "Thailand",
     "date": "2026-03-13T12:00:00+00:00"
   },
@@ -347,6 +385,7 @@
     "home_id": 2773,
     "away_id": 2771,
     "league": "Thai League 1",
+    "league_id": 296,
     "country": "Thailand",
     "date": "2026-03-13T12:00:00+00:00"
   },
@@ -356,6 +395,7 @@
     "home_id": 17151,
     "away_id": 7910,
     "league": "Youth Championship",
+    "league_id": 238,
     "country": "Russia",
     "date": "2026-03-13T12:00:00+00:00"
   },
@@ -365,6 +405,7 @@
     "home_id": 9226,
     "away_id": 7951,
     "league": "Youth Championship",
+    "league_id": 238,
     "country": "Russia",
     "date": "2026-03-13T12:00:00+00:00"
   },
@@ -374,6 +415,7 @@
     "home_id": 4117,
     "away_id": 4120,
     "league": "Premier League",
+    "league_id": 363,
     "country": "Ethiopia",
     "date": "2026-03-13T12:00:00+00:00"
   },
@@ -383,6 +425,7 @@
     "home_id": 9983,
     "away_id": 26880,
     "league": "Premier League",
+    "league_id": 363,
     "country": "Ethiopia",
     "date": "2026-03-13T12:00:00+00:00"
   },
@@ -392,6 +435,7 @@
     "home_id": 3670,
     "away_id": 3678,
     "league": "V.League 1",
+    "league_id": 340,
     "country": "Vietnam",
     "date": "2026-03-13T12:15:00+00:00"
   },
@@ -401,6 +445,7 @@
     "home_id": 12347,
     "away_id": 12329,
     "league": "Prva Liga",
+    "league_id": 287,
     "country": "Serbia",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -410,6 +455,7 @@
     "home_id": 16255,
     "away_id": 12902,
     "league": "II Liga - East",
+    "league_id": 109,
     "country": "Poland",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -419,6 +465,7 @@
     "home_id": 7198,
     "away_id": 7201,
     "league": "Premier League 2 Division One",
+    "league_id": 702,
     "country": "England",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -428,6 +475,7 @@
     "home_id": 22176,
     "away_id": 19838,
     "league": "Ligi kuu Bara",
+    "league_id": 567,
     "country": "Tanzania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -437,6 +485,7 @@
     "home_id": 21678,
     "away_id": 6850,
     "league": "Liga III - Serie 1",
+    "league_id": 784,
     "country": "Romania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -446,6 +495,7 @@
     "home_id": 2593,
     "away_id": 26674,
     "league": "Liga III - Serie 1",
+    "league_id": 784,
     "country": "Romania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -455,6 +505,7 @@
     "home_id": 6897,
     "away_id": 7461,
     "league": "Liga III - Serie 2",
+    "league_id": 785,
     "country": "Romania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -464,6 +515,7 @@
     "home_id": 16294,
     "away_id": 6919,
     "league": "Liga III - Serie 2",
+    "league_id": 785,
     "country": "Romania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -473,6 +525,7 @@
     "home_id": 16286,
     "away_id": 14592,
     "league": "Liga III - Serie 3",
+    "league_id": 786,
     "country": "Romania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -482,6 +535,7 @@
     "home_id": 24361,
     "away_id": 23382,
     "league": "Liga III - Serie 5",
+    "league_id": 788,
     "country": "Romania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -491,6 +545,7 @@
     "home_id": 26204,
     "away_id": 14582,
     "league": "Liga III - Serie 5",
+    "league_id": 788,
     "country": "Romania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -500,6 +555,7 @@
     "home_id": 19174,
     "away_id": 6892,
     "league": "Liga III - Serie 5",
+    "league_id": 788,
     "country": "Romania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -509,6 +565,7 @@
     "home_id": 6861,
     "away_id": 16296,
     "league": "Liga III - Serie 5",
+    "league_id": 788,
     "country": "Romania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -518,6 +575,7 @@
     "home_id": 6912,
     "away_id": 21684,
     "league": "Liga III - Serie 6",
+    "league_id": 789,
     "country": "Romania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -527,6 +585,7 @@
     "home_id": 22208,
     "away_id": 26845,
     "league": "Liga III - Serie 6",
+    "league_id": 789,
     "country": "Romania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -536,6 +595,7 @@
     "home_id": 6876,
     "away_id": 6865,
     "league": "Liga III - Serie 7",
+    "league_id": 790,
     "country": "Romania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -545,6 +605,7 @@
     "home_id": 7483,
     "away_id": 2606,
     "league": "Liga III - Serie 7",
+    "league_id": 790,
     "country": "Romania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -554,6 +615,7 @@
     "home_id": 21680,
     "away_id": 24842,
     "league": "Liga III - Serie 7",
+    "league_id": 790,
     "country": "Romania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -563,6 +625,7 @@
     "home_id": 6906,
     "away_id": 6878,
     "league": "Liga III - Serie 8",
+    "league_id": 791,
     "country": "Romania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -572,6 +635,7 @@
     "home_id": 7490,
     "away_id": 6914,
     "league": "Liga III - Serie 8",
+    "league_id": 791,
     "country": "Romania",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -581,6 +645,7 @@
     "home_id": 25735,
     "away_id": 5229,
     "league": "Premier Soccer League",
+    "league_id": 401,
     "country": "Zimbabwe",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -590,6 +655,7 @@
     "home_id": 8576,
     "away_id": 21622,
     "league": "Ligue 1",
+    "league_id": 424,
     "country": "Congo-DR",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -599,6 +665,7 @@
     "home_id": 17767,
     "away_id": 8571,
     "league": "Ligue 1",
+    "league_id": 424,
     "country": "Congo-DR",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -608,6 +675,7 @@
     "home_id": 14894,
     "away_id": 14011,
     "league": "Liga 1",
+    "league_id": 395,
     "country": "Moldova",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -617,6 +685,7 @@
     "home_id": 27498,
     "away_id": 26152,
     "league": "Liga 1",
+    "league_id": 395,
     "country": "Moldova",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -626,6 +695,7 @@
     "home_id": 5384,
     "away_id": 14009,
     "league": "Liga 1",
+    "league_id": 395,
     "country": "Moldova",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -635,6 +705,7 @@
     "home_id": 5372,
     "away_id": 17625,
     "league": "Super Liga",
+    "league_id": 394,
     "country": "Moldova",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -644,6 +715,7 @@
     "home_id": 12449,
     "away_id": 12455,
     "league": "Premier League",
+    "league_id": 585,
     "country": "Uganda",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -653,6 +725,7 @@
     "home_id": 15562,
     "away_id": 26672,
     "league": "Premier League",
+    "league_id": 585,
     "country": "Uganda",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -662,6 +735,7 @@
     "home_id": 12461,
     "away_id": 22699,
     "league": "Premier League",
+    "league_id": 585,
     "country": "Uganda",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -671,6 +745,7 @@
     "home_id": 3460,
     "away_id": 3469,
     "league": "I-League",
+    "league_id": 324,
     "country": "India",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -680,6 +755,7 @@
     "home_id": 12261,
     "away_id": 8031,
     "league": "Vysshaya Liga",
+    "league_id": 571,
     "country": "Tajikistan",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -689,6 +765,7 @@
     "home_id": 27579,
     "away_id": 22842,
     "league": "Copa Rio U20",
+    "league_id": 1082,
     "country": "Brazil",
     "date": "2026-03-13T13:00:00+00:00"
   },
@@ -698,6 +775,7 @@
     "home_id": 24758,
     "away_id": 2697,
     "league": "1st Division",
+    "league_id": 289,
     "country": "South-Africa",
     "date": "2026-03-13T13:30:00+00:00"
   },
@@ -707,6 +785,7 @@
     "home_id": 2500,
     "away_id": 2502,
     "league": "Super League",
+    "league_id": 278,
     "country": "Malaysia",
     "date": "2026-03-13T14:00:00+00:00"
   },
@@ -716,6 +795,7 @@
     "home_id": 20019,
     "away_id": 20097,
     "league": "Professional Development League",
+    "league_id": 703,
     "country": "England",
     "date": "2026-03-13T14:00:00+00:00"
   },
@@ -725,6 +805,7 @@
     "home_id": 12901,
     "away_id": 12776,
     "league": "III Liga - Group 3",
+    "league_id": 782,
     "country": "Poland",
     "date": "2026-03-13T14:00:00+00:00"
   },
@@ -734,6 +815,7 @@
     "home_id": 324,
     "away_id": 2152,
     "league": "Friendlies Clubs",
+    "league_id": 667,
     "country": "World",
     "date": "2026-03-13T14:00:00+00:00"
   },
@@ -743,6 +825,7 @@
     "home_id": 1472,
     "away_id": 8602,
     "league": "Second NL",
+    "league_id": 946,
     "country": "Croatia",
     "date": "2026-03-13T14:00:00+00:00"
   },
@@ -752,6 +835,7 @@
     "home_id": 8022,
     "away_id": 12238,
     "league": "Premier League",
+    "league_id": 569,
     "country": "Kyrgyzstan",
     "date": "2026-03-13T14:00:00+00:00"
   },
@@ -761,6 +845,7 @@
     "home_id": 12236,
     "away_id": 12240,
     "league": "Premier League",
+    "league_id": 569,
     "country": "Kyrgyzstan",
     "date": "2026-03-13T14:00:00+00:00"
   },
@@ -770,6 +855,7 @@
     "home_id": 20762,
     "away_id": 27580,
     "league": "Copa Rio U20",
+    "league_id": 1082,
     "country": "Brazil",
     "date": "2026-03-13T14:00:00+00:00"
   },
@@ -779,6 +865,7 @@
     "home_id": 15667,
     "away_id": 27589,
     "league": "Youth Viareggio Cup",
+    "league_id": 910,
     "country": "World",
     "date": "2026-03-13T14:00:00+00:00"
   },
@@ -788,6 +875,7 @@
     "home_id": 23035,
     "away_id": 27602,
     "league": "Youth Viareggio Cup",
+    "league_id": 910,
     "country": "World",
     "date": "2026-03-13T14:00:00+00:00"
   },
@@ -797,6 +885,7 @@
     "home_id": 15665,
     "away_id": 27597,
     "league": "Youth Viareggio Cup",
+    "league_id": 910,
     "country": "World",
     "date": "2026-03-13T14:00:00+00:00"
   },
@@ -806,6 +895,7 @@
     "home_id": 6950,
     "away_id": 6961,
     "league": "II Liga - East",
+    "league_id": 109,
     "country": "Poland",
     "date": "2026-03-13T14:15:00+00:00"
   },
@@ -815,6 +905,7 @@
     "home_id": 10752,
     "away_id": 918,
     "league": "Ligue 1",
+    "league_id": 186,
     "country": "Algeria",
     "date": "2026-03-13T14:15:00+00:00"
   },
@@ -824,6 +915,7 @@
     "home_id": 915,
     "away_id": 906,
     "league": "Ligue 1",
+    "league_id": 186,
     "country": "Algeria",
     "date": "2026-03-13T14:15:00+00:00"
   },
@@ -833,6 +925,7 @@
     "home_id": 9132,
     "away_id": 22910,
     "league": "III Liga - Group 3",
+    "league_id": 782,
     "country": "Poland",
     "date": "2026-03-13T14:30:00+00:00"
   },
@@ -842,6 +935,7 @@
     "home_id": 11238,
     "away_id": 11239,
     "league": "Premyer Liqa",
+    "league_id": 419,
     "country": "Azerbaijan",
     "date": "2026-03-13T14:30:00+00:00"
   },
@@ -851,6 +945,7 @@
     "home_id": 858,
     "away_id": 856,
     "league": "First League",
+    "league_id": 172,
     "country": "Bulgaria",
     "date": "2026-03-13T14:45:00+00:00"
   },
@@ -860,6 +955,7 @@
     "home_id": 6959,
     "away_id": 20625,
     "league": "III Liga - Group 2",
+    "league_id": 781,
     "country": "Poland",
     "date": "2026-03-13T15:00:00+00:00"
   },
@@ -869,6 +965,7 @@
     "home_id": 26679,
     "away_id": 22202,
     "league": "Liga III - Serie 6",
+    "league_id": 789,
     "country": "Romania",
     "date": "2026-03-13T15:00:00+00:00"
   },
@@ -878,6 +975,7 @@
     "home_id": 26783,
     "away_id": 26784,
     "league": "1a Divis\u00e3o - Women",
+    "league_id": 948,
     "country": "Portugal",
     "date": "2026-03-13T15:00:00+00:00"
   },
@@ -887,6 +985,7 @@
     "home_id": 26257,
     "away_id": 17475,
     "league": "Liga Revela\u00e7\u00e3o U23",
+    "league_id": 701,
     "country": "Portugal",
     "date": "2026-03-13T15:00:00+00:00"
   },
@@ -896,6 +995,7 @@
     "home_id": 26834,
     "away_id": 26836,
     "league": "Liga MX U21",
+    "league_id": 1200,
     "country": "Mexico",
     "date": "2026-03-13T15:00:00+00:00"
   },
@@ -905,6 +1005,7 @@
     "home_id": 26839,
     "away_id": 26837,
     "league": "Liga MX U21",
+    "league_id": 1200,
     "country": "Mexico",
     "date": "2026-03-13T15:00:00+00:00"
   },
@@ -914,6 +1015,7 @@
     "home_id": 26842,
     "away_id": 26840,
     "league": "Liga MX U21",
+    "league_id": 1200,
     "country": "Mexico",
     "date": "2026-03-13T15:00:00+00:00"
   },
@@ -923,6 +1025,7 @@
     "home_id": 330,
     "away_id": 7012,
     "league": "Friendlies Clubs",
+    "league_id": 667,
     "country": "World",
     "date": "2026-03-13T15:00:00+00:00"
   },
@@ -932,6 +1035,7 @@
     "home_id": 7922,
     "away_id": 7997,
     "league": "J\u00faniores U19",
+    "league_id": 1041,
     "country": "Portugal",
     "date": "2026-03-13T15:00:00+00:00"
   },
@@ -941,6 +1045,7 @@
     "home_id": 3398,
     "away_id": 3405,
     "league": "2. Division",
+    "league_id": 319,
     "country": "Cyprus",
     "date": "2026-03-13T15:00:00+00:00"
   },
@@ -950,6 +1055,7 @@
     "home_id": 4123,
     "away_id": 9986,
     "league": "Premier League",
+    "league_id": 363,
     "country": "Ethiopia",
     "date": "2026-03-13T15:00:00+00:00"
   },
@@ -959,6 +1065,7 @@
     "home_id": 4119,
     "away_id": 4112,
     "league": "Premier League",
+    "league_id": 363,
     "country": "Ethiopia",
     "date": "2026-03-13T15:00:00+00:00"
   },
@@ -968,6 +1075,7 @@
     "home_id": 2589,
     "away_id": 2579,
     "league": "Liga I",
+    "league_id": 283,
     "country": "Romania",
     "date": "2026-03-13T15:30:00+00:00"
   },
@@ -977,6 +1085,7 @@
     "home_id": 572,
     "away_id": 3630,
     "league": "Premier League",
+    "league_id": 333,
     "country": "Ukraine",
     "date": "2026-03-13T16:00:00+00:00"
   },
@@ -986,6 +1095,7 @@
     "home_id": 12323,
     "away_id": 2637,
     "league": "Prva Liga",
+    "league_id": 287,
     "country": "Serbia",
     "date": "2026-03-13T16:00:00+00:00"
   },
@@ -995,6 +1105,7 @@
     "home_id": 18387,
     "away_id": 22199,
     "league": "Reserve Pro League",
+    "league_id": 518,
     "country": "Belgium",
     "date": "2026-03-13T16:00:00+00:00"
   },
@@ -1004,6 +1115,7 @@
     "home_id": 8570,
     "away_id": 22017,
     "league": "Ligue 1",
+    "league_id": 423,
     "country": "Burkina-Faso",
     "date": "2026-03-13T16:00:00+00:00"
   },
@@ -1013,6 +1125,7 @@
     "home_id": 13978,
     "away_id": 20029,
     "league": "Ligue 1",
+    "league_id": 423,
     "country": "Burkina-Faso",
     "date": "2026-03-13T16:00:00+00:00"
   },
@@ -1022,6 +1135,7 @@
     "home_id": 17923,
     "away_id": 8111,
     "league": "Ligue 1",
+    "league_id": 423,
     "country": "Burkina-Faso",
     "date": "2026-03-13T16:00:00+00:00"
   },
@@ -1031,6 +1145,7 @@
     "home_id": 5425,
     "away_id": 5416,
     "league": "Premier League",
+    "league_id": 412,
     "country": "Botswana",
     "date": "2026-03-13T16:00:00+00:00"
   },
@@ -1040,6 +1155,7 @@
     "home_id": 12197,
     "away_id": 12190,
     "league": "Ligi kuu Bara",
+    "league_id": 567,
     "country": "Tanzania",
     "date": "2026-03-13T16:00:00+00:00"
   },
@@ -1049,6 +1165,7 @@
     "home_id": 661,
     "away_id": 4160,
     "league": "Virsliga",
+    "league_id": 365,
     "country": "Latvia",
     "date": "2026-03-13T16:00:00+00:00"
   },
@@ -1058,6 +1175,7 @@
     "home_id": 16594,
     "away_id": 7996,
     "league": "Youth Championship",
+    "league_id": 238,
     "country": "Russia",
     "date": "2026-03-13T16:00:00+00:00"
   },
@@ -1067,6 +1185,7 @@
     "home_id": 27237,
     "away_id": 7941,
     "league": "Youth Championship",
+    "league_id": 238,
     "country": "Russia",
     "date": "2026-03-13T16:00:00+00:00"
   },
@@ -1076,6 +1195,7 @@
     "home_id": 27600,
     "away_id": 27599,
     "league": "Youth Viareggio Cup",
+    "league_id": 910,
     "country": "World",
     "date": "2026-03-13T16:00:00+00:00"
   },
@@ -1085,6 +1205,7 @@
     "home_id": 27596,
     "away_id": 18828,
     "league": "Youth Viareggio Cup",
+    "league_id": 910,
     "country": "World",
     "date": "2026-03-13T16:00:00+00:00"
   },
@@ -1094,6 +1215,7 @@
     "home_id": 27592,
     "away_id": 25895,
     "league": "Youth Viareggio Cup",
+    "league_id": 910,
     "country": "World",
     "date": "2026-03-13T16:00:00+00:00"
   },
@@ -1103,6 +1225,7 @@
     "home_id": 6813,
     "away_id": 1080,
     "league": "Premier League",
+    "league_id": 235,
     "country": "Russia",
     "date": "2026-03-13T16:30:00+00:00"
   },
@@ -1112,6 +1235,7 @@
     "home_id": 5503,
     "away_id": 666,
     "league": "Premyer Liqa",
+    "league_id": 419,
     "country": "Azerbaijan",
     "date": "2026-03-13T16:30:00+00:00"
   },
@@ -1121,6 +1245,7 @@
     "home_id": 16747,
     "away_id": 3857,
     "league": "1 Lyga",
+    "league_id": 361,
     "country": "Lithuania",
     "date": "2026-03-13T16:30:00+00:00"
   },
@@ -1130,6 +1255,7 @@
     "home_id": 20811,
     "away_id": 16801,
     "league": "GFA League",
+    "league_id": 845,
     "country": "Gambia",
     "date": "2026-03-13T16:30:00+00:00"
   },
@@ -1139,6 +1265,7 @@
     "home_id": 27264,
     "away_id": 22708,
     "league": "GFA League",
+    "league_id": 845,
     "country": "Gambia",
     "date": "2026-03-13T16:30:00+00:00"
   },
@@ -1148,6 +1275,7 @@
     "home_id": 2393,
     "away_id": 2410,
     "league": "NB I",
+    "league_id": 271,
     "country": "Hungary",
     "date": "2026-03-13T16:45:00+00:00"
   },
@@ -1157,6 +1285,7 @@
     "home_id": 3487,
     "away_id": 14562,
     "league": "Ekstraklasa",
+    "league_id": 106,
     "country": "Poland",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1166,6 +1295,7 @@
     "home_id": 3483,
     "away_id": 3490,
     "league": "I Liga",
+    "league_id": 107,
     "country": "Poland",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1175,6 +1305,7 @@
     "home_id": 1483,
     "away_id": 5730,
     "league": "HNL",
+    "league_id": 210,
     "country": "Croatia",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1184,6 +1315,7 @@
     "home_id": 22213,
     "away_id": 1401,
     "league": "2. Liga",
+    "league_id": 219,
     "country": "Austria",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1193,6 +1325,7 @@
     "home_id": 8247,
     "away_id": 1404,
     "league": "2. Liga",
+    "league_id": 219,
     "country": "Austria",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1202,6 +1335,7 @@
     "home_id": 8259,
     "away_id": 1023,
     "league": "2. Liga",
+    "league_id": 219,
     "country": "Austria",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1211,6 +1345,7 @@
     "home_id": 1405,
     "away_id": 1395,
     "league": "2. Liga",
+    "league_id": 219,
     "country": "Austria",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1220,6 +1355,7 @@
     "home_id": 15295,
     "away_id": 6256,
     "league": "First NL",
+    "league_id": 211,
     "country": "Croatia",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1229,6 +1365,7 @@
     "home_id": 1005,
     "away_id": 3573,
     "league": "S\u00fcper Lig",
+    "league_id": 203,
     "country": "Turkey",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1238,6 +1375,7 @@
     "home_id": 3589,
     "away_id": 611,
     "league": "S\u00fcper Lig",
+    "league_id": 203,
     "country": "Turkey",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1247,6 +1385,7 @@
     "home_id": 6958,
     "away_id": 12900,
     "league": "II Liga - East",
+    "league_id": 109,
     "country": "Poland",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1256,6 +1395,7 @@
     "home_id": 3735,
     "away_id": 3718,
     "league": "FNL",
+    "league_id": 346,
     "country": "Czech-Republic",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1265,6 +1405,7 @@
     "home_id": 13843,
     "away_id": 16252,
     "league": "III Liga - Group 2",
+    "league_id": 781,
     "country": "Poland",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1274,6 +1415,7 @@
     "home_id": 17402,
     "away_id": 6954,
     "league": "III Liga - Group 3",
+    "league_id": 782,
     "country": "Poland",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1283,6 +1425,7 @@
     "home_id": 1416,
     "away_id": 854,
     "league": "First League",
+    "league_id": 172,
     "country": "Bulgaria",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1292,6 +1435,7 @@
     "home_id": 3731,
     "away_id": 3722,
     "league": "FNL",
+    "league_id": 346,
     "country": "Czech-Republic",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1301,6 +1445,7 @@
     "home_id": 3727,
     "away_id": 7361,
     "league": "3. liga - MSFL",
+    "league_id": 349,
     "country": "Czech-Republic",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1310,6 +1455,7 @@
     "home_id": 3419,
     "away_id": 3401,
     "league": "2. Division",
+    "league_id": 319,
     "country": "Cyprus",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1319,6 +1465,7 @@
     "home_id": 3427,
     "away_id": 26639,
     "league": "3. Division",
+    "league_id": 320,
     "country": "Cyprus",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1328,6 +1475,7 @@
     "home_id": 13971,
     "away_id": 11885,
     "league": "1 Lyga",
+    "league_id": 361,
     "country": "Lithuania",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1337,6 +1485,7 @@
     "home_id": 18840,
     "away_id": 14384,
     "league": "1 Lyga",
+    "league_id": 361,
     "country": "Lithuania",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1346,6 +1495,7 @@
     "home_id": 6974,
     "away_id": 7005,
     "league": "Obos Supercup",
+    "league_id": 1215,
     "country": "Norway",
     "date": "2026-03-13T17:00:00+00:00"
   },
@@ -1355,6 +1505,7 @@
     "home_id": 178,
     "away_id": 1660,
     "league": "2. Bundesliga",
+    "league_id": 79,
     "country": "Germany",
     "date": "2026-03-13T17:30:00+00:00"
   },
@@ -1364,6 +1515,7 @@
     "home_id": 179,
     "away_id": 181,
     "league": "2. Bundesliga",
+    "league_id": 79,
     "country": "Germany",
     "date": "2026-03-13T17:30:00+00:00"
   },
@@ -1373,6 +1525,7 @@
     "home_id": 1867,
     "away_id": 20487,
     "league": "Frauen Bundesliga",
+    "league_id": 82,
     "country": "Germany",
     "date": "2026-03-13T17:30:00+00:00"
   },
@@ -1382,6 +1535,7 @@
     "home_id": 9347,
     "away_id": 14629,
     "league": "Regionalliga - Nord",
+    "league_id": 84,
     "country": "Germany",
     "date": "2026-03-13T17:30:00+00:00"
   },
@@ -1391,6 +1545,7 @@
     "home_id": 14044,
     "away_id": 14061,
     "league": "3. liga - West",
+    "league_id": 644,
     "country": "Slovakia",
     "date": "2026-03-13T17:30:00+00:00"
   },
@@ -1400,6 +1555,7 @@
     "home_id": 4905,
     "away_id": 8074,
     "league": "Premier Soccer League",
+    "league_id": 288,
     "country": "South-Africa",
     "date": "2026-03-13T17:30:00+00:00"
   },
@@ -1409,6 +1565,7 @@
     "home_id": 24213,
     "away_id": 8643,
     "league": "Denmark Series - Group 2",
+    "league_id": 125,
     "country": "Denmark",
     "date": "2026-03-13T17:30:00+00:00"
   },
@@ -1418,6 +1575,7 @@
     "home_id": 11912,
     "away_id": 20016,
     "league": "Professional Development League",
+    "league_id": 703,
     "country": "England",
     "date": "2026-03-13T17:30:00+00:00"
   },
@@ -1427,6 +1585,7 @@
     "home_id": 19420,
     "away_id": 7341,
     "league": "4. liga - Divizie E",
+    "league_id": 354,
     "country": "Czech-Republic",
     "date": "2026-03-13T17:30:00+00:00"
   },
@@ -1436,6 +1595,7 @@
     "home_id": 24224,
     "away_id": 21982,
     "league": "4. liga - Divizie A",
+    "league_id": 350,
     "country": "Czech-Republic",
     "date": "2026-03-13T17:30:00+00:00"
   },
@@ -1445,6 +1605,7 @@
     "home_id": 27491,
     "away_id": 27493,
     "league": "Pro League U23",
+    "league_id": 1218,
     "country": "United-Arab-Emirates",
     "date": "2026-03-13T17:30:00+00:00"
   },
@@ -1454,6 +1615,7 @@
     "home_id": 27492,
     "away_id": 27485,
     "league": "Pro League U23",
+    "league_id": 1218,
     "country": "United-Arab-Emirates",
     "date": "2026-03-13T17:30:00+00:00"
   },
@@ -1463,6 +1625,7 @@
     "home_id": 6009,
     "away_id": 2063,
     "league": "1. Division",
+    "league_id": 120,
     "country": "Denmark",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1472,6 +1635,7 @@
     "home_id": 625,
     "away_id": 6042,
     "league": "1. Division",
+    "league_id": 120,
     "country": "Denmark",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1481,6 +1645,7 @@
     "home_id": 6021,
     "away_id": 2067,
     "league": "2. Division",
+    "league_id": 122,
     "country": "Denmark",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1490,6 +1655,7 @@
     "home_id": 4259,
     "away_id": 1320,
     "league": "3. Liga",
+    "league_id": 80,
     "country": "Germany",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1499,6 +1665,7 @@
     "home_id": 1402,
     "away_id": 4942,
     "league": "Regionalliga - Mitte",
+    "league_id": 222,
     "country": "Austria",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1508,6 +1675,7 @@
     "home_id": 11225,
     "away_id": 4979,
     "league": "Regionalliga - Mitte",
+    "league_id": 222,
     "country": "Austria",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1517,6 +1685,7 @@
     "home_id": 4972,
     "away_id": 4996,
     "league": "Regionalliga - Mitte",
+    "league_id": 222,
     "country": "Austria",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1526,6 +1695,7 @@
     "home_id": 4940,
     "away_id": 21534,
     "league": "Regionalliga - Mitte",
+    "league_id": 222,
     "country": "Austria",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1535,6 +1705,7 @@
     "home_id": 231,
     "away_id": 4744,
     "league": "Segunda Liga",
+    "league_id": 95,
     "country": "Portugal",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1544,6 +1715,7 @@
     "home_id": 761,
     "away_id": 223,
     "league": "Segunda Liga",
+    "league_id": 95,
     "country": "Portugal",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1553,6 +1725,7 @@
     "home_id": 12800,
     "away_id": 9365,
     "league": "Oberliga - Rheinland-Pfalz / Saar",
+    "league_id": 752,
     "country": "Germany",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1562,6 +1735,7 @@
     "home_id": 18384,
     "away_id": 13946,
     "league": "Oberliga - Nordost-Nord",
+    "league_id": 754,
     "country": "Germany",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1571,6 +1745,7 @@
     "home_id": 1315,
     "away_id": 12786,
     "league": "Regionalliga - Nordost",
+    "league_id": 85,
     "country": "Germany",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1580,6 +1755,7 @@
     "home_id": 1636,
     "away_id": 1651,
     "league": "Regionalliga - Nordost",
+    "league_id": 85,
     "country": "Germany",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1589,6 +1765,7 @@
     "home_id": 1325,
     "away_id": 9358,
     "league": "Regionalliga - Nordost",
+    "league_id": 85,
     "country": "Germany",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1598,6 +1775,7 @@
     "home_id": 4674,
     "away_id": 9331,
     "league": "Regionalliga - Bayern",
+    "league_id": 83,
     "country": "Germany",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1607,6 +1785,7 @@
     "home_id": 9326,
     "away_id": 9325,
     "league": "Regionalliga - Bayern",
+    "league_id": 83,
     "country": "Germany",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1616,6 +1795,7 @@
     "home_id": 9323,
     "away_id": 12893,
     "league": "Regionalliga - Bayern",
+    "league_id": 83,
     "country": "Germany",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1625,6 +1805,7 @@
     "home_id": 14717,
     "away_id": 19220,
     "league": "Oberliga - Bayern S\u00fcd",
+    "league_id": 939,
     "country": "Germany",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1634,6 +1815,7 @@
     "home_id": 19761,
     "away_id": 12762,
     "league": "Oberliga - Bayern Nord",
+    "league_id": 938,
     "country": "Germany",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1643,6 +1825,7 @@
     "home_id": 12727,
     "away_id": 21511,
     "league": "Oberliga - Bayern Nord",
+    "league_id": 938,
     "country": "Germany",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1652,6 +1835,7 @@
     "home_id": 6948,
     "away_id": 19693,
     "league": "III Liga - Group 2",
+    "league_id": 781,
     "country": "Poland",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1661,6 +1845,7 @@
     "home_id": 26166,
     "away_id": 1638,
     "league": "Oberliga - Baden-W\u00fcrttemberg",
+    "league_id": 753,
     "country": "Germany",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1670,6 +1855,7 @@
     "home_id": 3327,
     "away_id": 3339,
     "league": "Superliga",
+    "league_id": 310,
     "country": "Albania",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1679,6 +1865,7 @@
     "home_id": 4954,
     "away_id": 1397,
     "league": "Regionalliga - Ost",
+    "league_id": 221,
     "country": "Austria",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1688,6 +1875,7 @@
     "home_id": 8372,
     "away_id": 4966,
     "league": "Regionalliga - Ost",
+    "league_id": 221,
     "country": "Austria",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1697,6 +1885,7 @@
     "home_id": 1308,
     "away_id": 3037,
     "league": "National 2 - Group A",
+    "league_id": 67,
     "country": "France",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1706,6 +1895,7 @@
     "home_id": 10140,
     "away_id": 9900,
     "league": "Primera Divisi\u00f3n RFEF - Group 1",
+    "league_id": 435,
     "country": "Spain",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1715,6 +1905,7 @@
     "home_id": 15124,
     "away_id": 6045,
     "league": "Denmark Series - Group 3",
+    "league_id": 126,
     "country": "Denmark",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1724,6 +1915,7 @@
     "home_id": 26526,
     "away_id": 2308,
     "league": "Liga Premier Serie A",
+    "league_id": 722,
     "country": "Mexico",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1733,6 +1925,7 @@
     "home_id": 4983,
     "away_id": 24464,
     "league": "Landesliga - Burgenland",
+    "league_id": 224,
     "country": "Austria",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1742,6 +1935,7 @@
     "home_id": 19310,
     "away_id": 8333,
     "league": "Landesliga - Steiermark",
+    "league_id": 229,
     "country": "Austria",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1751,6 +1945,7 @@
     "home_id": 8326,
     "away_id": 8323,
     "league": "Landesliga - Steiermark",
+    "league_id": 229,
     "country": "Austria",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1760,6 +1955,7 @@
     "home_id": 8320,
     "away_id": 8331,
     "league": "Landesliga - Steiermark",
+    "league_id": 229,
     "country": "Austria",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1769,6 +1965,7 @@
     "home_id": 4934,
     "away_id": 21730,
     "league": "Landesliga - Steiermark",
+    "league_id": 229,
     "country": "Austria",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1778,6 +1975,7 @@
     "home_id": 8321,
     "away_id": 18409,
     "league": "Landesliga - Steiermark",
+    "league_id": 229,
     "country": "Austria",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1787,6 +1985,7 @@
     "home_id": 8318,
     "away_id": 19702,
     "league": "Landesliga - Steiermark",
+    "league_id": 229,
     "country": "Austria",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1796,6 +1995,7 @@
     "home_id": 24454,
     "away_id": 21533,
     "league": "Landesliga - Steiermark",
+    "league_id": 229,
     "country": "Austria",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1805,6 +2005,7 @@
     "home_id": 7334,
     "away_id": 7269,
     "league": "3. liga - CFL A",
+    "league_id": 348,
     "country": "Czech-Republic",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1814,6 +2015,7 @@
     "home_id": 765,
     "away_id": 11659,
     "league": "Friendlies Clubs",
+    "league_id": 667,
     "country": "World",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1823,6 +2025,7 @@
     "home_id": 16558,
     "away_id": 16568,
     "league": "Nasjonal U19 Champions League",
+    "league_id": 823,
     "country": "Norway",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1832,6 +2035,7 @@
     "home_id": 27478,
     "away_id": 27475,
     "league": "Division 2",
+    "league_id": 309,
     "country": "Saudi-Arabia",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1841,6 +2045,7 @@
     "home_id": 5330,
     "away_id": 7505,
     "league": "Professional League",
+    "league_id": 406,
     "country": "Oman",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1850,6 +2055,7 @@
     "home_id": 2699,
     "away_id": 6434,
     "league": "CAF Champions League",
+    "league_id": 12,
     "country": "World",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1859,6 +2065,7 @@
     "home_id": 11071,
     "away_id": 11066,
     "league": "Iraqi League",
+    "league_id": 542,
     "country": "Iraq",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1868,6 +2075,7 @@
     "home_id": 25061,
     "away_id": 8009,
     "league": "Iraqi League",
+    "league_id": 542,
     "country": "Iraq",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1877,6 +2085,7 @@
     "home_id": 2061,
     "away_id": 401,
     "league": "Superliga",
+    "league_id": 119,
     "country": "Denmark",
     "date": "2026-03-13T18:00:00+00:00"
   },
@@ -1886,6 +2095,7 @@
     "home_id": 8367,
     "away_id": 4961,
     "league": "Regionalliga - Ost",
+    "league_id": 221,
     "country": "Austria",
     "date": "2026-03-13T18:10:00+00:00"
   },
@@ -1895,6 +2105,7 @@
     "home_id": 14500,
     "away_id": 16069,
     "league": "Oberliga - Schleswig-Holstein",
+    "league_id": 744,
     "country": "Germany",
     "date": "2026-03-13T18:15:00+00:00"
   },
@@ -1904,6 +2115,7 @@
     "home_id": 6012,
     "away_id": 6018,
     "league": "3. Division",
+    "league_id": 862,
     "country": "Denmark",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -1913,6 +2125,7 @@
     "home_id": 14689,
     "away_id": 14553,
     "league": "Oberliga - Niederrhein",
+    "league_id": 751,
     "country": "Germany",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -1922,6 +2135,7 @@
     "home_id": 17564,
     "away_id": 14555,
     "league": "Oberliga - Niederrhein",
+    "league_id": 751,
     "country": "Germany",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -1931,6 +2145,7 @@
     "home_id": 12790,
     "away_id": 23678,
     "league": "Oberliga - Niederrhein",
+    "league_id": 751,
     "country": "Germany",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -1940,6 +2155,7 @@
     "home_id": 12890,
     "away_id": 26174,
     "league": "Oberliga - Hamburg",
+    "league_id": 745,
     "country": "Germany",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -1949,6 +2165,7 @@
     "home_id": 12878,
     "away_id": 14796,
     "league": "Oberliga - Hamburg",
+    "league_id": 745,
     "country": "Germany",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -1958,6 +2175,7 @@
     "home_id": 1625,
     "away_id": 9340,
     "league": "Regionalliga - Nord",
+    "league_id": 84,
     "country": "Germany",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -1967,6 +2185,7 @@
     "home_id": 13935,
     "away_id": 9375,
     "league": "Regionalliga - West",
+    "league_id": 87,
     "country": "Germany",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -1976,6 +2195,7 @@
     "home_id": 9367,
     "away_id": 9369,
     "league": "Regionalliga - West",
+    "league_id": 87,
     "country": "Germany",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -1985,6 +2205,7 @@
     "home_id": 12897,
     "away_id": 9368,
     "league": "Regionalliga - West",
+    "league_id": 87,
     "country": "Germany",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -1994,6 +2215,7 @@
     "home_id": 12847,
     "away_id": 1326,
     "league": "Regionalliga - West",
+    "league_id": 87,
     "country": "Germany",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2003,6 +2225,7 @@
     "home_id": 14779,
     "away_id": 26186,
     "league": "Oberliga - Westfalen",
+    "league_id": 747,
     "country": "Germany",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2012,6 +2235,7 @@
     "home_id": 14635,
     "away_id": 14787,
     "league": "Oberliga - Niedersachsen",
+    "league_id": 748,
     "country": "Germany",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2021,6 +2245,7 @@
     "home_id": 13941,
     "away_id": 9345,
     "league": "Oberliga - Niedersachsen",
+    "league_id": 748,
     "country": "Germany",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2030,6 +2255,7 @@
     "home_id": 4263,
     "away_id": 16096,
     "league": "Oberliga - Bremen",
+    "league_id": 749,
     "country": "Germany",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2039,6 +2265,7 @@
     "home_id": 16094,
     "away_id": 12769,
     "league": "Oberliga - Bremen",
+    "league_id": 749,
     "country": "Germany",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2048,6 +2275,7 @@
     "home_id": 11200,
     "away_id": 16999,
     "league": "Regionalliga - Ost",
+    "league_id": 221,
     "country": "Austria",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2057,6 +2285,7 @@
     "home_id": 8365,
     "away_id": 4952,
     "league": "Regionalliga - Ost",
+    "league_id": 221,
     "country": "Austria",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2066,6 +2295,7 @@
     "home_id": 107,
     "away_id": 1302,
     "league": "National 1",
+    "league_id": 63,
     "country": "France",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2075,6 +2305,7 @@
     "home_id": 89,
     "away_id": 9930,
     "league": "National 1",
+    "league_id": 63,
     "country": "France",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2084,6 +2315,7 @@
     "home_id": 3179,
     "away_id": 431,
     "league": "National 1",
+    "league_id": 63,
     "country": "France",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2093,6 +2325,7 @@
     "home_id": 3069,
     "away_id": 88,
     "league": "National 1",
+    "league_id": 63,
     "country": "France",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2102,6 +2335,7 @@
     "home_id": 103,
     "away_id": 9238,
     "league": "National 1",
+    "league_id": 63,
     "country": "France",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2111,6 +2345,7 @@
     "home_id": 3221,
     "away_id": 3229,
     "league": "National 1",
+    "league_id": 63,
     "country": "France",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2120,6 +2355,7 @@
     "home_id": 115,
     "away_id": 1300,
     "league": "National 1",
+    "league_id": 63,
     "country": "France",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2129,6 +2365,7 @@
     "home_id": 3131,
     "away_id": 430,
     "league": "National 1",
+    "league_id": 63,
     "country": "France",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2138,6 +2375,7 @@
     "home_id": 1303,
     "away_id": 9915,
     "league": "National 2 - Group A",
+    "league_id": 67,
     "country": "France",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2147,6 +2385,7 @@
     "home_id": 3892,
     "away_id": 3930,
     "league": "Derde Divisie - Sunday",
+    "league_id": 93,
     "country": "Netherlands",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2156,6 +2395,7 @@
     "home_id": 6616,
     "away_id": 6654,
     "league": "Challenge League",
+    "league_id": 208,
     "country": "Switzerland",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2165,6 +2405,7 @@
     "home_id": 2896,
     "away_id": 2905,
     "league": "Stars League",
+    "league_id": 305,
     "country": "Qatar",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2174,6 +2415,7 @@
     "home_id": 2897,
     "away_id": 2893,
     "league": "Stars League",
+    "league_id": 305,
     "country": "Qatar",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2183,6 +2425,7 @@
     "home_id": 2895,
     "away_id": 2899,
     "league": "Stars League",
+    "league_id": 305,
     "country": "Qatar",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2192,6 +2435,7 @@
     "home_id": 580,
     "away_id": 678,
     "league": "Meistaradeildin",
+    "league_id": 367,
     "country": "Faroe-Islands",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2201,6 +2445,7 @@
     "home_id": 5582,
     "away_id": 17666,
     "league": "Premier League",
+    "league_id": 417,
     "country": "Bahrain",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2210,6 +2455,7 @@
     "home_id": 5479,
     "away_id": 5483,
     "league": "Premier League",
+    "league_id": 417,
     "country": "Bahrain",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2219,6 +2465,7 @@
     "home_id": 2978,
     "away_id": 27479,
     "league": "Division 2",
+    "league_id": 309,
     "country": "Saudi-Arabia",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2228,6 +2475,7 @@
     "home_id": 12984,
     "away_id": 13036,
     "league": "Paranaense U20",
+    "league_id": 1071,
     "country": "Brazil",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2237,6 +2485,7 @@
     "home_id": 23232,
     "away_id": 27553,
     "league": "Paranaense U20",
+    "league_id": 1071,
     "country": "Brazil",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2246,6 +2495,7 @@
     "home_id": 12986,
     "away_id": 27576,
     "league": "Goiano U20",
+    "league_id": 1069,
     "country": "Brazil",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2255,6 +2505,7 @@
     "home_id": 27577,
     "away_id": 27578,
     "league": "Goiano U20",
+    "league_id": 1069,
     "country": "Brazil",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2264,6 +2515,7 @@
     "home_id": 13066,
     "away_id": 25730,
     "league": "Goiano U20",
+    "league_id": 1069,
     "country": "Brazil",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2273,6 +2525,7 @@
     "home_id": 1026,
     "away_id": 1072,
     "league": "Bundesliga",
+    "league_id": 218,
     "country": "Austria",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2282,6 +2535,7 @@
     "home_id": 632,
     "away_id": 2592,
     "league": "Liga I",
+    "league_id": 283,
     "country": "Romania",
     "date": "2026-03-13T18:30:00+00:00"
   },
@@ -2291,6 +2545,7 @@
     "home_id": 2402,
     "away_id": 2396,
     "league": "NB I",
+    "league_id": 271,
     "country": "Hungary",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2300,6 +2555,7 @@
     "home_id": 193,
     "away_id": 202,
     "league": "Eredivisie",
+    "league_id": 88,
     "country": "Netherlands",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2309,6 +2565,7 @@
     "home_id": 420,
     "away_id": 414,
     "league": "Eerste Divisie",
+    "league_id": 89,
     "country": "Netherlands",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2318,6 +2575,7 @@
     "home_id": 208,
     "away_id": 198,
     "league": "Eerste Divisie",
+    "league_id": 89,
     "country": "Netherlands",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2327,6 +2585,7 @@
     "home_id": 425,
     "away_id": 421,
     "league": "Eerste Divisie",
+    "league_id": 89,
     "country": "Netherlands",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2336,6 +2595,7 @@
     "home_id": 411,
     "away_id": 422,
     "league": "Eerste Divisie",
+    "league_id": 89,
     "country": "Netherlands",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2345,6 +2605,7 @@
     "home_id": 428,
     "away_id": 424,
     "league": "Eerste Divisie",
+    "league_id": 89,
     "country": "Netherlands",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2354,6 +2615,7 @@
     "home_id": 412,
     "away_id": 204,
     "league": "Eerste Divisie",
+    "league_id": 89,
     "country": "Netherlands",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2363,6 +2625,7 @@
     "home_id": 423,
     "away_id": 195,
     "league": "Eerste Divisie",
+    "league_id": 89,
     "country": "Netherlands",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2372,6 +2635,7 @@
     "home_id": 200,
     "away_id": 419,
     "league": "Eerste Divisie",
+    "league_id": 89,
     "country": "Netherlands",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2381,6 +2645,7 @@
     "home_id": 417,
     "away_id": 418,
     "league": "Eerste Divisie",
+    "league_id": 89,
     "country": "Netherlands",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2390,6 +2655,7 @@
     "home_id": 82,
     "away_id": 433,
     "league": "Ligue 2",
+    "league_id": 62,
     "country": "France",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2399,6 +2665,7 @@
     "home_id": 99,
     "away_id": 1297,
     "league": "Ligue 2",
+    "league_id": 62,
     "country": "France",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2408,6 +2675,7 @@
     "home_id": 102,
     "away_id": 1298,
     "league": "Ligue 2",
+    "league_id": 62,
     "country": "France",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2417,6 +2685,7 @@
     "home_id": 90,
     "away_id": 87,
     "league": "Ligue 2",
+    "league_id": 62,
     "country": "France",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2426,6 +2695,7 @@
     "home_id": 1305,
     "away_id": 1299,
     "league": "Ligue 2",
+    "league_id": 62,
     "country": "France",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2435,6 +2705,7 @@
     "home_id": 6219,
     "away_id": 6222,
     "league": "Challenger Pro League",
+    "league_id": 145,
     "country": "Belgium",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2444,6 +2715,7 @@
     "home_id": 19046,
     "away_id": 739,
     "league": "Challenger Pro League",
+    "league_id": 145,
     "country": "Belgium",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2453,6 +2725,7 @@
     "home_id": 3496,
     "away_id": 3486,
     "league": "II Liga - East",
+    "league_id": 109,
     "country": "Poland",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2462,6 +2735,7 @@
     "home_id": 14489,
     "away_id": 12894,
     "league": "Oberliga - Hessen",
+    "league_id": 750,
     "country": "Germany",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2471,6 +2745,7 @@
     "home_id": 1786,
     "away_id": 24035,
     "league": "Super League Women",
+    "league_id": 146,
     "country": "Belgium",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2480,6 +2755,7 @@
     "home_id": 21033,
     "away_id": 24531,
     "league": "Oberliga - Mittelrhein",
+    "league_id": 746,
     "country": "Germany",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2489,6 +2765,7 @@
     "home_id": 1291,
     "away_id": 3026,
     "league": "National 2 - Group B",
+    "league_id": 68,
     "country": "France",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2498,6 +2775,7 @@
     "home_id": 7189,
     "away_id": 7195,
     "league": "Premier League 2 Division One",
+    "league_id": 702,
     "country": "England",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2507,6 +2785,7 @@
     "home_id": 7194,
     "away_id": 19746,
     "league": "Premier League 2 Division One",
+    "league_id": 702,
     "country": "England",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2516,6 +2795,7 @@
     "home_id": 11913,
     "away_id": 20078,
     "league": "Premier League 2 Division One",
+    "league_id": 702,
     "country": "England",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2525,6 +2805,7 @@
     "home_id": 7203,
     "away_id": 11914,
     "league": "Premier League 2 Division One",
+    "league_id": 702,
     "country": "England",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2534,6 +2815,7 @@
     "home_id": 7190,
     "away_id": 7200,
     "league": "Premier League 2 Division One",
+    "league_id": 702,
     "country": "England",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2543,6 +2825,7 @@
     "home_id": 7199,
     "away_id": 19744,
     "league": "Premier League 2 Division One",
+    "league_id": 702,
     "country": "England",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2552,6 +2835,7 @@
     "home_id": 11910,
     "away_id": 11911,
     "league": "Premier League 2 Division One",
+    "league_id": 702,
     "country": "England",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2561,6 +2845,7 @@
     "home_id": 10511,
     "away_id": 2938,
     "league": "Pro League",
+    "league_id": 307,
     "country": "Saudi-Arabia",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2570,6 +2855,7 @@
     "home_id": 2944,
     "away_id": 2934,
     "league": "Pro League",
+    "league_id": 307,
     "country": "Saudi-Arabia",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2579,6 +2865,7 @@
     "home_id": 2933,
     "away_id": 2929,
     "league": "Pro League",
+    "league_id": 307,
     "country": "Saudi-Arabia",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2588,6 +2875,7 @@
     "home_id": 26403,
     "away_id": 19584,
     "league": "Reserve Pro League",
+    "league_id": 518,
     "country": "Belgium",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2597,6 +2885,7 @@
     "home_id": 19586,
     "away_id": 22198,
     "league": "Reserve Pro League",
+    "league_id": 518,
     "country": "Belgium",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2606,6 +2895,7 @@
     "home_id": 26404,
     "away_id": 22200,
     "league": "Reserve Pro League",
+    "league_id": 518,
     "country": "Belgium",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2615,6 +2905,7 @@
     "home_id": 26851,
     "away_id": 20375,
     "league": "Tercera Divisi\u00f3n RFEF - Group 12",
+    "league_id": 450,
     "country": "Spain",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2624,6 +2915,7 @@
     "home_id": 2948,
     "away_id": 2943,
     "league": "Division 2",
+    "league_id": 309,
     "country": "Saudi-Arabia",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2633,6 +2925,7 @@
     "home_id": 27477,
     "away_id": 27476,
     "league": "Division 2",
+    "league_id": 309,
     "country": "Saudi-Arabia",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2642,6 +2935,7 @@
     "home_id": 27480,
     "away_id": 2990,
     "league": "Division 2",
+    "league_id": 309,
     "country": "Saudi-Arabia",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2651,6 +2945,7 @@
     "home_id": 2973,
     "away_id": 10520,
     "league": "Division 2",
+    "league_id": 309,
     "country": "Saudi-Arabia",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2660,6 +2955,7 @@
     "home_id": 27482,
     "away_id": 2941,
     "league": "Division 2",
+    "league_id": 309,
     "country": "Saudi-Arabia",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2669,6 +2965,7 @@
     "home_id": 2965,
     "away_id": 17443,
     "league": "Division 2",
+    "league_id": 309,
     "country": "Saudi-Arabia",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2678,6 +2975,7 @@
     "home_id": 15381,
     "away_id": 15378,
     "league": "FA Youth Cup",
+    "league_id": 1068,
     "country": "England",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2687,6 +2985,7 @@
     "home_id": 4534,
     "away_id": 4533,
     "league": "League",
+    "league_id": 387,
     "country": "Jordan",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2696,6 +2995,7 @@
     "home_id": 16211,
     "away_id": 2154,
     "league": "Obos Supercup",
+    "league_id": 1215,
     "country": "Norway",
     "date": "2026-03-13T19:00:00+00:00"
   },
@@ -2705,6 +3005,7 @@
     "home_id": 24614,
     "away_id": 9854,
     "league": "Tercera Divisi\u00f3n RFEF - Group 15",
+    "league_id": 453,
     "country": "Spain",
     "date": "2026-03-13T19:15:00+00:00"
   },
@@ -2714,6 +3015,7 @@
     "home_id": 2177,
     "away_id": 660,
     "league": "Challenge League",
+    "league_id": 208,
     "country": "Switzerland",
     "date": "2026-03-13T19:15:00+00:00"
   },
@@ -2723,6 +3025,7 @@
     "home_id": 6653,
     "away_id": 2179,
     "league": "Challenge League",
+    "league_id": 208,
     "country": "Switzerland",
     "date": "2026-03-13T19:15:00+00:00"
   },
@@ -2732,6 +3035,7 @@
     "home_id": 4248,
     "away_id": 339,
     "league": "Ekstraklasa",
+    "league_id": 106,
     "country": "Poland",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2741,6 +3045,7 @@
     "home_id": 338,
     "away_id": 335,
     "league": "I Liga",
+    "league_id": 107,
     "country": "Poland",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2750,6 +3055,7 @@
     "home_id": 163,
     "away_id": 186,
     "league": "Bundesliga",
+    "league_id": 78,
     "country": "Germany",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2759,6 +3065,7 @@
     "home_id": 5000,
     "away_id": 1400,
     "league": "2. Liga",
+    "league_id": 219,
     "country": "Austria",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2768,6 +3075,7 @@
     "home_id": 799,
     "away_id": 724,
     "league": "Segunda Divisi\u00f3n",
+    "league_id": 141,
     "country": "Spain",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2777,6 +3085,7 @@
     "home_id": 2200,
     "away_id": 2202,
     "league": "FAW Championship",
+    "league_id": 111,
     "country": "Wales",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2786,6 +3095,7 @@
     "home_id": 2190,
     "away_id": 6479,
     "league": "FAW Championship",
+    "league_id": 111,
     "country": "Wales",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2795,6 +3105,7 @@
     "home_id": 5829,
     "away_id": 16980,
     "league": "First Amateur Division",
+    "league_id": 487,
     "country": "Belgium",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2804,6 +3115,7 @@
     "home_id": 6227,
     "away_id": 5951,
     "league": "First Amateur Division",
+    "league_id": 487,
     "country": "Belgium",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2813,6 +3125,7 @@
     "home_id": 899,
     "away_id": 515,
     "league": "Serie B",
+    "league_id": 136,
     "country": "Italy",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2822,6 +3135,7 @@
     "home_id": 714,
     "away_id": 9593,
     "league": "Primera Divisi\u00f3n RFEF - Group 2",
+    "league_id": 436,
     "country": "Spain",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2831,6 +3145,7 @@
     "home_id": 17824,
     "away_id": 26356,
     "league": "Serie C - Girone A",
+    "league_id": 138,
     "country": "Italy",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2840,6 +3155,7 @@
     "home_id": 19587,
     "away_id": 14016,
     "league": "Reserve Pro League",
+    "league_id": 518,
     "country": "Belgium",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2849,6 +3165,7 @@
     "home_id": 24650,
     "away_id": 19959,
     "league": "Reserve Pro League",
+    "league_id": 518,
     "country": "Belgium",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2858,6 +3175,7 @@
     "home_id": 18036,
     "away_id": 16436,
     "league": "Second League",
+    "league_id": 887,
     "country": "Egypt",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2867,6 +3185,7 @@
     "home_id": 15739,
     "away_id": 18032,
     "league": "Second League",
+    "league_id": 887,
     "country": "Egypt",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2876,6 +3195,7 @@
     "home_id": 21304,
     "away_id": 18022,
     "league": "Second League",
+    "league_id": 887,
     "country": "Egypt",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2885,6 +3205,7 @@
     "home_id": 3353,
     "away_id": 591,
     "league": "Copa Constituci\u00f3",
+    "league_id": 655,
     "country": "Andorra",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2894,6 +3215,7 @@
     "home_id": 14651,
     "away_id": 1039,
     "league": "Cup",
+    "league_id": 714,
     "country": "Egypt",
     "date": "2026-03-13T19:30:00+00:00"
   },
@@ -2903,6 +3225,7 @@
     "home_id": 503,
     "away_id": 523,
     "league": "Serie A",
+    "league_id": 135,
     "country": "Italy",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -2912,6 +3235,7 @@
     "home_id": 631,
     "away_id": 600,
     "league": "Jupiler Pro League",
+    "league_id": 144,
     "country": "Belgium",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -2921,6 +3245,7 @@
     "home_id": 1383,
     "away_id": 901,
     "league": "Championship",
+    "league_id": 180,
     "country": "Scotland",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -2930,6 +3255,7 @@
     "home_id": 5354,
     "away_id": 5351,
     "league": "Premiership",
+    "league_id": 408,
     "country": "Northern-Ireland",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -2939,6 +3265,7 @@
     "home_id": 11110,
     "away_id": 5345,
     "league": "Championship",
+    "league_id": 407,
     "country": "Northern-Ireland",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -2948,6 +3275,7 @@
     "home_id": 1361,
     "away_id": 1362,
     "league": "League Two",
+    "league_id": 42,
     "country": "England",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -2957,6 +3285,7 @@
     "home_id": 81,
     "away_id": 108,
     "league": "Ligue 1",
+    "league_id": 61,
     "country": "France",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -2966,6 +3295,7 @@
     "home_id": 5609,
     "away_id": 6451,
     "league": "FAW Championship",
+    "league_id": 111,
     "country": "Wales",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -2975,6 +3305,7 @@
     "home_id": 5623,
     "away_id": 5615,
     "league": "FAW Championship",
+    "league_id": 111,
     "country": "Wales",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -2984,6 +3315,7 @@
     "home_id": 5624,
     "away_id": 20360,
     "league": "FAW Championship",
+    "league_id": 111,
     "country": "Wales",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -2993,6 +3325,7 @@
     "home_id": 8880,
     "away_id": 8686,
     "league": "Non League Div One - Northern East",
+    "league_id": 932,
     "country": "England",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -3002,6 +3335,7 @@
     "home_id": 3840,
     "away_id": 3851,
     "league": "Premier Division",
+    "league_id": 357,
     "country": "Ireland",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -3011,6 +3345,7 @@
     "home_id": 670,
     "away_id": 3854,
     "league": "Premier Division",
+    "league_id": 357,
     "country": "Ireland",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -3020,6 +3355,7 @@
     "home_id": 584,
     "away_id": 3845,
     "league": "Premier Division",
+    "league_id": 357,
     "country": "Ireland",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -3029,6 +3365,7 @@
     "home_id": 3843,
     "away_id": 3850,
     "league": "Premier Division",
+    "league_id": 357,
     "country": "Ireland",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -3038,6 +3375,7 @@
     "home_id": 3846,
     "away_id": 3849,
     "league": "First Division",
+    "league_id": 358,
     "country": "Ireland",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -3047,6 +3385,7 @@
     "home_id": 3847,
     "away_id": 3844,
     "league": "First Division",
+    "league_id": 358,
     "country": "Ireland",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -3056,6 +3395,7 @@
     "home_id": 653,
     "away_id": 3853,
     "league": "First Division",
+    "league_id": 358,
     "country": "Ireland",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -3065,6 +3405,7 @@
     "home_id": 3841,
     "away_id": 16498,
     "league": "First Division",
+    "league_id": 358,
     "country": "Ireland",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -3074,6 +3415,7 @@
     "home_id": 3855,
     "away_id": 11328,
     "league": "First Division",
+    "league_id": 358,
     "country": "Ireland",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -3083,6 +3425,7 @@
     "home_id": 356,
     "away_id": 357,
     "league": "Premier League",
+    "league_id": 110,
     "country": "Wales",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -3092,6 +3435,7 @@
     "home_id": 2194,
     "away_id": 353,
     "league": "Premier League",
+    "league_id": 110,
     "country": "Wales",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -3101,6 +3445,7 @@
     "home_id": 355,
     "away_id": 2201,
     "league": "Premier League",
+    "league_id": 110,
     "country": "Wales",
     "date": "2026-03-13T19:45:00+00:00"
   },
@@ -3110,6 +3455,7 @@
     "home_id": 1837,
     "away_id": 76,
     "league": "Championship",
+    "league_id": 40,
     "country": "England",
     "date": "2026-03-13T20:00:00+00:00"
   },
@@ -3119,6 +3465,7 @@
     "home_id": 542,
     "away_id": 533,
     "league": "La Liga",
+    "league_id": 140,
     "country": "Spain",
     "date": "2026-03-13T20:00:00+00:00"
   },
@@ -3128,6 +3475,7 @@
     "home_id": 4909,
     "away_id": 6465,
     "league": "FAW Championship",
+    "league_id": 111,
     "country": "Wales",
     "date": "2026-03-13T20:00:00+00:00"
   },
@@ -3137,6 +3485,7 @@
     "home_id": 3842,
     "away_id": 652,
     "league": "Premier Division",
+    "league_id": 357,
     "country": "Ireland",
     "date": "2026-03-13T20:00:00+00:00"
   },
@@ -3146,6 +3495,7 @@
     "home_id": 22543,
     "away_id": 2558,
     "league": "Primera Divisi\u00f3n",
+    "league_id": 281,
     "country": "Peru",
     "date": "2026-03-13T20:00:00+00:00"
   },
@@ -3155,6 +3505,7 @@
     "home_id": 9571,
     "away_id": 719,
     "league": "Primera Divisi\u00f3n RFEF - Group 1",
+    "league_id": 435,
     "country": "Spain",
     "date": "2026-03-13T20:15:00+00:00"
   },
@@ -3164,6 +3515,7 @@
     "home_id": 8010,
     "away_id": 11074,
     "league": "Iraqi League",
+    "league_id": 542,
     "country": "Iraq",
     "date": "2026-03-13T20:15:00+00:00"
   },
@@ -3173,6 +3525,7 @@
     "home_id": 11070,
     "away_id": 11065,
     "league": "Iraqi League",
+    "league_id": 542,
     "country": "Iraq",
     "date": "2026-03-13T20:15:00+00:00"
   },
@@ -3182,6 +3535,7 @@
     "home_id": 5644,
     "away_id": 2340,
     "league": "Primera B",
+    "league_id": 266,
     "country": "Chile",
     "date": "2026-03-13T21:00:00+00:00"
   },
@@ -3191,6 +3545,7 @@
     "home_id": 931,
     "away_id": 1070,
     "league": "Ligue 1",
+    "league_id": 186,
     "country": "Algeria",
     "date": "2026-03-13T21:00:00+00:00"
   },
@@ -3200,6 +3555,7 @@
     "home_id": 911,
     "away_id": 10792,
     "league": "Ligue 1",
+    "league_id": 186,
     "country": "Algeria",
     "date": "2026-03-13T21:00:00+00:00"
   },
@@ -3209,6 +3565,7 @@
     "home_id": 10743,
     "away_id": 10780,
     "league": "Ligue 1",
+    "league_id": 186,
     "country": "Algeria",
     "date": "2026-03-13T21:00:00+00:00"
   },
@@ -3218,6 +3575,7 @@
     "home_id": 914,
     "away_id": 907,
     "league": "Ligue 1",
+    "league_id": 186,
     "country": "Algeria",
     "date": "2026-03-13T21:00:00+00:00"
   },
@@ -3227,6 +3585,7 @@
     "home_id": 19410,
     "away_id": 15628,
     "league": "Segunda Divisi\u00f3n",
+    "league_id": 269,
     "country": "Uruguay",
     "date": "2026-03-13T21:00:00+00:00"
   },
@@ -3236,6 +3595,7 @@
     "home_id": 1183,
     "away_id": 2125,
     "league": "Division Profesional - Apertura",
+    "league_id": 250,
     "country": "Paraguay",
     "date": "2026-03-13T21:30:00+00:00"
   },
@@ -3245,6 +3605,7 @@
     "home_id": 1151,
     "away_id": 18762,
     "league": "Liga Pro",
+    "league_id": 242,
     "country": "Ecuador",
     "date": "2026-03-13T21:30:00+00:00"
   },
@@ -3254,6 +3615,7 @@
     "home_id": 15938,
     "away_id": 24952,
     "league": "Liga Premier Serie A",
+    "league_id": 722,
     "country": "Mexico",
     "date": "2026-03-13T22:00:00+00:00"
   },
@@ -3263,6 +3625,7 @@
     "home_id": 12560,
     "away_id": 12562,
     "league": "Pro League",
+    "league_id": 591,
     "country": "Trinidad-And-Tobago",
     "date": "2026-03-13T22:00:00+00:00"
   },
@@ -3272,6 +3635,7 @@
     "home_id": 22955,
     "away_id": 23581,
     "league": "Paulista - A4",
+    "league_id": 1062,
     "country": "Brazil",
     "date": "2026-03-13T22:00:00+00:00"
   },
@@ -3281,6 +3645,7 @@
     "home_id": 16497,
     "away_id": 1794,
     "league": "Brasileiro Women",
+    "league_id": 74,
     "country": "Brazil",
     "date": "2026-03-13T22:00:00+00:00"
   },
@@ -3290,6 +3655,7 @@
     "home_id": 969,
     "away_id": 1036,
     "league": "CAF Champions League",
+    "league_id": 12,
     "country": "World",
     "date": "2026-03-13T22:00:00+00:00"
   },
@@ -3299,6 +3665,7 @@
     "home_id": 27567,
     "away_id": 27566,
     "league": "CONMEBOL Libertadores U20",
+    "league_id": 540,
     "country": "World",
     "date": "2026-03-13T22:00:00+00:00"
   },
@@ -3308,6 +3675,7 @@
     "home_id": 21987,
     "away_id": 16175,
     "league": "Premier League",
+    "league_id": 762,
     "country": "Mauritania",
     "date": "2026-03-13T22:00:00+00:00"
   },
@@ -3317,6 +3685,7 @@
     "home_id": 24658,
     "away_id": 24663,
     "league": "USL Super League",
+    "league_id": 1130,
     "country": "USA",
     "date": "2026-03-13T23:00:00+00:00"
   },
@@ -3326,6 +3695,7 @@
     "home_id": 450,
     "away_id": 446,
     "league": "Liga Profesional Argentina",
+    "league_id": 128,
     "country": "Argentina",
     "date": "2026-03-13T23:00:00+00:00"
   },
@@ -3335,6 +3705,7 @@
     "home_id": 2300,
     "away_id": 14278,
     "league": "Liga de Expansi\u00f3n MX",
+    "league_id": 263,
     "country": "Mexico",
     "date": "2026-03-13T23:00:00+00:00"
   },
@@ -3344,6 +3715,7 @@
     "home_id": 10861,
     "away_id": 2231,
     "league": "Amapaense",
+    "league_id": 521,
     "country": "Brazil",
     "date": "2026-03-13T23:00:00+00:00"
   },
@@ -3353,6 +3725,7 @@
     "home_id": 7868,
     "away_id": 2231,
     "league": "Amapaense",
+    "league_id": 521,
     "country": "Brazil",
     "date": "2026-03-13T23:00:00+00:00"
   },
@@ -3362,6 +3735,7 @@
     "home_id": 2329,
     "away_id": 5635,
     "league": "Primera Divisi\u00f3n",
+    "league_id": 265,
     "country": "Chile",
     "date": "2026-03-13T23:00:00+00:00"
   },
@@ -3371,6 +3745,7 @@
     "home_id": 2813,
     "away_id": 2827,
     "league": "Primera Divisi\u00f3n",
+    "league_id": 299,
     "country": "Venezuela",
     "date": "2026-03-13T23:00:00+00:00"
   },
@@ -3380,6 +3755,7 @@
     "home_id": 2356,
     "away_id": 2360,
     "league": "Primera Divisi\u00f3n - Apertura",
+    "league_id": 268,
     "country": "Uruguay",
     "date": "2026-03-13T23:00:00+00:00"
   },
@@ -3389,6 +3765,7 @@
     "home_id": 8004,
     "away_id": 8003,
     "league": "Liga Mayor",
+    "league_id": 759,
     "country": "Dominican-Republic",
     "date": "2026-03-13T23:00:00+00:00"
   },
@@ -3398,6 +3775,7 @@
     "home_id": 1136,
     "away_id": 1126,
     "league": "Primera A",
+    "league_id": 239,
     "country": "Colombia",
     "date": "2026-03-13T23:20:00+00:00"
   },
@@ -3407,6 +3785,7 @@
     "home_id": 2140,
     "away_id": 1179,
     "league": "Division Profesional - Apertura",
+    "league_id": 250,
     "country": "Paraguay",
     "date": "2026-03-13T23:30:00+00:00"
   },
@@ -3416,6 +3795,7 @@
     "home_id": 2319,
     "away_id": 2332,
     "league": "Primera B",
+    "league_id": 266,
     "country": "Chile",
     "date": "2026-03-13T23:30:00+00:00"
   },
@@ -3425,6 +3805,7 @@
     "home_id": 20469,
     "away_id": 24798,
     "league": "Premier League",
+    "league_id": 762,
     "country": "Mauritania",
     "date": "2026-03-13T23:59:00+00:00"
   }
