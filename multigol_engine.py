@@ -17,7 +17,7 @@ for m in matches[:30]:
     home_id = str(m["home_id"])
     away_id = str(m["away_id"])
 
-    # se non esistono stats usa valori medi
+    # se mancano statistiche usa media globale
     home_attack = stats.get(home_id, {}).get("scored", 1.4)
     home_def = stats.get(home_id, {}).get("conceded", 1.4)
 
