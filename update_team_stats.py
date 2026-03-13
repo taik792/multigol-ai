@@ -17,8 +17,8 @@ teams = {}
 
 for m in matches:
 
-    home = str(m["home_team_id"])
-    away = str(m["away_team_id"])
+    home = str(m["home_id"])
+    away = str(m["away_id"])
 
     teams[home] = m["home"]
     teams[away] = m["away"]
