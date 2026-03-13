@@ -13,6 +13,9 @@ headers = {
 with open("data/matches.json") as f:
     matches = json.load(f)
 
+# prendiamo solo le prime 40 partite (basta e avanza)
+matches = matches[:40]
+
 teams = {}
 
 for m in matches:
@@ -67,7 +70,7 @@ for team_id in teams:
             "conceded": goals_against / games
         }
 
-    time.sleep(1)
+    time.sleep(0.3)
 
 with open("data/team_stats.json", "w") as f:
     json.dump(stats, f, indent=2)
