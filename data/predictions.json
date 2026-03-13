@@ -3,160 +3,220 @@
     "home": "Brisbane Roar",
     "away": "Western Sydney Wanderers",
     "league": "A-League",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Adelaide United W",
     "away": "Perth Glory FC W",
     "league": "A-League Women",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Newcastle Jets FC W",
     "away": "Sydney FC W",
     "league": "A-League Women",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Manly United",
     "away": "Western Sydney Wanderers U23",
     "league": "New South Wales NPL",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Green Gully",
     "away": "South Melbourne",
     "league": "Victoria NPL",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Port Melbourne",
     "away": "Langwarrin",
     "league": "Victoria NPL 2",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Cumberland United",
     "away": "Adelaide Cobras",
     "league": "South Australia State League 1",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Mohammedan Dhaka",
     "away": "Bangladesh Police",
     "league": "Premier League",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Rahmatgonj MFS",
     "away": "Fakirerpool",
     "league": "Premier League",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Broadmeadow Magic",
     "away": "Adamstown Rosebuds",
     "league": "Northern NSW NPL",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Belmont Swansea",
     "away": "Weston Bears",
     "league": "Northern NSW NPL",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Adelaide Olympic",
     "away": "Eastern United",
     "league": "South Australia State League 1",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Dordoi Bishkek",
     "away": "Bishkek City",
     "league": "Premier League",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "West Wallsend",
     "away": "Lake Macquarie",
     "league": "NNSW League 1",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Oakleigh Cannons",
     "away": "Heidelberg United",
     "league": "Victoria NPL",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Ayeyawady United",
     "away": "Yarmanya United",
     "league": "National League",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Preston Lions",
     "away": "Sunshine Georgies",
     "league": "Victoria NPL",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Brunswick City",
     "away": "Melbourne Victory II",
     "league": "Victoria NPL 2",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "Melbourne Knights",
     "away": "Melbourne Srbija",
     "league": "Victoria NPL 2",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   },
   {
     "home": "WDSC Wolves",
     "away": "Peninsula Power",
     "league": "Queensland NPL",
-    "over25": 43,
-    "btts": 49,
-    "multigol": "1-3"
+    "multigol": "1-3",
+    "multigol_home": "1-2",
+    "multigol_away": "1-2",
+    "over25": 60,
+    "btts": 43,
+    "probability": 52
   }
 ]
