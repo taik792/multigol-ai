@@ -9,16 +9,20 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
+# carichiamo le partite
 with open("data/matches.json") as f:
     matches = json.load(f)
 
 teams = set()
 
-# prendiamo solo le prime 20 partite per limitare le API
+# prendiamo solo le prime 20 partite per limitare API
 for m in matches[:20]:
 
-    teams.add(m["home_id"])
-    teams.add(m["away_id"])
+    home_id = m["home_id"]
+    away_id = m["away_id"]
+
+    teams.add(home_id)
+    teams.add(away_id)
 
 stats = {}
 
@@ -31,41 +35,62 @@ for team_id in teams:
         "last": 10
     }
 
-    r = requests.get(url, headers=headers, params=params)
+    try:
 
-    data = r.json()
+        r = requests.get(url, headers=headers, params=params)
 
-    goals_for = 0
-    goals_against = 0
-    games = 0
+        data = r.json()
 
-    for f in data["response"]:
+        goals_for = 0
+        goals_against = 0
+        games = 0
 
-        home = f["teams"]["home"]["id"]
+        for f in data["response"]:
 
-        if home == team_id:
-            gf = f["goals"]["home"]
-            ga = f["goals"]["away"]
+            home = f["teams"]["home"]["id"]
+
+            if home == team_id:
+
+                gf = f["goals"]["home"]
+                ga = f["goals"]["away"]
+
+            else:
+
+                gf = f["goals"]["away"]
+                ga = f["goals"]["home"]
+
+            if gf is None or ga is None:
+                continue
+
+            goals_for += gf
+            goals_against += ga
+            games += 1
+
+        # se non troviamo partite usiamo valori medi
+        if games == 0:
+
+            stats[team_id] = {
+                "scored": 1.2,
+                "conceded": 1.2
+            }
+
         else:
-            gf = f["goals"]["away"]
-            ga = f["goals"]["home"]
 
-        if gf is None or ga is None:
-            continue
+            stats[team_id] = {
+                "scored": goals_for / games,
+                "conceded": goals_against / games
+            }
 
-        goals_for += gf
-        goals_against += ga
-        games += 1
+        time.sleep(0.25)
 
-    if games > 0:
+    except:
 
         stats[team_id] = {
-            "scored": goals_for / games,
-            "conceded": goals_against / games
+            "scored": 1.2,
+            "conceded": 1.2
         }
 
-    time.sleep(0.25)
-
+# salviamo statistiche
 with open("data/team_stats.json", "w") as f:
     json.dump(stats, f, indent=2)
 
