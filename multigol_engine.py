@@ -1,12 +1,14 @@
 import json
+import math
 
-# carichiamo partite
 with open("data/matches.json") as f:
     matches = json.load(f)
 
-# carichiamo statistiche squadre
 with open("data/team_stats.json") as f:
     stats = json.load(f)
+
+def poisson(lmbda, k):
+    return (lmbda**k * math.exp(-lmbda)) / math.factorial(k)
 
 predictions = []
 
@@ -19,50 +21,61 @@ for m in matches[:30]:
         continue
 
     home_attack = stats[home_id]["scored"]
-    home_defense = stats[home_id]["conceded"]
+    home_def = stats[home_id]["conceded"]
 
     away_attack = stats[away_id]["scored"]
-    away_defense = stats[away_id]["conceded"]
+    away_def = stats[away_id]["conceded"]
 
     # goal attesi
-    home_goals = (home_attack + away_defense) / 2
-    away_goals = (away_attack + home_defense) / 2
+    home_xg = (home_attack + away_def) / 2
+    away_xg = (away_attack + home_def) / 2
 
-    total_goals = home_goals + away_goals
+    over25_prob = 0
+    btts_prob = 0
+    multigol_prob = 0
 
-    # OVER 2.5
-    over25 = int(min(90, total_goals * 25))
+    for h in range(6):
+        for a in range(6):
 
-    # BTTS
-    btts = int(min(90, home_goals * away_goals * 30))
+            p = poisson(home_xg, h) * poisson(away_xg, a)
 
-    # MULTIGOL TOTALE
-    if total_goals < 2:
+            if h + a > 2:
+                over25_prob += p
+
+            if h > 0 and a > 0:
+                btts_prob += p
+
+            if 1 <= h + a <= 3:
+                multigol_prob += p
+
+    over25 = int(over25_prob * 100)
+    btts = int(btts_prob * 100)
+    probability = int(multigol_prob * 100)
+
+    total_xg = home_xg + away_xg
+
+    if total_xg < 2:
         multigol = "0-2"
-    elif total_goals < 3:
+    elif total_xg < 3:
         multigol = "1-3"
-    elif total_goals < 4:
+    elif total_xg < 4:
         multigol = "2-4"
     else:
         multigol = "3-5"
 
-    # MULTIGOL CASA
-    if home_goals < 1:
+    if home_xg < 1:
         home_multi = "0-1"
-    elif home_goals < 2:
+    elif home_xg < 2:
         home_multi = "1-2"
     else:
         home_multi = "2-3"
 
-    # MULTIGOL OSPITE
-    if away_goals < 1:
+    if away_xg < 1:
         away_multi = "0-1"
-    elif away_goals < 2:
+    elif away_xg < 2:
         away_multi = "1-2"
     else:
         away_multi = "2-3"
-
-    probability = int(min(90, total_goals * 22))
 
     predictions.append({
         "home": m["home"],
@@ -76,7 +89,6 @@ for m in matches[:30]:
         "probability": probability
     })
 
-# salviamo pronostici
 with open("data/predictions.json", "w") as f:
     json.dump(predictions, f, indent=2)
 
