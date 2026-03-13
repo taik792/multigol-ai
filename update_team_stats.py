@@ -9,22 +9,21 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-# carica partite
 with open("data/matches.json") as f:
     matches = json.load(f)
 
-# prendiamo solo le prime 40 partite (basta e avanza)
+# prendiamo solo le prime 40 partite
 matches = matches[:40]
 
 teams = {}
 
 for m in matches:
 
-    home = str(m["home_id"])
-    away = str(m["away_id"])
+    home_id = str(m["teams"]["home"]["id"])
+    away_id = str(m["teams"]["away"]["id"])
 
-    teams[home] = m["home"]
-    teams[away] = m["away"]
+    teams[home_id] = m["teams"]["home"]["name"]
+    teams[away_id] = m["teams"]["away"]["name"]
 
 stats = {}
 
@@ -47,9 +46,9 @@ for team_id in teams:
 
     for f in data["response"]:
 
-        home_id = f["teams"]["home"]["id"]
+        home = f["teams"]["home"]["id"]
 
-        if home_id == int(team_id):
+        if home == int(team_id):
             gf = f["goals"]["home"]
             ga = f["goals"]["away"]
         else:
