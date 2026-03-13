@@ -8,14 +8,15 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-# carica partite trovate
+url = "https://v3.football.api-sports.io/teams/statistics"
+
+# carica partite del giorno
 with open("data/matches_today.json") as f:
     matches = json.load(f)
 
 team_stats = {}
 
-# limitiamo per non consumare API
-for match in matches[:20]:
+for match in matches[:40]:   # limitiamo per non consumare troppe API
 
     league_id = match["league_id"]
     home_id = match["home_id"]
@@ -26,11 +27,9 @@ for match in matches[:20]:
         if str(team_id) in team_stats:
             continue
 
-        url = "https://v3.football.api-sports.io/teams/statistics"
-
         params = {
             "league": league_id,
-            "season": 2023,
+            "season": 2024,
             "team": team_id
         }
 
@@ -38,23 +37,23 @@ for match in matches[:20]:
             response = requests.get(url, headers=headers, params=params)
             data = response.json()
 
-            if not data.get("response"):
+            if "response" not in data:
                 continue
 
             stats = data["response"]
 
-            goals_for = stats["goals"]["for"]["average"]["total"]
-            goals_against = stats["goals"]["against"]["average"]["total"]
-            btts = stats["both_teams_score"]["percentage"]
+            if not stats:
+                continue
 
             team_stats[str(team_id)] = {
-                "goals_for": goals_for,
-                "goals_against": goals_against,
-                "btts": btts
+                "goals_for": stats["goals"]["for"]["average"]["total"],
+                "goals_against": stats["goals"]["against"]["average"]["total"],
+                "over25": stats["goals"]["for"]["total"]["total"],
+                "btts": stats["fixtures"]["both_teams_score"]["percentage"]
             }
 
-        except:
-            continue
+        except Exception as e:
+            print("Errore squadra:", team_id)
 
 print("Statistiche squadre aggiornate:", len(team_stats))
 
