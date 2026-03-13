@@ -1,7 +1,6 @@
 import requests
 import json
 import os
-import time
 
 API_KEY = os.getenv("API_KEY")
 
@@ -9,88 +8,56 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-# carichiamo le partite
 with open("data/matches.json") as f:
     matches = json.load(f)
 
-teams = set()
+stats = {}
 
-# prendiamo solo le prime 20 partite per limitare API
-for m in matches[:20]:
+for m in matches[:40]:
 
     home_id = m["home_id"]
     away_id = m["away_id"]
+    league_id = m["league_id"]
 
-    teams.add(home_id)
-    teams.add(away_id)
+    for team_id in [home_id, away_id]:
 
-stats = {}
+        team_id = str(team_id)
 
-for team_id in teams:
+        if team_id in stats:
+            continue
 
-    url = "https://v3.football.api-sports.io/fixtures"
+        url = "https://v3.football.api-sports.io/teams/statistics"
 
-    params = {
-        "team": team_id,
-        "last": 10
-    }
-
-    try:
+        params = {
+            "team": team_id,
+            "league": league_id,
+            "season": 2025
+        }
 
         r = requests.get(url, headers=headers, params=params)
 
         data = r.json()
 
-        goals_for = 0
-        goals_against = 0
-        games = 0
+        try:
 
-        for f in data["response"]:
+            games = data["response"]["fixtures"]["played"]["total"]
 
-            home = f["teams"]["home"]["id"]
+            scored = data["response"]["goals"]["for"]["total"]["total"]
+            conceded = data["response"]["goals"]["against"]["total"]["total"]
 
-            if home == team_id:
-
-                gf = f["goals"]["home"]
-                ga = f["goals"]["away"]
-
-            else:
-
-                gf = f["goals"]["away"]
-                ga = f["goals"]["home"]
-
-            if gf is None or ga is None:
+            if games == 0:
                 continue
 
-            goals_for += gf
-            goals_against += ga
-            games += 1
-
-        # se non troviamo partite usiamo valori medi
-        if games == 0:
-
             stats[team_id] = {
-                "scored": 1.2,
-                "conceded": 1.2
+                "scored": scored / games,
+                "conceded": conceded / games
             }
 
-        else:
+        except:
+            continue
 
-            stats[team_id] = {
-                "scored": goals_for / games,
-                "conceded": goals_against / games
-            }
+os.makedirs("data", exist_ok=True)
 
-        time.sleep(0.25)
-
-    except:
-
-        stats[team_id] = {
-            "scored": 1.2,
-            "conceded": 1.2
-        }
-
-# salviamo statistiche
 with open("data/team_stats.json", "w") as f:
     json.dump(stats, f, indent=2)
 
