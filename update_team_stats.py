@@ -15,7 +15,7 @@ with open("data/matches_today.json") as f:
 
 team_stats = {}
 
-for match in matches[:120]:
+for match in matches[:40]:
 
     league_id = match["league_id"]
     home_id = match["home_id"]
