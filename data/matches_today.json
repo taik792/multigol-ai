@@ -10,16 +10,6 @@
     "date": "2026-03-13T09:00:00+00:00"
   },
   {
-    "home": "Akademiya Konoplev U20",
-    "away": "Almaz Antey U19",
-    "home_id": 15175,
-    "away_id": 27473,
-    "league": "Youth Championship",
-    "league_id": 238,
-    "country": "Russia",
-    "date": "2026-03-13T10:00:00+00:00"
-  },
-  {
     "home": "Sardor Tursunzoda",
     "away": "Parvoz",
     "home_id": 27266,
@@ -28,16 +18,6 @@
     "league_id": 571,
     "country": "Tajikistan",
     "date": "2026-03-13T10:00:00+00:00"
-  },
-  {
-    "home": "Rajasthan United",
-    "away": "Namdhari",
-    "home_id": 18009,
-    "away_id": 22596,
-    "league": "I-League",
-    "league_id": 324,
-    "country": "India",
-    "date": "2026-03-13T10:30:00+00:00"
   },
   {
     "home": "SK Poltava",
