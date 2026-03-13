@@ -1,35 +1,43 @@
-import requests
 import json
 import os
 
-API_KEY = os.getenv("API_KEY")
+# carica partite
+with open("data/matches_today.json") as f:
+    matches = json.load(f)
 
-url = "https://v3.football.api-sports.io/fixtures"
+predictions = []
 
-headers = {
-    "x-apisports-key": API_KEY
-}
+for m in matches:
 
-params = {
-    "next": 300
-}
+    home = m["home"]
+    away = m["away"]
 
-response = requests.get(url, headers=headers, params=params)
-data = response.json()
+    # simulazione statistica semplice
+    over25 = 55
+    btts = 48
+    probability = 60
 
-matches = []
+    pred = {
+        "home": home,
+        "away": away,
+        "league": m.get("league", ""),
+        "country": m.get("country", ""),
+        "date": m.get("date", ""),
 
-for match in data["response"]:
+        "multigol": "2-4",
+        "home_multigol": "1-3",
+        "away_multigol": "1-2",
 
-    if match["fixture"]["status"]["short"] != "NS":
-        continue
+        "over25": over25,
+        "btts": btts,
+        "probability": probability
+    }
 
-    matches.append({
-        "home": match["teams"]["home"]["name"],
-        "away": match["teams"]["away"]["name"],
-        "home_id": match["teams"]["home"]["id"],
-        "away_id": match["teams"]["away"]["id"],
-        "league": match["league"]["name"],
-        "country": match["league"]["country"],
-        "league_id": match["league"]["id"],
-        "date": match["fixture"]["date"]
+    predictions.append(pred)
+
+os.makedirs("data", exist_ok=True)
+
+with open("data/predictions.json", "w") as f:
+    json.dump(predictions, f, indent=2)
+
+print("Pronostici generati:", len(predictions))
