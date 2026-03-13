@@ -1,16 +1,14 @@
 import json
 import math
 import os
+from datetime import datetime
 
-# funzione poisson
 def poisson(k, lam):
     return (lam**k * math.exp(-lam)) / math.factorial(k)
 
-# carica partite
 with open("data/matches_today.json") as f:
     matches = json.load(f)
 
-# carica statistiche
 with open("data/team_stats.json") as f:
     team_stats = json.load(f)
 
@@ -33,11 +31,9 @@ for match in matches:
     away_attack = float(away_stats["goals_for"])
     away_def = float(away_stats["goals_against"])
 
-    # aspettativa gol
     home_lambda = (home_attack + away_def) / 2
     away_lambda = (away_attack + home_def) / 2
 
-    # probabilità gol
     goal_probs = {}
 
     for h in range(6):
@@ -48,6 +44,9 @@ for match in matches:
     over25 = 0
     btts = 0
     multigol_2_4 = 0
+
+    home_goals = 0
+    away_goals = 0
 
     for (h,a), p in goal_probs.items():
 
@@ -62,13 +61,37 @@ for match in matches:
         if 2 <= total <= 4:
             multigol_2_4 += p
 
+        home_goals += h * p
+        away_goals += a * p
+
+    # stima range gol
+    if home_goals < 1.2:
+        home_range = "0-2"
+    elif home_goals < 2:
+        home_range = "1-3"
+    else:
+        home_range = "2-4"
+
+    if away_goals < 1.2:
+        away_range = "0-2"
+    elif away_goals < 2:
+        away_range = "1-3"
+    else:
+        away_range = "2-4"
+
+    # format ora
+    match_time = datetime.fromisoformat(match["date"].replace("Z","+00:00"))
+    time_str = match_time.strftime("%H:%M")
+
     prediction = {
         "home": match["home"],
         "away": match["away"],
         "league": match["league"],
         "country": match["country"],
-        "date": match["date"],
+        "time": time_str,
         "multigol": "2-4",
+        "home_multigol": home_range,
+        "away_multigol": away_range,
         "over25": round(over25*100,1),
         "btts": round(btts*100,1),
         "probability": round(multigol_2_4*100,1)
