@@ -17,18 +17,12 @@ for m in matches[:30]:
     home_id = str(m["home_id"])
     away_id = str(m["away_id"])
 
-    # se non esistono stats usa media
-    if home_id not in stats:
-        stats[home_id] = {"scored": 1.4, "conceded": 1.4}
+    # se non esistono stats usa valori medi
+    home_attack = stats.get(home_id, {}).get("scored", 1.4)
+    home_def = stats.get(home_id, {}).get("conceded", 1.4)
 
-    if away_id not in stats:
-        stats[away_id] = {"scored": 1.4, "conceded": 1.4}
-
-    home_attack = stats[home_id]["scored"]
-    home_def = stats[home_id]["conceded"]
-
-    away_attack = stats[away_id]["scored"]
-    away_def = stats[away_id]["conceded"]
+    away_attack = stats.get(away_id, {}).get("scored", 1.4)
+    away_def = stats.get(away_id, {}).get("conceded", 1.4)
 
     home_xg = (home_attack + away_def) / 2
     away_xg = (away_attack + home_def) / 2
