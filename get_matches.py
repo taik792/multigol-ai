@@ -22,28 +22,58 @@ data = response.json()
 
 matches = []
 
-for m in data["response"]:
+# solo leghe affidabili
+TOP_LEAGUES = [
+39,   # Premier League
+140,  # La Liga
+135,  # Serie A
+78,   # Bundesliga
+61,   # Ligue 1
+94,   # Primeira Liga
+88,   # Eredivisie
+253,  # MLS
+2,    # Champions League
+3     # Europa League
+]
 
-    # prendiamo solo partite non iniziate
-    if m["fixture"]["status"]["short"] != "NS":
+for match in data["response"]:
+
+    league_id = match["league"]["id"]
+    status = match["fixture"]["status"]["short"]
+
+    # prendiamo solo partite NON iniziate
+    if status != "NS":
         continue
 
-    match = {
-        "home": m["teams"]["home"]["name"],
-        "away": m["teams"]["away"]["name"],
-        "home_id": m["teams"]["home"]["id"],
-        "away_id": m["teams"]["away"]["id"],
-        "league": m["league"]["name"],
-        "league_id": m["league"]["id"],
-        "country": m["league"]["country"],
-        "date": m["fixture"]["date"]
-    }
+    # filtriamo solo leghe top
+    if league_id not in TOP_LEAGUES:
+        continue
 
-    matches.append(match)
+    home = match["teams"]["home"]["name"]
+    away = match["teams"]["away"]["name"]
+
+    home_id = match["teams"]["home"]["id"]
+    away_id = match["teams"]["away"]["id"]
+
+    league = match["league"]["name"]
+    country = match["league"]["country"]
+
+    date = match["fixture"]["date"]
+
+    matches.append({
+        "home": home,
+        "away": away,
+        "home_id": home_id,
+        "away_id": away_id,
+        "league": league,
+        "league_id": league_id,
+        "country": country,
+        "date": date
+    })
+
+print("Partite trovate:", len(matches))
 
 os.makedirs("data", exist_ok=True)
 
 with open("data/matches_today.json", "w") as f:
     json.dump(matches, f, indent=2)
-
-print("Partite trovate:", len(matches))
