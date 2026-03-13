@@ -24,6 +24,7 @@ matches = []
 
 for m in data["response"]:
 
+    # prendiamo solo partite non iniziate
     if m["fixture"]["status"]["short"] != "NS":
         continue
 
@@ -33,6 +34,7 @@ for m in data["response"]:
         "home_id": m["teams"]["home"]["id"],
         "away_id": m["teams"]["away"]["id"],
         "league": m["league"]["name"],
+        "league_id": m["league"]["id"],
         "country": m["league"]["country"],
         "date": m["fixture"]["date"]
     }
