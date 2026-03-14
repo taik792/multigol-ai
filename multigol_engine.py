@@ -1,96 +1,107 @@
 import json
+import math
+import os
+from datetime import datetime
 
-MATCHES_FILE = "data/matches_today.json"
-STATS_FILE = "data/teams_stats.json"
-OUTPUT_FILE = "data/predictions.json"
+def poisson(k, lam):
+    return (lam**k * math.exp(-lam)) / math.factorial(k)
 
-with open(MATCHES_FILE) as f:
+with open("data/matches_today.json") as f:
     matches = json.load(f)
 
-with open(STATS_FILE) as f:
-    stats = json.load(f)
+with open("data/team_stats.json") as f:
+    team_stats = json.load(f)
 
 predictions = []
 
-for m in matches:
+for match in matches:
 
-    home = m["home"]
-    away = m["away"]
+    home_id = str(match["home_id"])
+    away_id = str(match["away_id"])
 
-    if home not in stats or away not in stats:
+    if home_id not in team_stats or away_id not in team_stats:
         continue
 
-    home_scored = stats[home]["scored"]
-    home_conceded = stats[home]["conceded"]
+    home_stats = team_stats[home_id]
+    away_stats = team_stats[away_id]
 
-    away_scored = stats[away]["scored"]
-    away_conceded = stats[away]["conceded"]
+    home_attack = float(home_stats["goals_for"])
+    home_def = float(home_stats["goals_against"])
 
-    # expected goals
-    home_xg = (home_scored + away_conceded) / 2
-    away_xg = (away_scored + home_conceded) / 2
+    away_attack = float(away_stats["goals_for"])
+    away_def = float(away_stats["goals_against"])
 
-    xg_total = home_xg + away_xg
+    home_lambda = (home_attack + away_def) / 2
+    away_lambda = (away_attack + home_def) / 2
 
-    # probabilità
-    probability = int((xg_total / 4) * 100)
+    goal_probs = {}
 
-    if probability < 50:
-        probability = 50
+    for h in range(6):
+        for a in range(6):
+            prob = poisson(h, home_lambda) * poisson(a, away_lambda)
+            goal_probs[(h,a)] = prob
 
-    if probability > 85:
-        probability = 85
+    over25 = 0
+    btts = 0
+    multigol_2_4 = 0
 
-    # over
-    over25 = "Possibile" if xg_total > 2.4 else "Rischioso"
+    home_goals = 0
+    away_goals = 0
 
-    # btts
-    btts = "Possibile" if home_xg > 1 and away_xg > 1 else "Rischioso"
+    for (h,a), p in goal_probs.items():
 
-    # multigol casa
-    if home_xg < 1:
-        multigol_home = "0-2"
-    elif home_xg < 2:
-        multigol_home = "1-3"
+        total = h + a
+
+        if total >= 3:
+            over25 += p
+
+        if h >=1 and a >=1:
+            btts += p
+
+        if 2 <= total <= 4:
+            multigol_2_4 += p
+
+        home_goals += h * p
+        away_goals += a * p
+
+    # stima range gol
+    if home_goals < 1.2:
+        home_range = "0-2"
+    elif home_goals < 2:
+        home_range = "1-3"
     else:
-        multigol_home = "2-4"
+        home_range = "2-4"
 
-    # multigol ospite
-    if away_xg < 1:
-        multigol_away = "0-2"
-    elif away_xg < 2:
-        multigol_away = "1-3"
+    if away_goals < 1.2:
+        away_range = "0-2"
+    elif away_goals < 2:
+        away_range = "1-3"
     else:
-        multigol_away = "2-4"
+        away_range = "2-4"
 
-    # combo
-    if home_xg > away_xg:
-        combo = "Casa o Over 1.5"
-    elif away_xg > home_xg:
-        combo = "Ospite o Over 1.5"
-    else:
-        combo = "Over 1.5"
+    # format ora
+    match_time = datetime.fromisoformat(match["date"].replace("Z","+00:00"))
+    time_str = match_time.strftime("%H:%M")
 
-    predictions.append({
-        "home": home,
-        "away": away,
-        "league": m["league"],
-        "time": m["time"],
-        "combo": combo,
-        "multigol_home": multigol_home,
-        "multigol_away": multigol_away,
-        "over25": over25,
-        "btts": btts,
-        "probability": probability
-    })
+    prediction = {
+        "home": match["home"],
+        "away": match["away"],
+        "league": match["league"],
+        "country": match["country"],
+        "time": time_str,
+        "multigol": "2-4",
+        "home_multigol": home_range,
+        "away_multigol": away_range,
+        "over25": round(over25*100,1),
+        "btts": round(btts*100,1),
+        "probability": round(multigol_2_4*100,1)
+    }
 
-# ordina per probabilità
-predictions = sorted(predictions, key=lambda x: x["probability"], reverse=True)
+    predictions.append(prediction)
 
-# prende le 30 migliori
-predictions = predictions[:30]
+print("Pronostici generati:", len(predictions))
 
-with open(OUTPUT_FILE, "w") as f:
-    json.dump(predictions, f, indent=2)
+os.makedirs("data", exist_ok=True)
 
-print("Predictions generated:", len(predictions))
+with open("data/predictions.json","w") as f:
+    json.dump(predictions,f,indent=2)

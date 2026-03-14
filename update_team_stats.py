@@ -1,34 +1,64 @@
+import requests
 import json
 import os
 
-MATCHES_FILE = "data/matches_today.json"
-STATS_FILE = "data/teams_stats.json"
+API_KEY = os.getenv("API_KEY")
 
-# carica partite
-with open(MATCHES_FILE) as f:
+headers = {
+    "x-apisports-key": API_KEY
+}
+
+url = "https://v3.football.api-sports.io/teams/statistics"
+
+with open("data/matches_today.json") as f:
     matches = json.load(f)
 
-stats = {}
+team_stats = {}
 
-for m in matches:
+for match in matches[:40]:
 
-    home = m["home"]
-    away = m["away"]
+    league_id = match["league_id"]
+    home_id = match["home_id"]
+    away_id = match["away_id"]
 
-    if home not in stats:
-        stats[home] = {
-            "scored": 1.5,
-            "conceded": 1.2
+    for team_id in [home_id, away_id]:
+
+        if str(team_id) in team_stats:
+            continue
+
+        params = {
+            "league": league_id,
+            "season": 2024,
+            "team": team_id
         }
 
-    if away not in stats:
-        stats[away] = {
-            "scored": 1.3,
-            "conceded": 1.4
-        }
+        try:
 
-# salva statistiche
-with open(STATS_FILE, "w") as f:
-    json.dump(stats, f, indent=2)
+            response = requests.get(url, headers=headers, params=params)
+            data = response.json()
 
-print("Team stats updated")
+            if "response" not in data:
+                continue
+
+            stats = data["response"]
+
+            if not stats:
+                continue
+
+            goals_for = stats["goals"]["for"]["average"]["total"]
+            goals_against = stats["goals"]["against"]["average"]["total"]
+
+            team_stats[str(team_id)] = {
+                "goals_for": goals_for,
+                "goals_against": goals_against
+            }
+
+        except Exception as e:
+            print("Errore squadra:", team_id)
+
+print("Statistiche squadre aggiornate:", len(team_stats))
+
+os.makedirs("data", exist_ok=True)
+
+with open("data/team_stats.json", "w") as f:
+    json.dump(team_stats, f, indent=2)

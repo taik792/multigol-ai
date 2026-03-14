@@ -1,47 +1,74 @@
 import requests
-from bs4 import BeautifulSoup
 import json
 import os
 from datetime import datetime
 
-url = "https://www.flashscore.com/"
+API_KEY = os.getenv("API_KEY")
+
+url = "https://v3.football.api-sports.io/fixtures"
 
 headers = {
-    "User-Agent": "Mozilla/5.0"
+    "x-apisports-key": API_KEY
 }
 
-response = requests.get(url, headers=headers)
+today = datetime.utcnow().strftime("%Y-%m-%d")
 
-soup = BeautifulSoup(response.text, "html.parser")
+params = {
+    "date": today
+}
+
+response = requests.get(url, headers=headers, params=params)
+data = response.json()
 
 matches = []
 
-games = soup.select(".event__match")
+# solo leghe affidabili
+TOP_LEAGUES = [
+39,   # Premier League
+140,  # La Liga
+135,  # Serie A
+78,   # Bundesliga
+61,   # Ligue 1
+94,   # Primeira Liga
+88,   # Eredivisie
+253,  # MLS
+2,    # Champions League
+3     # Europa League
+]
 
-for g in games:
+for match in data["response"]:
 
-    home = g.select_one(".event__participant--home")
-    away = g.select_one(".event__participant--away")
+    league_id = match["league"]["id"]
+    status = match["fixture"]["status"]["short"]
 
-    if not home or not away:
+    # prendiamo solo partite NON iniziate
+    if status != "NS":
         continue
 
-    home = home.text.strip()
-    away = away.text.strip()
+    # filtriamo solo leghe top
+    if league_id not in TOP_LEAGUES:
+        continue
+
+    home = match["teams"]["home"]["name"]
+    away = match["teams"]["away"]["name"]
+
+    home_id = match["teams"]["home"]["id"]
+    away_id = match["teams"]["away"]["id"]
+
+    league = match["league"]["name"]
+    country = match["league"]["country"]
+
+    date = match["fixture"]["date"]
 
     matches.append({
-
         "home": home,
         "away": away,
-        "home_id": home,
-        "away_id": away,
-
-        "league": "Unknown",
-        "league_id": 0,
-        "country": "Unknown",
-
-        "date": datetime.now().isoformat()
-
+        "home_id": home_id,
+        "away_id": away_id,
+        "league": league,
+        "league_id": league_id,
+        "country": country,
+        "date": date
     })
 
 print("Partite trovate:", len(matches))
