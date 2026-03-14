@@ -1,53 +1,52 @@
 import requests
+from bs4 import BeautifulSoup
 import json
 import os
 from datetime import datetime
 
-# INSERISCI QUI LA TUA API KEY
-API_KEY = "37ddec86e8578a1ff3127d5c394da749"
-
-url = "https://v3.football.api-sports.io/fixtures"
+url = "https://www.flashscore.com/"
 
 headers = {
-    "x-apisports-key": API_KEY
+    "User-Agent": "Mozilla/5.0"
 }
 
-today = datetime.utcnow().strftime("%Y-%m-%d")
+response = requests.get(url, headers=headers)
 
-params = {
-    "date": today
-}
-
-response = requests.get(url, headers=headers, params=params)
-data = response.json()
+soup = BeautifulSoup(response.text, "html.parser")
 
 matches = []
 
-for m in data["response"]:
+games = soup.select(".event__match")
 
-    status = m["fixture"]["status"]["short"]
+for g in games:
 
-    # Prende solo partite non iniziate
-    if status != "NS":
+    home = g.select_one(".event__participant--home")
+    away = g.select_one(".event__participant--away")
+
+    if not home or not away:
         continue
 
-    home = m["teams"]["home"]["name"]
-    away = m["teams"]["away"]["name"]
-    league = m["league"]["name"]
-
-    time = m["fixture"]["date"][11:16]
+    home = home.text.strip()
+    away = away.text.strip()
 
     matches.append({
+
         "home": home,
         "away": away,
-        "league": league,
-        "time": time
+        "home_id": home,
+        "away_id": away,
+
+        "league": "Unknown",
+        "league_id": 0,
+        "country": "Unknown",
+
+        "date": datetime.now().isoformat()
+
     })
 
-# crea cartella data se non esiste
+print("Partite trovate:", len(matches))
+
 os.makedirs("data", exist_ok=True)
 
 with open("data/matches_today.json", "w") as f:
     json.dump(matches, f, indent=2)
-
-print("Matches salvati:", len(matches))
