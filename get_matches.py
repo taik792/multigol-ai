@@ -3,7 +3,8 @@ import json
 import os
 from datetime import datetime
 
-API_KEY = os.getenv("API_KEY")
+# INSERISCI QUI LA TUA API KEY
+API_KEY = "37ddec86e8578a1ff3127d5c394da749"
 
 url = "https://v3.football.api-sports.io/fixtures"
 
@@ -22,58 +23,31 @@ data = response.json()
 
 matches = []
 
-# solo leghe affidabili
-TOP_LEAGUES = [
-39,   # Premier League
-140,  # La Liga
-135,  # Serie A
-78,   # Bundesliga
-61,   # Ligue 1
-94,   # Primeira Liga
-88,   # Eredivisie
-253,  # MLS
-2,    # Champions League
-3     # Europa League
-]
+for m in data["response"]:
 
-for match in data["response"]:
+    status = m["fixture"]["status"]["short"]
 
-    league_id = match["league"]["id"]
-    status = match["fixture"]["status"]["short"]
-
-    # prendiamo solo partite NON iniziate
+    # Prende solo partite non iniziate
     if status != "NS":
         continue
 
-    # filtriamo solo leghe top
-    if league_id not in TOP_LEAGUES:
-        continue
+    home = m["teams"]["home"]["name"]
+    away = m["teams"]["away"]["name"]
+    league = m["league"]["name"]
 
-    home = match["teams"]["home"]["name"]
-    away = match["teams"]["away"]["name"]
-
-    home_id = match["teams"]["home"]["id"]
-    away_id = match["teams"]["away"]["id"]
-
-    league = match["league"]["name"]
-    country = match["league"]["country"]
-
-    date = match["fixture"]["date"]
+    time = m["fixture"]["date"][11:16]
 
     matches.append({
         "home": home,
         "away": away,
-        "home_id": home_id,
-        "away_id": away_id,
         "league": league,
-        "league_id": league_id,
-        "country": country,
-        "date": date
+        "time": time
     })
 
-print("Partite trovate:", len(matches))
-
+# crea cartella data se non esiste
 os.makedirs("data", exist_ok=True)
 
 with open("data/matches_today.json", "w") as f:
     json.dump(matches, f, indent=2)
+
+print("Matches salvati:", len(matches))

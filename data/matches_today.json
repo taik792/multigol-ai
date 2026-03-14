@@ -1,1 +1,1346 @@
-[]
+[
+  {
+    "home": "Maharlika",
+    "away": "Davao Aguilas",
+    "league": "PFL",
+    "time": "09:45"
+  },
+  {
+    "home": "Machokha",
+    "away": "Members",
+    "league": "Premier League",
+    "time": "10:00"
+  },
+  {
+    "home": "Hatayspor",
+    "away": "Sivasspor",
+    "league": "1. Lig",
+    "time": "10:30"
+  },
+  {
+    "home": "\u0130stanbulspor",
+    "away": "Amed",
+    "league": "1. Lig",
+    "time": "10:30"
+  },
+  {
+    "home": "Batman Petrolspor",
+    "away": "Karacabey Belediyespor",
+    "league": "2. Lig",
+    "time": "10:30"
+  },
+  {
+    "home": "24 Erzincanspor",
+    "away": "Tuzlaspor",
+    "league": "2. Lig",
+    "time": "10:30"
+  },
+  {
+    "home": "Adana 1954 FK",
+    "away": "Ankaraspor",
+    "league": "2. Lig",
+    "time": "10:30"
+  },
+  {
+    "home": "12 Bing\u00f6lspor",
+    "away": "A\u011fr\u0131 1970",
+    "league": "3. Lig - Group 2",
+    "time": "10:30"
+  },
+  {
+    "home": "Tabora United",
+    "away": "Namungo",
+    "league": "Ligi kuu Bara",
+    "time": "11:00"
+  },
+  {
+    "home": "\u015eimal",
+    "away": "Safa Baku",
+    "league": "Birinci Dasta",
+    "time": "11:00"
+  },
+  {
+    "home": "Taguig",
+    "away": "Stallion",
+    "league": "PFL",
+    "time": "11:00"
+  },
+  {
+    "home": "Wis\u0142a Krak\u00f3w U19",
+    "away": "Resovia U19",
+    "league": "Central Youth League",
+    "time": "11:00"
+  },
+  {
+    "home": "Royal Vision",
+    "away": "Rukinzo",
+    "league": "Ligue A",
+    "time": "11:00"
+  },
+  {
+    "home": "Sioni",
+    "away": "Shturmi",
+    "league": "Erovnuli Liga 2",
+    "time": "11:00"
+  },
+  {
+    "home": "Gareji",
+    "away": "Aragvi Dusheti",
+    "league": "Erovnuli Liga 2",
+    "time": "11:00"
+  },
+  {
+    "home": "Merani Martvili",
+    "away": "Odishi 1919",
+    "league": "Erovnuli Liga 2",
+    "time": "11:00"
+  },
+  {
+    "home": "Samtredia",
+    "away": "Gori",
+    "league": "Erovnuli Liga 2",
+    "time": "11:00"
+  },
+  {
+    "home": "Lernayin Artsakh",
+    "away": "Mika",
+    "league": "First League",
+    "time": "11:00"
+  },
+  {
+    "home": "Visakha",
+    "away": "NagaWorld",
+    "league": "Hun Sen Cup",
+    "time": "11:00"
+  },
+  {
+    "home": "Boeung Ket",
+    "away": "National Defense",
+    "league": "Hun Sen Cup",
+    "time": "11:00"
+  },
+  {
+    "home": "LMPS",
+    "away": "Lioli",
+    "league": "Premier League",
+    "time": "11:00"
+  },
+  {
+    "home": "Surkhon",
+    "away": "Bunyodkor",
+    "league": "Super League",
+    "time": "11:30"
+  },
+  {
+    "home": "Fiorentina U19",
+    "away": "Viareggio U18",
+    "league": "Youth Viareggio Cup",
+    "time": "11:30"
+  },
+  {
+    "home": "Green Eagles",
+    "away": "Nkwazi",
+    "league": "Super League",
+    "time": "12:00"
+  },
+  {
+    "home": "Elche II",
+    "away": "Getafe II",
+    "league": "Segunda Divisi\u00f3n RFEF - Group 5",
+    "time": "12:00"
+  },
+  {
+    "home": "Warriors",
+    "away": "Wofoo Tai Po",
+    "league": "League Cup",
+    "time": "12:00"
+  },
+  {
+    "home": "Kolkheti Poti",
+    "away": "Telavi",
+    "league": "Erovnuli Liga 2",
+    "time": "12:00"
+  },
+  {
+    "home": "Hegelmann Litauen",
+    "away": "\u0160iauliai",
+    "league": "A Lyga",
+    "time": "12:00"
+  },
+  {
+    "home": "Al Karama",
+    "away": "Khan Shaykhun SC",
+    "league": "Premier League",
+    "time": "12:00"
+  },
+  {
+    "home": "Al Wahda",
+    "away": "Shorta",
+    "league": "Premier League",
+    "time": "12:00"
+  },
+  {
+    "home": "Liphakoe",
+    "away": "Maroala",
+    "league": "Premier League",
+    "time": "12:00"
+  },
+  {
+    "home": "Ratchaburi",
+    "away": "Gamba Osaka",
+    "league": "AFC Cup",
+    "time": "12:15"
+  },
+  {
+    "home": "Ankarag\u00fcc\u00fc",
+    "away": "Kastamonuspor 1966",
+    "league": "2. Lig",
+    "time": "12:30"
+  },
+  {
+    "home": "Sevilla III",
+    "away": "Ceuta II",
+    "league": "Tercera Divisi\u00f3n RFEF - Group 10",
+    "time": "12:30"
+  },
+  {
+    "home": "\u00dcmraniyespor",
+    "away": "Erzurumspor FK",
+    "league": "1. Lig",
+    "time": "13:00"
+  },
+  {
+    "home": "Mufulira Wanderers",
+    "away": "Prison Leopards",
+    "league": "Super League",
+    "time": "13:00"
+  },
+  {
+    "home": "Konkola Blades",
+    "away": "Kabwe Warriors",
+    "league": "Super League",
+    "time": "13:00"
+  },
+  {
+    "home": "Red Arrows",
+    "away": "Kansanshi Dynamos",
+    "league": "Super League",
+    "time": "13:00"
+  },
+  {
+    "home": "Mutondo Stars",
+    "away": "Nkana",
+    "league": "Super League",
+    "time": "13:00"
+  },
+  {
+    "home": "Balkan Botevgrad",
+    "away": "Strumska Slava",
+    "league": "Third League - Southwest",
+    "time": "13:00"
+  },
+  {
+    "home": "Kostinbrod",
+    "away": "Bansko",
+    "league": "Third League - Southwest",
+    "time": "13:00"
+  },
+  {
+    "home": "Septemvri Sofia II",
+    "away": "Pirin Gotse Delchev",
+    "league": "Third League - Southwest",
+    "time": "13:00"
+  },
+  {
+    "home": "Slivnishki geroy",
+    "away": "Levski Sofia II",
+    "league": "Third League - Southwest",
+    "time": "13:00"
+  },
+  {
+    "home": "Rozova dolina",
+    "away": "Neftochimic Burgas",
+    "league": "Third League - Southeast",
+    "time": "13:00"
+  },
+  {
+    "home": "Jezero",
+    "away": "De\u010di\u0107",
+    "league": "First League",
+    "time": "13:00"
+  },
+  {
+    "home": "Ngozi City",
+    "away": "Garage Express",
+    "league": "Ligue A",
+    "time": "13:00"
+  },
+  {
+    "home": "Molde U19",
+    "away": "Brann U19",
+    "league": "Nasjonal U19 Champions League",
+    "time": "13:00"
+  },
+  {
+    "home": "UPDF",
+    "away": "Vipers",
+    "league": "Premier League",
+    "time": "13:00"
+  },
+  {
+    "home": "Majantja",
+    "away": "Bantu",
+    "league": "Premier League",
+    "time": "13:00"
+  },
+  {
+    "home": "Manonyane",
+    "away": "Lijabatho",
+    "league": "Premier League",
+    "time": "13:00"
+  },
+  {
+    "home": "Singida Black Stars",
+    "away": "Simba",
+    "league": "Ligi kuu Bara",
+    "time": "13:15"
+  },
+  {
+    "home": "Sabah FA",
+    "away": "Perak",
+    "league": "MFL Cup",
+    "time": "13:15"
+  },
+  {
+    "home": "PSIM Yogyakarta",
+    "away": "Persijap",
+    "league": "Liga 1",
+    "time": "13:30"
+  },
+  {
+    "home": "Casric Stars",
+    "away": "University of Pretoria",
+    "league": "1st Division",
+    "time": "13:30"
+  },
+  {
+    "home": "Bokelj",
+    "away": "Mornar",
+    "league": "First League",
+    "time": "13:30"
+  },
+  {
+    "home": "Ancona",
+    "away": "Pistoiese",
+    "league": "Coppa Italia Serie D",
+    "time": "13:30"
+  },
+  {
+    "home": "TransINVEST Vilnius",
+    "away": "Banga",
+    "league": "A Lyga",
+    "time": "13:30"
+  },
+  {
+    "home": "LCS",
+    "away": "Matlama",
+    "league": "Premier League",
+    "time": "13:30"
+  },
+  {
+    "home": "Genoa U19",
+    "away": "Vllaznia U18",
+    "league": "Youth Viareggio Cup",
+    "time": "13:30"
+  },
+  {
+    "home": "Mavlon U18",
+    "away": "AS Police Viareggio Team",
+    "league": "Youth Viareggio Cup",
+    "time": "13:30"
+  },
+  {
+    "home": "Enugu Rangers Viareggio Team",
+    "away": "One Touch U18",
+    "league": "Youth Viareggio Cup",
+    "time": "13:30"
+  },
+  {
+    "home": "Nexus U18",
+    "away": "RBM U18",
+    "league": "Youth Viareggio Cup",
+    "time": "13:30"
+  },
+  {
+    "home": "Vital'O",
+    "away": "Green Farmers FC",
+    "league": "Ligue A",
+    "time": "13:45"
+  },
+  {
+    "home": "Flambeau du Centre",
+    "away": "Muzinga",
+    "league": "Ligue A",
+    "time": "13:45"
+  },
+  {
+    "home": "Stal Rzesz\u00f3w U19",
+    "away": "Znicz Pruszk\u00f3w U19",
+    "league": "Central Youth League",
+    "time": "14:00"
+  },
+  {
+    "home": "Escola Varsovia U19",
+    "away": "G\u00f3rnik Zabrze U19",
+    "league": "Central Youth League",
+    "time": "14:00"
+  },
+  {
+    "home": "Fu\u017einar",
+    "away": "Aluminij",
+    "league": "Cup",
+    "time": "14:00"
+  },
+  {
+    "home": "Sutjeska",
+    "away": "Arsenal Tivat",
+    "league": "First League",
+    "time": "14:00"
+  },
+  {
+    "home": "Kumba",
+    "away": "Avion Academy",
+    "league": "Elite Two",
+    "time": "14:00"
+  },
+  {
+    "home": "Penang",
+    "away": "Kelantan United",
+    "league": "MFL Cup",
+    "time": "14:00"
+  },
+  {
+    "home": "Petrovac",
+    "away": "Mladost DG",
+    "league": "First League",
+    "time": "14:30"
+  },
+  {
+    "home": "Lillestr\u00f8m U19",
+    "away": "Troms\u00f8 U19",
+    "league": "Nasjonal U19 Champions League",
+    "time": "14:30"
+  },
+  {
+    "home": "Lokomotiv",
+    "away": "Kokand-1912",
+    "league": "Super League",
+    "time": "14:30"
+  },
+  {
+    "home": "Limkokwing University",
+    "away": "Linare",
+    "league": "Premier League",
+    "time": "14:30"
+  },
+  {
+    "home": "Sassuolo U18",
+    "away": "UYSS New York U18",
+    "league": "Youth Viareggio Cup",
+    "time": "14:30"
+  },
+  {
+    "home": "Buxoro",
+    "away": "Xorazm",
+    "league": "Super League",
+    "time": "14:45"
+  },
+  {
+    "home": "Tona",
+    "away": "L'Hospitalet",
+    "league": "Tercera Divisi\u00f3n RFEF - Group 5",
+    "time": "15:00"
+  },
+  {
+    "home": "Mercadal",
+    "away": "Rotlet Molinar",
+    "league": "Tercera Divisi\u00f3n RFEF - Group 11",
+    "time": "15:00"
+  },
+  {
+    "home": "Dinamo Tbilisi",
+    "away": "Rustavi",
+    "league": "Erovnuli Liga",
+    "time": "15:00"
+  },
+  {
+    "home": "Paris FC W",
+    "away": "Strasbourg W",
+    "league": "Feminine Division 1",
+    "time": "15:15"
+  },
+  {
+    "home": "Paris Saint Germain W",
+    "away": "Marseille W",
+    "league": "Feminine Division 1",
+    "time": "15:15"
+  },
+  {
+    "home": "Linares Deportivo",
+    "away": "La Uni\u00f3n Atl\u00e9tico",
+    "league": "Segunda Divisi\u00f3n RFEF - Group 4",
+    "time": "15:30"
+  },
+  {
+    "home": "Buducnost Podgorica",
+    "away": "Jedinstvo",
+    "league": "First League",
+    "time": "15:30"
+  },
+  {
+    "home": "Zrinjski",
+    "away": "GO\u0160K Gabela",
+    "league": "Cup",
+    "time": "15:30"
+  },
+  {
+    "home": "Tenerife II",
+    "away": "Las Palmas II",
+    "league": "Segunda Divisi\u00f3n RFEF - Group 5",
+    "time": "16:00"
+  },
+  {
+    "home": "Birmingham Legion",
+    "away": "Hartford Athletic",
+    "league": "USL Championship",
+    "time": "16:00"
+  },
+  {
+    "home": "Gagra",
+    "away": "Spaeri",
+    "league": "Erovnuli Liga",
+    "time": "16:00"
+  },
+  {
+    "home": "Torpedo Kutaisi",
+    "away": "Saburtalo",
+    "league": "Erovnuli Liga",
+    "time": "16:00"
+  },
+  {
+    "home": "Trans Narva",
+    "away": "Viimsi",
+    "league": "Cup",
+    "time": "16:00"
+  },
+  {
+    "home": "Paide",
+    "away": "Tallinna Kalev",
+    "league": "Cup",
+    "time": "16:00"
+  },
+  {
+    "home": "Dodoma Jiji",
+    "away": "Azam",
+    "league": "Ligi kuu Bara",
+    "time": "16:15"
+  },
+  {
+    "home": "Fylkir",
+    "away": "IBV Vestmannaeyjar",
+    "league": "League Cup",
+    "time": "16:30"
+  },
+  {
+    "home": "Ke\u00e7i\u00f6reng\u00fcc\u00fc",
+    "away": "Sakaryaspor",
+    "league": "1. Lig",
+    "time": "17:00"
+  },
+  {
+    "home": "Police XI",
+    "away": "Santa Green",
+    "league": "Premier League",
+    "time": "17:00"
+  },
+  {
+    "home": "Utsikten",
+    "away": "Landskrona BoIS",
+    "league": "Friendlies Clubs",
+    "time": "17:00"
+  },
+  {
+    "home": "KCCA",
+    "away": "Express",
+    "league": "Premier League",
+    "time": "17:00"
+  },
+  {
+    "home": "URA",
+    "away": "Lugazi",
+    "league": "Premier League",
+    "time": "17:00"
+  },
+  {
+    "home": "Tatran Pre\u0161ov",
+    "away": "Liptovsk\u00fd Mikul\u00e1\u0161",
+    "league": "Cup",
+    "time": "17:00"
+  },
+  {
+    "home": "Orlando Pirates",
+    "away": "Richards Bay",
+    "league": "Premier Soccer League",
+    "time": "17:30"
+  },
+  {
+    "home": "Hamburger SV W",
+    "away": "Bayern Munich W",
+    "league": "DFB Pokal - Women",
+    "time": "17:30"
+  },
+  {
+    "home": "Carl Zeiss Jena  W",
+    "away": "SC Sand W",
+    "league": "DFB Pokal - Women",
+    "time": "17:30"
+  },
+  {
+    "home": "SGS Essen W",
+    "away": "Werder Bremen W",
+    "league": "DFB Pokal - Women",
+    "time": "17:30"
+  },
+  {
+    "home": "VfL Wolfsburg W",
+    "away": "Eintracht Frankfurt W",
+    "league": "DFB Pokal - Women",
+    "time": "17:30"
+  },
+  {
+    "home": "Sharjah FC",
+    "away": "Al Nasr",
+    "league": "Pro League",
+    "time": "17:30"
+  },
+  {
+    "home": "Khorfakkan",
+    "away": "Dibba Al-Fujairah",
+    "league": "Pro League",
+    "time": "17:30"
+  },
+  {
+    "home": "Shabab Al Ahli Dubai",
+    "away": "Al-Ittihad Kalba",
+    "league": "Pro League",
+    "time": "17:30"
+  },
+  {
+    "home": "Ajman U23",
+    "away": "Al Bataeh U23",
+    "league": "Pro League U23",
+    "time": "17:30"
+  },
+  {
+    "home": "Al Jazira U23",
+    "away": "Al Dhafra U23",
+    "league": "Pro League U23",
+    "time": "17:30"
+  },
+  {
+    "home": "FK Trakai",
+    "away": "D\u017eiugas Tel\u0161iai",
+    "league": "A Lyga",
+    "time": "17:30"
+  },
+  {
+    "home": "Feyenoord W",
+    "away": "Twente W",
+    "league": "Eredivisie Women",
+    "time": "17:45"
+  },
+  {
+    "home": "Vele\u017e",
+    "away": "FK Sarajevo",
+    "league": "Cup",
+    "time": "17:45"
+  },
+  {
+    "home": "Bayer Leverkusen",
+    "away": "Arsenal",
+    "league": "UEFA Champions League",
+    "time": "17:45"
+  },
+  {
+    "home": "BAK '07",
+    "away": "Tennis Borussia",
+    "league": "Oberliga - Nordost-Nord",
+    "time": "18:00"
+  },
+  {
+    "home": "Altglienicke",
+    "away": "Luckenwalde",
+    "league": "Regionalliga - Nordost",
+    "time": "18:00"
+  },
+  {
+    "home": "Os Marialvas",
+    "away": "Marinhense",
+    "league": "Campeonato de Portugal Prio - Group C",
+    "time": "18:00"
+  },
+  {
+    "home": "Dijon W",
+    "away": "Saint-\u00c9tienne W",
+    "league": "Feminine Division 1",
+    "time": "18:00"
+  },
+  {
+    "home": "Nantes W",
+    "away": "FC Fleury 91 W",
+    "league": "Feminine Division 1",
+    "time": "18:00"
+  },
+  {
+    "home": "Lens W",
+    "away": "Montpellier W",
+    "league": "Feminine Division 1",
+    "time": "18:00"
+  },
+  {
+    "home": "Antequera",
+    "away": "Algeciras",
+    "league": "Primera Divisi\u00f3n RFEF - Group 2",
+    "time": "18:00"
+  },
+  {
+    "home": "Real Murcia",
+    "away": "Marbella",
+    "league": "Primera Divisi\u00f3n RFEF - Group 2",
+    "time": "18:00"
+  },
+  {
+    "home": "Linense",
+    "away": "Coria CF",
+    "league": "Tercera Divisi\u00f3n RFEF - Group 10",
+    "time": "18:00"
+  },
+  {
+    "home": "Rio Branco SP",
+    "away": "Itapirense",
+    "league": "Paulista - A3",
+    "time": "18:00"
+  },
+  {
+    "home": "Rio Claro",
+    "away": "XV de Jau",
+    "league": "Paulista - A3",
+    "time": "18:00"
+  },
+  {
+    "home": "Ibri",
+    "away": "Oman Club",
+    "league": "Professional League",
+    "time": "18:00"
+  },
+  {
+    "home": "Sur",
+    "away": "Saham",
+    "league": "Professional League",
+    "time": "18:00"
+  },
+  {
+    "home": "Al-Rustaq",
+    "away": "Smail",
+    "league": "Professional League",
+    "time": "18:00"
+  },
+  {
+    "home": "Al-Shabab",
+    "away": "Sohar",
+    "league": "Professional League",
+    "time": "18:00"
+  },
+  {
+    "home": "H\u00e4cken",
+    "away": "Link\u00f6ping",
+    "league": "Svenska Cupen - Women",
+    "time": "18:00"
+  },
+  {
+    "home": "Juventude U17",
+    "away": "Coritiba U17",
+    "league": "Copa do Brasil U17",
+    "time": "18:00"
+  },
+  {
+    "home": "Botafogo U20",
+    "away": "Resende FC U20",
+    "league": "Copa Rio U20",
+    "time": "18:00"
+  },
+  {
+    "home": "Bahia de Feira U20",
+    "away": "Estrela De Marco U20",
+    "league": "Baiano U20",
+    "time": "18:00"
+  },
+  {
+    "home": "Barcelona BA U20",
+    "away": "Porto BA U20",
+    "league": "Baiano U20",
+    "time": "18:00"
+  },
+  {
+    "home": "Cama\u00e7ariense U20",
+    "away": "Gal\u00edcia U20",
+    "league": "Baiano U20",
+    "time": "18:00"
+  },
+  {
+    "home": "Catuense U20",
+    "away": "Vit\u00f3ria da Conquista U20",
+    "league": "Baiano U20",
+    "time": "18:00"
+  },
+  {
+    "home": "Conquista U20",
+    "away": "Jequie U20",
+    "league": "Baiano U20",
+    "time": "18:00"
+  },
+  {
+    "home": "Fluminense de Feira U20",
+    "away": "Leonico U20",
+    "league": "Baiano U20",
+    "time": "18:00"
+  },
+  {
+    "home": "Jacuipense U20",
+    "away": "Atl\u00e9tico Alagoinhas U20",
+    "league": "Baiano U20",
+    "time": "18:00"
+  },
+  {
+    "home": "Juazeirense U20",
+    "away": "Feirense U20",
+    "league": "Baiano U20",
+    "time": "18:00"
+  },
+  {
+    "home": "SSA U20",
+    "away": "Bahia U20",
+    "league": "Baiano U20",
+    "time": "18:00"
+  },
+  {
+    "home": "Grapiuna U20",
+    "away": "Serrano U20",
+    "league": "Baiano U20",
+    "time": "18:00"
+  },
+  {
+    "home": "Jacobina U20",
+    "away": "Camacari U20",
+    "league": "Baiano U20",
+    "time": "18:00"
+  },
+  {
+    "home": "Vit\u00f3ria U20",
+    "away": "Redencao U20",
+    "league": "Baiano U20",
+    "time": "18:00"
+  },
+  {
+    "home": "Deisenhofen",
+    "away": "Kirchansch\u00f6ring",
+    "league": "Oberliga - Bayern S\u00fcd",
+    "time": "18:30"
+  },
+  {
+    "home": "Bavois",
+    "away": "SC Kriens",
+    "league": "1. Liga Promotion",
+    "time": "18:30"
+  },
+  {
+    "home": "Bulle",
+    "away": "Luzern II",
+    "league": "1. Liga Promotion",
+    "time": "18:30"
+  },
+  {
+    "home": "UD San Pedro",
+    "away": "Martos",
+    "league": "Tercera Divisi\u00f3n RFEF - Group 9",
+    "time": "18:30"
+  },
+  {
+    "home": "SK Beveren",
+    "away": "RWDM",
+    "league": "Challenger Pro League",
+    "time": "19:00"
+  },
+  {
+    "home": "KAA Gent II",
+    "away": "Lommel United",
+    "league": "Challenger Pro League",
+    "time": "19:00"
+  },
+  {
+    "home": "Olympic Charleroi",
+    "away": "Seraing United",
+    "league": "Challenger Pro League",
+    "time": "19:00"
+  },
+  {
+    "home": "Sunderland W",
+    "away": "Nottingham Forest W",
+    "league": "Women's Championship",
+    "time": "19:00"
+  },
+  {
+    "home": "Charlton Athletic W",
+    "away": "Portsmouth W",
+    "league": "Women's Championship",
+    "time": "19:00"
+  },
+  {
+    "home": "Court\u00e9telle",
+    "away": "Del\u00e9mont",
+    "league": "1. Liga Classic - Group 2",
+    "time": "19:00"
+  },
+  {
+    "home": "SV Schaffhausen",
+    "away": "YF Juventus",
+    "league": "1. Liga Classic - Group 3",
+    "time": "19:00"
+  },
+  {
+    "home": "Soneja",
+    "away": "Saguntino",
+    "league": "Tercera Divisi\u00f3n RFEF - Group 6",
+    "time": "19:00"
+  },
+  {
+    "home": "Bu\u00f1ol",
+    "away": "Crevillente",
+    "league": "Tercera Divisi\u00f3n RFEF - Group 6",
+    "time": "19:00"
+  },
+  {
+    "home": "Al Hussein",
+    "away": "Al Buqa'a",
+    "league": "League",
+    "time": "19:00"
+  },
+  {
+    "home": "Concordia Basel",
+    "away": "Langenthal",
+    "league": "1. Liga Classic - Group 2",
+    "time": "19:15"
+  },
+  {
+    "home": "Echallens",
+    "away": "Coffrane",
+    "league": "1. Liga Classic - Group 1",
+    "time": "19:15"
+  },
+  {
+    "home": "Prishtina Bern",
+    "away": "Servette II",
+    "league": "1. Liga Classic - Group 1",
+    "time": "19:15"
+  },
+  {
+    "home": "Baden",
+    "away": "Mendrisio",
+    "league": "1. Liga Classic - Group 3",
+    "time": "19:15"
+  },
+  {
+    "home": "Pozoblanco",
+    "away": "San Roque Lepe",
+    "league": "Tercera Divisi\u00f3n RFEF - Group 10",
+    "time": "19:15"
+  },
+  {
+    "home": "Clachnacuddin",
+    "away": "Brechin",
+    "league": "Football League - Highland League",
+    "time": "19:30"
+  },
+  {
+    "home": "Enppi",
+    "away": "Zamalek SC",
+    "league": "Premier League",
+    "time": "19:30"
+  },
+  {
+    "home": "Masr",
+    "away": "Future FC",
+    "league": "Premier League",
+    "time": "19:30"
+  },
+  {
+    "home": "Atl\u00e8tic Club d'Escaldes",
+    "away": "Esperan\u00e7a d'Andorra",
+    "league": "Copa Constituci\u00f3",
+    "time": "19:30"
+  },
+  {
+    "home": "Queen's University",
+    "away": "Limavady United",
+    "league": "Championship",
+    "time": "19:45"
+  },
+  {
+    "home": "Norwich",
+    "away": "Sheffield Utd",
+    "league": "Championship",
+    "time": "19:45"
+  },
+  {
+    "home": "Birmingham",
+    "away": "QPR",
+    "league": "Championship",
+    "time": "19:45"
+  },
+  {
+    "home": "West Brom",
+    "away": "Southampton",
+    "league": "Championship",
+    "time": "19:45"
+  },
+  {
+    "home": "Middlesbrough",
+    "away": "Charlton",
+    "league": "Championship",
+    "time": "19:45"
+  },
+  {
+    "home": "Oxford United",
+    "away": "Blackburn",
+    "league": "Championship",
+    "time": "19:45"
+  },
+  {
+    "home": "Port Vale",
+    "away": "Bradford",
+    "league": "League One",
+    "time": "19:45"
+  },
+  {
+    "home": "AFC Wimbledon",
+    "away": "Blackpool",
+    "league": "League One",
+    "time": "19:45"
+  },
+  {
+    "home": "Gorleston",
+    "away": "Cambridge City",
+    "league": "Non League Div One - Isthmian North",
+    "time": "19:45"
+  },
+  {
+    "home": "Turriff United",
+    "away": "Banks O' Dee",
+    "league": "Football League - Highland League",
+    "time": "20:00"
+  },
+  {
+    "home": "Strathspey Thistle",
+    "away": "Buckie Thistle",
+    "league": "Football League - Highland League",
+    "time": "20:00"
+  },
+  {
+    "home": "Formartine United",
+    "away": "Lossiemouth",
+    "league": "Football League - Highland League",
+    "time": "20:00"
+  },
+  {
+    "home": "Keith",
+    "away": "Inverurie Loco Works",
+    "league": "Football League - Highland League",
+    "time": "20:00"
+  },
+  {
+    "home": "Coventry",
+    "away": "Preston",
+    "league": "Championship",
+    "time": "20:00"
+  },
+  {
+    "home": "Bogota FC",
+    "away": "Tigres FC",
+    "league": "Primera B",
+    "time": "20:00"
+  },
+  {
+    "home": "Real Madrid",
+    "away": "Manchester City",
+    "league": "UEFA Champions League",
+    "time": "20:00"
+  },
+  {
+    "home": "Paris Saint Germain",
+    "away": "Chelsea",
+    "league": "UEFA Champions League",
+    "time": "20:00"
+  },
+  {
+    "home": "Bodo/Glimt",
+    "away": "Sporting CP",
+    "league": "UEFA Champions League",
+    "time": "20:00"
+  },
+  {
+    "home": "Argentinos JRS",
+    "away": "Rosario Central",
+    "league": "Liga Profesional Argentina",
+    "time": "20:30"
+  },
+  {
+    "home": "Banfield",
+    "away": "Gimnasia L.P.",
+    "league": "Liga Profesional Argentina",
+    "time": "20:30"
+  },
+  {
+    "home": "Leones FC",
+    "away": "Envigado",
+    "league": "Primera B",
+    "time": "20:30"
+  },
+  {
+    "home": "AD Cofutpa",
+    "away": "Santa Cruz FC",
+    "league": "Liga de Ascenso",
+    "time": "21:00"
+  },
+  {
+    "home": "CS Uruguay",
+    "away": "Lim\u00f3n Black Star",
+    "league": "Liga de Ascenso",
+    "time": "21:00"
+  },
+  {
+    "home": "Municipal Grecia",
+    "away": "Turrialba Fc",
+    "league": "Liga de Ascenso",
+    "time": "21:00"
+  },
+  {
+    "home": "Quepos Cambute",
+    "away": "AD Sarch\u00ed",
+    "league": "Liga de Ascenso",
+    "time": "21:00"
+  },
+  {
+    "home": "Mictl\u00e1n",
+    "away": "Aurora",
+    "league": "Liga Nacional",
+    "time": "21:00"
+  },
+  {
+    "home": "Cabanas",
+    "away": "Cacahuatique",
+    "league": "Copa Presidente",
+    "time": "21:00"
+  },
+  {
+    "home": "Drag\u00f3n",
+    "away": "Fuerte San Francisco",
+    "league": "Copa Presidente",
+    "time": "21:00"
+  },
+  {
+    "home": "Platense",
+    "away": "Municipal Lime\u00f1o",
+    "league": "Copa Presidente",
+    "time": "21:00"
+  },
+  {
+    "home": "G\u00e9nesis",
+    "away": "Olancho",
+    "league": "Liga Nacional",
+    "time": "21:00"
+  },
+  {
+    "home": "Atletico-MG",
+    "away": "Internacional",
+    "league": "Serie A",
+    "time": "22:00"
+  },
+  {
+    "home": "Mar\u00edlia",
+    "away": "USAC",
+    "league": "Paulista - A3",
+    "time": "22:00"
+  },
+  {
+    "home": "Union Magdalena",
+    "away": "Real Soacha",
+    "league": "Primera B",
+    "time": "22:00"
+  },
+  {
+    "home": "Sporting Cristal",
+    "away": "Carabobo FC",
+    "league": "CONMEBOL Libertadores",
+    "time": "22:00"
+  },
+  {
+    "home": "Olimpia U20",
+    "away": "Palmeiras U20",
+    "league": "CONMEBOL Libertadores U20",
+    "time": "22:00"
+  },
+  {
+    "home": "Catanduva",
+    "away": "Desportivo Brasil",
+    "league": "Paulista - A3",
+    "time": "22:30"
+  },
+  {
+    "home": "Uniao Barbarense",
+    "away": "Paulista",
+    "league": "Paulista - A3",
+    "time": "22:30"
+  },
+  {
+    "home": "Uni\u00e3o S\u00e3o Jo\u00e3o",
+    "away": "Francana",
+    "league": "Paulista - A3",
+    "time": "22:30"
+  },
+  {
+    "home": "Maring\u00e1",
+    "away": "Uberlandia",
+    "league": "Copa Do Brasil",
+    "time": "22:30"
+  },
+  {
+    "home": "Athletic Club",
+    "away": "Ypiranga-RS",
+    "league": "Copa Do Brasil",
+    "time": "22:30"
+  },
+  {
+    "home": "Manauara",
+    "away": "Fortaleza EC",
+    "league": "Copa Do Brasil",
+    "time": "22:30"
+  },
+  {
+    "home": "Volta Redonda",
+    "away": "America-RN",
+    "league": "Copa Do Brasil",
+    "time": "22:30"
+  },
+  {
+    "home": "Goias",
+    "away": "Fluminense PI",
+    "league": "Copa Do Brasil",
+    "time": "22:30"
+  },
+  {
+    "home": "Boca Juniors",
+    "away": "San Lorenzo",
+    "league": "Liga Profesional Argentina",
+    "time": "22:45"
+  },
+  {
+    "home": "Depor FC",
+    "away": "Orsomarso",
+    "league": "Primera B",
+    "time": "22:45"
+  },
+  {
+    "home": "Bahia",
+    "away": "Vitoria",
+    "league": "Serie A",
+    "time": "23:00"
+  },
+  {
+    "home": "S\u00e3o Jos\u00e9 EC",
+    "away": "Orat\u00f3rio",
+    "league": "Amapaense",
+    "time": "23:00"
+  },
+  {
+    "home": "Bandeirante SP",
+    "away": "EC S\u00e3o Bernardo",
+    "league": "Paulista - A3",
+    "time": "23:00"
+  },
+  {
+    "home": "Portuguesa Santista",
+    "away": "Rio Preto",
+    "league": "Paulista - A3",
+    "time": "23:00"
+  },
+  {
+    "home": "Ind. Yumbo",
+    "away": "Barranquilla",
+    "league": "Primera B",
+    "time": "23:00"
+  },
+  {
+    "home": "Atl\u00e9tico Roraima",
+    "away": "Progresso",
+    "league": "Roraimense",
+    "time": "23:00"
+  },
+  {
+    "home": "Confian\u00e7a",
+    "away": "Tombense",
+    "league": "Copa Do Brasil",
+    "time": "23:00"
+  },
+  {
+    "home": "Castanhal",
+    "away": "Nova Igua\u00e7u",
+    "league": "Copa Do Brasil",
+    "time": "23:00"
+  },
+  {
+    "home": "Santa Catarina",
+    "away": "Jacuipense",
+    "league": "Copa Do Brasil",
+    "time": "23:00"
+  },
+  {
+    "home": "CD Motagua",
+    "away": "Lobos Upnfm",
+    "league": "Liga Nacional",
+    "time": "23:15"
+  },
+  {
+    "home": "Nashville SC",
+    "away": "Inter Miami",
+    "league": "CONCACAF Champions League",
+    "time": "23:30"
+  },
+  {
+    "home": "Porto Velho",
+    "away": "Atletico Goianiense",
+    "league": "Copa Do Brasil",
+    "time": "23:30"
+  },
+  {
+    "home": "Corumbaense",
+    "away": "Dourados Atl\u00e9tico",
+    "league": "Sul-Matogrossense",
+    "time": "23:30"
+  },
+  {
+    "home": "Ivinhema",
+    "away": "Bataguassu",
+    "league": "Sul-Matogrossense",
+    "time": "23:30"
+  }
+]
