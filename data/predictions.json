@@ -1,1 +1,54 @@
-[]
+[
+  {
+    "home": "PEC Zwolle",
+    "away": "Groningen",
+    "league": "Eredivisie",
+    "country": "Netherlands",
+    "time": "19:00",
+    "multigol": "2-4",
+    "home_multigol": "1-3",
+    "away_multigol": "1-3",
+    "over25": 52.4,
+    "btts": 56.2,
+    "probability": 61.7
+  },
+  {
+    "home": "Borussia M\u00f6nchengladbach",
+    "away": "FC St. Pauli",
+    "league": "Bundesliga",
+    "country": "Germany",
+    "time": "19:30",
+    "multigol": "2-4",
+    "home_multigol": "1-3",
+    "away_multigol": "1-3",
+    "over25": 48.9,
+    "btts": 53.4,
+    "probability": 61.2
+  },
+  {
+    "home": "Torino",
+    "away": "Parma",
+    "league": "Serie A",
+    "country": "Italy",
+    "time": "19:45",
+    "multigol": "2-4",
+    "home_multigol": "1-3",
+    "away_multigol": "0-2",
+    "over25": 44.0,
+    "btts": 49.6,
+    "probability": 60.0
+  },
+  {
+    "home": "Marseille",
+    "away": "Auxerre",
+    "league": "Ligue 1",
+    "country": "France",
+    "time": "19:45",
+    "multigol": "2-4",
+    "home_multigol": "1-3",
+    "away_multigol": "1-3",
+    "over25": 61.6,
+    "btts": 62.3,
+    "probability": 60.7
+  }
+]

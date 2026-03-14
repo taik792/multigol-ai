@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 def poisson(k, lam):
-    return (lam ** k * math.exp(-lam)) / math.factorial(k)
+    return (lam**k * math.exp(-lam)) / math.factorial(k)
 
 with open("data/matches_today.json") as f:
     matches = json.load(f)
@@ -43,27 +43,28 @@ for match in matches:
 
     over25 = 0
     btts = 0
-    multigol = 0
+    multigol_2_4 = 0
 
     home_goals = 0
     away_goals = 0
 
-    for (h,a),p in goal_probs.items():
+    for (h,a), p in goal_probs.items():
 
         total = h + a
 
         if total >= 3:
             over25 += p
 
-        if h >= 1 and a >= 1:
+        if h >=1 and a >=1:
             btts += p
 
         if 2 <= total <= 4:
-            multigol += p
+            multigol_2_4 += p
 
         home_goals += h * p
         away_goals += a * p
 
+    # stima range gol
     if home_goals < 1.2:
         home_range = "0-2"
     elif home_goals < 2:
@@ -78,30 +79,22 @@ for match in matches:
     else:
         away_range = "2-4"
 
-    # conversione data
+    # format ora
     match_time = datetime.fromisoformat(match["date"].replace("Z","+00:00"))
-
-    date_str = match_time.strftime("%d-%m-%Y")
     time_str = match_time.strftime("%H:%M")
 
     prediction = {
-
         "home": match["home"],
         "away": match["away"],
         "league": match["league"],
         "country": match["country"],
-
-        "date": date_str,
         "time": time_str,
-
         "multigol": "2-4",
         "home_multigol": home_range,
         "away_multigol": away_range,
-
         "over25": round(over25*100,1),
         "btts": round(btts*100,1),
-        "probability": round(multigol*100,1)
-
+        "probability": round(multigol_2_4*100,1)
     }
 
     predictions.append(prediction)

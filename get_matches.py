@@ -11,7 +11,7 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-today = datetime.now().strftime("%Y-%m-%d")
+today = datetime.utcnow().strftime("%Y-%m-%d")
 
 params = {
     "date": today
@@ -22,31 +22,53 @@ data = response.json()
 
 matches = []
 
-for match in data.get("response", []):
+# solo leghe affidabili
+TOP_LEAGUES = [
+39,   # Premier League
+140,  # La Liga
+135,  # Serie A
+78,   # Bundesliga
+61,   # Ligue 1
+94,   # Primeira Liga
+88,   # Eredivisie
+253,  # MLS
+2,    # Champions League
+3     # Europa League
+]
 
-    fixture = match["fixture"]
-    teams = match["teams"]
-    league = match["league"]
+for match in data["response"]:
+
+    league_id = match["league"]["id"]
+    status = match["fixture"]["status"]["short"]
 
     # prendiamo solo partite NON iniziate
-    if fixture["status"]["short"] != "NS":
+    if status != "NS":
         continue
 
+    # filtriamo solo leghe top
+    if league_id not in TOP_LEAGUES:
+        continue
+
+    home = match["teams"]["home"]["name"]
+    away = match["teams"]["away"]["name"]
+
+    home_id = match["teams"]["home"]["id"]
+    away_id = match["teams"]["away"]["id"]
+
+    league = match["league"]["name"]
+    country = match["league"]["country"]
+
+    date = match["fixture"]["date"]
+
     matches.append({
-
-        "home": teams["home"]["name"],
-        "away": teams["away"]["name"],
-
-        "home_id": teams["home"]["id"],
-        "away_id": teams["away"]["id"],
-
-        "league": league["name"],
-        "league_id": league["id"],
-
-        "country": league["country"],
-
-        "date": fixture["date"]
-
+        "home": home,
+        "away": away,
+        "home_id": home_id,
+        "away_id": away_id,
+        "league": league,
+        "league_id": league_id,
+        "country": country,
+        "date": date
     })
 
 print("Partite trovate:", len(matches))
