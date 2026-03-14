@@ -11,41 +11,43 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-today = datetime.utcnow().strftime("%Y-%m-%d")
+today = datetime.now().strftime("%Y-%m-%d")
 
 params = {
     "date": today
 }
 
 response = requests.get(url, headers=headers, params=params)
-
 data = response.json()
 
 matches = []
 
-for m in data["response"]:
+for match in data.get("response", []):
 
-    if m["fixture"]["status"]["short"] == "FT":
+    fixture = match["fixture"]
+    teams = match["teams"]
+    league = match["league"]
+
+    # prendiamo solo partite NON iniziate
+    if fixture["status"]["short"] != "NS":
         continue
 
-    match = {
+    matches.append({
 
-        "home": m["teams"]["home"]["name"],
-        "away": m["teams"]["away"]["name"],
+        "home": teams["home"]["name"],
+        "away": teams["away"]["name"],
 
-        "home_id": m["teams"]["home"]["id"],
-        "away_id": m["teams"]["away"]["id"],
+        "home_id": teams["home"]["id"],
+        "away_id": teams["away"]["id"],
 
-        "league": m["league"]["name"],
-        "league_id": m["league"]["id"],
+        "league": league["name"],
+        "league_id": league["id"],
 
-        "country": m["league"]["country"],
+        "country": league["country"],
 
-        "date": m["fixture"]["date"]
+        "date": fixture["date"]
 
-    }
-
-    matches.append(match)
+    })
 
 print("Partite trovate:", len(matches))
 
