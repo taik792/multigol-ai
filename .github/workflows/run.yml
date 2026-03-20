@@ -3,7 +3,7 @@ name: Multigol AI Scanner
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 8 * * *'   # ogni giorno alle 08:00
+    - cron: '0 11, 16 * *'   # ogni giorno alle 11 e alle 16
 
 jobs:
   build:
