@@ -1,33 +1,33 @@
 [
   {
-    "home": "PEC Zwolle",
-    "away": "Groningen",
+    "home": "Heracles",
+    "away": "Excelsior",
     "league": "Eredivisie",
     "country": "Netherlands",
     "time": "19:00",
     "multigol": "2-4",
-    "home_multigol": "1-3",
-    "away_multigol": "1-3",
-    "over25": 52.4,
-    "btts": 56.2,
-    "probability": 61.7
+    "home_multigol": "0-2",
+    "away_multigol": "0-2",
+    "over25": 20.3,
+    "btts": 27.6,
+    "probability": 43.8
   },
   {
-    "home": "Borussia M\u00f6nchengladbach",
-    "away": "FC St. Pauli",
+    "home": "RB Leipzig",
+    "away": "1899 Hoffenheim",
     "league": "Bundesliga",
     "country": "Germany",
     "time": "19:30",
     "multigol": "2-4",
     "home_multigol": "1-3",
     "away_multigol": "1-3",
-    "over25": 48.9,
-    "btts": 53.4,
-    "probability": 61.2
+    "over25": 60.7,
+    "btts": 61.8,
+    "probability": 60.9
   },
   {
-    "home": "Torino",
-    "away": "Parma",
+    "home": "Genoa",
+    "away": "Udinese",
     "league": "Serie A",
     "country": "Italy",
     "time": "19:45",
@@ -39,16 +39,16 @@
     "probability": 60.0
   },
   {
-    "home": "Marseille",
-    "away": "Auxerre",
+    "home": "Lens",
+    "away": "Angers",
     "league": "Ligue 1",
     "country": "France",
     "time": "19:45",
     "multigol": "2-4",
     "home_multigol": "1-3",
-    "away_multigol": "1-3",
-    "over25": 61.6,
-    "btts": 62.3,
-    "probability": 60.7
+    "away_multigol": "0-2",
+    "over25": 42.6,
+    "btts": 47.4,
+    "probability": 59.6
   }
 ]
