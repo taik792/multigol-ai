@@ -13,7 +13,6 @@ headers = {
 with open("data/matches_today.json") as f:
     matches = json.load(f)
 
-# carica stats se esistono
 if os.path.exists("data/team_stats.json"):
     with open("data/team_stats.json") as f:
         team_stats = json.load(f)
@@ -22,7 +21,7 @@ else:
 
 updated = 0
 
-for match in matches:
+for match in matches[:20]:  # 🔥 limite API
 
     league_id = match["league_id"]
 
@@ -30,7 +29,7 @@ for match in matches:
 
         team_id = str(team_id)
 
-        # 🔥 BLOCCO API: se già esiste → NON CHIAMA API
+        # 🔥 NON richiama API se già esiste
         if team_id in team_stats:
             continue
 
