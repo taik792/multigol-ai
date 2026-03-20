@@ -1,46 +1,70 @@
-name: Run Multigol
+import requests
+import json
+import os
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 */6 * * *'
+API_KEY = os.getenv("API_KEY")
 
-jobs:
+url = "https://v3.football.api-sports.io/teams/statistics"
 
-  build:
+headers = {
+    "x-apisports-key": API_KEY
+}
 
-    runs-on: ubuntu-latest
+# carica partite
+with open("data/matches_today.json") as f:
+    matches = json.load(f)
 
-    steps:
+# carica statistiche già salvate
+if os.path.exists("data/team_stats.json"):
+    with open("data/team_stats.json") as f:
+        team_stats = json.load(f)
+else:
+    team_stats = {}
 
-    - name: Checkout repository
-      uses: actions/checkout@v4
+updated = 0
 
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
+for match in matches:
 
-    - name: Install libraries
-      run: pip install requests beautifulsoup4
+    league_id = match["league_id"]
+    home_id = match["home_id"]
+    away_id = match["away_id"]
 
-    - name: Get matches
-      env:
-        API_KEY: ${{ secrets.API_KEY }}
-      run: python get_matches.py
+    for team_id in [home_id, away_id]:
 
-    - name: Update stats
-      env:
-        API_KEY: ${{ secrets.API_KEY }}
-      run: python update_team_stats.py
+        team_id = str(team_id)
 
-    - name: Run engine
-      run: python multigol_engine.py
+        # se già salvata → skip
+        if team_id in team_stats:
+            continue
 
-    - name: Commit results
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "actions@github.com"
-        git add .
-        git commit -m "update predictions" || echo "No changes"
-        git push
+        params = {
+            "league": league_id,
+            "season": 2024,
+            "team": team_id
+        }
+
+        try:
+            response = requests.get(url, headers=headers, params=params)
+            data = response.json()
+
+            if not data.get("response"):
+                continue
+
+            stats = data["response"]
+
+            team_stats[team_id] = {
+                "goals_for": stats["goals"]["for"]["average"]["total"],
+                "goals_against": stats["goals"]["against"]["average"]["total"]
+            }
+
+            updated += 1
+
+        except:
+            print("Errore squadra:", team_id)
+
+print("Statistiche squadre aggiornate:", updated)
+
+os.makedirs("data", exist_ok=True)
+
+with open("data/team_stats.json", "w") as f:
+    json.dump(team_stats, f, indent=2)
