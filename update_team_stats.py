@@ -10,11 +10,10 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-# carica partite
 with open("data/matches_today.json") as f:
     matches = json.load(f)
 
-# carica statistiche già salvate
+# carica stats se esistono
 if os.path.exists("data/team_stats.json"):
     with open("data/team_stats.json") as f:
         team_stats = json.load(f)
@@ -26,14 +25,12 @@ updated = 0
 for match in matches:
 
     league_id = match["league_id"]
-    home_id = match["home_id"]
-    away_id = match["away_id"]
 
-    for team_id in [home_id, away_id]:
+    for team_id in [match["home_id"], match["away_id"]]:
 
         team_id = str(team_id)
 
-        # se già salvata → skip
+        # 🔥 BLOCCO API: se già esiste → NON CHIAMA API
         if team_id in team_stats:
             continue
 
@@ -62,9 +59,7 @@ for match in matches:
         except:
             print("Errore squadra:", team_id)
 
-print("Statistiche squadre aggiornate:", updated)
-
-os.makedirs("data", exist_ok=True)
+print("Statistiche nuove scaricate:", updated)
 
 with open("data/team_stats.json", "w") as f:
     json.dump(team_stats, f, indent=2)
