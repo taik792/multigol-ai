@@ -7,38 +7,10 @@
     "date": "2026-03-20",
     "time": "19:30",
     "multigol": "2-4",
-    "home_multigol": "1-2",
-    "away_multigol": "1-2",
+    "home_multigol": "1-3",
+    "away_multigol": "1-3",
     "over25": 80.0,
     "btts": 63.0,
     "probability": 71.5
-  },
-  {
-    "home": "Bournemouth",
-    "away": "Manchester United",
-    "league": "Premier League",
-    "country": "England",
-    "date": "2026-03-20",
-    "time": "20:00",
-    "multigol": "2-4",
-    "home_multigol": "1-2",
-    "away_multigol": "1-2",
-    "over25": 66.2,
-    "btts": 43.5,
-    "probability": 54.9
-  },
-  {
-    "home": "CFR 1907 Cluj",
-    "away": "Rapid",
-    "league": "Liga I",
-    "country": "Romania",
-    "date": "2026-03-20",
-    "time": "19:45",
-    "multigol": "2-4",
-    "home_multigol": "1-2",
-    "away_multigol": "1-2",
-    "over25": 65.0,
-    "btts": 41.7,
-    "probability": 53.3
   }
 ]
