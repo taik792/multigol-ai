@@ -21,9 +21,15 @@ params = {
 response = requests.get(url, headers=headers, params=params)
 data = response.json()
 
+# 🔥 SOLO CAMPIONATI TOP
+TOP_LEAGUES = [39, 135, 78, 61, 140]
+
 matches = []
 
 for match in data.get("response", []):
+
+    if match["league"]["id"] not in TOP_LEAGUES:
+        continue
 
     match_data = {
         "home": match["teams"]["home"]["name"],
@@ -39,7 +45,11 @@ for match in data.get("response", []):
 
     matches.append(match_data)
 
-print("Partite trovate:", len(matches))
+    # 🔥 LIMITE PARTITE (ANTI API)
+    if len(matches) >= 30:
+        break
+
+print("Partite selezionate:", len(matches))
 
 os.makedirs("data", exist_ok=True)
 
