@@ -48,7 +48,7 @@ for match in matches:
     probability = (over25 + btts) / 2
 
     # 🔥 filtro qualità
-    if probability < 45:
+    if probability < 55:
         continue
 
     predictions.append({
