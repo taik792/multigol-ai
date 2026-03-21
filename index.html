@@ -1,108 +1,44 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-<meta charset="UTF-8">
-<title>Multigol AI Scanner</title>
-
-<style>
-
-body{
-background:#0f2742;
-font-family:Arial;
-color:white;
-text-align:center;
-}
-
-h1{
-margin-top:30px;
-}
-
-.container{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-margin-top:30px;
-}
-
-.card{
-
-background:#1f3f63;
-border-radius:12px;
-padding:20px;
-margin:15px;
-width:260px;
-
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
-}
-
-.card h3{
-margin-top:0;
-}
-
-.prob{
-color:#00ff9c;
-font-weight:bold;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<h1>⚽ Multigol AI Scanner</h1>
-
-<div id="matches" class="container"></div>
-
 <script>
-
 fetch("data/predictions.json")
-.then(response => response.json())
+.then(res => res.json())
 .then(data => {
 
-const container = document.getElementById("matches");
+    const container = document.getElementById("matches");
+    container.innerHTML = "";
 
-data.slice(0,30).forEach(match => {
+    data.forEach(match => {
 
-const card = document.createElement("div");
-card.className = "card";
+        const card = document.createElement("div");
+        card.className = "card";
 
-card.innerHTML = `
+        card.innerHTML = `
+        <h3>${match.home} vs ${match.away}</h3>
 
-<h3>${match.home} vs ${match.away}</h3>
+        <p>${match.country} - ${match.league}</p>
+        <p>📅 ${match.date} ⏰ ${match.time}</p>
 
-<p>${match.country} - ${match.league}</p>
+        <p><b>1:</b> ${match.home_win}% 
+           <b>X:</b> ${match.draw}% 
+           <b>2:</b> ${match.away_win}%</p>
 
-<p>📅 ${match.date} 🕒 ${match.time}</p>
+        <p>⚽ Over 2.5: ${match.over25}%</p>
+        <p>🤝 BTTS: ${match.btts}%</p>
 
-<p>🎯 Multigol: ${match.multigol}</p>
+        <p>🏠 Over 0.5 Casa: ${match.home_over05}%</p>
+        <p>🏠 Over 1.5 Casa: ${match.home_over15}%</p>
 
-<p>🏠 Casa multigol: ${match.home_multigol}</p>
+        <p>✈️ Over 0.5 Ospite: ${match.away_over05}%</p>
+        <p>✈️ Over 1.5 Ospite: ${match.away_over15}%</p>
 
-<p>✈️ Ospite multigol: ${match.away_multigol}</p>
+        <p>🎯 Multigol: ${match.multigol}</p>
 
-<p>⬆️ Over 2.5: ${match.over25}%</p>
+        <p style="color:#00ff9c; font-weight:bold;">
+        💡 ${match.combo}
+        </p>
+        `;
 
-<p>🤝 BTTS: ${match.btts}%</p>
-
-<p class="prob">Probabilità: ${match.probability}%</p>
-
-`;
-
-container.appendChild(card);
+        container.appendChild(card);
+    });
 
 });
-
-})
-.catch(err => {
-
-console.log(err);
-
-});
-
 </script>
-
-</body>
-
-</html>
