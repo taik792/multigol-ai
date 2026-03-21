@@ -1,7 +1,7 @@
 import requests
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 
 API_KEY = os.getenv("API_KEY")
 
@@ -11,47 +11,50 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
+# 📅 oggi + domani
 today = datetime.utcnow().strftime("%Y-%m-%d")
+tomorrow = (datetime.utcnow() + timedelta(days=1)).strftime("%Y-%m-%d")
 
 params = {
-    "date": today,
-    "status": "NS"
+    "from": today,
+    "to": tomorrow,
+    "status": "NS"  # solo non iniziate
 }
 
 response = requests.get(url, headers=headers, params=params)
-data = response.json()
 
-# 🔥 SOLO CAMPIONATI TOP
-TOP_LEAGUES = [39, 135, 78, 61, 140]
+data = response.json()
 
 matches = []
 
-for match in data.get("response", []):
+if "response" in data:
+    for match in data["response"]:
+        try:
+            fixture = match["fixture"]
+            teams = match["teams"]
+            league = match["league"]
 
-    if match["league"]["id"] not in TOP_LEAGUES:
-        continue
+            match_data = {
+                "fixture_id": fixture["id"],
+                "date": fixture["date"][:10],
+                "time": fixture["date"][11:16],
+                "home": teams["home"]["name"],
+                "away": teams["away"]["name"],
+                "home_id": teams["home"]["id"],
+                "away_id": teams["away"]["id"],
+                "league": league["name"],
+                "country": league["country"]
+            }
 
-    match_data = {
-        "home": match["teams"]["home"]["name"],
-        "away": match["teams"]["away"]["name"],
-        "home_id": match["teams"]["home"]["id"],
-        "away_id": match["teams"]["away"]["id"],
-        "league": match["league"]["name"],
-        "league_id": match["league"]["id"],
-        "country": match["league"]["country"],
-        "date": match["fixture"]["date"][:10],
-        "time": match["fixture"]["date"][11:16]
-    }
+            matches.append(match_data)
 
-    matches.append(match_data)
+        except:
+            continue
 
-    # 🔥 LIMITE PARTITE (ANTI API)
-    if len(matches) >= 30:
-        break
-
-print("Partite selezionate:", len(matches))
-
+# 📁 salva file
 os.makedirs("data", exist_ok=True)
 
 with open("data/matches_today.json", "w") as f:
     json.dump(matches, f, indent=2)
+
+print("Partite trovate:", len(matches))
