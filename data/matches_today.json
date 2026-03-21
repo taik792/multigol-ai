@@ -300,18 +300,6 @@
     "country": "World"
   },
   {
-    "fixture_id": 1422045,
-    "date": "2026-03-21",
-    "time": "14:00",
-    "home": "Oravsk\u00e9 Vesel\u00e9",
-    "away": "Fomat Martin",
-    "home_id": 14089,
-    "away_id": 14082,
-    "league": "3. liga - Center",
-    "league_id": 646,
-    "country": "Slovakia"
-  },
-  {
     "fixture_id": 1422427,
     "date": "2026-03-21",
     "time": "14:00",
@@ -1092,18 +1080,6 @@
     "country": "Brazil"
   },
   {
-    "fixture_id": 1493371,
-    "date": "2026-03-21",
-    "time": "21:45",
-    "home": "Cruz Azul W",
-    "away": "Mazatl\u00e1n W",
-    "home_id": 14875,
-    "away_id": 14878,
-    "league": "Liga MX Femenil",
-    "league_id": 673,
-    "country": "Mexico"
-  },
-  {
     "fixture_id": 1445581,
     "date": "2026-03-21",
     "time": "22:00",
@@ -1111,18 +1087,6 @@
     "away": "Mineros de Fresnillo",
     "home_id": 15927,
     "away_id": 15935,
-    "league": "Liga Premier Serie A",
-    "league_id": 722,
-    "country": "Mexico"
-  },
-  {
-    "fixture_id": 1457046,
-    "date": "2026-03-21",
-    "time": "22:00",
-    "home": "Deportivo Zap",
-    "away": "Cordob\u00e9s",
-    "home_id": 17783,
-    "away_id": 24939,
     "league": "Liga Premier Serie A",
     "league_id": 722,
     "country": "Mexico"
