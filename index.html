@@ -1,4 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Multigol AI Scanner PRO</title>
+
+<style>
+
+body {
+    background: #0f2742;
+    font-family: Arial;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 30px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.card {
+    background: #1f3f63;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.combo {
+    color: #00ff9c;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>⚽ Multigol AI Scanner PRO</h1>
+
+<div id="matches" class="container"></div>
+
 <script>
+
 fetch("data/predictions.json")
 .then(res => res.json())
 .then(data => {
@@ -32,13 +89,19 @@ fetch("data/predictions.json")
 
         <p>🎯 Multigol: ${match.multigol}</p>
 
-        <p style="color:#00ff9c; font-weight:bold;">
-        💡 ${match.combo}
-        </p>
+        <p class="combo">💡 ${match.combo}</p>
         `;
 
         container.appendChild(card);
     });
 
+})
+.catch(err => {
+    console.log("Errore caricamento:", err);
 });
+
 </script>
+
+</body>
+
+</html>
