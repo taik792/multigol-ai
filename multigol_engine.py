@@ -146,7 +146,7 @@ for match in matches:
             prob = 1 - over25
 
         # 🔥 filtro qualità
-        if pick and prob > 0.55:
+        if pick and prob > 0.48:
             predictions.append({
                 "home": home,
                 "away": away,
