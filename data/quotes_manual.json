@@ -1,6 +1,6 @@
 [
   {
-    "home": "Newcastel",
+    "home": "Newcastle",
     "away": "Sunderland",
 
     "q1": 1.67,
@@ -17,7 +17,7 @@
     "o_o15": 3.70
   },
   {
-    "home": "NEC Nimega",
+    "home": "NEC Nijmegen",
     "away": "Heerenveen",
 
     "q1": 1.65,
@@ -35,7 +35,7 @@
   },
   {
     "home": "Aarhus",
-    "away": "Brøndby IF",
+    "away": "Brondby",
 
     "q1": 1.72,
     "qx": 3.75,
