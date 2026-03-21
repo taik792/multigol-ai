@@ -1104,18 +1104,6 @@
     "country": "USA"
   },
   {
-    "fixture_id": 1498387,
-    "date": "2026-03-21",
-    "time": "22:00",
-    "home": "Deportivo Madryn",
-    "away": "CA Estudiantes",
-    "home_id": 1929,
-    "away_id": 1936,
-    "league": "Primera Nacional",
-    "league_id": 129,
-    "country": "Argentina"
-  },
-  {
     "fixture_id": 1498389,
     "date": "2026-03-21",
     "time": "22:00",
@@ -1150,78 +1138,6 @@
     "league": "Liga Nacional",
     "league_id": 339,
     "country": "Guatemala"
-  },
-  {
-    "fixture_id": 1502829,
-    "date": "2026-03-21",
-    "time": "22:00",
-    "home": "Gr\u00eamio S\u00e3ocarlense",
-    "away": "Penapolense",
-    "home_id": 22947,
-    "away_id": 10022,
-    "league": "Paulista - A4",
-    "league_id": 1062,
-    "country": "Brazil"
-  },
-  {
-    "fixture_id": 1506158,
-    "date": "2026-03-21",
-    "time": "22:00",
-    "home": "UCV",
-    "away": "Deportivo La Guaira",
-    "home_id": 2840,
-    "away_id": 2813,
-    "league": "Primera Divisi\u00f3n",
-    "league_id": 299,
-    "country": "Venezuela"
-  },
-  {
-    "fixture_id": 1511917,
-    "date": "2026-03-21",
-    "time": "22:00",
-    "home": "Orsomarso",
-    "away": "Ind. Yumbo",
-    "home_id": 1469,
-    "away_id": 27411,
-    "league": "Primera B",
-    "league_id": 240,
-    "country": "Colombia"
-  },
-  {
-    "fixture_id": 1513005,
-    "date": "2026-03-21",
-    "time": "22:00",
-    "home": "Houston Dynamo FC II",
-    "away": "North Texas",
-    "home_id": 18813,
-    "away_id": 10282,
-    "league": "MLS Next Pro",
-    "league_id": 909,
-    "country": "USA"
-  },
-  {
-    "fixture_id": 1524367,
-    "date": "2026-03-21",
-    "time": "22:00",
-    "home": "Atl\u00e9tico Nacional W",
-    "away": "Atl\u00e9tico Bucaramanga W",
-    "home_id": 15722,
-    "away_id": 15718,
-    "league": "Liga Femenina",
-    "league_id": 712,
-    "country": "Colombia"
-  },
-  {
-    "fixture_id": 1531850,
-    "date": "2026-03-21",
-    "time": "22:00",
-    "home": "Cibao",
-    "away": "Delfines Del Este",
-    "home_id": 8004,
-    "away_id": 16139,
-    "league": "Liga Mayor",
-    "league_id": 759,
-    "country": "Dominican-Republic"
   },
   {
     "fixture_id": 1490167,

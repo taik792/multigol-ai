@@ -11,6 +11,17 @@
     "source": "ai"
   },
   {
+    "home": "FC Copenhagen W",
+    "away": "ASA Aarhus W",
+    "league": "Kvindeliga",
+    "country": "Denmark",
+    "date": "2026-03-21",
+    "time": "13:00",
+    "pick": "Under 2.5",
+    "prob": 100.0,
+    "source": "ai"
+  },
+  {
     "home": "Muhanga",
     "away": "Musanze",
     "league": "National Soccer League",
@@ -30,6 +41,17 @@
     "time": "13:00",
     "pick": "Under 2.5",
     "prob": 90.1,
+    "source": "ai"
+  },
+  {
+    "home": "Midtjylland W",
+    "away": "Osterbro W",
+    "league": "Kvindeliga",
+    "country": "Denmark",
+    "date": "2026-03-21",
+    "time": "13:00",
+    "pick": "Under 2.5",
+    "prob": 87.2,
     "source": "ai"
   },
   {
@@ -85,28 +107,6 @@
     "time": "12:15",
     "pick": "Under 2.5",
     "prob": 77.5,
-    "source": "ai"
-  },
-  {
-    "home": "Fortuna K\u00f6ln U19",
-    "away": "Darmstadt 98 U19",
-    "league": "U19 Bundesliga",
-    "country": "Germany",
-    "date": "2026-03-21",
-    "time": "13:00",
-    "pick": "Under 2.5",
-    "prob": 74.9,
-    "source": "ai"
-  },
-  {
-    "home": "Police",
-    "away": "Etincelles",
-    "league": "National Soccer League",
-    "country": "Rwanda",
-    "date": "2026-03-21",
-    "time": "13:00",
-    "pick": "Under 2.5",
-    "prob": 71.1,
     "source": "ai"
   }
 ]
