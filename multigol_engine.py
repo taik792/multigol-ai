@@ -1,6 +1,11 @@
 import json
-import os
+import math
 
+# funzione Poisson
+def poisson(k, lam):
+    return (lam**k * math.exp(-lam)) / math.factorial(k)
+
+# carica dati
 with open("data/matches_today.json") as f:
     matches = json.load(f)
 
@@ -25,30 +30,72 @@ for match in matches:
     except:
         continue
 
-    # 🔥 CALCOLO REALE
-    expected_home = (home_for + away_against) / 2
-    expected_away = (away_for + home_against) / 2
+    # 🔥 Expected goals
+    home_lambda = (home_for + away_against) / 2
+    away_lambda = (away_for + home_against) / 2
 
-    total = expected_home + expected_away
+    score_probs = {}
 
-    # 🎯 MULTIGOL
-    if 2 <= total <= 4:
-        multigol = "2-4"
-    elif total < 2:
-        multigol = "0-2"
+    # calcolo probabilità risultati
+    for h in range(6):
+        for a in range(6):
+            p = poisson(h, home_lambda) * poisson(a, away_lambda)
+            score_probs[(h, a)] = p
+
+    home_win = 0
+    draw = 0
+    away_win = 0
+    btts = 0
+    over25 = 0
+    multigol_2_5 = 0
+
+    for (h, a), p in score_probs.items():
+
+        if h > a:
+            home_win += p
+        elif h == a:
+            draw += p
+        else:
+            away_win += p
+
+        if h >= 1 and a >= 1:
+            btts += p
+
+        if h + a >= 3:
+            over25 += p
+
+        if 2 <= (h + a) <= 5:
+            multigol_2_5 += p
+
+    # 🔥 Over squadra
+    home_over05 = 1 - poisson(0, home_lambda)
+    home_over15 = 1 - (poisson(0, home_lambda) + poisson(1, home_lambda))
+
+    away_over05 = 1 - poisson(0, away_lambda)
+    away_over15 = 1 - (poisson(0, away_lambda) + poisson(1, away_lambda))
+
+    # 🔥 Favorita
+    if home_win > away_win:
+        favorite = "home"
     else:
-        multigol = "3-5"
+        favorite = "away"
 
-    casa = "1-3" if expected_home >= 1 else "0-2"
-    ospite = "1-3" if expected_away >= 1 else "0-2"
+    # 🔥 Combo intelligente
+    combo = ""
 
-    over25 = min((total / 4) * 100, 100)
-    btts = min((expected_home * expected_away) / 4 * 100, 100)
-
-    probability = (over25 + btts) / 2
+    if favorite == "home":
+        if home_win + draw > 0.65 and multigol_2_5 > 0.55:
+            combo = "1X + Multigol 2-5"
+        elif home_over15 > 0.6:
+            combo = "Over 1.5 Casa"
+    else:
+        if away_win + draw > 0.65 and multigol_2_5 > 0.55:
+            combo = "X2 + Multigol 2-5"
+        elif away_over15 > 0.6:
+            combo = "Over 1.5 Ospite"
 
     # 🔥 filtro qualità
-    if probability < 55:
+    if multigol_2_5 < 0.50:
         continue
 
     predictions.append({
@@ -58,16 +105,25 @@ for match in matches:
         "country": match["country"],
         "date": match["date"],
         "time": match["time"],
-        "multigol": multigol,
-        "home_multigol": casa,
-        "away_multigol": ospite,
-        "over25": round(over25, 1),
-        "btts": round(btts, 1),
-        "probability": round(probability, 1)
+
+        "home_win": round(home_win * 100, 1),
+        "draw": round(draw * 100, 1),
+        "away_win": round(away_win * 100, 1),
+
+        "btts": round(btts * 100, 1),
+        "over25": round(over25 * 100, 1),
+        "multigol": "2-5",
+
+        "home_over05": round(home_over05 * 100, 1),
+        "home_over15": round(home_over15 * 100, 1),
+        "away_over05": round(away_over05 * 100, 1),
+        "away_over15": round(away_over15 * 100, 1),
+
+        "combo": combo
     })
 
 # 🔥 TOP 10
-predictions = sorted(predictions, key=lambda x: x["probability"], reverse=True)[:10]
+predictions = sorted(predictions, key=lambda x: x["over25"], reverse=True)[:10]
 
 print("Pronostici generati:", len(predictions))
 
