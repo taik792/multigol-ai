@@ -11,6 +11,17 @@
     "source": "ai"
   },
   {
+    "home": "Muhanga",
+    "away": "Musanze",
+    "league": "National Soccer League",
+    "country": "Rwanda",
+    "date": "2026-03-21",
+    "time": "13:00",
+    "pick": "Under 2.5",
+    "prob": 92.9,
+    "source": "ai"
+  },
+  {
     "home": "LSK Kvinner W",
     "away": "R\u00f8a W",
     "league": "Toppserien",
@@ -26,6 +37,17 @@
     "away": "Victoria Wrze\u015bnia",
     "league": "III Liga - Group 2",
     "country": "Poland",
+    "date": "2026-03-21",
+    "time": "13:00",
+    "pick": "Under 2.5",
+    "prob": 83.5,
+    "source": "ai"
+  },
+  {
+    "home": "Moss",
+    "away": "Lyn II",
+    "league": "Friendlies Clubs",
+    "country": "World",
     "date": "2026-03-21",
     "time": "13:00",
     "pick": "Under 2.5",
@@ -66,47 +88,25 @@
     "source": "ai"
   },
   {
-    "home": "Kyustendil",
-    "away": "Germaneya",
-    "league": "Third League - Southwest",
-    "country": "Bulgaria",
+    "home": "Fortuna K\u00f6ln U19",
+    "away": "Darmstadt 98 U19",
+    "league": "U19 Bundesliga",
+    "country": "Germany",
     "date": "2026-03-21",
     "time": "13:00",
     "pick": "Under 2.5",
-    "prob": 69.0,
+    "prob": 74.9,
     "source": "ai"
   },
   {
-    "home": "Southampton U18",
-    "away": "Aston Villa U18",
-    "league": "U18 Premier League - South",
-    "country": "England",
+    "home": "Police",
+    "away": "Etincelles",
+    "league": "National Soccer League",
+    "country": "Rwanda",
     "date": "2026-03-21",
-    "time": "12:00",
-    "pick": "Over 2.5",
-    "prob": 65.7,
-    "source": "ai"
-  },
-  {
-    "home": "Sotra",
-    "away": "Brann",
-    "league": "Friendlies Clubs",
-    "country": "World",
-    "date": "2026-03-21",
-    "time": "12:30",
-    "pick": "Over 2.5",
-    "prob": 64.0,
-    "source": "ai"
-  },
-  {
-    "home": "Mt Druitt Town",
-    "away": "Bulls Academy",
-    "league": "New South Wales NPL 2",
-    "country": "Australia",
-    "date": "2026-03-21",
-    "time": "08:00",
-    "pick": "Over 2.5",
-    "prob": 63.1,
+    "time": "13:00",
+    "pick": "Under 2.5",
+    "prob": 71.1,
     "source": "ai"
   }
 ]
