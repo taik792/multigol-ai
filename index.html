@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multigol AI Scanner PRO</title>
+</head>
+
+<body style="background:#0b1726; color:white; font-family:sans-serif;">
+
+<h1 style="text-align:center;">⚽ Multigol AI Scanner PRO</h1>
+
+<div id="matches"></div>
+
 <script>
 fetch('data/predictions.json')
 .then(res => res.json())
@@ -11,7 +23,7 @@ fetch('data/predictions.json')
         let badge = match.source === "quotes" ? "🔥 TOP PICK" : "";
 
         container.innerHTML += `
-        <div class="card">
+        <div style="background:#1e2a38;padding:15px;margin:10px;border-radius:10px;">
             <h3>${match.home} vs ${match.away}</h3>
             <p>${match.league}</p>
             <p>${match.date} ${match.time}</p>
@@ -25,5 +37,9 @@ fetch('data/predictions.json')
         `;
     });
 
-});
+})
+.catch(err => console.error(err));
 </script>
+
+</body>
+</html>
