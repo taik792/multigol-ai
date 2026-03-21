@@ -15,41 +15,41 @@ headers = {
 today = datetime.utcnow().strftime("%Y-%m-%d")
 tomorrow = (datetime.utcnow() + timedelta(days=1)).strftime("%Y-%m-%d")
 
-params = {
-    "from": today,
-    "to": tomorrow,
-    "status": "NS"  # solo non iniziate
-}
-
-response = requests.get(url, headers=headers, params=params)
-
-data = response.json()
-
 matches = []
 
-if "response" in data:
-    for match in data["response"]:
-        try:
-            fixture = match["fixture"]
-            teams = match["teams"]
-            league = match["league"]
+for date in [today, tomorrow]:
 
-            match_data = {
-                "fixture_id": fixture["id"],
-                "date": fixture["date"][:10],
-                "time": fixture["date"][11:16],
-                "home": teams["home"]["name"],
-                "away": teams["away"]["name"],
-                "home_id": teams["home"]["id"],
-                "away_id": teams["away"]["id"],
-                "league": league["name"],
-                "country": league["country"]
-            }
+    params = {
+        "date": date,
+        "status": "NS"
+    }
 
-            matches.append(match_data)
+    response = requests.get(url, headers=headers, params=params)
+    data = response.json()
 
-        except:
-            continue
+    if "response" in data:
+        for match in data["response"]:
+            try:
+                fixture = match["fixture"]
+                teams = match["teams"]
+                league = match["league"]
+
+                match_data = {
+                    "fixture_id": fixture["id"],
+                    "date": fixture["date"][:10],
+                    "time": fixture["date"][11:16],
+                    "home": teams["home"]["name"],
+                    "away": teams["away"]["name"],
+                    "home_id": teams["home"]["id"],
+                    "away_id": teams["away"]["id"],
+                    "league": league["name"],
+                    "country": league["country"]
+                }
+
+                matches.append(match_data)
+
+            except:
+                continue
 
 # 📁 salva file
 os.makedirs("data", exist_ok=True)
