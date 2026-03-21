@@ -95,7 +95,7 @@ for match in matches:
             combo = "Over 1.5 Ospite"
 
     # 🔥 filtro qualità
-    if multigol_2_5 < 0.50:
+    if multigol_2_5 < 0.38:
         continue
 
     predictions.append({
