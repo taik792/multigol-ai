@@ -1,7 +1,8 @@
 import json
 import math
+import os
 
-# funzione Poisson
+# 🔥 Poisson
 def poisson(k, lam):
     return (lam**k * math.exp(-lam)) / math.factorial(k)
 
@@ -12,118 +13,154 @@ with open("data/matches_today.json") as f:
 with open("data/team_stats.json") as f:
     team_stats = json.load(f)
 
+# carica quote manuali (se esiste)
+quotes_data = []
+if os.path.exists("data/quotes_manual.json"):
+    with open("data/quotes_manual.json") as f:
+        quotes_data = json.load(f)
+
 predictions = []
 
+# 🔍 funzione per trovare quote match
+def find_quotes(home, away):
+    for q in quotes_data:
+        if q["home"] == home and q["away"] == away:
+            return q
+    return None
+
 for match in matches:
+
+    home = match["home"]
+    away = match["away"]
 
     home_id = str(match["home_id"])
     away_id = str(match["away_id"])
 
-    if home_id not in team_stats or away_id not in team_stats:
-        continue
+    # 🔍 controllo se ho quote manuali
+    q = find_quotes(home, away)
 
-    try:
-        home_for = float(team_stats[home_id]["goals_for"])
-        home_against = float(team_stats[home_id]["goals_against"])
-        away_for = float(team_stats[away_id]["goals_for"])
-        away_against = float(team_stats[away_id]["goals_against"])
-    except:
-        continue
+    # =========================
+    # 🔥 ORACLE (QUOTE MANUALI)
+    # =========================
+    if q:
+        try:
+            # lambda da quote
+            l_home = -math.log(max(0.01, 1 - (1/q["c_o05"])))
+            l_away = -math.log(max(0.01, 1 - (1/q["o_o05"])))
 
-    # 🔥 Expected goals
-    home_lambda = (home_for + away_against) / 2
-    away_lambda = (away_for + home_against) / 2
+            # probabilità combo
+            combos = []
 
-    score_probs = {}
+            ranges = [(1,3),(1,4),(2,3),(2,4),(2,5)]
 
-    # calcolo probabilità risultati
-    for h in range(6):
-        for a in range(6):
-            p = poisson(h, home_lambda) * poisson(a, away_lambda)
-            score_probs[(h, a)] = p
+            for mi, ma in ranges:
+                p_1x = sum(poisson(c, l_home)*poisson(o, l_away)
+                           for c in range(6) for o in range(6)
+                           if c >= o and mi <= (c+o) <= ma)
 
-    home_win = 0
-    draw = 0
-    away_win = 0
-    btts = 0
-    over25 = 0
-    multigol_2_5 = 0
+                p_x2 = sum(poisson(c, l_home)*poisson(o, l_away)
+                           for c in range(6) for o in range(6)
+                           if o >= c and mi <= (c+o) <= ma)
 
-    for (h, a), p in score_probs.items():
+                combos.append((p_1x, f"1X + Multigol {mi}-{ma}"))
+                combos.append((p_x2, f"X2 + Multigol {mi}-{ma}"))
 
-        if h > a:
-            home_win += p
-        elif h == a:
-            draw += p
-        else:
-            away_win += p
+            combos.sort(key=lambda x: x[0], reverse=True)
 
-        if h >= 1 and a >= 1:
-            btts += p
+            best_prob = combos[0][0] * 100
+            best_pick = combos[0][1]
 
-        if h + a >= 3:
-            over25 += p
+            # 🔥 filtro qualità
+            if best_prob >= 65:
+                predictions.append({
+                    "home": home,
+                    "away": away,
+                    "league": match["league"],
+                    "country": match["country"],
+                    "date": match["date"],
+                    "time": match["time"],
+                    "pick": best_pick,
+                    "prob": round(best_prob, 1),
+                    "source": "quotes"
+                })
 
-        if 2 <= (h + a) <= 5:
-            multigol_2_5 += p
+        except:
+            pass
 
-    # 🔥 Over squadra
-    home_over05 = 1 - poisson(0, home_lambda)
-    home_over15 = 1 - (poisson(0, home_lambda) + poisson(1, home_lambda))
-
-    away_over05 = 1 - poisson(0, away_lambda)
-    away_over15 = 1 - (poisson(0, away_lambda) + poisson(1, away_lambda))
-
-    # 🔥 Favorita
-    if home_win > away_win:
-        favorite = "home"
+    # =========================
+    # 🤖 AI NORMALE (STATISTICHE)
+    # =========================
     else:
-        favorite = "away"
 
-    # 🔥 Combo intelligente
-    combo = ""
+        if home_id not in team_stats or away_id not in team_stats:
+            continue
 
-    if favorite == "home":
-        if home_win + draw > 0.65 and multigol_2_5 > 0.55:
-            combo = "1X + Multigol 2-5"
-        elif home_over15 > 0.6:
-            combo = "Over 1.5 Casa"
-    else:
-        if away_win + draw > 0.65 and multigol_2_5 > 0.55:
-            combo = "X2 + Multigol 2-5"
-        elif away_over15 > 0.6:
-            combo = "Over 1.5 Ospite"
+        try:
+            hf = float(team_stats[home_id]["goals_for"])
+            ha = float(team_stats[home_id]["goals_against"])
+            af = float(team_stats[away_id]["goals_for"])
+            aa = float(team_stats[away_id]["goals_against"])
+        except:
+            continue
 
-    # 🔥 filtro qualità
-    if multigol_2_5 < 0.43:
-        continue
+        # lambda base
+        l_home = (hf + aa) / 2
+        l_away = (af + ha) / 2
 
-    predictions.append({
-        "home": match["home"],
-        "away": match["away"],
-        "league": match["league"],
-        "country": match["country"],
-        "date": match["date"],
-        "time": match["time"],
+        home_win = draw = away_win = 0
+        over25 = btts = 0
 
-        "home_win": round(home_win * 100, 1),
-        "draw": round(draw * 100, 1),
-        "away_win": round(away_win * 100, 1),
+        for h in range(5):
+            for a in range(5):
+                p = poisson(h, l_home) * poisson(a, l_away)
 
-        "btts": round(btts * 100, 1),
-        "over25": round(over25 * 100, 1),
-        "multigol": "2-5",
+                if h > a: home_win += p
+                elif h == a: draw += p
+                else: away_win += p
 
-        "home_over05": round(home_over05 * 100, 1),
-        "home_over15": round(home_over15 * 100, 1),
-        "away_over05": round(away_over05 * 100, 1),
-        "away_over15": round(away_over15 * 100, 1),
+                if h + a >= 3: over25 += p
+                if h >= 1 and a >= 1: btts += p
 
-        "combo": combo
-    })
+        # 🔥 LOGICA SCELTA
+        pick = None
+        prob = 0
 
-# 🔥 TOP 10
-predictions = sorted(predictions, key=lambda x: x["over25"], reverse=True)[:10]
+        if home_win > 0.6:
+            pick = "1"
+            prob = home_win
+
+        elif away_win > 0.6:
+            pick = "2"
+            prob = away_win
+
+        elif over25 > 0.6:
+            pick = "Over 2.5"
+            prob = over25
+
+        elif btts > 0.6:
+            pick = "Goal"
+            prob = btts
+
+        elif over25 < 0.4:
+            pick = "Under 2.5"
+            prob = 1 - over25
+
+        # 🔥 filtro qualità
+        if pick and prob > 0.55:
+            predictions.append({
+                "home": home,
+                "away": away,
+                "league": match["league"],
+                "country": match["country"],
+                "date": match["date"],
+                "time": match["time"],
+                "pick": pick,
+                "prob": round(prob*100, 1),
+                "source": "ai"
+            })
+
+# 🔥 ordina
+predictions = sorted(predictions, key=lambda x: x["prob"], reverse=True)[:10]
 
 print("Pronostici generati:", len(predictions))
 
