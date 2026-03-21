@@ -190,5 +190,41 @@
   "180": {
     "goals_for": "1.1",
     "goals_against": "1.9"
+  },
+  "168": {
+    "goals_for": "2.1",
+    "goals_against": "1.3"
+  },
+  "161": {
+    "goals_for": "1.6",
+    "goals_against": "1.6"
+  },
+  "162": {
+    "goals_for": "1.6",
+    "goals_against": "1.7"
+  },
+  "36": {
+    "goals_for": "1.4",
+    "goals_against": "1.4"
+  },
+  "44": {
+    "goals_for": "0.0",
+    "goals_against": "0.0"
+  },
+  "540": {
+    "goals_for": "1.1",
+    "goals_against": "1.3"
+  },
+  "546": {
+    "goals_for": "0.9",
+    "goals_against": "1.0"
+  },
+  "96": {
+    "goals_for": "1.3",
+    "goals_against": "1.3"
+  },
+  "97": {
+    "goals_for": "0.0",
+    "goals_against": "0.0"
   }
 }
