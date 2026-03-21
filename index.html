@@ -1,44 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-    <title>Multigol AI Scanner PRO</title>
+<meta charset="UTF-8">
+<title>Multigol AI Scanner PRO</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1e293b;
+    border-radius: 15px;
+    padding: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.match {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.league {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.time {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.section {
+    margin-top: 10px;
+}
+
+.pick {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.prob {
+    font-size: 14px;
+    color: #38bdf8;
+}
+
+.top {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.badge {
+    display: inline-block;
+    background: #22c55e;
+    color: black;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.quote-badge {
+    background: gold;
+    color: black;
+}
+
+.ai-badge {
+    background: #38bdf8;
+    color: black;
+}
+
+</style>
 </head>
 
-<body style="background:#0b1726; color:white; font-family:sans-serif;">
+<body>
 
-<h1 style="text-align:center;">⚽ Multigol AI Scanner PRO</h1>
+<h1>⚽ Multigol AI Scanner PRO</h1>
 
-<div id="matches"></div>
+<div class="container" id="matches"></div>
 
 <script>
 fetch('data/predictions.json')
 .then(res => res.json())
 .then(data => {
 
-    const container = document.getElementById("matches");
+    const container = document.getElementById('matches');
 
     data.forEach(match => {
 
-        let color = match.source === "quotes" ? "#00ff99" : "#ffffff";
-        let badge = match.source === "quotes" ? "🔥 TOP PICK" : "";
+        let badge = "";
+        if(match.source === "quotes") {
+            badge = '<div class="badge quote-badge">⭐ TOP PICK</div>';
+        } else {
+            badge = '<div class="badge ai-badge">🤖 AI</div>';
+        }
+
+        let pick = match.pick || match.combo || "N/D";
+        let prob = match.prob || match.over25 || 0;
 
         container.innerHTML += `
-        <div style="background:#1e2a38;padding:15px;margin:10px;border-radius:10px;">
-            <h3>${match.home} vs ${match.away}</h3>
-            <p>${match.league}</p>
-            <p>${match.date} ${match.time}</p>
+        <div class="card">
+            ${badge}
+            <div class="match">${match.home} vs ${match.away}</div>
+            <div class="league">${match.country} - ${match.league}</div>
+            <div class="time">📅 ${match.date} ⏰ ${match.time}</div>
 
-            <p style="color:${color}; font-weight:bold;">
-                ${badge} ${match.pick}
-            </p>
-
-            <p>Probabilità: ${match.prob}%</p>
+            <div class="section">
+                <div class="pick">🎯 ${pick}</div>
+                <div class="prob">📊 Probabilità: ${prob}%</div>
+            </div>
         </div>
         `;
     });
 
-})
-.catch(err => console.error(err));
+});
 </script>
 
 </body>
