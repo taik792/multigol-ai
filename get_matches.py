@@ -43,12 +43,13 @@ for date in [today, tomorrow]:
                     "home_id": teams["home"]["id"],
                     "away_id": teams["away"]["id"],
                     "league": league["name"],
+                    "league_id": league["id"],  # 🔥 FIX IMPORTANTE
                     "country": league["country"]
                 }
 
                 matches.append(match_data)
 
-            except:
+            except Exception as e:
                 continue
 
 # 📁 salva file
