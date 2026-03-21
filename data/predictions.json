@@ -1,1 +1,40 @@
-[]
+[
+  {
+    "home": "Brighton",
+    "away": "Liverpool",
+    "league": "Premier League",
+    "country": "England",
+    "date": "2026-03-21",
+    "time": "12:30",
+    "home_win": 27.3,
+    "draw": 22.0,
+    "away_win": 48.9,
+    "btts": 63.2,
+    "over25": 63.3,
+    "multigol": "2-5",
+    "home_over05": 75.3,
+    "home_over15": 40.8,
+    "away_over05": 85.8,
+    "away_over15": 58.0,
+    "combo": "X2 + Multigol 2-5"
+  },
+  {
+    "home": "Bayern M\u00fcnchen",
+    "away": "Union Berlin",
+    "league": "Bundesliga",
+    "country": "Germany",
+    "date": "2026-03-21",
+    "time": "14:30",
+    "home_win": 62.1,
+    "draw": 19.4,
+    "away_win": 16.0,
+    "btts": 54.6,
+    "over25": 59.5,
+    "multigol": "2-5",
+    "home_over05": 88.9,
+    "home_over15": 64.5,
+    "away_over05": 63.2,
+    "away_over15": 26.4,
+    "combo": "1X + Multigol 2-5"
+  }
+]
