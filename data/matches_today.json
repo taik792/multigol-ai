@@ -312,18 +312,6 @@
     "country": "Slovakia"
   },
   {
-    "fixture_id": 1422425,
-    "date": "2026-03-21",
-    "time": "14:00",
-    "home": "Nov\u00e9 Z\u00e1mky",
-    "away": "Ban\u00edk Prievidza",
-    "home_id": 14061,
-    "away_id": 14943,
-    "league": "3. liga - West",
-    "league_id": 644,
-    "country": "Slovakia"
-  },
-  {
     "fixture_id": 1422427,
     "date": "2026-03-21",
     "time": "14:00",
@@ -1032,18 +1020,6 @@
     "country": "Iceland"
   },
   {
-    "fixture_id": 1450775,
-    "date": "2026-03-21",
-    "time": "19:15",
-    "home": "Rotselaar",
-    "away": "Berchem Sport",
-    "home_id": 21811,
-    "away_id": 5751,
-    "league": "Second Amateur Division - VFV B",
-    "league_id": 150,
-    "country": "Belgium"
-  },
-  {
     "fixture_id": 1534914,
     "date": "2026-03-21",
     "time": "19:30",
@@ -1102,102 +1078,6 @@
     "league": "Eerste Divisie",
     "league_id": 568,
     "country": "Suriname"
-  },
-  {
-    "fixture_id": 1457045,
-    "date": "2026-03-21",
-    "time": "21:30",
-    "home": "Ciervos",
-    "away": "Zacatepec 1948",
-    "home_id": 15925,
-    "away_id": 2303,
-    "league": "Liga Premier Serie A",
-    "league_id": 722,
-    "country": "Mexico"
-  },
-  {
-    "fixture_id": 1457047,
-    "date": "2026-03-21",
-    "time": "21:30",
-    "home": "Sporting Canamy",
-    "away": "Gavilanes FC Matamoros",
-    "home_id": 17789,
-    "away_id": 15931,
-    "league": "Liga Premier Serie A",
-    "league_id": 722,
-    "country": "Mexico"
-  },
-  {
-    "fixture_id": 1457188,
-    "date": "2026-03-21",
-    "time": "21:30",
-    "home": "Deportiva Venados",
-    "away": "Ca\u00f1oneros Marina",
-    "home_id": 19907,
-    "away_id": 15924,
-    "league": "Liga Premier Serie A",
-    "league_id": 722,
-    "country": "Mexico"
-  },
-  {
-    "fixture_id": 1492184,
-    "date": "2026-03-21",
-    "time": "21:30",
-    "home": "Fluminense",
-    "away": "Atletico-MG",
-    "home_id": 124,
-    "away_id": 1062,
-    "league": "Serie A",
-    "league_id": 71,
-    "country": "Brazil"
-  },
-  {
-    "fixture_id": 1505025,
-    "date": "2026-03-21",
-    "time": "21:30",
-    "home": "Club Guarani",
-    "away": "Olimpia",
-    "home_id": 1174,
-    "away_id": 1182,
-    "league": "Division Profesional - Apertura",
-    "league_id": 250,
-    "country": "Paraguay"
-  },
-  {
-    "fixture_id": 1519299,
-    "date": "2026-03-21",
-    "time": "21:30",
-    "home": "Deportivo Cuenca",
-    "away": "Macara",
-    "home_id": 1154,
-    "away_id": 1155,
-    "league": "Liga Pro",
-    "league_id": 242,
-    "country": "Ecuador"
-  },
-  {
-    "fixture_id": 1527418,
-    "date": "2026-03-21",
-    "time": "21:30",
-    "home": "Laranja Mec\u00e2nica",
-    "away": "Patriotas",
-    "home_id": 18746,
-    "away_id": 21171,
-    "league": "Paranaense - 2",
-    "league_id": 614,
-    "country": "Brazil"
-  },
-  {
-    "fixture_id": 1531762,
-    "date": "2026-03-21",
-    "time": "21:30",
-    "home": "Fundaci\u00f3n Lara Deportiva",
-    "away": "Club Atletico Barinas",
-    "home_id": 10091,
-    "away_id": 27528,
-    "league": "Segunda Divisi\u00f3n",
-    "league_id": 300,
-    "country": "Venezuela"
   },
   {
     "fixture_id": 1534906,
@@ -1414,18 +1294,6 @@
     "league": "Serie B",
     "league_id": 72,
     "country": "Brazil"
-  },
-  {
-    "fixture_id": 1457189,
-    "date": "2026-03-21",
-    "time": "22:30",
-    "home": "Chapulineros",
-    "away": "Monta\u00f1eses",
-    "home_id": 26525,
-    "away_id": 17788,
-    "league": "Liga Premier Serie A",
-    "league_id": 722,
-    "country": "Mexico"
   },
   {
     "fixture_id": 1502830,
