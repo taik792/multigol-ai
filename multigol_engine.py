@@ -1,90 +1,104 @@
 import json
 import random
 
-# Carica matches
+# ===============================
+# LOAD FILES
+# ===============================
+
 with open("data/matches_today.json", "r", encoding="utf-8") as f:
     matches = json.load(f)
 
-# Carica quote manuali
 with open("data/quotes_manual.json", "r", encoding="utf-8") as f:
     quotes = json.load(f)
 
-# Mappa quote
-quotes_map = {q["fixture_id"]: q for q in quotes}
+# ===============================
+# UTILS
+# ===============================
+
+def find_quote(fixture_id):
+    for q in quotes:
+        if q.get("fixture_id") == fixture_id:
+            return q
+    return None
+
+def generate_pick(q):
+    picks = []
+
+    # 1X2
+    if q["q1"] < 2:
+        picks.append(("1", 60))
+    if q["q2"] < 2:
+        picks.append(("2", 60))
+    if q["qx"] < 3:
+        picks.append(("X", 55))
+
+    # GG / NG
+    if q["qgg"] < 1.80:
+        picks.append(("GG", 65))
+    if q["qng"] < 1.80:
+        picks.append(("NG", 65))
+
+    # OVER / UNDER
+    if q["o_05"] < 1.50:
+        picks.append(("Over 0.5", 75))
+    if q["o_15"] < 2:
+        picks.append(("Over 1.5", 70))
+    if q["c_15"] < 2:
+        picks.append(("Under 1.5", 65))
+
+    # fallback
+    if not picks:
+        return "Over 1.5", 55
+
+    pick = max(picks, key=lambda x: x[1])
+    return pick
+
+# ===============================
+# MAIN ENGINE
+# ===============================
 
 predictions = []
 
 for match in matches:
+    fixture_id = match["fixture"]["id"]
+    home = match["teams"]["home"]["name"]
+    away = match["teams"]["away"]["name"]
+    league = match["league"]["name"]
+    date = match["fixture"]["date"]
 
-    fixture_id = match.get("fixture_id")
+    q = find_quote(fixture_id)
 
-    # 🔥 SE NON HAI QUOTE → FALLBACK
-    if fixture_id not in quotes_map:
-
-        prediction = random.choice(["1", "X", "2"])
-        confidence = random.randint(55, 70)
-
-        predictions.append({
-            "fixture_id": fixture_id,
-            "home": match["home"],
-            "away": match["away"],
-            "league": match.get("league", ""),
-            "date": match.get("date", ""),
-            "time": match.get("time", ""),
-            "prediction": prediction,
-            "probability": confidence
-        })
-
+    if not q:
         continue
 
-    # 🔥 SE HAI QUOTE → CALCOLO VERO
-    q = quotes_map[fixture_id]
-
-    q1 = q["q1"]
-    qx = q["qx"]
-    q2 = q["q2"]
-
-    p1 = 1 / q1
-    px = 1 / qx
-    p2 = 1 / q2
-
-    total = p1 + px + p2
-
-    p1 /= total
-    px /= total
-    p2 /= total
-
-    probs = {
-        "1": p1,
-        "X": px,
-        "2": p2
-    }
-
-    pick = max(probs, key=probs.get)
-    confidence = round(probs[pick] * 100, 1)
+    pick, confidence = generate_pick(q)
 
     predictions.append({
         "fixture_id": fixture_id,
-        "home": match["home"],
-        "away": match["away"],
-        "league": match.get("league", ""),
-        "date": match.get("date", ""),
-        "time": match.get("time", ""),
-        "prediction": pick,
-        "probability": confidence
+        "home": home,
+        "away": away,
+        "league": league,
+        "date": date,
+        "pick": pick,
+        "confidence": confidence
     })
 
-# 🔥 ORDINA
-predictions = sorted(predictions, key=lambda x: x["probability"], reverse=True)
+# ===============================
+# TOP PICKS
+# ===============================
 
-# 🔥 TOP PICK
-top_picks = predictions[:10]
+top_picks = sorted(predictions, key=lambda x: x["confidence"], reverse=True)[:5]
 
-# 🔥 SALVA FORMATO GIUSTO
-with open("data/predictions.json", "w", encoding="utf-8") as f:
-    json.dump({
-        "all": predictions,
-        "top": top_picks
-    }, f, indent=2)
+# ===============================
+# SAVE (FIX DEFINITIVO)
+# ===============================
 
-print(f"Generate: {len(predictions)} partite")
+output = {
+    "all": predictions,
+    "top": top_picks
+}
+
+with open("predictions.json", "w", encoding="utf-8") as f:
+    json.dump(output, f, indent=2)
+
+print(f"✅ Generate {len(predictions)} predictions")
