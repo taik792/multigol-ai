@@ -1,5 +1,38 @@
 [
   {
+    "home": "NEC Nijmegen",
+    "away": "Heerenveen",
+    "league": "Eredivisie",
+    "country": "Netherlands",
+    "date": "2026-03-22",
+    "time": "11:15",
+    "pick": "Combo da Quote",
+    "prob": 85,
+    "source": "quotes"
+  },
+  {
+    "home": "Newcastle",
+    "away": "Sunderland",
+    "league": "Premier League",
+    "country": "England",
+    "date": "2026-03-22",
+    "time": "12:00",
+    "pick": "Combo da Quote",
+    "prob": 85,
+    "source": "quotes"
+  },
+  {
+    "home": "Aarhus",
+    "away": "Brondby",
+    "league": "Superliga",
+    "country": "Denmark",
+    "date": "2026-03-22",
+    "time": "17:00",
+    "pick": "Combo da Quote",
+    "prob": 85,
+    "source": "quotes"
+  },
+  {
     "home": "Yichun Grand Tiger",
     "away": "Chengdu Rongcheng II",
     "league": "League Two",
@@ -18,7 +51,7 @@
     "date": "2026-03-22",
     "time": "07:00",
     "pick": "Under 2.5",
-    "prob": 89.1,
+    "prob": 89.0,
     "source": "ai"
   },
   {
@@ -29,7 +62,18 @@
     "date": "2026-03-22",
     "time": "06:00",
     "pick": "Under 2.5",
-    "prob": 74.8,
+    "prob": 74.4,
+    "source": "ai"
+  },
+  {
+    "home": "Capalaba",
+    "away": "Broadbeach United",
+    "league": "Queensland Premier League",
+    "country": "Australia",
+    "date": "2026-03-22",
+    "time": "07:00",
+    "pick": "Over 2.5",
+    "prob": 73.0,
     "source": "ai"
   },
   {
@@ -40,7 +84,7 @@
     "date": "2026-03-22",
     "time": "13:00",
     "pick": "Under 2.5",
-    "prob": 71.1,
+    "prob": 70.4,
     "source": "ai"
   },
   {
@@ -51,7 +95,7 @@
     "date": "2026-03-22",
     "time": "07:00",
     "pick": "Under 2.5",
-    "prob": 70.1,
+    "prob": 69.0,
     "source": "ai"
   },
   {
@@ -62,7 +106,18 @@
     "date": "2026-03-22",
     "time": "08:00",
     "pick": "1",
-    "prob": 63.7,
+    "prob": 67.9,
+    "source": "ai"
+  },
+  {
+    "home": "Lions",
+    "away": "Magic United",
+    "league": "Queensland NPL",
+    "country": "Australia",
+    "date": "2026-03-22",
+    "time": "07:00",
+    "pick": "Under 2.5",
+    "prob": 67.7,
     "source": "ai"
   },
   {
@@ -73,7 +128,18 @@
     "date": "2026-03-22",
     "time": "07:00",
     "pick": "Over 2.5",
-    "prob": 61.4,
+    "prob": 66.5,
+    "source": "ai"
+  },
+  {
+    "home": "Stellenbosch U23",
+    "away": "Chippa United U23",
+    "league": "Diski Challenge",
+    "country": "South-Africa",
+    "date": "2026-03-22",
+    "time": "08:00",
+    "pick": "Over 2.5",
+    "prob": 64.9,
     "source": "ai"
   }
 ]
