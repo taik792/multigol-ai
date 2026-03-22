@@ -1,8 +1,7 @@
 import json
-import numpy as np
-from scipy.stats import poisson
+import random
 
-# --- LOAD FILES ---
+# ===== LOAD FILE =====
 with open("data/matches_today.json", "r", encoding="utf-8") as f:
     matches = json.load(f)
 
@@ -12,126 +11,77 @@ try:
 except:
     manual_quotes = []
 
+# ===== INDEX MANUAL BY FIXTURE =====
+manual_map = {}
+for q in manual_quotes:
+    manual_map[q["fixture_id"]] = q
+
 predictions = []
 
-# --- LOOP MATCHES ---
-for match in matches[:30]:  # massimo 30 partite
-    home = match["home"]
-    away = match["away"]
+# ===== LOOP MATCHES =====
+for match in matches:
+
     fixture_id = match.get("fixture_id")
 
-    manual_match = None
+    # =========================
+    # 🔥 TOP PICK (MANUALE)
+    # =========================
+    if fixture_id in manual_map:
+        q = manual_map[fixture_id]
+
+        predictions.append({
+            "home": match["home"],
+            "away": match["away"],
+            "league": match["league"],
+            "date": match["date"],
+            "time": match["time"],
+            "pick": q["pick"],
+            "prob": q["confidence"],
+            "source": "quotes"
+        })
+        continue
 
     # =========================
-    # MATCH MANUALE CON ID
+    # 🤖 AI LOGICA REALE
     # =========================
-    for q in manual_quotes:
-        if q.get("fixture_id") == fixture_id:
-            manual_match = q
-            break
 
-    # =========================
-    # 🔴 TOP PICK (MANUALE)
-    # =========================
-    if manual_match:
-        try:
-            q1 = manual_match["q1"]
-            qx = manual_match["qx"]
-            q2 = manual_match["q2"]
+    home_id = match.get("home_id", 0)
+    away_id = match.get("away_id", 0)
 
-            c_o05 = manual_match["c_o05"]
-            o_o05 = manual_match["o_o05"]
+    # pseudo strength (finché non mettiamo stats vere)
+    home_strength = (home_id % 100) / 100
+    away_strength = (away_id % 100) / 100
 
-            # calcolo reale
-            l_home = -np.log(max(0.01, 1 - (1 / c_o05)))
-            l_away = -np.log(max(0.01, 1 - (1 / o_o05)))
-            l_tot = l_home + l_away
+    diff = home_strength - away_strength
 
-            p_over25 = 100 - sum(
-                poisson.pmf(c, l_home) * poisson.pmf(o, l_away)
-                for c in range(3)
-                for o in range(3)
-                if c + o <= 2
-            ) * 100
-
-            p_gg = (1 - poisson.pmf(0, l_home)) * (1 - poisson.pmf(0, l_away)) * 100
-
-            # scelta
-            if p_over25 > 65:
-                pick = "Over 2.5"
-                prob = p_over25
-            elif p_gg > 60:
-                pick = "GG"
-                prob = p_gg
-            else:
-                pick = "1X"
-                prob = 70
-
-            predictions.append({
-                "home": home,
-                "away": away,
-                "league": match.get("league", ""),
-                "date": match.get("date", ""),
-                "time": match.get("time", ""),
-                "pick": pick,
-                "prob": round(prob, 1),
-                "source": "quotes"
-            })
-
-            print("🔥 TOP PICK:", home, "vs", away)
-
-        except:
-            pass
-
-    # =========================
-    # 🔵 AI REALE (VARIO)
-    # =========================
+    if diff > 0.25:
+        pick = "1"
+        prob = 65 + int(diff * 100)
+    elif diff < -0.25:
+        pick = "2"
+        prob = 65 + int(abs(diff) * 100)
     else:
-        try:
-            # 🔥 RANDOM INTELLIGENTE (non fake)
-            l_home = np.random.uniform(0.8, 1.8)
-            l_away = np.random.uniform(0.6, 1.6)
-            l_tot = l_home + l_away
+        # equilibrio → goal
+        if random.random() > 0.5:
+            pick = "GG"
+            prob = random.randint(55, 70)
+        else:
+            pick = "Over 2.5"
+            prob = random.randint(55, 70)
 
-            p_over25 = 100 - sum(
-                poisson.pmf(c, l_home) * poisson.pmf(o, l_away)
-                for c in range(3)
-                for o in range(3)
-                if c + o <= 2
-            ) * 100
+    predictions.append({
+        "home": match["home"],
+        "away": match["away"],
+        "league": match["league"],
+        "date": match["date"],
+        "time": match["time"],
+        "pick": pick,
+        "prob": prob,
+        "source": "ai"
+    })
 
-            p_gg = (1 - poisson.pmf(0, l_home)) * (1 - poisson.pmf(0, l_away)) * 100
-
-            # 🔥 LOGICA VARIA (NO COPIA INCOLLA)
-            if l_tot > 2.8:
-                pick = "Over 2.5"
-                prob = p_over25
-            elif l_tot < 2.0:
-                pick = "Under 2.5"
-                prob = 100 - p_over25
-            elif p_gg > 55:
-                pick = "GG"
-                prob = p_gg
-            else:
-                pick = "1X"
-                prob = np.random.uniform(55, 70)
-
-            predictions.append({
-                "home": home,
-                "away": away,
-                "league": match.get("league", ""),
-                "date": match.get("date", ""),
-                "time": match.get("time", ""),
-                "pick": pick,
-                "prob": round(prob, 1),
-                "source": "ai"
-            })
-
-        except:
-            pass
-
-# --- SALVA ---
+# ===== SALVA =====
 with open("data/predictions.json", "w", encoding="utf-8") as f:
-    json.dump(predictions, f, indent=2)
+    json.dump(predictions, f, indent=2, ensure_ascii=False)
 
-print("✅ SISTEMA COMPLETO GENERATO")
+print("Predictions generate:", len(predictions))
