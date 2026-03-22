@@ -1,35 +1,28 @@
-name: Run Multigol AI Scanner
+name: Multigol AI Scanner
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 6 * * *'   # 1 volta al giorno (puoi lasciarlo)
+    - cron: '0 6 * * *'
 
 jobs:
-  build:
+  run:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - run: pip install -r requirements.txt
 
-      # 🔥 RUN INTELLIGENTE (usa API solo se serve)
-      - name: Smart run
-        run: python run_smart.py
+      - run: python run_smart.py
 
-      # 💾 Salva risultati su GitHub
-      - name: Commit and push
-        run: |
-          git config --global user.name "multigol-bot"
-          git config --global user.email "bot@multigol.ai"
+      - run: |
+          git config --global user.name "bot"
+          git config --global user.email "bot@bot.com"
           git add .
           git commit -m "update predictions" || echo "no changes"
           git push
