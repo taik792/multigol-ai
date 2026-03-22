@@ -11,42 +11,79 @@ quotes_map = {q["fixture_id"]: q for q in quotes}
 
 predictions = []
 
-# ===== ENGINE =====
+# ===== ENGINE PRO =====
 for match in matches:
 
     fixture_id = match.get("fixture_id")
 
-    # SOLO partite con quote
     if fixture_id not in quotes_map:
         continue
 
     q = quotes_map[fixture_id]
 
     try:
-        # probabilità reali
+        # ===== 1X2 =====
         p1 = 1 / q["q1"]
         px = 1 / q["qx"]
         p2 = 1 / q["q2"]
 
-        total = p1 + px + p2
+        total_1x2 = p1 + px + p2
 
-        p1 /= total
-        px /= total
-        p2 /= total
+        p1 /= total_1x2
+        px /= total_1x2
+        p2 /= total_1x2
 
-        probs = {"1": p1, "X": px, "2": p2}
+        # ===== GG =====
+        pgg = 1 / q["qgg"]
+        png = 1 / q["qng"]
 
-        pick = max(probs, key=probs.get)
-        prob = round(probs[pick] * 100, 1)
+        total_gg = pgg + png
 
-        # ===== FILTRI REALI =====
+        pgg /= total_gg
+        png /= total_gg
 
-        # qualità minima
+        # ===== OVER 2.5 =====
+        pover = 1 / q["over25"]
+        punder = 1 / q["under25"]
+
+        total_ou = pover + punder
+
+        pover /= total_ou
+        punder /= total_ou
+
+        # ===== MERCATI =====
+        markets = {
+            "1": p1,
+            "X": px,
+            "2": p2,
+            "GG": pgg,
+            "NG": png,
+            "Over 2.5": pover,
+            "Under 2.5": punder
+        }
+
+        pick = max(markets, key=markets.get)
+        prob = round(markets[pick] * 100, 1)
+
+        # ===== VALUE BET =====
+        odds_map = {
+            "1": q["q1"],
+            "X": q["qx"],
+            "2": q["q2"],
+            "GG": q["qgg"],
+            "NG": q["qng"],
+            "Over 2.5": q["over25"],
+            "Under 2.5": q["under25"]
+        }
+
+        value = markets[pick] * odds_map[pick]
+
+        # ===== FILTRI PRO =====
+
         if prob < 60:
             continue
 
-        # evita partite incerte
-        if abs(p1 - p2) < 0.05:
+        if value < 1.05:
             continue
 
     except:
@@ -59,10 +96,11 @@ for match in matches:
         "date": match.get("date"),
         "time": match.get("time"),
         "prediction": pick,
-        "probability": prob
+        "probability": prob,
+        "value": round(value, 2)
     })
 
-# ===== ORDINAMENTO =====
+# ===== ORDINA =====
 predictions = sorted(predictions, key=lambda x: x["probability"], reverse=True)
 
 # ===== TOP PICKS =====
@@ -75,4 +113,4 @@ with open("predictions.json", "w", encoding="utf-8") as f:
         "top": top_picks
     }, f, indent=2)
 
-print(f"✅ REAL PICKS: {len(predictions)}")
+print(f"🔥 PRO PICKS: {len(predictions)}")
