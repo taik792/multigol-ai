@@ -1,136 +1,142 @@
 import json
+import numpy as np
 from scipy.stats import poisson
-import math
 
-# -----------------------
-# CARICA FILE
-# -----------------------
-
-with open("data/matches_today.json") as f:
+# --- LOAD FILES ---
+with open("data/matches_today.json", "r", encoding="utf-8") as f:
     matches = json.load(f)
 
-try:
-    with open("data/quotes_manual.json") as f:
-        manual_quotes = json.load(f)
-except:
-    manual_quotes = []
-
-# -----------------------
-# NORMALIZZA NOMI (FIX VERO)
-# -----------------------
-
-def clean_name(name):
-    return (
-        name.lower()
-        .replace(" ", "")
-        .replace(".", "")
-        .replace("-", "")
-    )
-
-# -----------------------
-# AI REALISTICA (NO RANDOM)
-# -----------------------
-
-def basic_ai_prediction(match):
-    # usa id per variare risultati
-    seed = int(match.get("fixture_id", 1)) % 100
-
-    if seed > 70:
-        return "Over 2.5", 75
-    elif seed > 50:
-        return "Goal", 68
-    elif seed > 30:
-        return "1X", 65
-    else:
-        return "Under 2.5", 62
-
-# -----------------------
-# MOTORE QUOTE (TOP PICK)
-# -----------------------
-
-def quote_engine(q):
-    try:
-        l_casa = -math.log(max(0.01, 1 - (1/q["c_o05"])))
-        l_ospite = -math.log(max(0.01, 1 - (1/q["o_o05"])))
-
-        l_tot = l_casa + l_ospite
-
-        p_u25 = sum(
-            poisson.pmf(c, l_casa) * poisson.pmf(o, l_ospite)
-            for c in range(3) for o in range(3) if c+o <= 2
-        ) * 100
-
-        p_gg = (1 - poisson.pmf(0, l_casa)) * (1 - poisson.pmf(0, l_ospite)) * 100
-
-        if p_u25 > 65:
-            return "Under 2.5 🔥", round(p_u25, 1)
-        elif p_gg > 60:
-            return "Goal 🔥", round(p_gg, 1)
-        elif l_tot > 2.6:
-            return "Over 2.5 🔥", round(100 - p_u25, 1)
-        else:
-            return "1X 🔥", 65
-
-    except:
-        return "No Data", 0
-
-# -----------------------
-# GENERAZIONE
-# -----------------------
+with open("data/quotes_manual.json", "r", encoding="utf-8") as f:
+    manual_quotes = json.load(f)
 
 predictions = []
 
+# --- LOOP MATCHES ---
 for match in matches:
-
     home = match["home"]
     away = match["away"]
-
-    home_clean = clean_name(home)
-    away_clean = clean_name(away)
+    fixture_id = match.get("fixture_id")
 
     manual_match = None
 
+    # 🔥 MATCH PERFETTO CON ID
     for q in manual_quotes:
-        if clean_name(q["home"]) == home_clean and clean_name(q["away"]) == away_clean:
+        if q.get("fixture_id") == fixture_id:
             manual_match = q
             break
 
-    # DEBUG (importantissimo)
+    # =========================
+    # 🔴 SE TROVA QUOTE MANUALI
+    # =========================
     if manual_match:
-        print("✅ TOP PICK:", home, "vs", away)
+        try:
+            q1 = manual_match["q1"]
+            qx = manual_match["qx"]
+            q2 = manual_match["q2"]
+
+            qgg = manual_match["qgg"]
+            qng = manual_match["qng"]
+
+            c_o05 = manual_match["c_o05"]
+            c_o15 = manual_match["c_o15"]
+
+            o_o05 = manual_match["o_o05"]
+            o_o15 = manual_match["o_o15"]
+
+            # --- CALCOLO LAMBDA ---
+            l_home = -np.log(max(0.01, 1 - (1 / c_o05)))
+            l_away = -np.log(max(0.01, 1 - (1 / o_o05)))
+            l_tot = l_home + l_away
+
+            # --- PROBABILITÀ ---
+            p_over25 = 100 - sum(
+                poisson.pmf(c, l_home) * poisson.pmf(o, l_away)
+                for c in range(3)
+                for o in range(3)
+                if c + o <= 2
+            ) * 100
+
+            p_gg = (1 - poisson.pmf(0, l_home)) * (1 - poisson.pmf(0, l_away)) * 100
+
+            # --- SCELTA PRONOSTICO ---
+            if p_over25 > 65:
+                pick = "Over 2.5"
+                prob = p_over25
+            elif p_gg > 60:
+                pick = "GG"
+                prob = p_gg
+            elif l_tot < 2:
+                pick = "Under 2.5"
+                prob = 70
+            else:
+                pick = "1X"
+                prob = 65
+
+            predictions.append({
+                "home": home,
+                "away": away,
+                "league": match.get("league", ""),
+                "date": match.get("date", ""),
+                "time": match.get("time", ""),
+                "pick": pick,
+                "prob": round(prob, 1),
+                "source": "quotes"
+            })
+
+            print(f"✅ TOP PICK: {home} vs {away}")
+
+        except Exception as e:
+            print("Errore manual match:", e)
+
+    # =========================
+    # 🔵 AI AUTOMATICO
+    # =========================
     else:
-        print("❌ NO MATCH:", home, "vs", away)
+        try:
+            # valori base AI
+            l_home = 1.2
+            l_away = 1.0
+            l_tot = l_home + l_away
 
-    # LOGICA
-    if manual_match:
-        pick, prob = quote_engine(manual_match)
-        source = "quotes"
-    else:
-        pick, prob = basic_ai_prediction(match)
-        source = "ai"
+            p_over25 = 100 - sum(
+                poisson.pmf(c, l_home) * poisson.pmf(o, l_away)
+                for c in range(3)
+                for o in range(3)
+                if c + o <= 2
+            ) * 100
 
-    predictions.append({
-        "home": home,
-        "away": away,
-        "league": match["league"],
-        "date": match["date"],
-        "time": match["time"],
-        "pick": pick,
-        "prob": prob,
-        "source": source
-    })
+            p_gg = (1 - poisson.pmf(0, l_home)) * (1 - poisson.pmf(0, l_away)) * 100
 
-# -----------------------
-# ORDINA + TOP 10
-# -----------------------
+            # logica migliorata
+            if p_over25 > 60:
+                pick = "Over 2.5"
+                prob = p_over25
+            elif p_gg > 55:
+                pick = "GG"
+                prob = p_gg
+            elif l_tot < 2:
+                pick = "Under 2.5"
+                prob = 65
+            else:
+                pick = "1X"
+                prob = 60
 
-predictions = sorted(predictions, key=lambda x: x["prob"], reverse=True)[:10]
+            predictions.append({
+                "home": home,
+                "away": away,
+                "league": match.get("league", ""),
+                "date": match.get("date", ""),
+                "time": match.get("time", ""),
+                "pick": pick,
+                "prob": round(prob, 1),
+                "source": "ai"
+            })
 
-# -----------------------
-# SALVA
-# -----------------------
+        except Exception as e:
+            print("Errore AI:", e)
 
-with open("data/predictions.json", "w") as f:
+# --- SALVA OUTPUT ---
+with open("data/predictions.json", "w", encoding="utf-8") as f:
     json.dump(predictions, f, indent=2)
 
-print("✅ FATTO!")
+print("✅ Predictions generate!")
