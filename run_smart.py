@@ -1,10 +1,5 @@
 import os
 import json
-from datetime import datetime
-
-# ===============================
-# CHECK FILE ESISTENTE
-# ===============================
 
 MATCHES_FILE = "data/matches_today.json"
 
@@ -18,23 +13,18 @@ def is_file_valid():
         except:
             return False
 
-    # Se vuoto → rifai fetch
     if not data:
         return False
 
     return True
 
-# ===============================
-# MAIN
-# ===============================
-
 print("🔍 Controllo matches...")
 
 if not is_file_valid():
-    print("⚡ Nessun match valido → chiamo API")
+    print("⚡ File vuoto → chiamo API")
     os.system("python get_matches.py")
 else:
-    print("✅ Matches già presenti → salto API")
+    print("✅ Uso matches già salvati")
 
 print("⚙️ Avvio engine...")
 os.system("python multigol_engine.py")
