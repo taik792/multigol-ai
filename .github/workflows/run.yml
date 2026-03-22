@@ -1,8 +1,8 @@
 name: Run Multigol AI Scanner
 
 on:
-  schedule:
-    - cron: "0 9,15 * * *"   # 10:00 e 16:00 ora Italia (UTC+1)
+  # schedule:
+#   - cron: '0 6 * * *'
   workflow_dispatch:
 
 jobs:
