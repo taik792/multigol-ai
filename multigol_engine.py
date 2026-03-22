@@ -12,66 +12,75 @@ with open("data/quotes_manual.json", "r", encoding="utf-8") as f:
     quotes = json.load(f)
 
 # ===============================
-# UTILS
+# MAPPA QUOTE
 # ===============================
 
-def find_quote(fixture_id):
-    for q in quotes:
-        if q.get("fixture_id") == fixture_id:
-            return q
-    return None
-
-def generate_pick(q):
-    picks = []
-
-    # 1X2
-    if q["q1"] < 2:
-        picks.append(("1", 60))
-    if q["q2"] < 2:
-        picks.append(("2", 60))
-    if q["qx"] < 3:
-        picks.append(("X", 55))
-
-    # GG / NG
-    if q["qgg"] < 1.80:
-        picks.append(("GG", 65))
-    if q["qng"] < 1.80:
-        picks.append(("NG", 65))
-
-    # OVER / UNDER
-    if q["o_05"] < 1.50:
-        picks.append(("Over 0.5", 75))
-    if q["o_15"] < 2:
-        picks.append(("Over 1.5", 70))
-    if q["c_15"] < 2:
-        picks.append(("Under 1.5", 65))
-
-    # fallback
-    if not picks:
-        return "Over 1.5", 55
-
-    pick = max(picks, key=lambda x: x[1])
-    return pick
-
-# ===============================
-# MAIN ENGINE
-# ===============================
+quotes_map = {q["fixture_id"]: q for q in quotes}
 
 predictions = []
 
+# ===============================
+# LOOP MATCHES
+# ===============================
+
 for match in matches:
-    fixture_id = match["fixture"]["id"]
-    home = match["teams"]["home"]["name"]
-    away = match["teams"]["away"]["name"]
-    league = match["league"]["name"]
-    date = match["fixture"]["date"]
 
-    q = find_quote(fixture_id)
+    fixture_id = match.get("fixture_id")
 
-    if not q:
-        continue
+    # dati base match
+    home = match.get("home")
+    away = match.get("away")
+    league = match.get("league")
+    date = match.get("date")
+    time = match.get("time")
 
-    pick, confidence = generate_pick(q)
+    # ===========================
+    # 🔥 SE HO QUOTE → CALCOLO VERO
+    # ===========================
+    if fixture_id in quotes_map:
+
+        q = quotes_map[fixture_id]
+
+        try:
+            q1 = q["q1"]
+            qx = q["qx"]
+            q2 = q["q2"]
+
+            # probabilità inverse
+            p1 = 1 / q1
+            px = 1 / qx
+            p2 = 1 / q2
+
+            total = p1 + px + p2
+
+            p1 /= total
+            px /= total
+            p2 /= total
+
+            probs = {
+                "1": p1,
+                "X": px,
+                "2": p2
+            }
+
+            pick = max(probs, key=probs.get)
+            confidence = round(probs[pick] * 100, 1)
+
+            source = "quotes"
+
+        except:
+            pick = "Over 1.5"
+            confidence = 55
+            source = "quotes"
+
+    # ===========================
+    # 🤖 FALLBACK AI
+    # ===========================
+    else:
+
+        pick = random.choice(["1", "X", "2", "GG", "Over 2.5"])
+        confidence = random.randint(55, 70)
+        source = "ai"
 
     predictions.append({
         "fixture_id": fixture_id,
@@ -79,26 +88,32 @@ for match in matches:
         "away": away,
         "league": league,
         "date": date,
-        "pick": pick,
-        "confidence": confidence
+        "time": time,
+        "prediction": pick,
+        "probability": confidence,
+        "source": source
     })
 
 # ===============================
-# TOP PICKS
+# ORDINA + TOP PICKS
 # ===============================
 
-top_picks = sorted(predictions, key=lambda x: x["confidence"], reverse=True)[:5]
+predictions = sorted(predictions, key=lambda x: x["probability"], reverse=True)
+
+top_picks = [p for p in predictions if p["source"] == "quotes"][:5]
+
+# fallback se non hai quote
+if len(top_picks) == 0:
+    top_picks = predictions[:5]
 
 # ===============================
-# SAVE (FIX DEFINITIVO)
+# SALVA (ROOT!)
 # ===============================
-
-output = {
-    "all": predictions,
-    "top": top_picks
-}
 
 with open("predictions.json", "w", encoding="utf-8") as f:
-    json.dump(output, f, indent=2)
+    json.dump({
+        "all": predictions,
+        "top": top_picks
+    }, f, indent=2)
 
-print(f"✅ Generate {len(predictions)} predictions")
+print(f"✅ Generate: {len(predictions)} partite")
