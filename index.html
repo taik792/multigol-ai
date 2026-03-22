@@ -2,63 +2,48 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Multigol AI Scanner PRO</title>
 
 <style>
 body {
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    font-family: Arial;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f1c2e, #1b2f4a);
     color: white;
 }
 
 h1 {
     text-align: center;
+    padding: 20px;
 }
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
     padding: 20px;
 }
 
 .card {
-    background: #1e293b;
-    border-radius: 15px;
+    background: #1e2f4d;
+    border-radius: 12px;
     padding: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.card p {
+    margin: 4px 0;
+    font-size: 14px;
 }
 
 .top {
-    border: 2px solid gold;
-    background: #2a1f00;
-}
-
-.badge {
-    font-size: 12px;
-    padding: 3px 8px;
-    border-radius: 10px;
-    display: inline-block;
-    margin-bottom: 8px;
-}
-
-.ai {
-    background: #38bdf8;
-}
-
-.topbadge {
-    background: gold;
-    color: black;
-}
-
-.pick {
-    font-size: 18px;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-.prob {
-    color: #38bdf8;
+    border: 2px solid #00ffd5;
 }
 </style>
 </head>
@@ -67,39 +52,10 @@ h1 {
 
 <h1>⚽ Multigol AI Scanner PRO</h1>
 
-<div class="container" id="matches"></div>
+<h2 style="text-align:center;">🔥 Top Picks</h2>
+<div id="top" class="container"></div>
 
-<script>
-fetch('data/predictions.json')
-.then(res => res.json())
-.then(data => {
+<h2 style="text-align:center;">📊 Tutte le partite</h2>
+<div id="matches" class="container"></div>
 
-    const container = document.getElementById("matches");
-
-    data.forEach(match => {
-
-        const isTop = match.source === "quotes";
-
-        const card = `
-        <div class="card ${isTop ? 'top' : ''}">
-            <div class="badge ${isTop ? 'topbadge' : 'ai'}">
-                ${isTop ? '🔥 TOP PICK' : '🤖 AI'}
-            </div>
-
-            <h3>${match.home} vs ${match.away}</h3>
-
-            <p>${match.league}</p>
-            <p>📅 ${match.date} ⏰ ${match.time}</p>
-
-            <div class="pick">🎯 ${match.pick}</div>
-            <div class="prob">📊 ${match.prob}%</div>
-        </div>
-        `;
-
-        container.innerHTML += card;
-    });
-});
-</script>
-
-</body>
-</html>
+<script
