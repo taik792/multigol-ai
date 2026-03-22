@@ -2,8 +2,7 @@ name: Run Multigol AI Scanner
 
 on:
   schedule:
-    - cron: "0 10 * * *"
-    - cron: "0 16 * * *"
+    - cron: "0 9,15 * * *"   # 10:00 e 16:00 ora Italia (UTC+1)
   workflow_dispatch:
 
 jobs:
@@ -17,10 +16,10 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
       - name: Install libraries
-        run: pip install -r requirements.txt 
+        run: pip install -r requirements.txt
 
       - name: Get matches
         env:
@@ -38,7 +37,7 @@ jobs:
       - name: Commit and push results
         run: |
           git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
-          git add .
-          git commit -m "update predictions" || echo "No changes"
+          git config --global user.email "github-actions@github.com"
+          git add data/predictions.json
+          git commit -m "Update predictions" || echo "No changes"
           git push
