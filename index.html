@@ -6,91 +6,60 @@
 
 <style>
 body {
-    font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #0f172a, #1e293b);
+    font-family: Arial;
     color: white;
-    margin: 0;
-    padding: 20px;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 30px;
 }
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    padding: 20px;
 }
 
 .card {
     background: #1e293b;
     border-radius: 15px;
-    padding: 18px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.match {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.league {
-    font-size: 13px;
-    color: #94a3b8;
-}
-
-.time {
-    font-size: 12px;
-    margin-bottom: 10px;
-}
-
-.section {
-    margin-top: 10px;
-}
-
-.pick {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 5px;
-}
-
-.prob {
-    font-size: 14px;
-    color: #38bdf8;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
 .top {
-    color: #22c55e;
-    font-weight: bold;
+    border: 2px solid gold;
+    background: #2a1f00;
 }
 
 .badge {
-    display: inline-block;
-    background: #22c55e;
-    color: black;
     font-size: 12px;
-    padding: 4px 8px;
-    border-radius: 8px;
-    margin-bottom: 5px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 8px;
 }
 
-.quote-badge {
+.ai {
+    background: #38bdf8;
+}
+
+.topbadge {
     background: gold;
     color: black;
 }
 
-.ai-badge {
-    background: #38bdf8;
-    color: black;
+.pick {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
+.prob {
+    color: #38bdf8;
+}
 </style>
 </head>
 
@@ -105,35 +74,30 @@ fetch('data/predictions.json')
 .then(res => res.json())
 .then(data => {
 
-    const container = document.getElementById('matches');
+    const container = document.getElementById("matches");
 
     data.forEach(match => {
 
-        let badge = "";
-        if(match.source === "quotes") {
-            badge = '<div class="badge quote-badge">⭐ TOP PICK</div>';
-        } else {
-            badge = '<div class="badge ai-badge">🤖 AI</div>';
-        }
+        const isTop = match.source === "quotes";
 
-        let pick = match.pick || match.combo || "N/D";
-        let prob = match.prob || match.over25 || 0;
-
-        container.innerHTML += `
-        <div class="card">
-            ${badge}
-            <div class="match">${match.home} vs ${match.away}</div>
-            <div class="league">${match.country} - ${match.league}</div>
-            <div class="time">📅 ${match.date} ⏰ ${match.time}</div>
-
-            <div class="section">
-                <div class="pick">🎯 ${pick}</div>
-                <div class="prob">📊 Probabilità: ${prob}%</div>
+        const card = `
+        <div class="card ${isTop ? 'top' : ''}">
+            <div class="badge ${isTop ? 'topbadge' : 'ai'}">
+                ${isTop ? '🔥 TOP PICK' : '🤖 AI'}
             </div>
+
+            <h3>${match.home} vs ${match.away}</h3>
+
+            <p>${match.league}</p>
+            <p>📅 ${match.date} ⏰ ${match.time}</p>
+
+            <div class="pick">🎯 ${match.pick}</div>
+            <div class="prob">📊 ${match.prob}%</div>
         </div>
         `;
-    });
 
+        container.innerHTML += card;
+    });
 });
 </script>
 
