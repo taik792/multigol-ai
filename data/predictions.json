@@ -1,44 +1,4 @@
 {
-  "all": [
-    {
-      "fixture_id": 1392098,
-      "home": "Castell\u00f3n",
-      "away": "Cultural Leonesa",
-      "plays": [
-        "GG",
-        "Over 1.5",
-        "1"
-      ]
-    },
-    {
-      "fixture_id": 1491990,
-      "home": "Estudiantes L.P.",
-      "away": "Central Cordoba de Santiago",
-      "plays": [
-        "NG",
-        "1"
-      ]
-    }
-  ],
-  "top": [
-    {
-      "fixture_id": 1392098,
-      "home": "Castell\u00f3n",
-      "away": "Cultural Leonesa",
-      "plays": [
-        "GG",
-        "Over 1.5",
-        "1"
-      ]
-    },
-    {
-      "fixture_id": 1491990,
-      "home": "Estudiantes L.P.",
-      "away": "Central Cordoba de Santiago",
-      "plays": [
-        "NG",
-        "1"
-      ]
-    }
-  ]
+  "all": [],
+  "top": []
 }
