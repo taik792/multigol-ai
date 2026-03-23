@@ -3,70 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <title>Multigol AI Scanner PRO</title>
+
   <style>
     body {
-      background: #0f2a44;
-      color: white;
+      margin: 0;
       font-family: Arial;
+      background: linear-gradient(180deg, #0f2a44, #123d5c);
+      color: white;
       text-align: center;
     }
-    h1 { margin-top: 20px; }
-    .match {
-      margin: 15px;
-      padding: 10px;
+
+    h1 {
+      padding: 20px;
+    }
+
+    .section {
+      margin: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      margin: 10px auto;
+      padding: 15px;
+      width: 80%;
       border-radius: 10px;
-      background: #163a5f;
+    }
+
+    .top {
+      background: rgba(255,140,0,0.2);
+    }
+
+    .loader {
+      margin-top: 50px;
+      font-size: 18px;
     }
   </style>
 </head>
+
 <body>
 
 <h1>⚽ Multigol AI Scanner PRO</h1>
 
-<h2>🔥 Top Picks</h2>
-<div id="top-picks"></div>
+<div class="section">
+  <h2>🔥 Top Picks</h2>
+  <div id="top-picks">Caricamento...</div>
+</div>
 
-<h2>📊 Tutte le partite</h2>
-<div id="all-matches"></div>
+<div class="section">
+  <h2>📊 Tutte le partite</h2>
+  <div id="all-matches"></div>
+</div>
 
 <script>
-async function loadData() {
+async function loadPredictions() {
   try {
-    const res = await fetch("data/predictions.json");
-    const data = await res.json();
+    // 🔥 NO CACHE (FIX PRINCIPALE)
+    const url = "data/predictions.json?v=" + new Date().getTime();
 
-    const top = document.getElementById("top-picks");
-    const all = document.getElementById("all-matches");
+    const response = await fetch(url);
+    const data = await response.json();
 
-    top.innerHTML = "";
-    all.innerHTML = "";
+    console.log("DATI JSON:", data);
 
-    // TOP PICKS
-    data.top.forEach(m => {
-      top.innerHTML += `
-        <div class="match">
-          <h3>${m.home} vs ${m.away}</h3>
-          <p>👉 ${m.plays.join(", ")}</p>
+    const topDiv = document.getElementById("top-picks");
+    const allDiv = document.getElementById("all-matches");
+
+    topDiv.innerHTML = "";
+    allDiv.innerHTML = "";
+
+    // 🔥 TOP PICKS
+    data.top.forEach(match => {
+      topDiv.innerHTML += `
+        <div class="card top">
+          <strong>${match.home} vs ${match.away}</strong><br>
+          🏆 ${match.league || ""} <br>
+          📅 ${match.date || ""}<br>
+          👉 ${match.pick}
         </div>
       `;
     });
 
-    // ALL MATCHES
-    data.all.forEach(m => {
-      all.innerHTML += `
-        <div class="match">
-          <h4>${m.home} vs ${m.away}</h4>
-          <p>👉 ${m.plays.join(", ")}</p>
+    // 🔥 TUTTE LE PARTITE
+    data.all.forEach(match => {
+      allDiv.innerHTML += `
+        <div class="card">
+          <strong>${match.home} vs ${match.away}</strong><br>
+          🏆 ${match.league || ""}<br>
+          📅 ${match.date || ""}<br>
+          👉 ${match.pick}
         </div>
       `;
     });
 
   } catch (err) {
-    console.error("Errore:", err);
+    console.error("ERRORE:", err);
+    document.getElementById("top-picks").innerHTML = "Errore caricamento dati";
   }
 }
 
-loadData();
+// 🔁 AUTO REFRESH ogni 60 sec
+setInterval(loadPredictions, 60000);
+
+// 🚀 LOAD iniziale
+loadPredictions();
 </script>
 
 </body>
