@@ -22,9 +22,9 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Run get matches
+      - name: Get matches
         env:
-          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          API_KEY: ${{ secrets.API_KEY }}
         run: python get_matches.py
 
       - name: Run engine
