@@ -1,2452 +1,922 @@
 [
   {
-    "fixture": {
-      "id": 1535830,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T14:00:00+00:00",
-      "timestamp": 1774274400,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": null,
-        "city": null
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 910,
-      "name": "Youth Viareggio Cup",
-      "country": "World",
-      "logo": "https://media.api-sports.io/football/leagues/910.png",
-      "flag": null,
-      "season": 2026,
-      "round": "Final",
-      "standings": false
-    },
-    "teams": {
-      "home": {
-        "id": 15665,
-        "name": "Fiorentina U19",
-        "logo": "https://media.api-sports.io/football/teams/15665.png",
-        "winner": null
-      },
-      "away": {
-        "id": 27594,
-        "name": "HNK Rijeka U18",
-        "logo": "https://media.api-sports.io/football/teams/27594.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1490179,
+    "home": "San Diego",
+    "away": "Real Salt Lake",
+    "date": "2026-03-23T00:00:00+01:00",
+    "league": "Major League Soccer",
+    "country": "USA"
   },
   {
-    "fixture": {
-      "id": 1389987,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T17:00:00+00:00",
-      "timestamp": 1774285200,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 3407,
-        "name": "Green Stadium",
-        "city": "Nazareth Illit"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 382,
-      "name": "Liga Leumit",
-      "country": "Israel",
-      "logo": "https://media.api-sports.io/football/leagues/382.png",
-      "flag": "https://media.api-sports.io/flags/il.svg",
-      "season": 2025,
-      "round": "Regular Season - 28",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 4487,
-        "name": "Hapoel Nazareth Illit",
-        "logo": "https://media.api-sports.io/football/teams/4487.png",
-        "winner": null
-      },
-      "away": {
-        "id": 4508,
-        "name": "Bnei Yehuda",
-        "logo": "https://media.api-sports.io/football/teams/4508.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1491987,
+    "home": "Boca Juniors",
+    "away": "Instituto Cordoba",
+    "date": "2026-03-23T00:00:00+01:00",
+    "league": "Liga Profesional Argentina",
+    "country": "Argentina"
   },
   {
-    "fixture": {
-      "id": 1389988,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T17:00:00+00:00",
-      "timestamp": 1774285200,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 2610,
-        "name": "National Stadium Ramat Gan",
-        "city": "Ramat Gan"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 382,
-      "name": "Liga Leumit",
-      "country": "Israel",
-      "logo": "https://media.api-sports.io/football/leagues/382.png",
-      "flag": "https://media.api-sports.io/flags/il.svg",
-      "season": 2025,
-      "round": "Regular Season - 28",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 4509,
-        "name": "Hapoel Ra'anana",
-        "logo": "https://media.api-sports.io/football/teams/4509.png",
-        "winner": null
-      },
-      "away": {
-        "id": 4483,
-        "name": "Hapoel Afula",
-        "logo": "https://media.api-sports.io/football/teams/4483.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1492565,
+    "home": "Pachuca",
+    "away": "Toluca",
+    "date": "2026-03-23T00:00:00+01:00",
+    "league": "Liga MX",
+    "country": "Mexico"
   },
   {
-    "fixture": {
-      "id": 1389992,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T17:00:00+00:00",
-      "timestamp": 1774285200,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 11941,
-        "name": "Netanya Stadium",
-        "city": "Netanya"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 382,
-      "name": "Liga Leumit",
-      "country": "Israel",
-      "logo": "https://media.api-sports.io/football/leagues/382.png",
-      "flag": "https://media.api-sports.io/flags/il.svg",
-      "season": 2025,
-      "round": "Regular Season - 28",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 4503,
-        "name": "Maccabi Herzliya",
-        "logo": "https://media.api-sports.io/football/teams/4503.png",
-        "winner": null
-      },
-      "away": {
-        "id": 6192,
-        "name": "Maccabi Kabilio Jaffa",
-        "logo": "https://media.api-sports.io/football/teams/6192.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1492569,
+    "home": "Santos Laguna",
+    "away": "Puebla",
+    "date": "2026-03-23T00:00:00+01:00",
+    "league": "Liga MX",
+    "country": "Mexico"
   },
   {
-    "fixture": {
-      "id": 1499796,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T18:30:00+00:00",
-      "timestamp": 1774290600,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": null,
-        "city": null
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 132,
-      "name": "Primera C",
-      "country": "Argentina",
-      "logo": "https://media.api-sports.io/football/leagues/132.png",
-      "flag": "https://media.api-sports.io/flags/ar.svg",
-      "season": 2026,
-      "round": "Regular Season - 4",
-      "standings": false
-    },
-    "teams": {
-      "home": {
-        "id": 1931,
-        "name": "Sportivo Barracas",
-        "logo": "https://media.api-sports.io/football/teams/1931.png",
-        "winner": null
-      },
-      "away": {
-        "id": 8396,
-        "name": "Lugano",
-        "logo": "https://media.api-sports.io/football/teams/8396.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1493376,
+    "home": "Atl\u00e9tico San Luis W",
+    "away": "Tigres UANL W",
+    "date": "2026-03-23T00:00:00+01:00",
+    "league": "Liga MX Femenil",
+    "country": "Mexico"
   },
   {
-    "fixture": {
-      "id": 1506437,
-      "referee": "D. Forna",
-      "timezone": "UTC",
-      "date": "2026-03-23T18:30:00+00:00",
-      "timestamp": 1774290600,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": null,
-        "city": "Gota"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 367,
-      "name": "Meistaradeildin",
-      "country": "Faroe-Islands",
-      "logo": "https://media.api-sports.io/football/leagues/367.png",
-      "flag": "https://media.api-sports.io/flags/fo.svg",
-      "season": 2026,
-      "round": "Regular Season - 3",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 580,
-        "name": "Vikingur Gota",
-        "logo": "https://media.api-sports.io/football/teams/580.png",
-        "winner": null
-      },
-      "away": {
-        "id": 4133,
-        "name": "HB Torshavn",
-        "logo": "https://media.api-sports.io/football/teams/4133.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1494468,
+    "home": "Tapat\u00edo",
+    "away": "Monarcas",
+    "date": "2026-03-23T00:00:00+01:00",
+    "league": "Liga de Expansi\u00f3n MX",
+    "country": "Mexico"
   },
   {
-    "fixture": {
-      "id": 1434578,
-      "referee": "Z. Kennard-Kettle",
-      "timezone": "UTC",
-      "date": "2026-03-23T19:00:00+00:00",
-      "timestamp": 1774292400,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 7736,
-        "name": "Eppleton Colliery Welfare Ground",
-        "city": "Sunderland"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 702,
-      "name": "Premier League 2 Division One",
-      "country": "England",
-      "logo": "https://media.api-sports.io/football/leagues/702.png",
-      "flag": "https://media.api-sports.io/flags/gb-eng.svg",
-      "season": 2025,
-      "round": "Regular Season - 20",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 11915,
-        "name": "Sunderland U21",
-        "logo": "https://media.api-sports.io/football/teams/11915.png",
-        "winner": null
-      },
-      "away": {
-        "id": 7189,
-        "name": "Arsenal U21",
-        "logo": "https://media.api-sports.io/football/teams/7189.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1494474,
+    "home": "CDS Tampico Madero",
+    "away": "Tlaxcala",
+    "date": "2026-03-23T00:00:00+01:00",
+    "league": "Liga de Expansi\u00f3n MX",
+    "country": "Mexico"
   },
   {
-    "fixture": {
-      "id": 1434579,
-      "referee": "O. Mackey",
-      "timezone": "UTC",
-      "date": "2026-03-23T19:00:00+00:00",
-      "timestamp": 1774292400,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 545,
-        "name": "Portman Road",
-        "city": "Ipswich"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 702,
-      "name": "Premier League 2 Division One",
-      "country": "England",
-      "logo": "https://media.api-sports.io/football/leagues/702.png",
-      "flag": "https://media.api-sports.io/flags/gb-eng.svg",
-      "season": 2025,
-      "round": "Regular Season - 20",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 20094,
-        "name": "Ipswich Town U21",
-        "logo": "https://media.api-sports.io/football/teams/20094.png",
-        "winner": null
-      },
-      "away": {
-        "id": 20081,
-        "name": "Burnley U21",
-        "logo": "https://media.api-sports.io/football/teams/20081.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1504908,
+    "home": "FAS",
+    "away": "Fuerte San Francisco",
+    "date": "2026-03-23T00:00:00+01:00",
+    "league": "Primera Division",
+    "country": "El-Salvador"
   },
   {
-    "fixture": {
-      "id": 1434580,
-      "referee": "M. Scholes",
-      "timezone": "UTC",
-      "date": "2026-03-23T19:00:00+00:00",
-      "timestamp": 1774292400,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 11876,
-        "name": "Alexandra Stadium",
-        "city": "Crewe"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 702,
-      "name": "Premier League 2 Division One",
-      "country": "England",
-      "logo": "https://media.api-sports.io/football/leagues/702.png",
-      "flag": "https://media.api-sports.io/flags/gb-eng.svg",
-      "season": 2025,
-      "round": "Regular Season - 20",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 11911,
-        "name": "Stoke City U21",
-        "logo": "https://media.api-sports.io/football/teams/11911.png",
-        "winner": null
-      },
-      "away": {
-        "id": 7194,
-        "name": "Fulham U21",
-        "logo": "https://media.api-sports.io/football/teams/7194.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1508371,
+    "home": "Utah Royals W",
+    "away": "San Diego Wave W",
+    "date": "2026-03-23T00:00:00+01:00",
+    "league": "NWSL Women",
+    "country": "USA"
   },
   {
-    "fixture": {
-      "id": 1498390,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T19:00:00+00:00",
-      "timestamp": 1774292400,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": "Estadio Nueva Chicago",
-        "city": "Buenos Aires"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 129,
-      "name": "Primera Nacional",
-      "country": "Argentina",
-      "logo": "https://media.api-sports.io/football/leagues/129.png",
-      "flag": "https://media.api-sports.io/flags/ar.svg",
-      "season": 2026,
-      "round": "Regular Season - 6",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 484,
-        "name": "Nueva Chicago",
-        "logo": "https://media.api-sports.io/football/teams/484.png",
-        "winner": null
-      },
-      "away": {
-        "id": 1928,
-        "name": "Gimnasia Y Tiro",
-        "logo": "https://media.api-sports.io/football/teams/1928.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1512551,
+    "home": "Sport Boys",
+    "away": "Sport Huancayo",
+    "date": "2026-03-23T00:00:00+01:00",
+    "league": "Primera Divisi\u00f3n",
+    "country": "Peru"
   },
   {
-    "fixture": {
-      "id": 1506051,
-      "referee": "Carlos Ortega, Colombia",
-      "timezone": "UTC",
-      "date": "2026-03-23T19:00:00+00:00",
-      "timestamp": 1774292400,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": "Estadio La Independencia",
-        "city": "Tunja"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 239,
-      "name": "Primera A",
-      "country": "Colombia",
-      "logo": "https://media.api-sports.io/football/leagues/239.png",
-      "flag": "https://media.api-sports.io/flags/co.svg",
-      "season": 2026,
-      "round": "Regular Season - 13",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 1132,
-        "name": "Chico",
-        "logo": "https://media.api-sports.io/football/teams/1132.png",
-        "winner": null
-      },
-      "away": {
-        "id": 1142,
-        "name": "Deportes Tolima",
-        "logo": "https://media.api-sports.io/football/teams/1142.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1513013,
+    "home": "Crown Legacy",
+    "away": "Atlanta United II",
+    "date": "2026-03-23T00:00:00+01:00",
+    "league": "MLS Next Pro",
+    "country": "USA"
   },
   {
-    "fixture": {
-      "id": 1528462,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T19:00:00+00:00",
-      "timestamp": 1774292400,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 1645,
-        "name": "Parque Federico Omar Saroldi",
-        "city": "Montevideo"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 269,
-      "name": "Segunda Divisi\u00f3n",
-      "country": "Uruguay",
-      "logo": "https://media.api-sports.io/football/leagues/269.png",
-      "flag": "https://media.api-sports.io/flags/uy.svg",
-      "season": 2026,
-      "round": "Regular Season - 2",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 2351,
-        "name": "CA River Plate",
-        "logo": "https://media.api-sports.io/football/teams/2351.png",
-        "winner": null
-      },
-      "away": {
-        "id": 2371,
-        "name": "Rentistas",
-        "logo": "https://media.api-sports.io/football/teams/2371.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1513014,
+    "home": "Orlando City II",
+    "away": "Inter Miami II",
+    "date": "2026-03-23T00:00:00+01:00",
+    "league": "MLS Next Pro",
+    "country": "USA"
   },
   {
-    "fixture": {
-      "id": 1392098,
-      "referee": "Alejandro Morilla Turrion, Spain",
-      "timezone": "UTC",
-      "date": "2026-03-23T19:30:00+00:00",
-      "timestamp": 1774294200,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": "Estadio SkyFi Castalia",
-        "city": "Castellon"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 141,
-      "name": "Segunda Divisi\u00f3n",
-      "country": "Spain",
-      "logo": "https://media.api-sports.io/football/leagues/141.png",
-      "flag": "https://media.api-sports.io/flags/es.svg",
-      "season": 2025,
-      "round": "Regular Season - 31",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 5254,
-        "name": "Castell\u00f3n",
-        "logo": "https://media.api-sports.io/football/teams/5254.png",
-        "winner": null
-      },
-      "away": {
-        "id": 725,
-        "name": "Cultural Leonesa",
-        "logo": "https://media.api-sports.io/football/teams/725.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1520607,
+    "home": "Novorizontino",
+    "away": "Londrina",
+    "date": "2026-03-23T00:00:00+01:00",
+    "league": "Serie B",
+    "country": "Brazil"
   },
   {
-    "fixture": {
-      "id": 1440058,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T19:30:00+00:00",
-      "timestamp": 1774294200,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 887,
-        "name": "Stadio Angelo Massimino",
-        "city": "Catania"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 943,
-      "name": "Serie C - Girone C",
-      "country": "Italy",
-      "logo": "https://media.api-sports.io/football/leagues/943.png",
-      "flag": "https://media.api-sports.io/flags/it.svg",
-      "season": 2025,
-      "round": "Girone C - 33",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 1580,
-        "name": "Catania",
-        "logo": "https://media.api-sports.io/football/teams/1580.png",
-        "winner": null
-      },
-      "away": {
-        "id": 9542,
-        "name": "Casarano",
-        "logo": "https://media.api-sports.io/football/teams/9542.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1531815,
+    "home": "Robin Hood",
+    "away": "Notch",
+    "date": "2026-03-23T00:00:00+01:00",
+    "league": "Eerste Divisie",
+    "country": "Suriname"
   },
   {
-    "fixture": {
-      "id": 1440062,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T19:30:00+00:00",
-      "timestamp": 1774294200,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 933,
-        "name": "Stadio Arechi",
-        "city": "Salerno"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 943,
-      "name": "Serie C - Girone C",
-      "country": "Italy",
-      "logo": "https://media.api-sports.io/football/leagues/943.png",
-      "flag": "https://media.api-sports.io/flags/it.svg",
-      "season": 2025,
-      "round": "Girone C - 33",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 514,
-        "name": "Salernitana",
-        "logo": "https://media.api-sports.io/football/teams/514.png",
-        "winner": null
-      },
-      "away": {
-        "id": 9549,
-        "name": "Team Altamura",
-        "logo": "https://media.api-sports.io/football/teams/9549.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1533549,
+    "home": "Waterhouse",
+    "away": "Cavalier",
+    "date": "2026-03-23T00:00:00+01:00",
+    "league": "Premier League",
+    "country": "Jamaica"
   },
   {
-    "fixture": {
-      "id": 1440063,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T19:30:00+00:00",
-      "timestamp": 1774294200,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 914,
-        "name": "Stadio Vito Simone Veneziani",
-        "city": "Monopoli"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 943,
-      "name": "Serie C - Girone C",
-      "country": "Italy",
-      "logo": "https://media.api-sports.io/football/leagues/943.png",
-      "flag": "https://media.api-sports.io/flags/it.svg",
-      "season": 2025,
-      "round": "Girone C - 33",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 10138,
-        "name": "SS Monopoli",
-        "logo": "https://media.api-sports.io/football/teams/10138.png",
-        "winner": null
-      },
-      "away": {
-        "id": 506,
-        "name": "Benevento",
-        "logo": "https://media.api-sports.io/football/teams/506.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1510102,
+    "home": "Sporting San Miguelito",
+    "away": "Veraguas",
+    "date": "2026-03-23T00:15:00+01:00",
+    "league": "Liga Paname\u00f1a de F\u00fatbol",
+    "country": "Panama"
   },
   {
-    "fixture": {
-      "id": 1531759,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T19:30:00+00:00",
-      "timestamp": 1774294200,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": null,
-        "city": null
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 300,
-      "name": "Segunda Divisi\u00f3n",
-      "country": "Venezuela",
-      "logo": "https://media.api-sports.io/football/leagues/300.png",
-      "flag": "https://media.api-sports.io/flags/ve.svg",
-      "season": 2026,
-      "round": "Regular Season - 4",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 11371,
-        "name": "Monagas II",
-        "logo": "https://media.api-sports.io/football/teams/11371.png",
-        "winner": null
-      },
-      "away": {
-        "id": 21231,
-        "name": "Bol\u00edvar",
-        "logo": "https://media.api-sports.io/football/teams/21231.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1519302,
+    "home": "Mushuc Runa SC",
+    "away": "Emelec",
+    "date": "2026-03-23T00:15:00+01:00",
+    "league": "Liga Pro",
+    "country": "Ecuador"
   },
   {
-    "fixture": {
-      "id": 1395631,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T19:45:00+00:00",
-      "timestamp": 1774295100,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": "Bush Park",
-        "city": "Newbridge"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 111,
-      "name": "FAW Championship",
-      "country": "Wales",
-      "logo": "https://media.api-sports.io/football/leagues/111.png",
-      "flag": "https://media.api-sports.io/flags/gb-wls.svg",
-      "season": 2025,
-      "round": "South - 19",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 11309,
-        "name": "Treowen Stars",
-        "logo": "https://media.api-sports.io/football/teams/11309.png",
-        "winner": null
-      },
-      "away": {
-        "id": 2200,
-        "name": "Afan Lido",
-        "logo": "https://media.api-sports.io/football/teams/2200.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1526660,
+    "home": "CD Motagua",
+    "away": "Real Espana",
+    "date": "2026-03-23T00:15:00+01:00",
+    "league": "Liga Nacional",
+    "country": "Honduras"
   },
   {
-    "fixture": {
-      "id": 1511526,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T21:00:00+00:00",
-      "timestamp": 1774299600,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 344,
-        "name": "Estadio Municipal de San Felipe",
-        "city": "San Felipe"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 266,
-      "name": "Primera B",
-      "country": "Chile",
-      "logo": "https://media.api-sports.io/football/leagues/266.png",
-      "flag": "https://media.api-sports.io/flags/cl.svg",
-      "season": 2026,
-      "round": "Regular Season - 5",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 2340,
-        "name": "Union San Felipe",
-        "logo": "https://media.api-sports.io/football/teams/2340.png",
-        "winner": null
-      },
-      "away": {
-        "id": 2345,
-        "name": "San Marcos de Arica",
-        "logo": "https://media.api-sports.io/football/teams/2345.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1492182,
+    "home": "Corinthians",
+    "away": "Flamengo",
+    "date": "2026-03-23T00:30:00+01:00",
+    "league": "Serie A",
+    "country": "Brazil"
   },
   {
-    "fixture": {
-      "id": 1506052,
-      "referee": "A. J. Melendez Panneflek",
-      "timezone": "UTC",
-      "date": "2026-03-23T21:10:00+00:00",
-      "timestamp": 1774300200,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": null,
-        "city": null
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 239,
-      "name": "Primera A",
-      "country": "Colombia",
-      "logo": "https://media.api-sports.io/football/leagues/239.png",
-      "flag": "https://media.api-sports.io/flags/co.svg",
-      "season": 2026,
-      "round": "Regular Season - 13",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 1139,
-        "name": "Santa Fe",
-        "logo": "https://media.api-sports.io/football/teams/1139.png",
-        "winner": null
-      },
-      "away": {
-        "id": 1128,
-        "name": "Independiente Medellin",
-        "logo": "https://media.api-sports.io/football/teams/1128.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1505029,
+    "home": "Sportivo Luqueno",
+    "away": "2 de Mayo",
+    "date": "2026-03-23T00:30:00+01:00",
+    "league": "Division Profesional - Apertura",
+    "country": "Paraguay"
   },
   {
-    "fixture": {
-      "id": 1505030,
-      "referee": "C. Benitez",
-      "timezone": "UTC",
-      "date": "2026-03-23T21:30:00+00:00",
-      "timestamp": 1774301400,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": null,
-        "city": null
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 250,
-      "name": "Division Profesional - Apertura",
-      "country": "Paraguay",
-      "logo": "https://media.api-sports.io/football/leagues/250.png",
-      "flag": "https://media.api-sports.io/flags/py.svg",
-      "season": 2026,
-      "round": "Apertura - 12",
-      "standings": false
-    },
-    "teams": {
-      "home": {
-        "id": 1187,
-        "name": "Sportivo Trinidense",
-        "logo": "https://media.api-sports.io/football/teams/1187.png",
-        "winner": null
-      },
-      "away": {
-        "id": 10476,
-        "name": "Deportivo Recoleta",
-        "logo": "https://media.api-sports.io/football/teams/10476.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1506155,
+    "home": "Monagas SC",
+    "away": "Caracas FC",
+    "date": "2026-03-23T00:30:00+01:00",
+    "league": "Primera Divisi\u00f3n",
+    "country": "Venezuela"
   },
   {
-    "fixture": {
-      "id": 1519300,
-      "referee": "A. Diaz",
-      "timezone": "UTC",
-      "date": "2026-03-23T21:30:00+00:00",
-      "timestamp": 1774301400,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": null,
-        "city": "Guayaquil"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 242,
-      "name": "Liga Pro",
-      "country": "Ecuador",
-      "logo": "https://media.api-sports.io/football/leagues/242.png",
-      "flag": "https://media.api-sports.io/flags/ec.svg",
-      "season": 2026,
-      "round": "Regular Season - 6",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 1159,
-        "name": "Guayaquil City FC",
-        "logo": "https://media.api-sports.io/football/teams/1159.png",
-        "winner": null
-      },
-      "away": {
-        "id": 19034,
-        "name": "Leones del Norte",
-        "logo": "https://media.api-sports.io/football/teams/19034.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1511524,
+    "home": "Deportes Temuco",
+    "away": "San Luis",
+    "date": "2026-03-23T00:30:00+01:00",
+    "league": "Primera B",
+    "country": "Chile"
   },
   {
-    "fixture": {
-      "id": 1491990,
-      "referee": "N. Ramirez",
-      "timezone": "UTC",
-      "date": "2026-03-23T22:00:00+00:00",
-      "timestamp": 1774303200,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": "Estadio Jorge Luis Hirschi",
-        "city": "La Plata"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 128,
-      "name": "Liga Profesional Argentina",
-      "country": "Argentina",
-      "logo": "https://media.api-sports.io/football/leagues/128.png",
-      "flag": "https://media.api-sports.io/flags/ar.svg",
-      "season": 2026,
-      "round": "Regular Season - 12",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 450,
-        "name": "Estudiantes L.P.",
-        "logo": "https://media.api-sports.io/football/teams/450.png",
-        "winner": null
-      },
-      "away": {
-        "id": 1065,
-        "name": "Central Cordoba de Santiago",
-        "logo": "https://media.api-sports.io/football/teams/1065.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1535567,
+    "home": "O'Higgins",
+    "away": "Deportes Limache",
+    "date": "2026-03-23T00:30:00+01:00",
+    "league": "Copa De La Liga",
+    "country": "Chile"
   },
   {
-    "fixture": {
-      "id": 1506152,
-      "referee": "J. Uzcategui",
-      "timezone": "UTC",
-      "date": "2026-03-23T22:00:00+00:00",
-      "timestamp": 1774303200,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 1654,
-        "name": "Estadio Polideportivo Misael Delgado",
-        "city": "Valencia"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 299,
-      "name": "Primera Divisi\u00f3n",
-      "country": "Venezuela",
-      "logo": "https://media.api-sports.io/football/leagues/299.png",
-      "flag": "https://media.api-sports.io/flags/ve.svg",
-      "season": 2026,
-      "round": "Regular Season - 9",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 2810,
-        "name": "Carabobo FC",
-        "logo": "https://media.api-sports.io/football/teams/2810.png",
-        "winner": null
-      },
-      "away": {
-        "id": 2827,
-        "name": "Puerto Cabello",
-        "logo": "https://media.api-sports.io/football/teams/2827.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1489157,
+    "home": "San Carlos",
+    "away": "Deportivo Saprissa",
+    "date": "2026-03-23T01:00:00+01:00",
+    "league": "Primera Divisi\u00f3n",
+    "country": "Costa-Rica"
   },
   {
-    "fixture": {
-      "id": 1533550,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T22:00:00+00:00",
-      "timestamp": 1774303200,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": "Draxhall Sports Complex",
-        "city": "Runaway Bay"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 322,
-      "name": "Premier League",
-      "country": "Jamaica",
-      "logo": "https://media.api-sports.io/football/leagues/322.png",
-      "flag": "https://media.api-sports.io/flags/jm.svg",
-      "season": 2025,
-      "round": "Regular Season - 29",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 26495,
-        "name": "Spanish Town Police",
-        "logo": "https://media.api-sports.io/football/teams/26495.png",
-        "winner": null
-      },
-      "away": {
-        "id": 22606,
-        "name": "Treasure Beach",
-        "logo": "https://media.api-sports.io/football/teams/22606.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1499206,
+    "home": "Comunicaciones",
+    "away": "Xelaj\u00fa",
+    "date": "2026-03-23T01:00:00+01:00",
+    "league": "Liga Nacional",
+    "country": "Guatemala"
   },
   {
-    "fixture": {
-      "id": 1535745,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T22:00:00+00:00",
-      "timestamp": 1774303200,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 0,
-        "name": null,
-        "city": null
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 1143,
-      "name": "Estadual Junior U20",
-      "country": "Brazil",
-      "logo": "https://media.api-sports.io/football/leagues/1143.png",
-      "flag": "https://media.api-sports.io/flags/br.svg",
-      "season": 2026,
-      "round": "Regular Season - 1",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 24935,
-        "name": "SERC Brasil U20",
-        "logo": "https://media.api-sports.io/football/teams/24935.png",
-        "winner": null
-      },
-      "away": {
-        "id": 24936,
-        "name": "Sao Luiz U20",
-        "logo": "https://media.api-sports.io/football/teams/24936.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1513015,
+    "home": "Sporting KC II",
+    "away": "Minnesota United II",
+    "date": "2026-03-23T01:00:00+01:00",
+    "league": "MLS Next Pro",
+    "country": "USA"
   },
   {
-    "fixture": {
-      "id": 1536103,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T22:30:00+00:00",
-      "timestamp": 1774305000,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": null,
-        "city": null
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 1107,
-      "name": "Mineiro U20",
-      "country": "Brazil",
-      "logo": "https://media.api-sports.io/football/leagues/1107.png",
-      "flag": "https://media.api-sports.io/flags/br.svg",
-      "season": 2026,
-      "round": "Regular Season - 1",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 23643,
-        "name": "Athletic Club MG U20",
-        "logo": "https://media.api-sports.io/football/teams/23643.png",
-        "winner": null
-      },
-      "away": {
-        "id": 27642,
-        "name": "Sao Joao del Rei U20",
-        "logo": "https://media.api-sports.io/football/teams/27642.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1514418,
+    "home": "Wotton",
+    "away": "Weymouth Wales",
+    "date": "2026-03-23T01:00:00+01:00",
+    "league": "Premier League",
+    "country": "Barbados"
   },
   {
-    "fixture": {
-      "id": 1499322,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T23:00:00+00:00",
-      "timestamp": 1774306800,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": "Alfredo Ramos stadium",
-        "city": "Buenos Aires"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 131,
-      "name": "Primera B Metropolitana",
-      "country": "Argentina",
-      "logo": "https://media.api-sports.io/football/leagues/131.png",
-      "flag": "https://media.api-sports.io/flags/ar.svg",
-      "season": 2026,
-      "round": "Regular Season - 7",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 8008,
-        "name": "Comunicaciones",
-        "logo": "https://media.api-sports.io/football/teams/8008.png",
-        "winner": null
-      },
-      "away": {
-        "id": 8395,
-        "name": "Liniers",
-        "logo": "https://media.api-sports.io/football/teams/8395.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1528461,
+    "home": "Oriental",
+    "away": "Col\u00f3n",
+    "date": "2026-03-23T01:00:00+01:00",
+    "league": "Segunda Divisi\u00f3n",
+    "country": "Uruguay"
   },
   {
-    "fixture": {
-      "id": 1506154,
-      "referee": "Y. Madrid",
-      "timezone": "UTC",
-      "date": "2026-03-23T23:00:00+00:00",
-      "timestamp": 1774306800,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 1653,
-        "name": "Estadio Olimpico de la UCV",
-        "city": "Caracas"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 299,
-      "name": "Primera Divisi\u00f3n",
-      "country": "Venezuela",
-      "logo": "https://media.api-sports.io/football/leagues/299.png",
-      "flag": "https://media.api-sports.io/flags/ve.svg",
-      "season": 2026,
-      "round": "Regular Season - 9",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 2825,
-        "name": "Metropolitanos FC",
-        "logo": "https://media.api-sports.io/football/teams/2825.png",
-        "winner": null
-      },
-      "away": {
-        "id": 18806,
-        "name": "Academia Anzo\u00e1tegui",
-        "logo": "https://media.api-sports.io/football/teams/18806.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1533548,
+    "home": "Arnett Gardens",
+    "away": "Harbour View",
+    "date": "2026-03-23T01:00:00+01:00",
+    "league": "Premier League",
+    "country": "Jamaica"
   },
   {
-    "fixture": {
-      "id": 1522350,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T23:00:00+00:00",
-      "timestamp": 1774306800,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 0,
-        "name": null,
-        "city": null
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 74,
-      "name": "Brasileiro Women",
-      "country": "Brazil",
-      "logo": "https://media.api-sports.io/football/leagues/74.png",
-      "flag": "https://media.api-sports.io/flags/br.svg",
-      "season": 2026,
-      "round": "Regular Season - 4",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 23157,
-        "name": "Fluminense W",
-        "logo": "https://media.api-sports.io/football/teams/23157.png",
-        "winner": null
-      },
-      "away": {
-        "id": 9982,
-        "name": "S\u00e3o Paulo W",
-        "logo": "https://media.api-sports.io/football/teams/9982.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1492570,
+    "home": "FC Juarez",
+    "away": "Tigres UANL",
+    "date": "2026-03-23T02:06:00+01:00",
+    "league": "Liga MX",
+    "country": "Mexico"
   },
   {
-    "fixture": {
-      "id": 1534903,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T23:00:00+00:00",
-      "timestamp": 1774306800,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": null,
-        "city": null
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 521,
-      "name": "Amapaense",
-      "country": "Brazil",
-      "logo": "https://media.api-sports.io/football/leagues/521.png",
-      "flag": "https://media.api-sports.io/flags/br.svg",
-      "season": 2026,
-      "round": "Semi-finals",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 15622,
-        "name": "S\u00e3o Jos\u00e9 EC",
-        "logo": "https://media.api-sports.io/football/teams/15622.png",
-        "winner": null
-      },
-      "away": {
-        "id": 10861,
-        "name": "Independente AP",
-        "logo": "https://media.api-sports.io/football/teams/10861.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1491983,
+    "home": "Argentinos JRS",
+    "away": "Platense",
+    "date": "2026-03-23T02:15:00+01:00",
+    "league": "Liga Profesional Argentina",
+    "country": "Argentina"
   },
   {
-    "fixture": {
-      "id": 1506053,
-      "referee": "A. Rojas",
-      "timezone": "UTC",
-      "date": "2026-03-23T23:20:00+00:00",
-      "timestamp": 1774308000,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": "Estadio Municipal de Futbol de Monteria",
-        "city": "Monteria"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 239,
-      "name": "Primera A",
-      "country": "Colombia",
-      "logo": "https://media.api-sports.io/football/leagues/239.png",
-      "flag": "https://media.api-sports.io/flags/co.svg",
-      "season": 2026,
-      "round": "Regular Season - 13",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 1133,
-        "name": "Jaguares",
-        "logo": "https://media.api-sports.io/football/teams/1133.png",
-        "winner": null
-      },
-      "away": {
-        "id": 1144,
-        "name": "\u00c1guilas Doradas",
-        "logo": "https://media.api-sports.io/football/teams/1144.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1491994,
+    "home": "Independ. Rivadavia",
+    "away": "Rosario Central",
+    "date": "2026-03-23T02:15:00+01:00",
+    "league": "Liga Profesional Argentina",
+    "country": "Argentina"
   },
   {
-    "fixture": {
-      "id": 1505027,
-      "referee": "J. Mendez",
-      "timezone": "UTC",
-      "date": "2026-03-23T23:30:00+00:00",
-      "timestamp": 1774308600,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": null,
-        "name": "La Arboleda",
-        "city": null
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 250,
-      "name": "Division Profesional - Apertura",
-      "country": "Paraguay",
-      "logo": "https://media.api-sports.io/football/leagues/250.png",
-      "flag": "https://media.api-sports.io/flags/py.svg",
-      "season": 2026,
-      "round": "Apertura - 12",
-      "standings": false
-    },
-    "teams": {
-      "home": {
-        "id": 1185,
-        "name": "Rubio NU",
-        "logo": "https://media.api-sports.io/football/teams/1185.png",
-        "winner": null
-      },
-      "away": {
-        "id": 10487,
-        "name": "Sportivo Ameliano",
-        "logo": "https://media.api-sports.io/football/teams/10487.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1511918,
+    "home": "Real Cartagena",
+    "away": "Union Magdalena",
+    "date": "2026-03-23T02:30:00+01:00",
+    "league": "Primera B",
+    "country": "Colombia"
   },
   {
-    "fixture": {
-      "id": 1511522,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T23:30:00+00:00",
-      "timestamp": 1774308600,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 322,
-        "name": "Estadio Zorros del Desierto",
-        "city": "Calama"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 266,
-      "name": "Primera B",
-      "country": "Chile",
-      "logo": "https://media.api-sports.io/football/leagues/266.png",
-      "flag": "https://media.api-sports.io/flags/cl.svg",
-      "season": 2026,
-      "round": "Regular Season - 5",
-      "standings": true
-    },
-    "teams": {
-      "home": {
-        "id": 2332,
-        "name": "Cobreloa",
-        "logo": "https://media.api-sports.io/football/teams/2332.png",
-        "winner": null
-      },
-      "away": {
-        "id": 2336,
-        "name": "Magallanes",
-        "logo": "https://media.api-sports.io/football/teams/2336.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1526661,
+    "home": "Juticalpa",
+    "away": "CD Olimpia",
+    "date": "2026-03-23T02:30:00+01:00",
+    "league": "Liga Nacional",
+    "country": "Honduras"
   },
   {
-    "fixture": {
-      "id": 1535568,
-      "referee": null,
-      "timezone": "UTC",
-      "date": "2026-03-23T23:30:00+00:00",
-      "timestamp": 1774308600,
-      "periods": {
-        "first": null,
-        "second": null
-      },
-      "venue": {
-        "id": 338,
-        "name": "Estadio Municipal de La Cisterna",
-        "city": "Santiago de Chile"
-      },
-      "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null,
-        "extra": null
-      }
-    },
-    "league": {
-      "id": 1220,
-      "name": "Copa De La Liga",
-      "country": "Chile",
-      "logo": "https://media.api-sports.io/football/leagues/1220.png",
-      "flag": "https://media.api-sports.io/flags/cl.svg",
-      "season": 2026,
-      "round": "Group Stage - 1",
-      "standings": false
-    },
-    "teams": {
-      "home": {
-        "id": 2318,
-        "name": "Palestino",
-        "logo": "https://media.api-sports.io/football/teams/2318.png",
-        "winner": null
-      },
-      "away": {
-        "id": 2325,
-        "name": "Everton de Vina",
-        "logo": "https://media.api-sports.io/football/teams/2325.png",
-        "winner": null
-      }
-    },
-    "goals": {
-      "home": null,
-      "away": null
-    },
-    "score": {
-      "halftime": {
-        "home": null,
-        "away": null
-      },
-      "fulltime": {
-        "home": null,
-        "away": null
-      },
-      "extratime": {
-        "home": null,
-        "away": null
-      },
-      "penalty": {
-        "home": null,
-        "away": null
-      }
-    }
+    "fixture_id": 1499209,
+    "home": "Malacateco",
+    "away": "Aurora",
+    "date": "2026-03-23T03:00:00+01:00",
+    "league": "Liga Nacional",
+    "country": "Guatemala"
+  },
+  {
+    "fixture_id": 1513016,
+    "home": "Tacoma Defiance",
+    "away": "Austin II",
+    "date": "2026-03-23T03:00:00+01:00",
+    "league": "MLS Next Pro",
+    "country": "USA"
+  },
+  {
+    "fixture_id": 1522072,
+    "home": "Melbourne Victory II",
+    "away": "Western United II",
+    "date": "2026-03-23T10:30:00+01:00",
+    "league": "Victoria NPL 2",
+    "country": "Australia"
+  },
+  {
+    "fixture_id": 1527279,
+    "home": "Adelaide Blue Eagles",
+    "away": "Modbury Jets",
+    "date": "2026-03-23T10:45:00+01:00",
+    "league": "South Australia State League 1",
+    "country": "Australia"
+  },
+  {
+    "fixture_id": 1514589,
+    "home": "Migori Youth",
+    "away": "Talanta",
+    "date": "2026-03-23T12:00:00+01:00",
+    "league": "Super League",
+    "country": "Kenya"
+  },
+  {
+    "fixture_id": 1529667,
+    "home": "Bentonit Ijevan",
+    "away": "Syunik",
+    "date": "2026-03-23T13:00:00+01:00",
+    "league": "First League",
+    "country": "Armenia"
+  },
+  {
+    "fixture_id": 1529668,
+    "home": "Pyunik II",
+    "away": "Mika",
+    "date": "2026-03-23T13:00:00+01:00",
+    "league": "First League",
+    "country": "Armenia"
+  },
+  {
+    "fixture_id": 1529669,
+    "home": "Van II",
+    "away": "Andranik",
+    "date": "2026-03-23T13:00:00+01:00",
+    "league": "First League",
+    "country": "Armenia"
+  },
+  {
+    "fixture_id": 1531408,
+    "home": "Tefik Canga",
+    "away": "Feronikeli",
+    "date": "2026-03-23T13:00:00+01:00",
+    "league": "Liga E Pare",
+    "country": "Kosovo"
+  },
+  {
+    "fixture_id": 1534895,
+    "home": "Foutoua",
+    "away": "Damascus Al-Ahli",
+    "date": "2026-03-23T13:00:00+01:00",
+    "league": "Premier League",
+    "country": "Syria"
+  },
+  {
+    "fixture_id": 1534896,
+    "home": "Wathba",
+    "away": "Khan Shaykhun SC",
+    "date": "2026-03-23T13:00:00+01:00",
+    "league": "Premier League",
+    "country": "Syria"
+  },
+  {
+    "fixture_id": 1534897,
+    "home": "Horriya",
+    "away": "Shorta",
+    "date": "2026-03-23T13:00:00+01:00",
+    "league": "Premier League",
+    "country": "Syria"
+  },
+  {
+    "fixture_id": 1534898,
+    "home": "Hottin",
+    "away": "Al Taliya",
+    "date": "2026-03-23T13:00:00+01:00",
+    "league": "Premier League",
+    "country": "Syria"
+  },
+  {
+    "fixture_id": 1534899,
+    "home": "Jabala",
+    "away": "Tishreen",
+    "date": "2026-03-23T13:00:00+01:00",
+    "league": "Premier League",
+    "country": "Syria"
+  },
+  {
+    "fixture_id": 1528437,
+    "home": "Ajim Djerba",
+    "away": "EM Mahdia",
+    "date": "2026-03-23T13:30:00+01:00",
+    "league": "Cup",
+    "country": "Tunisia"
+  },
+  {
+    "fixture_id": 1528438,
+    "home": "AS Agareb",
+    "away": "Stade Gabesien",
+    "date": "2026-03-23T13:30:00+01:00",
+    "league": "Cup",
+    "country": "Tunisia"
+  },
+  {
+    "fixture_id": 1528439,
+    "home": "BS Bouhajla",
+    "away": "Ksour Essef",
+    "date": "2026-03-23T13:30:00+01:00",
+    "league": "Cup",
+    "country": "Tunisia"
+  },
+  {
+    "fixture_id": 1519788,
+    "home": "Hajer",
+    "away": "Ohod",
+    "date": "2026-03-23T13:45:00+01:00",
+    "league": "Division 2",
+    "country": "Saudi-Arabia"
+  },
+  {
+    "fixture_id": 1434130,
+    "home": "Crewe Alexandra U21",
+    "away": "Colchester United U21",
+    "date": "2026-03-23T14:00:00+01:00",
+    "league": "Professional Development League",
+    "country": "England"
+  },
+  {
+    "fixture_id": 1434131,
+    "home": "Coventry City U21",
+    "away": "Charlton Athletic U21",
+    "date": "2026-03-23T14:00:00+01:00",
+    "league": "Professional Development League",
+    "country": "England"
+  },
+  {
+    "fixture_id": 1495177,
+    "home": "Herentals",
+    "away": "Triangle United",
+    "date": "2026-03-23T14:00:00+01:00",
+    "league": "Premier Soccer League",
+    "country": "Zimbabwe"
+  },
+  {
+    "fixture_id": 1497798,
+    "home": "Internacional Podgorica",
+    "away": "Mladost Lje\u0161kopolje",
+    "date": "2026-03-23T14:00:00+01:00",
+    "league": "Second League",
+    "country": "Montenegro"
+  },
+  {
+    "fixture_id": 1531696,
+    "home": "Shkupi 1927",
+    "away": "Bashkimi Kumanovo",
+    "date": "2026-03-23T14:30:00+01:00",
+    "league": "First League",
+    "country": "Macedonia"
+  },
+  {
+    "fixture_id": 1434132,
+    "home": "Sheffield United U21",
+    "away": "AFC Bournemouth U21",
+    "date": "2026-03-23T15:00:00+01:00",
+    "league": "Professional Development League",
+    "country": "England"
+  },
+  {
+    "fixture_id": 1512846,
+    "home": "Aigle Royal de Moungo",
+    "away": "Unisport Bafang",
+    "date": "2026-03-23T15:00:00+01:00",
+    "league": "Elite One",
+    "country": "Cameroon"
+  },
+  {
+    "fixture_id": 1521311,
+    "home": "East Bengal II",
+    "away": "Mohammedan",
+    "date": "2026-03-23T15:00:00+01:00",
+    "league": "Indian Super League",
+    "country": "India"
+  },
+  {
+    "fixture_id": 1527607,
+    "home": "Kara-Balta",
+    "away": "Muras United",
+    "date": "2026-03-23T15:00:00+01:00",
+    "league": "Premier League",
+    "country": "Kyrgyzstan"
+  },
+  {
+    "fixture_id": 1529670,
+    "home": "Banants II",
+    "away": "Ararat-Armenia II",
+    "date": "2026-03-23T15:00:00+01:00",
+    "league": "First League",
+    "country": "Armenia"
+  },
+  {
+    "fixture_id": 1535830,
+    "home": "Fiorentina U19",
+    "away": "HNK Rijeka U18",
+    "date": "2026-03-23T15:00:00+01:00",
+    "league": "Youth Viareggio Cup",
+    "country": "World"
+  },
+  {
+    "fixture_id": 1528800,
+    "home": "Chelyabinsk",
+    "away": "Torpedo Moskva",
+    "date": "2026-03-23T15:30:00+01:00",
+    "league": "First League",
+    "country": "Russia"
+  },
+  {
+    "fixture_id": 1446811,
+    "home": "Abia Warriors",
+    "away": "Niger Tornadoes",
+    "date": "2026-03-23T16:00:00+01:00",
+    "league": "NPFL",
+    "country": "Nigeria"
+  },
+  {
+    "fixture_id": 1446817,
+    "home": "Nasarawa United",
+    "away": "Rivers United",
+    "date": "2026-03-23T16:00:00+01:00",
+    "league": "NPFL",
+    "country": "Nigeria"
+  },
+  {
+    "fixture_id": 1498083,
+    "home": "Portimonense U23",
+    "away": "Estoril U23",
+    "date": "2026-03-23T16:00:00+01:00",
+    "league": "Liga Revela\u00e7\u00e3o U23",
+    "country": "Portugal"
+  },
+  {
+    "fixture_id": 1512848,
+    "home": "Canon",
+    "away": "Fortuna Mfou",
+    "date": "2026-03-23T16:00:00+01:00",
+    "league": "Elite One",
+    "country": "Cameroon"
+  },
+  {
+    "fixture_id": 1451878,
+    "home": "Yantra 2019",
+    "away": "Fratria",
+    "date": "2026-03-23T17:00:00+01:00",
+    "league": "Second League",
+    "country": "Bulgaria"
+  },
+  {
+    "fixture_id": 1528801,
+    "home": "Rodina Moskva",
+    "away": "Chayka",
+    "date": "2026-03-23T17:00:00+01:00",
+    "league": "First League",
+    "country": "Russia"
+  },
+  {
+    "fixture_id": 1531855,
+    "home": "Renaissance",
+    "away": "ASM Sangar\u00e9di",
+    "date": "2026-03-23T17:00:00+01:00",
+    "league": "Ligue 1",
+    "country": "Guinea"
+  },
+  {
+    "fixture_id": 1534663,
+    "home": "Zoman",
+    "away": "San-P\u00e9dro",
+    "date": "2026-03-23T17:00:00+01:00",
+    "league": "Ligue 1",
+    "country": "Ivory-Coast"
+  },
+  {
+    "fixture_id": 1526247,
+    "home": "Erbil",
+    "away": "Diyala",
+    "date": "2026-03-23T17:30:00+01:00",
+    "league": "Iraqi League",
+    "country": "Iraq"
+  },
+  {
+    "fixture_id": 1531295,
+    "home": "Fortune",
+    "away": "Hart Acedemy",
+    "date": "2026-03-23T17:30:00+01:00",
+    "league": "GFA League",
+    "country": "Gambia"
+  },
+  {
+    "fixture_id": 1531296,
+    "home": "Steve Biko",
+    "away": "Greater Tomorrow",
+    "date": "2026-03-23T17:30:00+01:00",
+    "league": "GFA League",
+    "country": "Gambia"
+  },
+  {
+    "fixture_id": 1531297,
+    "home": "Team Rhino",
+    "away": "Medina United",
+    "date": "2026-03-23T17:30:00+01:00",
+    "league": "GFA League",
+    "country": "Gambia"
+  },
+  {
+    "fixture_id": 1531298,
+    "home": "TMT",
+    "away": "Samger",
+    "date": "2026-03-23T17:30:00+01:00",
+    "league": "GFA League",
+    "country": "Gambia"
+  },
+  {
+    "fixture_id": 1389987,
+    "home": "Hapoel Nazareth Illit",
+    "away": "Bnei Yehuda",
+    "date": "2026-03-23T18:00:00+01:00",
+    "league": "Liga Leumit",
+    "country": "Israel"
+  },
+  {
+    "fixture_id": 1389988,
+    "home": "Hapoel Ra'anana",
+    "away": "Hapoel Afula",
+    "date": "2026-03-23T18:00:00+01:00",
+    "league": "Liga Leumit",
+    "country": "Israel"
+  },
+  {
+    "fixture_id": 1389992,
+    "home": "Maccabi Herzliya",
+    "away": "Maccabi Kabilio Jaffa",
+    "date": "2026-03-23T18:00:00+01:00",
+    "league": "Liga Leumit",
+    "country": "Israel"
+  },
+  {
+    "fixture_id": 1401355,
+    "home": "Union Berlin W",
+    "away": "Werder Bremen W",
+    "date": "2026-03-23T18:00:00+01:00",
+    "league": "Frauen Bundesliga",
+    "country": "Germany"
+  },
+  {
+    "fixture_id": 1410666,
+    "home": "Elana Toru\u0144",
+    "away": "Wybrze\u017ce Rewalskie Rewal",
+    "date": "2026-03-23T18:00:00+01:00",
+    "league": "III Liga - Group 2",
+    "country": "Poland"
+  },
+  {
+    "fixture_id": 1500165,
+    "home": "Leones de Rosario",
+    "away": "Centro Espa\u00f1ol",
+    "date": "2026-03-23T18:30:00+01:00",
+    "league": "Primera C",
+    "country": "Argentina"
+  },
+  {
+    "fixture_id": 1474659,
+    "home": "\u0160encur",
+    "away": "Tolmin",
+    "date": "2026-03-23T19:00:00+01:00",
+    "league": "3. SNL - West",
+    "country": "Slovenia"
+  },
+  {
+    "fixture_id": 1524371,
+    "home": "Santa Fe W",
+    "away": "Deportivo Cali W",
+    "date": "2026-03-23T19:00:00+01:00",
+    "league": "Liga Femenina",
+    "country": "Colombia"
+  },
+  {
+    "fixture_id": 1397236,
+    "home": "Granada",
+    "away": "Deportivo de La Coru\u00f1a W",
+    "date": "2026-03-23T19:30:00+01:00",
+    "league": "Primera Divisi\u00f3n Femenina",
+    "country": "Spain"
+  },
+  {
+    "fixture_id": 1499327,
+    "home": "Dock Sud",
+    "away": "Villa San Carlos",
+    "date": "2026-03-23T19:30:00+01:00",
+    "league": "Primera B Metropolitana",
+    "country": "Argentina"
+  },
+  {
+    "fixture_id": 1499785,
+    "home": "Argentino Rosario",
+    "away": "Yupanqui",
+    "date": "2026-03-23T19:30:00+01:00",
+    "league": "Primera C",
+    "country": "Argentina"
+  },
+  {
+    "fixture_id": 1499789,
+    "home": "Deportivo Mu\u00f1iz",
+    "away": "JJ Urquiza",
+    "date": "2026-03-23T19:30:00+01:00",
+    "league": "Primera C",
+    "country": "Argentina"
+  },
+  {
+    "fixture_id": 1499794,
+    "home": "F\u00e9nix",
+    "away": "Puerto Nuevo",
+    "date": "2026-03-23T19:30:00+01:00",
+    "league": "Primera C",
+    "country": "Argentina"
+  },
+  {
+    "fixture_id": 1499796,
+    "home": "Sportivo Barracas",
+    "away": "Lugano",
+    "date": "2026-03-23T19:30:00+01:00",
+    "league": "Primera C",
+    "country": "Argentina"
+  },
+  {
+    "fixture_id": 1499797,
+    "home": "Victoriano Arenas",
+    "away": "Deportivo Espa\u00f1ol",
+    "date": "2026-03-23T19:30:00+01:00",
+    "league": "Primera C",
+    "country": "Argentina"
+  },
+  {
+    "fixture_id": 1506437,
+    "home": "Vikingur Gota",
+    "away": "HB Torshavn",
+    "date": "2026-03-23T19:30:00+01:00",
+    "league": "Meistaradeildin",
+    "country": "Faroe-Islands"
+  },
+  {
+    "fixture_id": 1531511,
+    "home": "Unirea Slobozia",
+    "away": "O\u0163elul",
+    "date": "2026-03-23T19:30:00+01:00",
+    "league": "Liga I",
+    "country": "Romania"
+  },
+  {
+    "fixture_id": 1434578,
+    "home": "Sunderland U21",
+    "away": "Arsenal U21",
+    "date": "2026-03-23T20:00:00+01:00",
+    "league": "Premier League 2 Division One",
+    "country": "England"
+  },
+  {
+    "fixture_id": 1434579,
+    "home": "Ipswich Town U21",
+    "away": "Burnley U21",
+    "date": "2026-03-23T20:00:00+01:00",
+    "league": "Premier League 2 Division One",
+    "country": "England"
+  },
+  {
+    "fixture_id": 1434580,
+    "home": "Stoke City U21",
+    "away": "Fulham U21",
+    "date": "2026-03-23T20:00:00+01:00",
+    "league": "Premier League 2 Division One",
+    "country": "England"
+  },
+  {
+    "fixture_id": 1498390,
+    "home": "Nueva Chicago",
+    "away": "Gimnasia Y Tiro",
+    "date": "2026-03-23T20:00:00+01:00",
+    "league": "Primera Nacional",
+    "country": "Argentina"
+  },
+  {
+    "fixture_id": 1506051,
+    "home": "Chico",
+    "away": "Deportes Tolima",
+    "date": "2026-03-23T20:00:00+01:00",
+    "league": "Primera A",
+    "country": "Colombia"
+  },
+  {
+    "fixture_id": 1528462,
+    "home": "CA River Plate",
+    "away": "Rentistas",
+    "date": "2026-03-23T20:00:00+01:00",
+    "league": "Segunda Divisi\u00f3n",
+    "country": "Uruguay"
+  },
+  {
+    "fixture_id": 1392098,
+    "home": "Castell\u00f3n",
+    "away": "Cultural Leonesa",
+    "date": "2026-03-23T20:30:00+01:00",
+    "league": "Segunda Divisi\u00f3n",
+    "country": "Spain"
+  },
+  {
+    "fixture_id": 1440058,
+    "home": "Catania",
+    "away": "Casarano",
+    "date": "2026-03-23T20:30:00+01:00",
+    "league": "Serie C - Girone C",
+    "country": "Italy"
+  },
+  {
+    "fixture_id": 1440062,
+    "home": "Salernitana",
+    "away": "Team Altamura",
+    "date": "2026-03-23T20:30:00+01:00",
+    "league": "Serie C - Girone C",
+    "country": "Italy"
+  },
+  {
+    "fixture_id": 1440063,
+    "home": "SS Monopoli",
+    "away": "Benevento",
+    "date": "2026-03-23T20:30:00+01:00",
+    "league": "Serie C - Girone C",
+    "country": "Italy"
+  },
+  {
+    "fixture_id": 1531759,
+    "home": "Monagas II",
+    "away": "Bol\u00edvar",
+    "date": "2026-03-23T20:30:00+01:00",
+    "league": "Segunda Divisi\u00f3n",
+    "country": "Venezuela"
+  },
+  {
+    "fixture_id": 1395631,
+    "home": "Treowen Stars",
+    "away": "Afan Lido",
+    "date": "2026-03-23T20:45:00+01:00",
+    "league": "FAW Championship",
+    "country": "Wales"
+  },
+  {
+    "fixture_id": 1511526,
+    "home": "Union San Felipe",
+    "away": "San Marcos de Arica",
+    "date": "2026-03-23T22:00:00+01:00",
+    "league": "Primera B",
+    "country": "Chile"
+  },
+  {
+    "fixture_id": 1506052,
+    "home": "Santa Fe",
+    "away": "Independiente Medellin",
+    "date": "2026-03-23T22:10:00+01:00",
+    "league": "Primera A",
+    "country": "Colombia"
+  },
+  {
+    "fixture_id": 1505030,
+    "home": "Sportivo Trinidense",
+    "away": "Deportivo Recoleta",
+    "date": "2026-03-23T22:30:00+01:00",
+    "league": "Division Profesional - Apertura",
+    "country": "Paraguay"
+  },
+  {
+    "fixture_id": 1519300,
+    "home": "Guayaquil City FC",
+    "away": "Leones del Norte",
+    "date": "2026-03-23T22:30:00+01:00",
+    "league": "Liga Pro",
+    "country": "Ecuador"
+  },
+  {
+    "fixture_id": 1491990,
+    "home": "Estudiantes L.P.",
+    "away": "Central Cordoba de Santiago",
+    "date": "2026-03-23T23:00:00+01:00",
+    "league": "Liga Profesional Argentina",
+    "country": "Argentina"
+  },
+  {
+    "fixture_id": 1506152,
+    "home": "Carabobo FC",
+    "away": "Puerto Cabello",
+    "date": "2026-03-23T23:00:00+01:00",
+    "league": "Primera Divisi\u00f3n",
+    "country": "Venezuela"
+  },
+  {
+    "fixture_id": 1533550,
+    "home": "Spanish Town Police",
+    "away": "Treasure Beach",
+    "date": "2026-03-23T23:00:00+01:00",
+    "league": "Premier League",
+    "country": "Jamaica"
+  },
+  {
+    "fixture_id": 1535745,
+    "home": "SERC Brasil U20",
+    "away": "Sao Luiz U20",
+    "date": "2026-03-23T23:00:00+01:00",
+    "league": "Estadual Junior U20",
+    "country": "Brazil"
+  },
+  {
+    "fixture_id": 1536103,
+    "home": "Athletic Club MG U20",
+    "away": "Sao Joao del Rei U20",
+    "date": "2026-03-23T23:30:00+01:00",
+    "league": "Mineiro U20",
+    "country": "Brazil"
   }
 ]

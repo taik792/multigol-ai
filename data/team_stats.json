@@ -1,566 +1,922 @@
 {
-  "193": {
-    "goals_for": "1.3",
-    "goals_against": "1.5"
-  },
-  "202": {
-    "goals_for": "1.2",
-    "goals_against": "1.6"
-  },
-  "163": {
-    "goals_for": "1.6",
-    "goals_against": "1.7"
-  },
-  "186": {
-    "goals_for": "0.8",
-    "goals_against": "1.2"
-  },
-  "503": {
-    "goals_for": "1.0",
-    "goals_against": "1.2"
-  },
-  "523": {
-    "goals_for": "1.2",
-    "goals_against": "1.5"
-  },
-  "81": {
-    "goals_for": "2.2",
-    "goals_against": "1.4"
-  },
-  "108": {
-    "goals_for": "1.4",
-    "goals_against": "1.5"
-  },
-  "542": {
-    "goals_for": "1.0",
-    "goals_against": "1.3"
-  },
-  "206": {
-    "goals_for": "1.2",
-    "goals_against": "1.9"
-  },
-  "196": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "173": {
-    "goals_for": "1.6",
-    "goals_against": "1.4"
-  },
-  "167": {
-    "goals_for": "1.4",
-    "goals_against": "2.0"
-  },
-  "495": {
-    "goals_for": "1.0",
-    "goals_against": "1.3"
-  },
-  "494": {
-    "goals_for": "1.1",
-    "goals_against": "1.5"
-  },
-  "116": {
-    "goals_for": "1.2",
-    "goals_against": "1.1"
-  },
-  "77": {
-    "goals_for": "0.9",
-    "goals_against": "1.6"
-  },
-  "35": {
-    "goals_for": "1.5",
-    "goals_against": "1.2"
-  },
-  "6883": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "6850": {
-    "goals_for": "1.3",
-    "goals_against": "1.8"
-  },
-  "26675": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "2610": {
-    "goals_for": "2.7",
-    "goals_against": "1.4"
-  },
-  "6897": {
-    "goals_for": "1.0",
-    "goals_against": "1.9"
-  },
-  "16293": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "10163": {
-    "goals_for": "1.0",
-    "goals_against": "1.9"
-  },
-  "24844": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "7461": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "3846": {
-    "goals_for": "1.4",
-    "goals_against": "1.3"
-  },
-  "3844": {
-    "goals_for": "1.3",
-    "goals_against": "1.0"
-  },
-  "653": {
-    "goals_for": "1.8",
-    "goals_against": "0.6"
-  },
-  "354": {
-    "goals_for": "2.8",
-    "goals_against": "1.0"
-  },
-  "5611": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "355": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "353": {
-    "goals_for": "1.3",
-    "goals_against": "1.4"
-  },
-  "2246": {
-    "goals_for": "1.8",
-    "goals_against": "1.1"
-  },
-  "6231": {
-    "goals_for": "1.2",
-    "goals_against": "1.1"
-  },
-  "33": {
-    "goals_for": "1.2",
-    "goals_against": "1.4"
-  },
-  "533": {
-    "goals_for": "1.9",
-    "goals_against": "1.3"
-  },
-  "548": {
-    "goals_for": "0.9",
-    "goals_against": "1.2"
-  },
-  "51": {
-    "goals_for": "1.7",
-    "goals_against": "1.6"
-  },
-  "40": {
-    "goals_for": "2.3",
-    "goals_against": "1.1"
-  },
-  "797": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "798": {
-    "goals_for": "0.9",
-    "goals_against": "1.2"
-  },
-  "520": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "157": {
-    "goals_for": "2.9",
-    "goals_against": "0.9"
-  },
-  "182": {
-    "goals_for": "1.1",
-    "goals_against": "1.5"
-  },
-  "192": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "180": {
-    "goals_for": "1.1",
-    "goals_against": "1.9"
-  },
-  "168": {
-    "goals_for": "2.1",
-    "goals_against": "1.3"
-  },
-  "161": {
-    "goals_for": "1.6",
-    "goals_against": "1.6"
-  },
-  "162": {
-    "goals_for": "1.6",
-    "goals_against": "1.7"
-  },
-  "36": {
-    "goals_for": "1.4",
-    "goals_against": "1.4"
-  },
-  "44": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "540": {
-    "goals_for": "1.1",
-    "goals_against": "1.3"
-  },
-  "546": {
-    "goals_for": "0.9",
-    "goals_against": "1.0"
-  },
-  "96": {
-    "goals_for": "1.3",
-    "goals_against": "1.3"
-  },
-  "97": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "489": {
-    "goals_for": "1.6",
-    "goals_against": "1.1"
-  },
-  "45": {
-    "goals_for": "1.1",
-    "goals_against": "1.2"
-  },
-  "49": {
-    "goals_for": "1.7",
-    "goals_against": "1.1"
-  },
-  "165": {
-    "goals_for": "2.1",
-    "goals_against": "1.5"
-  },
-  "175": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "539": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "718": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "727": {
-    "goals_for": "1.3",
-    "goals_against": "1.4"
-  },
-  "547": {
-    "goals_for": "1.2",
-    "goals_against": "1.6"
-  },
-  "106": {
-    "goals_for": "1.5",
-    "goals_against": "1.7"
-  },
-  "496": {
-    "goals_for": "1.5",
-    "goals_against": "0.9"
-  },
-  "488": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "63": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "55": {
-    "goals_for": "1.7",
-    "goals_against": "1.5"
-  },
-  "536": {
-    "goals_for": "1.1",
-    "goals_against": "1.4"
-  },
-  "532": {
-    "goals_for": "1.2",
-    "goals_against": "1.4"
-  },
-  "84": {
-    "goals_for": "1.9",
-    "goals_against": "1.2"
-  },
-  "85": {
-    "goals_for": "2.7",
-    "goals_against": "1.0"
-  },
-  "3769": {
-    "goals_for": "2.2",
-    "goals_against": "1.3"
-  },
-  "20798": {
-    "goals_for": "2.4",
-    "goals_against": "1.4"
-  },
-  "21081": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "26803": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "15397": {
-    "goals_for": "2.8",
-    "goals_against": "1.7"
-  },
-  "15389": {
-    "goals_for": "2.0",
-    "goals_against": "1.5"
-  },
-  "9178": {
-    "goals_for": "1.3",
-    "goals_against": "2.0"
-  },
-  "9179": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "7028": {
-    "goals_for": "2.5",
-    "goals_against": "2.1"
-  },
-  "319": {
-    "goals_for": "2.7",
-    "goals_against": "0.6"
-  },
-  "17399": {
-    "goals_for": "1.4",
-    "goals_against": "1.4"
-  },
-  "19723": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "17398": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "13843": {
-    "goals_for": "1.9",
-    "goals_against": "1.2"
-  },
-  "6923": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "21678": {
-    "goals_for": "1.1",
-    "goals_against": "2.2"
-  },
-  "8542": {
-    "goals_for": "2.7",
-    "goals_against": "1.3"
-  },
-  "8558": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "850": {
-    "goals_for": "1.4",
-    "goals_against": "1.4"
-  },
-  "8547": {
-    "goals_for": "1.9",
-    "goals_against": "1.4"
-  },
-  "1423": {
-    "goals_for": "1.8",
-    "goals_against": "1.0"
-  },
-  "17308": {
-    "goals_for": "1.1",
-    "goals_against": "1.7"
-  },
-  "22586": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "18379": {
-    "goals_for": "0.8",
-    "goals_against": "1.4"
-  },
-  "7012": {
-    "goals_for": "1.5",
-    "goals_against": "1.3"
-  },
-  "25499": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "5319": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "5321": {
-    "goals_for": "0.9",
-    "goals_against": "1.0"
-  },
-  "5322": {
-    "goals_for": "1.3",
-    "goals_against": "0.8"
-  },
-  "5314": {
-    "goals_for": "0.8",
-    "goals_against": "0.9"
-  },
-  "13962": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "14028": {
-    "goals_for": "1.5",
-    "goals_against": "2.0"
-  },
-  "10883": {
-    "goals_for": "1.3",
-    "goals_against": "0.9"
-  },
-  "13982": {
-    "goals_for": "1.5",
-    "goals_against": "0.8"
-  },
-  "27632": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "27630": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "26101": {
-    "goals_for": "2.0",
-    "goals_against": "0.5"
-  },
-  "27631": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "13985": {
-    "goals_for": "1.0",
-    "goals_against": "9.0"
-  },
-  "13984": {
-    "goals_for": "1.3",
-    "goals_against": "1.4"
-  },
-  "25461": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "11195": {
-    "goals_for": "1.9",
-    "goals_against": "1.6"
-  },
-  "26471": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "4457": {
-    "goals_for": "2.6",
-    "goals_against": "1.3"
-  },
-  "4456": {
-    "goals_for": "1.4",
-    "goals_against": "1.5"
-  },
-  "6401": {
-    "goals_for": "1.5",
-    "goals_against": "2.7"
-  },
-  "281": {
-    "goals_for": "1.0",
-    "goals_against": "1.3"
-  },
-  "305": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "23289": {
-    "goals_for": "1.3",
-    "goals_against": "1.3"
-  },
-  "17272": {
-    "goals_for": "1.0",
-    "goals_against": "0.8"
-  },
-  "25839": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "15992": {
-    "goals_for": "2.3",
-    "goals_against": "0.6"
-  },
-  "24881": {
-    "goals_for": "0.8",
-    "goals_against": "1.9"
-  },
-  "15996": {
-    "goals_for": "2.3",
-    "goals_against": "1.1"
-  },
-  "15990": {
-    "goals_for": "1.1",
-    "goals_against": "2.6"
-  },
-  "22378": {
-    "goals_for": "0.8",
-    "goals_against": "1.8"
-  },
-  "15985": {
-    "goals_for": "1.3",
-    "goals_against": "1.5"
-  },
-  "20296": {
-    "goals_for": "1.5",
-    "goals_against": "1.4"
-  },
-  "287": {
-    "goals_for": "1.3",
-    "goals_against": "1.2"
-  },
-  "303": {
-    "goals_for": "1.4",
-    "goals_against": "0.9"
-  },
-  "10217": {
-    "goals_for": "2.7",
-    "goals_against": "1.3"
-  },
-  "25449": {
-    "goals_for": "0.0",
-    "goals_against": "0.0"
-  },
-  "10214": {
-    "goals_for": "1.8",
-    "goals_against": "2.3"
-  },
-  "20850": {
-    "goals_for": "2.3",
-    "goals_against": "1.7"
-  },
-  "5647": {
-    "goals_for": "1.0",
-    "goals_against": "1.1"
-  },
-  "21328": {
-    "goals_for": "1.0",
-    "goals_against": "1.2"
+  "San Diego": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Real Salt Lake": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Boca Juniors": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Instituto Cordoba": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Pachuca": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Toluca": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Santos Laguna": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Puebla": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Atl\u00e9tico San Luis W": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Tigres UANL W": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Tapat\u00edo": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Monarcas": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "CDS Tampico Madero": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Tlaxcala": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "FAS": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Fuerte San Francisco": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Utah Royals W": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "San Diego Wave W": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Sport Boys": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Sport Huancayo": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Crown Legacy": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Atlanta United II": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Orlando City II": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Inter Miami II": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Novorizontino": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Londrina": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Robin Hood": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Notch": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Waterhouse": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Cavalier": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Sporting San Miguelito": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Veraguas": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Mushuc Runa SC": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Emelec": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "CD Motagua": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Real Espana": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Corinthians": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Flamengo": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Sportivo Luqueno": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "2 de Mayo": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Monagas SC": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Caracas FC": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Deportes Temuco": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "San Luis": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "O'Higgins": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Deportes Limache": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "San Carlos": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Deportivo Saprissa": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Comunicaciones": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Xelaj\u00fa": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Sporting KC II": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Minnesota United II": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Wotton": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Weymouth Wales": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Oriental": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Col\u00f3n": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Arnett Gardens": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Harbour View": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "FC Juarez": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Tigres UANL": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Argentinos JRS": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Platense": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Independ. Rivadavia": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Rosario Central": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Real Cartagena": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Union Magdalena": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Juticalpa": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "CD Olimpia": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Malacateco": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Aurora": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Tacoma Defiance": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Austin II": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Melbourne Victory II": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Western United II": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Adelaide Blue Eagles": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Modbury Jets": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Migori Youth": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Talanta": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Bentonit Ijevan": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Syunik": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Pyunik II": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Mika": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Van II": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Andranik": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Tefik Canga": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Feronikeli": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Foutoua": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Damascus Al-Ahli": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Wathba": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Khan Shaykhun SC": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Horriya": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Shorta": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Hottin": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Al Taliya": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Jabala": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Tishreen": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Ajim Djerba": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "EM Mahdia": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "AS Agareb": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Stade Gabesien": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "BS Bouhajla": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Ksour Essef": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Hajer": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Ohod": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Crewe Alexandra U21": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Colchester United U21": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Coventry City U21": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Charlton Athletic U21": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Herentals": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Triangle United": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Internacional Podgorica": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Mladost Lje\u0161kopolje": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Shkupi 1927": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Bashkimi Kumanovo": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Sheffield United U21": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "AFC Bournemouth U21": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Aigle Royal de Moungo": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Unisport Bafang": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "East Bengal II": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Mohammedan": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Kara-Balta": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Muras United": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Banants II": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Ararat-Armenia II": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Fiorentina U19": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "HNK Rijeka U18": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Chelyabinsk": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Torpedo Moskva": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Abia Warriors": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Niger Tornadoes": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Nasarawa United": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Rivers United": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Portimonense U23": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Estoril U23": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Canon": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Fortuna Mfou": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Yantra 2019": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Fratria": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Rodina Moskva": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Chayka": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Renaissance": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "ASM Sangar\u00e9di": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Zoman": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "San-P\u00e9dro": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Erbil": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Diyala": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Fortune": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Hart Acedemy": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Steve Biko": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Greater Tomorrow": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Team Rhino": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Medina United": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "TMT": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Samger": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Hapoel Nazareth Illit": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Bnei Yehuda": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Hapoel Ra'anana": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Hapoel Afula": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Maccabi Herzliya": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Maccabi Kabilio Jaffa": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Union Berlin W": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Werder Bremen W": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Elana Toru\u0144": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Wybrze\u017ce Rewalskie Rewal": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Leones de Rosario": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Centro Espa\u00f1ol": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "\u0160encur": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Tolmin": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Santa Fe W": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Deportivo Cali W": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Granada": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Deportivo de La Coru\u00f1a W": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Dock Sud": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Villa San Carlos": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Argentino Rosario": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Yupanqui": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Deportivo Mu\u00f1iz": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "JJ Urquiza": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "F\u00e9nix": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Puerto Nuevo": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Sportivo Barracas": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Lugano": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Victoriano Arenas": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Deportivo Espa\u00f1ol": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Vikingur Gota": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "HB Torshavn": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Unirea Slobozia": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "O\u0163elul": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Sunderland U21": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Arsenal U21": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Ipswich Town U21": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Burnley U21": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Stoke City U21": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Fulham U21": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Nueva Chicago": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Gimnasia Y Tiro": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Chico": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Deportes Tolima": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "CA River Plate": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Rentistas": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Castell\u00f3n": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Cultural Leonesa": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Catania": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Casarano": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Salernitana": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Team Altamura": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "SS Monopoli": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Benevento": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Monagas II": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Bol\u00edvar": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Treowen Stars": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Afan Lido": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Union San Felipe": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "San Marcos de Arica": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Santa Fe": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Independiente Medellin": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Sportivo Trinidense": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Deportivo Recoleta": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Guayaquil City FC": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Leones del Norte": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Estudiantes L.P.": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Central Cordoba de Santiago": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Carabobo FC": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Puerto Cabello": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Spanish Town Police": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Treasure Beach": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "SERC Brasil U20": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Sao Luiz U20": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Athletic Club MG U20": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Sao Joao del Rei U20": {
+    "scored": 1.2,
+    "conceded": 1.2
   }
 }
