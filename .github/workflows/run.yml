@@ -2,11 +2,7 @@ name: Multigol AI Scanner
 
 on:
   schedule:
-    # 10:00 Italia (9 UTC)
-    - cron: "0 9 * * *"
-    # 16:00 Italia (15 UTC)
-    - cron: "0 15 * * *"
-
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 jobs:
@@ -20,20 +16,11 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: "3.11"
 
       - name: Install dependencies
         run: pip install requests
 
       - name: Run smart controller
         env:
-          API_KEY: ${{ secrets.API_KEY }}
-        run: python run_smart.py
-
-      - name: Commit and push results
-        run: |
-          git config --global user.name "actions-user"
-          git config --global user.email "actions@github.com"
-          git add data/*.json
-          git commit -m "update predictions" || echo "No changes"
-          git push
+          API_KEY: ${{ secrets.API
