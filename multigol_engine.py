@@ -1,116 +1,117 @@
 import json
+import math
 
-# ===== LOAD =====
-with open("data/matches_today.json", "r", encoding="utf-8") as f:
+# ========================
+# CONFIG
+# ========================
+TOP_THRESHOLD = 0.70   # minimo per top pick
+MIN_MATCHES = 3        # minimo partite giocate
+
+# ========================
+# LOAD FILES
+# ========================
+with open("data/matches_today.json", "r") as f:
     matches = json.load(f)
 
-with open("data/quotes_manual.json", "r", encoding="utf-8") as f:
-    quotes = json.load(f)
+with open("data/teams_stats.json", "r") as f:
+    stats = json.load(f)
 
-quotes_map = {q["fixture_id"]: q for q in quotes}
+# ========================
+# HELPER
+# ========================
+def poisson_prob(lmbda, k):
+    return (lmbda ** k * math.exp(-lmbda)) / math.factorial(k)
 
-predictions = []
+def over25_prob(home_avg, away_avg):
+    lmbda = home_avg + away_avg
+    prob = 0
+    for i in range(3):
+        for j in range(3 - i):
+            prob += poisson_prob(home_avg, i) * poisson_prob(away_avg, j)
+    return 1 - prob
 
-# ===== ENGINE PRO =====
+def btts_prob(home_avg, away_avg):
+    p_home = 1 - poisson_prob(home_avg, 0)
+    p_away = 1 - poisson_prob(away_avg, 0)
+    return p_home * p_away
+
+# ========================
+# MAIN
+# ========================
+all_preds = []
+
 for match in matches:
+    home_id = str(match["home_id"])
+    away_id = str(match["away_id"])
 
-    fixture_id = match.get("fixture_id")
-
-    if fixture_id not in quotes_map:
+    if home_id not in stats or away_id not in stats:
         continue
 
-    q = quotes_map[fixture_id]
+    home = stats[home_id]
+    away = stats[away_id]
 
-    try:
-        # ===== 1X2 =====
-        p1 = 1 / q["q1"]
-        px = 1 / q["qx"]
-        p2 = 1 / q["q2"]
-
-        total_1x2 = p1 + px + p2
-
-        p1 /= total_1x2
-        px /= total_1x2
-        p2 /= total_1x2
-
-        # ===== GG =====
-        pgg = 1 / q["qgg"]
-        png = 1 / q["qng"]
-
-        total_gg = pgg + png
-
-        pgg /= total_gg
-        png /= total_gg
-
-        # ===== OVER 2.5 =====
-        pover = 1 / q["over25"]
-        punder = 1 / q["under25"]
-
-        total_ou = pover + punder
-
-        pover /= total_ou
-        punder /= total_ou
-
-        # ===== MERCATI =====
-        markets = {
-            "1": p1,
-            "X": px,
-            "2": p2,
-            "GG": pgg,
-            "NG": png,
-            "Over 2.5": pover,
-            "Under 2.5": punder
-        }
-
-        pick = max(markets, key=markets.get)
-        prob = round(markets[pick] * 100, 1)
-
-        # ===== VALUE BET =====
-        odds_map = {
-            "1": q["q1"],
-            "X": q["qx"],
-            "2": q["q2"],
-            "GG": q["qgg"],
-            "NG": q["qng"],
-            "Over 2.5": q["over25"],
-            "Under 2.5": q["under25"]
-        }
-
-        value = markets[pick] * odds_map[pick]
-
-        # ===== FILTRI PRO =====
-
-        if prob < 60:
-            continue
-
-        if value < 1.05:
-            continue
-
-    except:
+    if home["played"] < MIN_MATCHES or away["played"] < MIN_MATCHES:
         continue
 
-    predictions.append({
-        "home": match.get("home"),
-        "away": match.get("away"),
-        "league": match.get("league"),
-        "date": match.get("date"),
-        "time": match.get("time"),
-        "prediction": pick,
-        "probability": prob,
-        "value": round(value, 2)
-    })
+    home_avg = home["goals_for"] / home["played"]
+    away_avg = away["goals_for"] / away["played"]
 
-# ===== ORDINA =====
-predictions = sorted(predictions, key=lambda x: x["probability"], reverse=True)
+    # Probabilità
+    over25 = over25_prob(home_avg, away_avg)
+    btts = btts_prob(home_avg, away_avg)
 
-# ===== TOP PICKS =====
-top_picks = predictions[:5]
+    # 1X semplice
+    home_strength = home_avg
+    away_strength = away_avg
 
-# ===== SAVE =====
-with open("predictions.json", "w", encoding="utf-8") as f:
-    json.dump({
-        "all": predictions,
-        "top": top_picks
-    }, f, indent=2)
+    prob_1x = home_strength / (home_strength + away_strength)
 
-print(f"🔥 PRO PICKS: {len(predictions)}")
+    # scegli pick migliore
+    best_pick = None
+    best_prob = 0
+
+    options = {
+        "Over 2.5": over25,
+        "GG": btts,
+        "1X": prob_1x
+    }
+
+    for k, v in options.items():
+        if v > best_prob:
+            best_prob = v
+            best_pick = k
+
+    if best_prob < 0.55:
+        continue
+
+    prediction = {
+        "fixture_id": match["fixture_id"],
+        "home": match["home"],
+        "away": match["away"],
+        "pick": best_pick,
+        "probability": round(best_prob * 100, 1)
+    }
+
+    all_preds.append(prediction)
+
+# ========================
+# TOP PICKS
+# ========================
+top_preds = [p for p in all_preds if p["probability"] >= TOP_THRESHOLD * 100]
+
+# prendi i migliori 5
+top_preds = sorted(top_preds, key=lambda x: x["probability"], reverse=True)[:5]
+
+# ========================
+# SAVE
+# ========================
+output = {
+    "all": all_preds,
+    "top": top_preds
+}
+
+with open("predictions.json", "w") as f:
+    json.dump(output, f, indent=2)
+
+print(f"Predizioni: {len(all_preds)}")
+print(f"Top picks: {len(top_preds)}")
