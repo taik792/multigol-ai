@@ -6,18 +6,18 @@ hour = now.hour
 
 print(f"Ora UTC: {hour}")
 
-# 08 UTC = 10 Italia
-# 14 UTC = 16 Italia
-
-if hour == 8:
-    print("RUN COMPLETO (mattina)")
+# ✅ AUTOMATICO ORARI
+if hour in [8, 14]:
+    print("RUN AUTOMATICO")
+    
     subprocess.run(["python", "get_matches.py"])
     subprocess.run(["python", "update_team_stats.py"])
     subprocess.run(["python", "multigol_engine.py"])
 
-elif hour == 14:
-    print("RUN LEGGERO (pomeriggio)")
-    subprocess.run(["python", "multigol_engine.py"])
-
+# ✅ MANUALE SEMPRE ATTIVO
 else:
-    print("Orario non previsto")
+    print("RUN MANUALE (fallback)")
+    
+    subprocess.run(["python", "get_matches.py"])
+    subprocess.run(["python", "update_team_stats.py"])
+    subprocess.run(["python", "multigol_engine.py"])
