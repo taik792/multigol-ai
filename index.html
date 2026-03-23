@@ -12,10 +12,6 @@ body {
     text-align: center;
 }
 
-h1 {
-    margin-top: 20px;
-}
-
 .section {
     margin-top: 30px;
 }
@@ -42,10 +38,42 @@ h1 {
 
 <script>
 function formatDate(dateString) {
+    if (!dateString) return ""
+
     const d = new Date(dateString)
 
     return d.toLocaleString("it-IT", {
         day: "2-digit",
         month: "2-digit",
         hour: "2-digit",
-        minute: "
+        minute: "2-digit"
+    })
+}
+
+function renderMatches(data, containerId) {
+    let html = ""
+
+    data.forEach(m => {
+        html += `
+        <div class="match">
+            <b>${m.home} vs ${m.away}</b><br>
+            🌍 ${(m.country || "")} ${(m.league || "")}<br>
+            📅 ${formatDate(m.date)}<br>
+            👉 ${(m.plays || []).join(", ")}
+        </div>
+        `
+    })
+
+    document.getElementById(containerId).innerHTML = html
+}
+
+fetch("data/predictions.json")
+.then(res => res.json())
+.then(data => {
+    renderMatches(data.top || [], "top")
+    renderMatches(data.all || [], "all")
+})
+</script>
+
+</body>
+</html>
