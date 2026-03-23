@@ -1,23 +1,21 @@
-import datetime
-import subprocess
+import os
+from datetime import datetime
 
-now = datetime.datetime.utcnow()
-hour = now.hour
+hour = datetime.utcnow().hour
 
 print(f"Ora UTC: {hour}")
 
-# ✅ AUTOMATICO ORARI
-if hour in [8, 14]:
-    print("RUN AUTOMATICO")
-    
-    subprocess.run(["python", "get_matches.py"])
-    subprocess.run(["python", "update_team_stats.py"])
-    subprocess.run(["python", "multigol_engine.py"])
+# Italia = UTC +1 / +2
+italy_hour = (hour + 1) % 24
 
-# ✅ MANUALE SEMPRE ATTIVO
-else:
-    print("RUN MANUALE (fallback)")
-    
-    subprocess.run(["python", "get_matches.py"])
-    subprocess.run(["python", "update_team_stats.py"])
-    subprocess.run(["python", "multigol_engine.py"])
+print(f"Ora Italia: {italy_hour}")
+
+# 🔥 SOLO 2 RUN
+if italy_hour not in [10, 16]:
+    print("⛔ Skip per risparmio API")
+    exit()
+
+print("🚀 RUN ATTIVO")
+
+os.system("python get_matches.py")
+os.system("python multigol_engine.py")
