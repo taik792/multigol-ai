@@ -1,61 +1,40 @@
 import requests
 import json
 import os
-from datetime import datetime, timedelta
+from datetime import datetime
 
-# 🔐 prende la key dal secret GIUSTO
 API_KEY = os.getenv("API_KEY")
 
-BASE_URL = "https://v3.football.api-sports.io/fixtures"
+url = "https://v3.football.api-sports.io/fixtures"
+
+today = datetime.utcnow().strftime("%Y-%m-%d")
 
 headers = {
     "x-apisports-key": API_KEY
 }
 
-def get_matches():
-    matches = []
+params = {
+    "date": today
+}
 
-    today = datetime.now()
-    dates = [
-        today.strftime("%Y-%m-%d"),
-        (today + timedelta(days=1)).strftime("%Y-%m-%d")
-    ]
+res = requests.get(url, headers=headers, params=params)
+data = res.json()
 
-    for date in dates:
-        url = f"{BASE_URL}?date={date}"
+matches = []
 
-        response = requests.get(url, headers=headers)
-        data = response.json()
+for m in data.get("response", []):
+    fixture = m["fixture"]
+    teams = m["teams"]
 
-        print("DEBUG:", data)  # 🔍 controlla sempre
+    matches.append({
+        "fixture_id": fixture["id"],
+        "home": teams["home"]["name"],
+        "away": teams["away"]["name"],
+        "date": fixture["date"]
+    })
 
-        if "response" not in data:
-            print("❌ Errore API")
-            continue
+# salva SOLO matches_today
+with open("data/matches_today.json", "w") as f:
+    json.dump(matches, f, indent=2)
 
-        for match in data["response"]:
-            status = match["fixture"]["status"]["short"]
-
-            # 👉 prendi partite non iniziate
-            if status in ["NS", "TBD"]:
-                matches.append({
-                    "fixture_id": match["fixture"]["id"],
-                    "home": match["teams"]["home"]["name"],
-                    "away": match["teams"]["away"]["name"],
-                    "date": match["fixture"]["date"]
-                })
-
-    if not matches:
-        print("⚠️ Nessuna partita trovata")
-
-    # salva per sito
-    with open("matches.json", "w") as f:
-        json.dump(matches, f, indent=2)
-
-    with open("data/matches_today.json", "w") as f:
-        json.dump(matches, f, indent=2)
-
-    print(f"✅ Partite trovate: {len(matches)}")
-
-if __name__ == "__main__":
-    get_matches()
+print(f"✅ Matches salvate: {len(matches)}")
