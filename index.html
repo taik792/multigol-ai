@@ -1,34 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Multigol AI Scanner PRO</title>
+  <style>
+    body {
+      background: #0f2a44;
+      color: white;
+      font-family: Arial;
+      text-align: center;
+    }
+    h1 { margin-top: 20px; }
+    .match {
+      margin: 15px;
+      padding: 10px;
+      border-radius: 10px;
+      background: #163a5f;
+    }
+  </style>
+</head>
+<body>
+
+<h1>⚽ Multigol AI Scanner PRO</h1>
+
+<h2>🔥 Top Picks</h2>
+<div id="top-picks"></div>
+
+<h2>📊 Tutte le partite</h2>
+<div id="all-matches"></div>
+
 <script>
 async function loadData() {
-  const res = await fetch("data/predictions.json");
-  const data = await res.json();
+  try {
+    const res = await fetch("data/predictions.json");
+    const data = await res.json();
 
-  const topContainer = document.getElementById("top-picks");
-  const allContainer = document.getElementById("all-matches");
+    const top = document.getElementById("top-picks");
+    const all = document.getElementById("all-matches");
 
-  topContainer.innerHTML = "";
-  allContainer.innerHTML = "";
+    top.innerHTML = "";
+    all.innerHTML = "";
 
-  // 🔥 TOP PICKS
-  data.top.forEach(match => {
-    topContainer.innerHTML += `
-      <div>
-        <h3>${match.home} vs ${match.away}</h3>
-        <p>👉 ${match.plays.join(", ")}</p>
-      </div>
-    `;
-  });
+    // TOP PICKS
+    data.top.forEach(m => {
+      top.innerHTML += `
+        <div class="match">
+          <h3>${m.home} vs ${m.away}</h3>
+          <p>👉 ${m.plays.join(", ")}</p>
+        </div>
+      `;
+    });
 
-  // 🔥 TUTTE LE PARTITE
-  data.all.forEach(match => {
-    allContainer.innerHTML += `
-      <div>
-        <h4>${match.home} vs ${match.away}</h4>
-        <p>👉 ${match.plays.join(", ")}</p>
-      </div>
-    `;
-  });
+    // ALL MATCHES
+    data.all.forEach(m => {
+      all.innerHTML += `
+        <div class="match">
+          <h4>${m.home} vs ${m.away}</h4>
+          <p>👉 ${m.plays.join(", ")}</p>
+        </div>
+      `;
+    });
+
+  } catch (err) {
+    console.error("Errore:", err);
+  }
 }
 
 loadData();
 </script>
+
+</body>
+</html>
