@@ -1,6 +1,7 @@
 import json
 import random
 
+# carica partite
 with open("data/matches_today.json") as f:
     matches = json.load(f)
 
@@ -22,13 +23,14 @@ for match in matches:
     if prob > 58:
         plays.append("1")
 
+    # 🔥 FIX IMPORTANTE → campi sempre presenti
     pred = {
-        "home": match["home"],
-        "away": match["away"],
-        "league": match["league"],
-        "country": match["country"],
-        "date": match["date"],
-        "plays": plays,
+        "home": match.get("home", ""),
+        "away": match.get("away", ""),
+        "league": match.get("league", "Unknown"),
+        "country": match.get("country", "Unknown"),
+        "date": match.get("date", ""),
+        "plays": plays if plays else ["No bet"],
         "probability": prob
     }
 
@@ -39,10 +41,10 @@ for match in matches:
 
 output = {
     "all": predictions,
-    "top": top_picks
+    "top": top_picks if top_picks else predictions[:2]  # fallback
 }
 
 with open("data/predictions.json", "w") as f:
     json.dump(output, f, indent=4)
 
-print("🔥 Predictions generate")
+print("🔥 Predictions generate OK")
