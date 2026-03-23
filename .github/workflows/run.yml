@@ -4,7 +4,6 @@ on:
   schedule:
     - cron: "0 9 * * *"   # 10:00 Italia
     - cron: "0 15 * * *"  # 16:00 Italia
-
   workflow_dispatch:
 
 jobs:
@@ -12,35 +11,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 📥 Scarica repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 🐍 Setup Python corretto
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.11
+          python-version: "3.11"
 
-      # 📦 Installa requests
       - name: Install dependencies
         run: pip install requests
 
-      # 🚀 RUN BOT
       - name: Run bot
         env:
           API_KEY: ${{ secrets.API_KEY }}
         run: |
           python get_matches.py
+          python update_team_stats.py
           python multigol_engine.py
 
-      # 💾 Commit FORZATO (QUESTO È IL FIX)
       - name: Commit and push
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
 
-          git add -A
+          git add .
 
           git diff --cached --quiet || git commit -m "auto update predictions"
 
