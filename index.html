@@ -1,14 +1,34 @@
 <script>
-function formatDate(dateString) {
-    if (!dateString) return ""
+async function loadData() {
+  const res = await fetch("data/predictions.json");
+  const data = await res.json();
 
-    const d = new Date(dateString)
+  const topContainer = document.getElementById("top-picks");
+  const allContainer = document.getElementById("all-matches");
 
-    return d.toLocaleString("it-IT", {
-        day: "2-digit",
-        month: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit"
-    })
+  topContainer.innerHTML = "";
+  allContainer.innerHTML = "";
+
+  // 🔥 TOP PICKS
+  data.top.forEach(match => {
+    topContainer.innerHTML += `
+      <div>
+        <h3>${match.home} vs ${match.away}</h3>
+        <p>👉 ${match.plays.join(", ")}</p>
+      </div>
+    `;
+  });
+
+  // 🔥 TUTTE LE PARTITE
+  data.all.forEach(match => {
+    allContainer.innerHTML += `
+      <div>
+        <h4>${match.home} vs ${match.away}</h4>
+        <p>👉 ${match.plays.join(", ")}</p>
+      </div>
+    `;
+  });
 }
+
+loadData();
 </script>
