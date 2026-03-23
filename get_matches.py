@@ -3,8 +3,8 @@ import json
 import os
 from datetime import datetime, timedelta
 
-# 🔐 API da GitHub Secrets
-API_KEY = os.getenv("API_FOOTBALL_KEY")
+# 🔐 prende la key dal secret GIUSTO
+API_KEY = os.getenv("API_KEY")
 
 BASE_URL = "https://v3.football.api-sports.io/fixtures"
 
@@ -27,7 +27,7 @@ def get_matches():
         response = requests.get(url, headers=headers)
         data = response.json()
 
-        print("DEBUG:", data)  # 🔍 fondamentale
+        print("DEBUG:", data)  # 🔍 controlla sempre
 
         if "response" not in data:
             print("❌ Errore API")
@@ -36,6 +36,7 @@ def get_matches():
         for match in data["response"]:
             status = match["fixture"]["status"]["short"]
 
+            # 👉 prendi partite non iniziate
             if status in ["NS", "TBD"]:
                 matches.append({
                     "fixture_id": match["fixture"]["id"],
@@ -44,11 +45,10 @@ def get_matches():
                     "date": match["fixture"]["date"]
                 })
 
-    # ⚠️ fallback
     if not matches:
         print("⚠️ Nessuna partita trovata")
 
-    # salva file
+    # salva per sito
     with open("matches.json", "w") as f:
         json.dump(matches, f, indent=2)
 
