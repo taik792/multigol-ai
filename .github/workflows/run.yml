@@ -23,4 +23,15 @@ jobs:
 
       - name: Run smart controller
         env:
-          API_KEY: ${{ secrets.API
+          API_KEY: ${{ secrets.API_KEY }}
+        run: |
+          python run_smart.py
+
+      - name: Commit and push
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+
+          git add .
+          git commit -m "auto update" || echo "no changes"
+          git push
