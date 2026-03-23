@@ -3,59 +3,59 @@ import json
 import os
 from datetime import datetime, timedelta
 
-API_KEY = os.getenv("API_KEY")
+# 🔐 API da GitHub Secrets
+API_KEY = os.getenv("API_FOOTBALL_KEY")
 
-url = "https://v3.football.api-sports.io/fixtures"
+BASE_URL = "https://v3.football.api-sports.io/fixtures"
 
 headers = {
     "x-apisports-key": API_KEY
 }
 
-# 📅 oggi + domani
-today = datetime.utcnow().strftime("%Y-%m-%d")
-tomorrow = (datetime.utcnow() + timedelta(days=1)).strftime("%Y-%m-%d")
+def get_matches():
+    matches = []
 
-matches = []
+    today = datetime.now()
+    dates = [
+        today.strftime("%Y-%m-%d"),
+        (today + timedelta(days=1)).strftime("%Y-%m-%d")
+    ]
 
-for date in [today, tomorrow]:
+    for date in dates:
+        url = f"{BASE_URL}?date={date}"
 
-    params = {
-        "date": date,
-        "status": "NS"
-    }
+        response = requests.get(url, headers=headers)
+        data = response.json()
 
-    response = requests.get(url, headers=headers, params=params)
-    data = response.json()
+        print("DEBUG:", data)  # 🔍 fondamentale
 
-    if "response" in data:
+        if "response" not in data:
+            print("❌ Errore API")
+            continue
+
         for match in data["response"]:
-            try:
-                fixture = match["fixture"]
-                teams = match["teams"]
-                league = match["league"]
+            status = match["fixture"]["status"]["short"]
 
-                match_data = {
-                    "fixture_id": fixture["id"],
-                    "date": fixture["date"][:10],
-                    "time": fixture["date"][11:16],
-                    "home": teams["home"]["name"],
-                    "away": teams["away"]["name"],
-                    "home_id": teams["home"]["id"],
-                    "away_id": teams["away"]["id"],
-                    "league": league["name"],
-                    "league_id": league["id"],  # 🔥 FIX IMPORTANTE
-                    "country": league["country"]
-                }
+            if status in ["NS", "TBD"]:
+                matches.append({
+                    "fixture_id": match["fixture"]["id"],
+                    "home": match["teams"]["home"]["name"],
+                    "away": match["teams"]["away"]["name"],
+                    "date": match["fixture"]["date"]
+                })
 
-                matches.append(match_data)
+    # ⚠️ fallback
+    if not matches:
+        print("⚠️ Nessuna partita trovata")
 
-            except Exception as e:
-                continue
+    # salva file
+    with open("matches.json", "w") as f:
+        json.dump(matches, f, indent=2)
 
-# 📁 salva file
-os.makedirs("data", exist_ok=True)
+    with open("data/matches_today.json", "w") as f:
+        json.dump(matches, f, indent=2)
 
-with open("data/matches_today.json", "w") as f:
-    json.dump(matches, f, indent=2)
+    print(f"✅ Partite trovate: {len(matches)}")
 
-print("Partite trovate:", len(matches))
+if __name__ == "__main__":
+    get_matches()
