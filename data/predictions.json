@@ -1,4 +1,326 @@
 {
-  "all": [],
-  "top": []
+  "all": [
+    {
+      "fixture_id": 1535830,
+      "home": "Fiorentina U19",
+      "away": "HNK Rijeka U18",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1389987,
+      "home": "Hapoel Nazareth Illit",
+      "away": "Bnei Yehuda",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1389988,
+      "home": "Hapoel Ra'anana",
+      "away": "Hapoel Afula",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1389992,
+      "home": "Maccabi Herzliya",
+      "away": "Maccabi Kabilio Jaffa",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1499796,
+      "home": "Sportivo Barracas",
+      "away": "Lugano",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1506437,
+      "home": "Vikingur Gota",
+      "away": "HB Torshavn",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1434578,
+      "home": "Sunderland U21",
+      "away": "Arsenal U21",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1434579,
+      "home": "Ipswich Town U21",
+      "away": "Burnley U21",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1434580,
+      "home": "Stoke City U21",
+      "away": "Fulham U21",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1498390,
+      "home": "Nueva Chicago",
+      "away": "Gimnasia Y Tiro",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1506051,
+      "home": "Chico",
+      "away": "Deportes Tolima",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1528462,
+      "home": "CA River Plate",
+      "away": "Rentistas",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1392098,
+      "home": "Castell\u00f3n",
+      "away": "Cultural Leonesa",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1440058,
+      "home": "Catania",
+      "away": "Casarano",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1440062,
+      "home": "Salernitana",
+      "away": "Team Altamura",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1440063,
+      "home": "SS Monopoli",
+      "away": "Benevento",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1531759,
+      "home": "Monagas II",
+      "away": "Bol\u00edvar",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1395631,
+      "home": "Treowen Stars",
+      "away": "Afan Lido",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1511526,
+      "home": "Union San Felipe",
+      "away": "San Marcos de Arica",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1506052,
+      "home": "Santa Fe",
+      "away": "Independiente Medellin",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1505030,
+      "home": "Sportivo Trinidense",
+      "away": "Deportivo Recoleta",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1519300,
+      "home": "Guayaquil City FC",
+      "away": "Leones del Norte",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1491990,
+      "home": "Estudiantes L.P.",
+      "away": "Central Cordoba de Santiago",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1506152,
+      "home": "Carabobo FC",
+      "away": "Puerto Cabello",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1533550,
+      "home": "Spanish Town Police",
+      "away": "Treasure Beach",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1535745,
+      "home": "SERC Brasil U20",
+      "away": "Sao Luiz U20",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1536103,
+      "home": "Athletic Club MG U20",
+      "away": "Sao Joao del Rei U20",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1499322,
+      "home": "Comunicaciones",
+      "away": "Liniers",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1506154,
+      "home": "Metropolitanos FC",
+      "away": "Academia Anzo\u00e1tegui",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1522350,
+      "home": "Fluminense W",
+      "away": "S\u00e3o Paulo W",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1534903,
+      "home": "S\u00e3o Jos\u00e9 EC",
+      "away": "Independente AP",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1506053,
+      "home": "Jaguares",
+      "away": "\u00c1guilas Doradas",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1505027,
+      "home": "Rubio NU",
+      "away": "Sportivo Ameliano",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1511522,
+      "home": "Cobreloa",
+      "away": "Magallanes",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1535568,
+      "home": "Palestino",
+      "away": "Everton de Vina",
+      "plays": [
+        "Over 1.5"
+      ]
+    }
+  ],
+  "top": [
+    {
+      "fixture_id": 1535830,
+      "home": "Fiorentina U19",
+      "away": "HNK Rijeka U18",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1389987,
+      "home": "Hapoel Nazareth Illit",
+      "away": "Bnei Yehuda",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1389988,
+      "home": "Hapoel Ra'anana",
+      "away": "Hapoel Afula",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1389992,
+      "home": "Maccabi Herzliya",
+      "away": "Maccabi Kabilio Jaffa",
+      "plays": [
+        "Over 1.5"
+      ]
+    },
+    {
+      "fixture_id": 1499796,
+      "home": "Sportivo Barracas",
+      "away": "Lugano",
+      "plays": [
+        "Over 1.5"
+      ]
+    }
+  ]
 }
