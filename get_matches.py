@@ -1,40 +1,37 @@
 import requests
 import json
-import os
 from datetime import datetime
 
-API_KEY = os.getenv("API_KEY")
+API_KEY = "YOUR_API_KEY"  # NON serve se usi secrets in GitHub
 
 url = "https://v3.football.api-sports.io/fixtures"
-
-today = datetime.utcnow().strftime("%Y-%m-%d")
 
 headers = {
     "x-apisports-key": API_KEY
 }
 
+today = datetime.utcnow().strftime('%Y-%m-%d')
+
 params = {
     "date": today
 }
 
-res = requests.get(url, headers=headers, params=params)
-data = res.json()
+response = requests.get(url, headers=headers, params=params)
+data = response.json()
 
 matches = []
 
-for m in data.get("response", []):
-    fixture = m["fixture"]
-    teams = m["teams"]
-
+for fixture in data.get("response", []):
     matches.append({
-        "fixture_id": fixture["id"],
-        "home": teams["home"]["name"],
-        "away": teams["away"]["name"],
-        "date": fixture["date"]
+        "fixture_id": fixture["fixture"]["id"],
+        "home": fixture["teams"]["home"]["name"],
+        "away": fixture["teams"]["away"]["name"],
+        "date": fixture["fixture"]["date"],
+        "league": fixture["league"]["name"],
+        "country": fixture["league"]["country"]
     })
 
-# salva SOLO matches_today
 with open("data/matches_today.json", "w") as f:
-    json.dump(matches, f, indent=2)
+    json.dump(matches, f, indent=4)
 
-print(f"✅ Matches salvate: {len(matches)}")
+print(f"✅ Salvate {len(matches)} partite")
