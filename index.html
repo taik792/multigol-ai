@@ -1,54 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-    <title>Multigol AI Scanner PRO</title>
+<meta charset="UTF-8">
+<title>Multigol AI Scanner PRO</title>
+
+<style>
+body {
+    background: #0d1b2a;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.section {
+    margin-top: 30px;
+}
+
+.match {
+    margin-bottom: 20px;
+}
+</style>
 </head>
-<body style="background:#0f2747;color:white;font-family:sans-serif;text-align:center">
+
+<body>
 
 <h1>⚽ Multigol AI Scanner PRO</h1>
 
+<div class="section">
 <h2>🔥 Top Picks</h2>
 <div id="top"></div>
+</div>
 
+<div class="section">
 <h2>📊 Tutte le partite</h2>
 <div id="all"></div>
+</div>
 
 <script>
-fetch("data/predictions.json")
-.then(res => res.json())
-.then(data => {
+function formatDate(dateString) {
+    const d = new Date(dateString)
 
-    let topDiv = document.getElementById("top");
-    let allDiv = document.getElementById("all");
-
-    if (!data.all.length) {
-        allDiv.innerHTML = "<p>Nessuna partita trovata</p>";
-        return;
-    }
-
-    data.top.forEach(p => {
-        topDiv.innerHTML += `
-            <p>
-            ${p.home} vs ${p.away} <br>
-            👉 ${p.plays.join(", ")}
-            </p>
-        `;
-    });
-
-    data.all.forEach(p => {
-        allDiv.innerHTML += `
-            <p>
-            ${p.home} vs ${p.away} <br>
-            ${p.plays.join(", ")}
-            </p>
-        `;
-    });
-
-})
-.catch(err => {
-    console.log(err);
-});
-</script>
-
-</body>
-</html>
+    return d.toLocaleString("it-IT", {
+        day: "2-digit",
+        month: "2-digit",
+        hour: "2-digit",
+        minute: "
