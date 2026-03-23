@@ -1,41 +1,67 @@
 import json
 
-# 📂 Carica partite
-with open("data/matches_today.json", "r") as f:
+with open("data/matches_today.json") as f:
     matches = json.load(f)
 
-predictions = {
-    "all": [],
-    "top": []
-}
+with open("data/team_stats.json") as f:
+    stats = json.load(f)
 
-for match in matches:
-    try:
-        fixture_id = match["fixture"]["id"]
-        home = match["teams"]["home"]["name"]
-        away = match["teams"]["away"]["name"]
+predictions = []
 
-        # 🔥 previsione base (così non resta mai vuoto)
-        plays = ["Over 1.5"]
+for m in matches:
+    home = m["home"]
+    away = m["away"]
 
-        pred = {
-            "fixture_id": fixture_id,
-            "home": home,
-            "away": away,
-            "plays": plays
-        }
+    home_scored = stats.get(home, {}).get("scored", 1.2)
+    home_conceded = stats.get(home, {}).get("conceded", 1.2)
 
-        predictions["all"].append(pred)
+    away_scored = stats.get(away, {}).get("scored", 1.2)
+    away_conceded = stats.get(away, {}).get("conceded", 1.2)
 
-    except Exception as e:
-        print(f"Errore match saltato: {e}")
+    # ⚽ forza offensiva
+    home_attack = (home_scored + away_conceded) / 2
+    away_attack = (away_scored + home_conceded) / 2
+
+    total_goals = home_attack + away_attack
+
+    plays = []
+
+    # 🎯 LOGICA REALE
+    if total_goals >= 2.5:
+        plays.append("Over 2.5")
+    elif total_goals >= 2:
+        plays.append("Over 1.5")
+
+    if home_attack > away_attack * 1.2:
+        plays.append("1")
+    elif away_attack > home_attack * 1.2:
+        plays.append("2")
+
+    if home_attack > 1 and away_attack > 1:
+        plays.append("GG")
+
+    if not plays:
         continue
 
-# 🔥 top picks = primi 5
-predictions["top"] = predictions["all"][:5]
+    predictions.append({
+        "home": home,
+        "away": away,
+        "date": m["date"],
+        "league": m["league"],
+        "country": m["country"],
+        "plays": plays,
+        "strength": total_goals
+    })
 
-# 💾 salva file
+# 🔥 TOP PICKS = migliori per goal attesi
+predictions = sorted(predictions, key=lambda x: x["strength"], reverse=True)
+
+output = {
+    "top": predictions[:5],
+    "all": predictions
+}
+
 with open("data/predictions.json", "w") as f:
-    json.dump(predictions, f, indent=2)
+    json.dump(output, f, indent=2)
 
-print(f"✅ Generate {len(predictions['all'])} predictions")
+print(f"Generate {len(predictions)} predictions")
