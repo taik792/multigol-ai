@@ -2,8 +2,8 @@ name: Multigol AI Scanner
 
 on:
   schedule:
-    - cron: "0 9 * * *"
-    - cron: "0 15 * * *"
+    - cron: "0 9 * * *"   # 10:00 Italia
+    - cron: "0 15 * * *"  # 16:00 Italia
 
   workflow_dispatch:
 
@@ -12,26 +12,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      # 📥 Scarica repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 🐍 Setup Python corretto
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.11
 
+      # 📦 Installa requests
       - name: Install dependencies
         run: pip install requests
 
-      - name: Run smart controller
+      # 🚀 RUN BOT
+      - name: Run bot
         env:
           API_KEY: ${{ secrets.API_KEY }}
-        run: python run_smart.py
-
-      - name: Commit results
         run: |
-          git config --global user.name "bot"
-          git config --global user.email "bot@github.com"
-          git add data/
-          git commit -m "update predictions" || echo "no changes"
+          python get_matches.py
+          python multigol_engine.py
+
+      # 💾 Commit FORZATO (QUESTO È IL FIX)
+      - name: Commit and push
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+
+          git add -A
+
+          git diff --cached --quiet || git commit -m "auto update predictions"
+
           git push
