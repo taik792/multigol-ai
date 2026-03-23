@@ -1,27 +1,19 @@
 import json
-import os
 
-# 📂 file
-MATCHES_FILE = "matches.json"
-QUOTES_FILE = "data/quotes_manual.json"
-OUTPUT_FILE = "data/predictions.json"
-
-def load_json(file):
-    if not os.path.exists(file):
+def load(file):
+    try:
+        with open(file) as f:
+            return json.load(f)
+    except:
         return []
-    with open(file, "r") as f:
-        return json.load(f)
 
-matches = load_json(MATCHES_FILE)
-quotes = load_json(QUOTES_FILE)
+matches = load("data/matches_today.json")
+quotes = load("data/quotes_manual.json")
 
 predictions = []
-top_picks = []
 
-for match in matches:
-    fid = match["fixture_id"]
-
-    # trova quote
+for m in matches:
+    fid = m["fixture_id"]
     q = next((x for x in quotes if x["fixture_id"] == fid), None)
 
     if not q:
@@ -29,52 +21,59 @@ for match in matches:
 
     plays = []
 
-    # 🔥 LOGICA REALE (semplice ma efficace)
+    # 🔥 FILTRO QUALITÀ (NO partite strane)
+    if q.get("q1", 10) < 1.20 or q.get("q2", 10) < 1.20:
+        continue
 
-    # GG
-    if q.get("qgg", 0) <= 1.80:
+    if q.get("q1", 10) > 5 and q.get("q2", 10) > 5:
+        continue
+
+    # 🔥 LOGICA PROFIT
+
+    # GG forte
+    if q.get("qgg", 10) <= 1.70:
         plays.append("GG")
 
-    # NG
-    if q.get("qng", 0) <= 1.80:
+    # NG forte
+    elif q.get("qng", 10) <= 1.70:
         plays.append("NG")
 
-    # Over 1.5
-    if q.get("c_o15", 0) <= 1.50:
+    # Over sicuro
+    if q.get("c_o15", 10) <= 1.40:
         plays.append("Over 1.5")
 
-    # Under 3.5
-    if q.get("c_o35", 0) >= 1.40:
+    # Under difensivo
+    if q.get("c_o35", 10) >= 1.50:
         plays.append("Under 3.5")
 
-    # 1 fisso
-    if q.get("q1", 10) <= 1.60:
+    # Favorita forte
+    if q.get("q1", 10) <= 1.55:
         plays.append("1")
 
-    # 2 fisso
-    if q.get("q2", 10) <= 1.80:
+    elif q.get("q2", 10) <= 1.80:
         plays.append("2")
 
-    if plays:
-        pred = {
-            "fixture_id": fid,
-            "home": match["home"],
-            "away": match["away"],
-            "plays": plays
-        }
+    if len(plays) < 2:
+        continue
 
-        predictions.append(pred)
+    predictions.append({
+        "fixture_id": fid,
+        "home": m["home"],
+        "away": m["away"],
+        "plays": plays
+    })
 
-# 🔥 TOP PICK = primi 3 più sicuri
-top_picks = predictions[:3]
+# 🔥 ORDINA (più affidabili prima)
+predictions = predictions[:5]
 
-# 🔥 salva SEMPRE qualcosa
+top = predictions[:3]
+
 output = {
     "all": predictions,
-    "top": top_picks
+    "top": top
 }
 
-with open(OUTPUT_FILE, "w") as f:
+with open("data/predictions.json", "w") as f:
     json.dump(output, f, indent=2)
 
-print(f"✅ Predictions generate: {len(predictions)}")
+print(f"🔥 PROFIT PICKS: {len(predictions)}")
