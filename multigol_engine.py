@@ -9,6 +9,17 @@ with open("odds.json") as f:
 
 predictions = []
 
+# campionati seri
+allowed_leagues = [
+    "Premier League",
+    "Serie A",
+    "La Liga",
+    "Bundesliga",
+    "Ligue 1",
+    "Championship",
+    "Eredivisie"
+]
+
 for m in matches:
 
     fixture_id = str(m["fixture"]["id"])
@@ -23,17 +34,29 @@ for m in matches:
     if not o15 or not o25:
         continue
 
-    # 🔥 LOGICA REALE (basata su quote)
+    league_name = m.get("league", {}).get("name", "N/A")
 
-    # Over 1.5 molto probabile
-    if o15 <= 1.25:
-        pred = "Over 1.5"
-        prob = round((1 / o15) * 100)
+    # filtro campionati
+    if league_name not in allowed_leagues:
+        continue
 
-    # Over 2.5 con valore
-    elif 1.70 <= o25 <= 2.20:
+    # 🔥 LOGICA REALE (ANTI FAKE)
+
+    # scarta quote troppo basse
+    if o15 <= 1.20:
+        continue
+
+    if o25 < 1.60:
+        continue
+
+    # scelta pronostico
+    if 1.60 <= o25 <= 2.20:
         pred = "Over 2.5"
         prob = round((1 / o25) * 100)
+
+    elif 1.25 <= o15 <= 1.45:
+        pred = "Over 1.5"
+        prob = round((1 / o15) * 100)
 
     else:
         continue
@@ -42,22 +65,28 @@ for m in matches:
         "home": m["teams"]["home"]["name"],
         "away": m["teams"]["away"]["name"],
         "date": m["fixture"]["date"],
-        "league": m["league"]["name"],
+        "league": league_name,
         "prediction": pred,
         "probability": prob,
-        "odds": o15 if pred == "Over 1.5" else o25
+        "odds": o25 if pred == "Over 2.5" else o15
     })
 
-# TOP PICKS (solo migliori)
-top = sorted(predictions, key=lambda x: -x["probability"])[:10]
+# ordina migliori
+predictions = sorted(predictions, key=lambda x: -x["probability"])
 
-# salva
+top = predictions[:10]
+
 output = {
     "top": top,
     "all": predictions
 }
 
+# salva file GIUSTO (sito legge questo)
 with open("data/predictions.json", "w") as f:
     json.dump(output, f, indent=2)
 
-print("Predictions:", len(predictions))
+# salva anche debug
+with open("predictions.json", "w") as f:
+    json.dump(output, f, indent=2)
+
+print("Predictions generate:", len(predictions))
