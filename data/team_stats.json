@@ -1,124 +1,4 @@
 {
-  "24 Erzincanspor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Kepez Belediyespor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Sunderland U18": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Middlesbrough U18": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Birmingham City U18": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Brighton U18": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "\u0130skenderunspor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "\u0130neg\u00f6lspor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Adana 1954 FK": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Buca FK": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "68 Aksaray Belediyespor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Fethiyespor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "K\u0131rklarelispor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Ankara Demirspor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Mu\u015f Menderesspor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  " Kahramanmara\u015f \u0130stiklal Spor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Ye\u015filyurt Belediyespor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Osmaniyespor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Kapadokyaspor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "T\u00fcrk Metal 1963": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Kilis Belediyespor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Karak\u00f6pr\u00fc Belediyespor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Orduspor 1967": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "\u00c7ayelispor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Sebat Gen\u00e7likspor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Amasyaspor 1968": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Yozgat Bld Bozokspor": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "1926 Bulancak": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Karadeniz Ere\u011fli BSK": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Karab\u00fck \u0130dman Yurdu": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
   "Lernayin Artsakh": {
     "scored": 1.2,
     "conceded": 1.2
@@ -140,14 +20,6 @@
     "conceded": 1.2
   },
   "Al Shouleh": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Al Sahel": {
-    "scored": 1.2,
-    "conceded": 1.2
-  },
-  "Jubbah": {
     "scored": 1.2,
     "conceded": 1.2
   },
@@ -327,6 +199,38 @@
     "scored": 1.2,
     "conceded": 1.2
   },
+  "Al Sahel": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Jubbah": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Kafr Qasim": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Maccabi Herzliya": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Hapoel Kfar Saba": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Hapoel Kfar Shalem": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Hapoel Hadera": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Kiryat Yam SC": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
   "Mangasport": {
     "scored": 1.2,
     "conceded": 1.2
@@ -404,6 +308,14 @@
     "conceded": 1.2
   },
   "Kaloum Star": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Atl\u00e9tico Paso": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "San Bartolom\u00e9": {
     "scored": 1.2,
     "conceded": 1.2
   },
@@ -524,6 +436,14 @@
     "conceded": 1.2
   },
   "Feirense U20": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Serrano U20": {
+    "scored": 1.2,
+    "conceded": 1.2
+  },
+  "Porto BA U20": {
     "scored": 1.2,
     "conceded": 1.2
   },

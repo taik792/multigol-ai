@@ -1,125 +1,5 @@
 [
   {
-    "fixture_id": 1441969,
-    "home": "24 Erzincanspor",
-    "away": "Kepez Belediyespor",
-    "date": "2026-03-24T11:30:00+01:00",
-    "league": "2. Lig",
-    "country": "Turkey"
-  },
-  {
-    "fixture_id": 1437588,
-    "home": "Sunderland U18",
-    "away": "Middlesbrough U18",
-    "date": "2026-03-24T12:00:00+01:00",
-    "league": "U18 Premier League - North",
-    "country": "England"
-  },
-  {
-    "fixture_id": 1437736,
-    "home": "Birmingham City U18",
-    "away": "Brighton U18",
-    "date": "2026-03-24T12:00:00+01:00",
-    "league": "U18 Premier League - South",
-    "country": "England"
-  },
-  {
-    "fixture_id": 1441966,
-    "home": "\u0130skenderunspor",
-    "away": "\u0130neg\u00f6lspor",
-    "date": "2026-03-24T12:00:00+01:00",
-    "league": "2. Lig",
-    "country": "Turkey"
-  },
-  {
-    "fixture_id": 1441967,
-    "home": "Adana 1954 FK",
-    "away": "Buca FK",
-    "date": "2026-03-24T12:00:00+01:00",
-    "league": "2. Lig",
-    "country": "Turkey"
-  },
-  {
-    "fixture_id": 1441974,
-    "home": "68 Aksaray Belediyespor",
-    "away": "Fethiyespor",
-    "date": "2026-03-24T12:00:00+01:00",
-    "league": "2. Lig",
-    "country": "Turkey"
-  },
-  {
-    "fixture_id": 1441975,
-    "home": "K\u0131rklarelispor",
-    "away": "Ankara Demirspor",
-    "date": "2026-03-24T12:00:00+01:00",
-    "league": "2. Lig",
-    "country": "Turkey"
-  },
-  {
-    "fixture_id": 1441979,
-    "home": "Mu\u015f Menderesspor",
-    "away": " Kahramanmara\u015f \u0130stiklal Spor",
-    "date": "2026-03-24T12:00:00+01:00",
-    "league": "2. Lig",
-    "country": "Turkey"
-  },
-  {
-    "fixture_id": 1448655,
-    "home": "Ye\u015filyurt Belediyespor",
-    "away": "Osmaniyespor",
-    "date": "2026-03-24T12:00:00+01:00",
-    "league": "3. Lig - Group 2",
-    "country": "Turkey"
-  },
-  {
-    "fixture_id": 1448658,
-    "home": "Kapadokyaspor",
-    "away": "T\u00fcrk Metal 1963",
-    "date": "2026-03-24T12:00:00+01:00",
-    "league": "3. Lig - Group 2",
-    "country": "Turkey"
-  },
-  {
-    "fixture_id": 1448659,
-    "home": "Kilis Belediyespor",
-    "away": "Karak\u00f6pr\u00fc Belediyespor",
-    "date": "2026-03-24T12:00:00+01:00",
-    "league": "3. Lig - Group 2",
-    "country": "Turkey"
-  },
-  {
-    "fixture_id": 1448887,
-    "home": "Orduspor 1967",
-    "away": "\u00c7ayelispor",
-    "date": "2026-03-24T12:00:00+01:00",
-    "league": "3. Lig - Group 3",
-    "country": "Turkey"
-  },
-  {
-    "fixture_id": 1448888,
-    "home": "Sebat Gen\u00e7likspor",
-    "away": "Amasyaspor 1968",
-    "date": "2026-03-24T12:00:00+01:00",
-    "league": "3. Lig - Group 3",
-    "country": "Turkey"
-  },
-  {
-    "fixture_id": 1448891,
-    "home": "Yozgat Bld Bozokspor",
-    "away": "1926 Bulancak",
-    "date": "2026-03-24T12:00:00+01:00",
-    "league": "3. Lig - Group 3",
-    "country": "Turkey"
-  },
-  {
-    "fixture_id": 1448892,
-    "home": "Karadeniz Ere\u011fli BSK",
-    "away": "Karab\u00fck \u0130dman Yurdu",
-    "date": "2026-03-24T12:00:00+01:00",
-    "league": "3. Lig - Group 3",
-    "country": "Turkey"
-  },
-  {
     "fixture_id": 1529671,
     "home": "Lernayin Artsakh",
     "away": "Sardarapat",
@@ -142,14 +22,6 @@
     "date": "2026-03-24T13:00:00+01:00",
     "league": "Premier League",
     "country": "Syria"
-  },
-  {
-    "fixture_id": 1520110,
-    "home": "Al Sahel",
-    "away": "Jubbah",
-    "date": "2026-03-24T13:35:00+01:00",
-    "league": "Division 2",
-    "country": "Saudi-Arabia"
   },
   {
     "fixture_id": 1519785,
@@ -328,6 +200,38 @@
     "country": "Armenia"
   },
   {
+    "fixture_id": 1520110,
+    "home": "Al Sahel",
+    "away": "Jubbah",
+    "date": "2026-03-24T15:05:00+01:00",
+    "league": "Division 2",
+    "country": "Saudi-Arabia"
+  },
+  {
+    "fixture_id": 1389961,
+    "home": "Kafr Qasim",
+    "away": "Maccabi Herzliya",
+    "date": "2026-03-24T15:30:00+01:00",
+    "league": "Liga Leumit",
+    "country": "Israel"
+  },
+  {
+    "fixture_id": 1389962,
+    "home": "Hapoel Kfar Saba",
+    "away": "Hapoel Kfar Shalem",
+    "date": "2026-03-24T15:30:00+01:00",
+    "league": "Liga Leumit",
+    "country": "Israel"
+  },
+  {
+    "fixture_id": 1389968,
+    "home": "Hapoel Hadera",
+    "away": "Kiryat Yam SC",
+    "date": "2026-03-24T15:30:00+01:00",
+    "league": "Liga Leumit",
+    "country": "Israel"
+  },
+  {
     "fixture_id": 1533182,
     "home": "Mangasport",
     "away": "FC 105",
@@ -406,6 +310,14 @@
     "date": "2026-03-24T17:00:00+01:00",
     "league": "Ligue 1",
     "country": "Guinea"
+  },
+  {
+    "fixture_id": 1461565,
+    "home": "Atl\u00e9tico Paso",
+    "away": "San Bartolom\u00e9",
+    "date": "2026-03-24T17:30:00+01:00",
+    "league": "Tercera Divisi\u00f3n RFEF - Group 12",
+    "country": "Spain"
   },
   {
     "fixture_id": 1531299,
@@ -523,6 +435,14 @@
     "fixture_id": 1530762,
     "home": "Gal\u00edcia U20",
     "away": "Feirense U20",
+    "date": "2026-03-24T19:00:00+01:00",
+    "league": "Baiano U20",
+    "country": "Brazil"
+  },
+  {
+    "fixture_id": 1530866,
+    "home": "Serrano U20",
+    "away": "Porto BA U20",
     "date": "2026-03-24T19:00:00+01:00",
     "league": "Baiano U20",
     "country": "Brazil"
