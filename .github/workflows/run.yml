@@ -2,8 +2,7 @@ name: Multigol AI Scanner
 
 on:
   schedule:
-    - cron: "0 9 * * *"
-    - cron: "0 15 * * *"
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -11,26 +10,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
-      - run: pip install requests
+      - name: Install dependencies
+        run: pip install requests
 
       - name: Run Bot
-        env:
-          API_KEY: ${{ secrets.API_KEY }}
         run: |
           python get_matches.py
-          python odds_api_scraper.py
+          python get_odds.py
           python multigol_engine.py
 
       - name: Push data
         run: |
-          git config --global user.name "bot"
-          git config --global user.email "bot@bot.com"
-          git add data/
-          git commit -m "update data" || echo "no changes"
-          git push
+          git config user.name "
