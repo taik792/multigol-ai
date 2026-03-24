@@ -1,19 +1,30 @@
 import json
+import os
 
-# carica matches
-with open("data/matches.json") as f:
-    matches = json.load(f)
+# ===== LOAD MATCHES =====
+if os.path.exists("data/matches.json"):
+    with open("data/matches.json") as f:
+        matches = json.load(f)
+else:
+    matches = []
 
-# carica odds
-with open("data/odds.json") as f:
-    odds = json.load(f)
+# ===== LOAD ODDS =====
+if os.path.exists("data/odds.json"):
+    with open("data/odds.json") as f:
+        odds = json.load(f)
+else:
+    odds = {}
 
 predictions = []
 
-for m in matches:
-    match_id = str(m.get("id"))
+print(f"Matches caricati: {len(matches)}")
+print(f"Odds disponibili: {len(odds)}")
 
-    # prendi odds reali
+# ===== LOOP MATCHES =====
+for m in matches:
+
+    match_id = str(m.get("fixture_id"))  # 🔥 FIX IMPORTANTE
+
     o = odds.get(match_id)
 
     if not o:
@@ -25,14 +36,14 @@ for m in matches:
     if not over15 or not over25:
         continue
 
-    # logica reale basata su quota
+    # ===== LOGICA REALE (basata su quote) =====
     if over25 <= 1.80:
         prediction = "Over 2.5"
-        prob = int((1 / over25) * 100)
+        prob = round((1 / over25) * 100)
         odd = over25
     else:
         prediction = "Over 1.5"
-        prob = int((1 / over15) * 100)
+        prob = round((1 / over15) * 100)
         odd = over15
 
     predictions.append({
@@ -45,16 +56,20 @@ for m in matches:
         "odds": odd
     })
 
-# TOP picks veri (quota bassa + alta probabilità)
+# ===== TOP PICKS =====
 top = sorted(predictions, key=lambda x: x["probability"], reverse=True)[:5]
 
-# salva
+# ===== OUTPUT =====
 output = {
     "top": top,
     "all": predictions
 }
 
+# crea cartella se manca
+os.makedirs("data", exist_ok=True)
+
 with open("data/predictions.json", "w") as f:
     json.dump(output, f, indent=2)
 
-print("✅ Predictions generate REALI")
+print(f"Predictions generate: {len(predictions)}")
+print("✅ ENGINE OK")
