@@ -1,6 +1,6 @@
 import json
 
-with open("data/predictions.json", "w") as f:
+with open("matches.json") as f:
     matches = json.load(f)
 
 predictions = []
@@ -27,8 +27,11 @@ for m in matches:
         "prediction": pick
     })
 
-# 🔥 SALVA SOLO LISTA (IMPORTANTE)
-with open("predictions.json", "w") as f:
-    json.dump(predictions, f, indent=2)
+# 🔥 SALVA NELLA CARTELLA GIUSTA
+with open("data/predictions.json", "w") as f:
+    json.dump({
+        "top": predictions[:5],
+        "all": predictions
+    }, f, indent=2)
 
 print(f"Generate {len(predictions)} predictions")
