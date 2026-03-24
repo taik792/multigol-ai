@@ -1,6 +1,6 @@
 import json
 
-with open("matches.json") as f:
+with open("data/predictions.json", "w") as f:
     matches = json.load(f)
 
 predictions = []
