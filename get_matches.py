@@ -7,15 +7,19 @@ API_KEY = os.getenv("API_KEY")
 url = "https://v3.football.api-sports.io/fixtures"
 
 headers = {
-    "x-apisports-key": API_KEY
+    "x-rapidapi-key": API_KEY,
+    "x-rapidapi-host": "v3.football.api-sports.io"
 }
 
 params = {
-    "next": 20,  # 🔥 PRENDE LE PROSSIME 20 PARTITE
-    "timezone": "Europe/Rome"
+    "next": 10
 }
 
 response = requests.get(url, headers=headers, params=params)
+
+print("STATUS:", response.status_code)
+print("TEXT:", response.text[:300])
+
 data = response.json()
 
 matches = []
@@ -29,7 +33,6 @@ for m in data.get("response", []):
         "date": m["fixture"]["date"]
     })
 
-# salva file
 os.makedirs("data", exist_ok=True)
 
 with open("data/matches.json", "w") as f:
