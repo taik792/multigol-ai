@@ -1,1 +1,555 @@
-[]
+[
+  {
+    "fixture_id": 1437603,
+    "home": "Burnley U18",
+    "away": "Nottingham Forest U18",
+    "date": "2026-03-24T14:00:00+01:00",
+    "league": "U18 Premier League - North"
+  },
+  {
+    "fixture_id": 1529673,
+    "home": "Noah II",
+    "away": "Araks Ararat",
+    "date": "2026-03-24T15:00:00+01:00",
+    "league": "First League"
+  },
+  {
+    "fixture_id": 1441971,
+    "home": "Bursaspor",
+    "away": "Belediye Derincespor",
+    "date": "2026-03-24T17:00:00+01:00",
+    "league": "2. Lig"
+  },
+  {
+    "fixture_id": 1531852,
+    "home": "Afrique Football \u00c9lite",
+    "away": "RCC Kamsar",
+    "date": "2026-03-24T17:00:00+01:00",
+    "league": "Ligue 1"
+  },
+  {
+    "fixture_id": 1531856,
+    "home": "Hafia",
+    "away": "Wakirya",
+    "date": "2026-03-24T17:00:00+01:00",
+    "league": "Ligue 1"
+  },
+  {
+    "fixture_id": 1531858,
+    "home": "Karfamoriah",
+    "away": "Kaloum Star",
+    "date": "2026-03-24T17:00:00+01:00",
+    "league": "Ligue 1"
+  },
+  {
+    "fixture_id": 1461565,
+    "home": "Atl\u00e9tico Paso",
+    "away": "San Bartolom\u00e9",
+    "date": "2026-03-24T17:30:00+01:00",
+    "league": "Tercera Divisi\u00f3n RFEF - Group 12"
+  },
+  {
+    "fixture_id": 1531299,
+    "home": "Falcons",
+    "away": "Dutch Lions",
+    "date": "2026-03-24T17:30:00+01:00",
+    "league": "GFA League"
+  },
+  {
+    "fixture_id": 1531300,
+    "home": "GPA",
+    "away": "Brikama United",
+    "date": "2026-03-24T17:30:00+01:00",
+    "league": "GFA League"
+  },
+  {
+    "fixture_id": 1531301,
+    "home": "Hawks",
+    "away": "BST Galaxy",
+    "date": "2026-03-24T17:30:00+01:00",
+    "league": "GFA League"
+  },
+  {
+    "fixture_id": 1531302,
+    "home": "Real de Banjul",
+    "away": "Bombada",
+    "date": "2026-03-24T17:30:00+01:00",
+    "league": "GFA League"
+  },
+  {
+    "fixture_id": 1531926,
+    "home": "Deportivo Maldonado",
+    "away": "Atletico Torque",
+    "date": "2026-03-24T18:00:00+01:00",
+    "league": "Primera Divisi\u00f3n - Apertura"
+  },
+  {
+    "fixture_id": 1514892,
+    "home": "UMM Salal",
+    "away": "Al Bidda SC",
+    "date": "2026-03-24T18:15:00+01:00",
+    "league": "QSL Cup"
+  },
+  {
+    "fixture_id": 1525671,
+    "home": "VfL Wolfsburg W",
+    "away": "Lyon W",
+    "date": "2026-03-24T18:45:00+01:00",
+    "league": "UEFA Champions League Women"
+  },
+  {
+    "fixture_id": 1398847,
+    "home": "Rheindorf Altach II",
+    "away": "Bischofshofen",
+    "date": "2026-03-24T19:00:00+01:00",
+    "league": "Regionalliga - West"
+  },
+  {
+    "fixture_id": 1407647,
+    "home": "FSV Zwickau",
+    "away": "Hertha BSC II",
+    "date": "2026-03-24T19:00:00+01:00",
+    "league": "Regionalliga - Nordost"
+  },
+  {
+    "fixture_id": 1407950,
+    "home": "Curslack-Neuengamme",
+    "away": "Eimsb\u00fctteler TV",
+    "date": "2026-03-24T19:00:00+01:00",
+    "league": "Oberliga - Hamburg"
+  },
+  {
+    "fixture_id": 1407951,
+    "home": "HEBC",
+    "away": "Teutonia Ottensen",
+    "date": "2026-03-24T19:00:00+01:00",
+    "league": "Oberliga - Hamburg"
+  },
+  {
+    "fixture_id": 1407953,
+    "home": "Nikola Tesla",
+    "away": "Halstenbek-Rellingen",
+    "date": "2026-03-24T19:00:00+01:00",
+    "league": "Oberliga - Hamburg"
+  },
+  {
+    "fixture_id": 1407954,
+    "home": "Sasel",
+    "away": "Buchholz",
+    "date": "2026-03-24T19:00:00+01:00",
+    "league": "Oberliga - Hamburg"
+  },
+  {
+    "fixture_id": 1408525,
+    "home": "Ansbach",
+    "away": "SpVgg Unterhaching",
+    "date": "2026-03-24T19:00:00+01:00",
+    "league": "Regionalliga - Bayern"
+  },
+  {
+    "fixture_id": 1530762,
+    "home": "Gal\u00edcia U20",
+    "away": "Feirense U20",
+    "date": "2026-03-24T19:00:00+01:00",
+    "league": "Baiano U20"
+  },
+  {
+    "fixture_id": 1530866,
+    "home": "Serrano U20",
+    "away": "Porto BA U20",
+    "date": "2026-03-24T19:00:00+01:00",
+    "league": "Baiano U20"
+  },
+  {
+    "fixture_id": 1533332,
+    "home": "IF Karlstad",
+    "away": "\u00d6rebro Syrianska",
+    "date": "2026-03-24T19:00:00+01:00",
+    "league": "Friendlies Clubs"
+  },
+  {
+    "fixture_id": 1534601,
+    "home": "AGF",
+    "away": "Fortuna Hj\u00f8rring",
+    "date": "2026-03-24T19:00:00+01:00",
+    "league": "Kvindeliga"
+  },
+  {
+    "fixture_id": 1398852,
+    "home": "Pinzgau Saalfelden",
+    "away": "Kitzb\u00fchel",
+    "date": "2026-03-24T19:30:00+01:00",
+    "league": "Regionalliga - West"
+  },
+  {
+    "fixture_id": 1407948,
+    "home": "Harksheide",
+    "away": "Paloma",
+    "date": "2026-03-24T19:30:00+01:00",
+    "league": "Oberliga - Hamburg"
+  },
+  {
+    "fixture_id": 1382125,
+    "home": "Emmen",
+    "away": "Cambuur",
+    "date": "2026-03-24T20:00:00+01:00",
+    "league": "Eerste Divisie"
+  },
+  {
+    "fixture_id": 1438025,
+    "home": "Dovo",
+    "away": "Hercules",
+    "date": "2026-03-24T20:00:00+01:00",
+    "league": "Derde Divisie - Saturday"
+  },
+  {
+    "fixture_id": 1531601,
+    "home": "L\u00e9ttir",
+    "away": "Stokkseyri",
+    "date": "2026-03-24T20:15:00+01:00",
+    "league": "Cup"
+  },
+  {
+    "fixture_id": 1395663,
+    "home": "Cardiff Draconians",
+    "away": "Ynyshir Albions",
+    "date": "2026-03-24T20:30:00+01:00",
+    "league": "FAW Championship"
+  },
+  {
+    "fixture_id": 1395683,
+    "home": "Ammanford AFC",
+    "away": "Cambrian & Clydach",
+    "date": "2026-03-24T20:30:00+01:00",
+    "league": "FAW Championship"
+  },
+  {
+    "fixture_id": 1383003,
+    "home": "Raith Rovers",
+    "away": "Partick",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Championship"
+  },
+  {
+    "fixture_id": 1383327,
+    "home": "Stranraer",
+    "away": "Clyde",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "League Two"
+  },
+  {
+    "fixture_id": 1383346,
+    "home": "Elgin City",
+    "away": "Forfar Athletic",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "League Two"
+  },
+  {
+    "fixture_id": 1386304,
+    "home": "Oldham",
+    "away": "Notts County",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "League Two"
+  },
+  {
+    "fixture_id": 1387479,
+    "home": "Doncaster",
+    "away": "Port Vale",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "League One"
+  },
+  {
+    "fixture_id": 1389511,
+    "home": "Rathfriland",
+    "away": "Newry City AFC",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Premier Intermediate League"
+  },
+  {
+    "fixture_id": 1395676,
+    "home": "Flint Mountain",
+    "away": "Guilsfield",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "FAW Championship"
+  },
+  {
+    "fixture_id": 1395708,
+    "home": "Baglan Dragons",
+    "away": "Cwmbran Celtic",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "FAW Championship"
+  },
+  {
+    "fixture_id": 1399866,
+    "home": "Aldershot Town",
+    "away": "Boreham Wood",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "National League"
+  },
+  {
+    "fixture_id": 1399867,
+    "home": "Boston United",
+    "away": "Altrincham",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "National League"
+  },
+  {
+    "fixture_id": 1399868,
+    "home": "Brackley Town",
+    "away": "Braintree",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "National League"
+  },
+  {
+    "fixture_id": 1399869,
+    "home": "Eastleigh",
+    "away": "Sutton Utd",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "National League"
+  },
+  {
+    "fixture_id": 1399870,
+    "home": "FC Halifax Town",
+    "away": "Carlisle",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "National League"
+  },
+  {
+    "fixture_id": 1399871,
+    "home": "Gateshead",
+    "away": "York",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "National League"
+  },
+  {
+    "fixture_id": 1401670,
+    "home": "Weston-super-Mare",
+    "away": "Worthing",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "National League - South"
+  },
+  {
+    "fixture_id": 1401829,
+    "home": "Chesham United",
+    "away": "AFC Hornchurch",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "National League - South"
+  },
+  {
+    "fixture_id": 1401851,
+    "home": "Bath City",
+    "away": "Hemel Hempstead Town",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "National League - South"
+  },
+  {
+    "fixture_id": 1401861,
+    "home": "Torquay",
+    "away": "Dorking Wanderers",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "National League - South"
+  },
+  {
+    "fixture_id": 1401879,
+    "home": "Enfield Town",
+    "away": "Dover",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "National League - South"
+  },
+  {
+    "fixture_id": 1402295,
+    "home": "Alfreton Town",
+    "away": "Macclesfield",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "National League - North"
+  },
+  {
+    "fixture_id": 1402370,
+    "home": "Hereford",
+    "away": "Spennymoor Town",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "National League - North"
+  },
+  {
+    "fixture_id": 1402382,
+    "home": "Leamington",
+    "away": "King's Lynn Town",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "National League - North"
+  },
+  {
+    "fixture_id": 1402431,
+    "home": "Darlington 1883",
+    "away": "Kidderminster Harriers",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "National League - North"
+  },
+  {
+    "fixture_id": 1405229,
+    "home": "Albion Rovers",
+    "away": "Gretna 2008",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Football League - Lowland League"
+  },
+  {
+    "fixture_id": 1427860,
+    "home": "Real Bedford",
+    "away": "Harborough Town",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Non League Premier - Southern Central"
+  },
+  {
+    "fixture_id": 1428019,
+    "home": "Stratford Town",
+    "away": "Stamford",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Non League Premier - Southern Central"
+  },
+  {
+    "fixture_id": 1428020,
+    "home": "Alvechurch",
+    "away": "St Ives Town",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Non League Premier - Southern Central"
+  },
+  {
+    "fixture_id": 1428037,
+    "home": "Kettering Town",
+    "away": "Banbury United",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Non League Premier - Southern Central"
+  },
+  {
+    "fixture_id": 1428317,
+    "home": "Yate Town",
+    "away": "Poole Town",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Non League Premier - Southern South"
+  },
+  {
+    "fixture_id": 1428325,
+    "home": "Tiverton Town",
+    "away": "Gloucester City",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Non League Premier - Southern South"
+  },
+  {
+    "fixture_id": 1428335,
+    "home": "Sholing",
+    "away": "Walton & Hersham",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Non League Premier - Southern South"
+  },
+  {
+    "fixture_id": 1428461,
+    "home": "Plymouth Parkway",
+    "away": "Farnham Town",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Non League Premier - Southern South"
+  },
+  {
+    "fixture_id": 1428519,
+    "home": "Hanwell Town",
+    "away": "Evesham United",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Non League Premier - Southern South"
+  },
+  {
+    "fixture_id": 1428759,
+    "home": "United of Manchester",
+    "away": "Stockton Town",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Non League Premier - Northern"
+  },
+  {
+    "fixture_id": 1428942,
+    "home": "Gainsborough Trinity",
+    "away": "Bamber Bridge",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Non League Premier - Northern"
+  },
+  {
+    "fixture_id": 1428943,
+    "home": "Cleethorpes Town",
+    "away": "Guiseley AFC",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Non League Premier - Northern"
+  },
+  {
+    "fixture_id": 1443355,
+    "home": "Takeley",
+    "away": "Newmarket Town",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Non League Div One - Isthmian North"
+  },
+  {
+    "fixture_id": 1472385,
+    "home": "Dollingstown",
+    "away": "Strabane Athletic",
+    "date": "2026-03-24T20:45:00+01:00",
+    "league": "Premier Intermediate League"
+  },
+  {
+    "fixture_id": 1443672,
+    "home": "Carlton Town",
+    "away": "Anstey Nomads",
+    "date": "2026-03-24T20:45:40+01:00",
+    "league": "Non League Div One - Northern Midlands"
+  },
+  {
+    "fixture_id": 1395661,
+    "home": "Newtown AFC",
+    "away": "Rhyl",
+    "date": "2026-03-24T21:00:00+01:00",
+    "league": "FAW Championship"
+  },
+  {
+    "fixture_id": 1525451,
+    "home": "Arsenal W",
+    "away": "Chelsea W",
+    "date": "2026-03-24T21:00:00+01:00",
+    "league": "UEFA Champions League Women"
+  },
+  {
+    "fixture_id": 1531927,
+    "home": "Liverpool Montevideo",
+    "away": "Central Espanol",
+    "date": "2026-03-24T21:00:00+01:00",
+    "league": "Primera Divisi\u00f3n - Apertura"
+  },
+  {
+    "fixture_id": 1506049,
+    "home": "Deportivo Pereira",
+    "away": "Cucuta",
+    "date": "2026-03-24T21:30:00+01:00",
+    "league": "Primera A"
+  },
+  {
+    "fixture_id": 1535569,
+    "home": "Universidad de Chile",
+    "away": "Union La Calera",
+    "date": "2026-03-24T22:00:00+01:00",
+    "league": "Copa De La Liga"
+  },
+  {
+    "fixture_id": 1524372,
+    "home": "Fortaleza W",
+    "away": "Real Santander W",
+    "date": "2026-03-24T23:00:00+01:00",
+    "league": "Liga Femenina"
+  },
+  {
+    "fixture_id": 1534122,
+    "home": "Imperatriz",
+    "away": "Retr\u00f4",
+    "date": "2026-03-24T23:00:00+01:00",
+    "league": "Copa do Nordeste"
+  },
+  {
+    "fixture_id": 1534123,
+    "home": "ASA",
+    "away": "Piau\u00ed",
+    "date": "2026-03-24T23:30:00+01:00",
+    "league": "Copa do Nordeste"
+  }
+]
