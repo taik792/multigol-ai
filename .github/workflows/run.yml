@@ -11,37 +11,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 📥 Checkout repo
+      # 📥 scarica repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 🐍 Setup Python
+      # 🐍 setup python
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: 3.11
 
-      # 📦 Install dependencies
+      # 📦 install
       - name: Install dependencies
         run: pip install requests
 
-      # 🚀 RUN SISTEMA COMPLETO (REALE)
+      # 🔥 RUN COMPLETO (ORDINE GIUSTO)
       - name: Run AI Scanner
         env:
           API_KEY: ${{ secrets.API_KEY }}
         run: |
           python get_matches.py
-          python update_team_stats.py
+          python odds_api_scraper.py
           python multigol_engine.py
 
-      # 💾 Commit automatico risultati
+      # 💾 commit automatico
       - name: Commit and push
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-
-          git add data/*.json
-
-          git diff --cached --quiet || git commit -m "auto update predictions REAL"
-
+          git add .
+          git diff --cached --quiet || git commit -m "auto update predictions"
           git push
