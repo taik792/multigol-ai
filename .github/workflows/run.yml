@@ -29,4 +29,8 @@ jobs:
 
       - name: Push data
         run: |
-          git config user.name "
+          git config user.name github-actions
+          git config user.email actions@github.com
+          git add .
+          git commit -m update_data || echo no_changes
+          git push
