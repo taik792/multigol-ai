@@ -1,53 +1,52 @@
 import requests
 import json
-import os
-from datetime import datetime
 
-API_KEY = os.getenv("API_KEY")
+API_KEY = "LA_TUA_API_KEY"
 
-url = "https://v3.football.api-sports.io/odds"
+with open("data/matches.json") as f:
+    matches = json.load(f)
 
 headers = {
     "x-apisports-key": API_KEY
 }
 
-today = datetime.now().strftime("%Y-%m-%d")
+odds_data = {}
 
-params = {
-    "date": today
-}
+for m in matches:
+    fixture_id = m["fixture"]["id"]
 
-response = requests.get(url, headers=headers, params=params)
-data = response.json()
+    url = f"https://v3.football.api-sports.io/odds?fixture={fixture_id}"
 
-odds_dict = {}
+    res = requests.get(url, headers=headers).json()
 
-for match in data.get("response", []):
+    if not res["response"]:
+        continue
 
-    fixture_id = match["fixture"]["id"]
+    try:
+        bookmakers = res["response"][0]["bookmakers"]
+        bets = bookmakers[0]["bets"]
 
-    for bookmaker in match.get("bookmakers", []):
-        for bet in bookmaker.get("bets", []):
+        over_15 = None
+        over_25 = None
 
-            if bet["name"] == "Goals Over/Under":
+        for b in bets:
+            if b["name"] == "Goals Over/Under":
+                for v in b["values"]:
+                    if v["value"] == "Over 1.5":
+                        over_15 = float(v["odd"])
+                    if v["value"] == "Over 2.5":
+                        over_25 = float(v["odd"])
 
-                over15 = None
-                over25 = None
+        if over_15 and over_25:
+            odds_data[str(fixture_id)] = {
+                "over_1_5": over_15,
+                "over_2_5": over_25
+            }
 
-                for value in bet["values"]:
-                    if value["value"] == "Over 1.5":
-                        over15 = float(value["odd"])
-                    if value["value"] == "Over 2.5":
-                        over25 = float(value["odd"])
+    except:
+        continue
 
-                if over15 and over25:
-                    odds_dict[str(fixture_id)] = {
-                        "over_1_5": over15,
-                        "over_2_5": over25
-                    }
-
-# salva
 with open("odds.json", "w") as f:
-    json.dump(odds_dict, f, indent=2)
+    json.dump(odds_data, f, indent=2)
 
-print("ODDS:", len(odds_dict))
+print("Odds salvate:", len(odds_data))
