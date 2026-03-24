@@ -1,34 +1,37 @@
-import requests
-import json
+import requests, json, os
+from datetime import datetime, timedelta
 
-API_KEY = "LA_TUA_API_KEY"
+API_KEY = os.getenv("API_KEY")
 
-url = "https://v3.football.api-sports.io/fixtures?next=50"
+url = "https://v3.football.api-sports.io/fixtures"
+headers = {"x-apisports-key": API_KEY}
 
-headers = {
-    "x-apisports-key": API_KEY
+today = (datetime.utcnow() + timedelta(hours=2)).strftime("%Y-%m-%d")
+
+params = {
+    "date": today,
+    "timezone": "Europe/Rome"
 }
 
-res = requests.get(url, headers=headers).json()
+res = requests.get(url, headers=headers, params=params).json()
 
 matches = []
 
-for match in res["response"]:
+for m in res.get("response", []):
+    if m["fixture"]["status"]["short"] != "NS":
+        continue
+
     matches.append({
-        "fixture": {
-            "id": match["fixture"]["id"],
-            "date": match["fixture"]["date"]
-        },
-        "teams": {
-            "home": {"name": match["teams"]["home"]["name"]},
-            "away": {"name": match["teams"]["away"]["name"]}
-        },
-        "league": {
-            "name": match["league"]["name"]
-        }
+        "fixture_id": m["fixture"]["id"],
+        "home": m["teams"]["home"]["name"],
+        "away": m["teams"]["away"]["name"],
+        "date": m["fixture"]["date"],
+        "league": m["league"]["name"]
     })
+
+os.makedirs("data", exist_ok=True)
 
 with open("data/matches.json", "w") as f:
     json.dump(matches, f, indent=2)
 
-print("Matches salvati:", len(matches))
+print("Matches:", len(matches))
