@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+from datetime import datetime
 
 API_KEY = os.getenv("API_KEY")
 
@@ -10,12 +11,14 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
+today = datetime.now().strftime("%Y-%m-%d")
+
 params = {
-    "date": "2026-03-24"
+    "date": today
 }
 
-res = requests.get(url, headers=headers, params=params)
-data = res.json()
+response = requests.get(url, headers=headers, params=params)
+data = response.json()
 
 odds_dict = {}
 
@@ -23,8 +26,8 @@ for match in data.get("response", []):
 
     fixture_id = match["fixture"]["id"]
 
-    for bookmaker in match["bookmakers"]:
-        for bet in bookmaker["bets"]:
+    for bookmaker in match.get("bookmakers", []):
+        for bet in bookmaker.get("bets", []):
 
             if bet["name"] == "Goals Over/Under":
 
@@ -47,4 +50,4 @@ for match in data.get("response", []):
 with open("odds.json", "w") as f:
     json.dump(odds_dict, f, indent=2)
 
-print("ODDS salvate:", len(odds_dict))
+print("ODDS:", len(odds_dict))
