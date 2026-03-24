@@ -1,7 +1,6 @@
 import json
 import os
 
-# carica dati
 with open("data/matches.json") as f:
     matches = json.load(f)
 
@@ -14,7 +13,7 @@ for m in matches:
     fid = str(m["fixture_id"])
 
     if fid not in odds:
-        continue  # 🔥 SOLO match con quote reali
+        continue
 
     o = odds[fid]
 
@@ -24,13 +23,14 @@ for m in matches:
     if over15 == 0:
         continue
 
-    # 🎯 LOGICA REALE BASATA SU QUOTE
     if over25 > 0 and over25 <= 1.80:
         prediction = "Over 2.5"
-        prob = round(1 / over25, 2)
+        quota = over25
     else:
         prediction = "Over 1.5"
-        prob = round(1 / over15, 2)
+        quota = over15
+
+    probability = round(1 / quota, 2)
 
     predictions.append({
         "home": m["home"],
@@ -38,14 +38,12 @@ for m in matches:
         "league": m.get("league", ""),
         "date": m["date"],
         "prediction": prediction,
-        "probability": prob,
-        "odds": over25 if prediction == "Over 2.5" else over15
+        "odds": quota,
+        "probability": probability
     })
 
-# 🔥 ordina per probabilità
 predictions.sort(key=lambda x: x["probability"], reverse=True)
 
-# TOP 10
 top = predictions[:10]
 
 os.makedirs("data", exist_ok=True)
