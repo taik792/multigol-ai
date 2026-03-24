@@ -1,52 +1,48 @@
-import requests
-import json
+import requests, json, os, time
 
-API_KEY = "LA_TUA_API_KEY"
+API_KEY = os.getenv("API_KEY")
+headers = {"x-apisports-key": API_KEY}
 
 with open("data/matches.json") as f:
     matches = json.load(f)
 
-headers = {
-    "x-apisports-key": API_KEY
-}
-
-odds_data = {}
+odds = {}
 
 for m in matches:
-    fixture_id = m["fixture"]["id"]
+    fixture_id = m["fixture_id"]
 
     url = f"https://v3.football.api-sports.io/odds?fixture={fixture_id}"
 
     res = requests.get(url, headers=headers).json()
 
-    if not res["response"]:
+    if not res.get("response"):
         continue
 
     try:
-        bookmakers = res["response"][0]["bookmakers"]
-        bets = bookmakers[0]["bets"]
+        bets = res["response"][0]["bookmakers"][0]["bets"]
 
-        over_15 = None
-        over_25 = None
+        over15, over25 = None, None
 
         for b in bets:
             if b["name"] == "Goals Over/Under":
                 for v in b["values"]:
                     if v["value"] == "Over 1.5":
-                        over_15 = float(v["odd"])
+                        over15 = float(v["odd"])
                     if v["value"] == "Over 2.5":
-                        over_25 = float(v["odd"])
+                        over25 = float(v["odd"])
 
-        if over_15 and over_25:
-            odds_data[str(fixture_id)] = {
-                "over_1_5": over_15,
-                "over_2_5": over_25
+        if over15 and over25:
+            odds[str(fixture_id)] = {
+                "over_1_5": over15,
+                "over_2_5": over25
             }
 
     except:
         continue
 
-with open("odds.json", "w") as f:
-    json.dump(odds_data, f, indent=2)
+    time.sleep(1.1)  # evita blocco API
 
-print("Odds salvate:", len(odds_data))
+with open("data/odds.json", "w") as f:
+    json.dump(odds, f, indent=2)
+
+print("Odds:", len(odds))
