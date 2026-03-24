@@ -11,7 +11,6 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-# 🔥 DATA OGGI
 today = datetime.now().strftime("%Y-%m-%d")
 
 params = {
@@ -20,10 +19,6 @@ params = {
 }
 
 response = requests.get(url, headers=headers, params=params)
-
-print("STATUS:", response.status_code)
-print("TEXT:", response.text[:300])
-
 data = response.json()
 
 matches = []
