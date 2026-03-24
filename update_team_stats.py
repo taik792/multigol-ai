@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+import time
 
 API_KEY = os.getenv("API_KEY")
 
@@ -8,39 +9,40 @@ headers = {
     "x-apisports-key": API_KEY
 }
 
-with open("data/matches_today.json") as f:
+with open("data/matches_today.json", "r") as f:
     matches = json.load(f)
 
-team_stats = {}
+stats = {}
 
 for m in matches:
-    for team in [m["home"], m["away"]]:
-        if team in team_stats:
+    for team_id in [m["home_id"], m["away_id"]]:
+
+        key = f"{team_id}_{m['league_id']}"
+
+        if key in stats:
             continue
 
-        url = "https://v3.football.api-sports.io/teams/statistics"
+        url = f"https://v3.football.api-sports.io/teams/statistics?team={team_id}&league={m['league_id']}&season={m['season']}"
 
-        params = {
-            "league": 39,  # placeholder (puoi migliorare dopo)
-            "season": 2024,
-            "team": team
-        }
+        res = requests.get(url, headers=headers).json()
 
         try:
-            r = requests.get(url, headers=headers, params=params).json()
-            stats = r["response"]
+            data = res["response"]
 
-            team_stats[team] = {
-                "scored": stats["goals"]["for"]["average"]["total"],
-                "conceded": stats["goals"]["against"]["average"]["total"]
+            stats[key] = {
+                "team_id": team_id,
+                "goals_for": data["goals"]["for"]["average"]["total"],
+                "goals_against": data["goals"]["against"]["average"]["total"]
             }
+
+            print(f"OK stats team {team_id}")
+
         except:
-            team_stats[team] = {
-                "scored": 1.2,
-                "conceded": 1.2
-            }
+            print(f"Errore stats team {team_id}")
+
+        time.sleep(1.2)  # evita ban API
 
 with open("data/team_stats.json", "w") as f:
-    json.dump(team_stats, f, indent=2)
+    json.dump(stats, f, indent=2)
 
-print("Statistiche aggiornate")
+print("Stats salvate")
