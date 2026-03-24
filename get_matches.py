@@ -1,18 +1,22 @@
 import requests
 import json
 import os
+from datetime import datetime
 
 API_KEY = os.getenv("API_KEY")
 
 url = "https://v3.football.api-sports.io/fixtures"
 
 headers = {
-    "x-rapidapi-key": API_KEY,
-    "x-rapidapi-host": "v3.football.api-sports.io"
+    "x-apisports-key": API_KEY
 }
 
+# 🔥 DATA OGGI
+today = datetime.now().strftime("%Y-%m-%d")
+
 params = {
-    "next": 10
+    "date": today,
+    "timezone": "Europe/Rome"
 }
 
 response = requests.get(url, headers=headers, params=params)
