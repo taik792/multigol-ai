@@ -1,36 +1,34 @@
 import requests
 import json
-import os
-from datetime import datetime
 
-API_KEY = os.getenv("API_KEY")
+API_KEY = "LA_TUA_API_KEY"
 
-url = "https://v3.football.api-sports.io/fixtures?date=" + datetime.now().strftime("%Y-%m-%d")
+url = "https://v3.football.api-sports.io/fixtures?next=50"
 
 headers = {
     "x-apisports-key": API_KEY
 }
 
-response = requests.get(url, headers=headers)
-data = response.json()
+res = requests.get(url, headers=headers).json()
 
 matches = []
 
-for m in data["response"]:
+for match in res["response"]:
     matches.append({
-        "fixture_id": m["fixture"]["id"],
-        "home": m["teams"]["home"]["name"],
-        "away": m["teams"]["away"]["name"],
-        "home_id": m["teams"]["home"]["id"],
-        "away_id": m["teams"]["away"]["id"],
-        "league_id": m["league"]["id"],
-        "season": m["league"]["season"],
-        "date": m["fixture"]["date"],
-        "league": m["league"]["name"],
-        "country": m["league"]["country"]
+        "fixture": {
+            "id": match["fixture"]["id"],
+            "date": match["fixture"]["date"]
+        },
+        "teams": {
+            "home": {"name": match["teams"]["home"]["name"]},
+            "away": {"name": match["teams"]["away"]["name"]}
+        },
+        "league": {
+            "name": match["league"]["name"]
+        }
     })
 
-with open("data/matches_today.json", "w") as f:
+with open("data/matches.json", "w") as f:
     json.dump(matches, f, indent=2)
 
-print(f"Scaricate {len(matches)} partite")
+print("Matches salvati:", len(matches))
