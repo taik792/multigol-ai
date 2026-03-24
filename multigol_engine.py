@@ -26,3 +26,23 @@ for match in matches:
         pred = "Over 1.5"
         prob = 85
         quota = o["over_1_5"]
+
+    predictions.append({
+        "home": match["home"],
+        "away": match["away"],
+        "date": match["date"],
+        "league": match.get("league", ""),
+        "prediction": pred,
+        "probability": prob,
+        "odds": quota
+    })
+
+output = {
+    "top": predictions[:10],
+    "all": predictions
+}
+
+with open("data/predictions.json", "w") as f:
+    json.dump(output, f, indent=2)
+
+print("Predictions generate:", len(predictions))
