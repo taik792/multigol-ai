@@ -1,37 +1,38 @@
-import requests, json, os
-from datetime import datetime, timedelta
+import requests
+import json
+import os
 
 API_KEY = os.getenv("API_KEY")
 
 url = "https://v3.football.api-sports.io/fixtures"
-headers = {"x-apisports-key": API_KEY}
 
-today = (datetime.utcnow() + timedelta(hours=2)).strftime("%Y-%m-%d")
+headers = {
+    "x-apisports-key": API_KEY
+}
 
 params = {
-    "date": today,
+    "next": 20,  # 🔥 PRENDE LE PROSSIME 20 PARTITE
     "timezone": "Europe/Rome"
 }
 
-res = requests.get(url, headers=headers, params=params).json()
+response = requests.get(url, headers=headers, params=params)
+data = response.json()
 
 matches = []
 
-for m in res.get("response", []):
-    if m["fixture"]["status"]["short"] != "NS":
-        continue
-
+for m in data.get("response", []):
     matches.append({
         "fixture_id": m["fixture"]["id"],
         "home": m["teams"]["home"]["name"],
         "away": m["teams"]["away"]["name"],
-        "date": m["fixture"]["date"],
-        "league": m["league"]["name"]
+        "league": m["league"]["name"],
+        "date": m["fixture"]["date"]
     })
 
+# salva file
 os.makedirs("data", exist_ok=True)
 
 with open("data/matches.json", "w") as f:
     json.dump(matches, f, indent=2)
 
-print("Matches:", len(matches))
+print("Matches trovati:", len(matches))
