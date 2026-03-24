@@ -8,12 +8,11 @@ predictions = []
 
 for m in matches:
 
-    # ✅ safe read (qualsiasi formato)
     home = m.get("home", "")
     away = m.get("away", "")
     date = m.get("date", "")
 
-    # FIX league (supporta più formati)
+    # supporta più formati API
     if isinstance(m.get("league"), dict):
         league = m["league"].get("name", "Unknown")
     else:
@@ -21,7 +20,7 @@ for m in matches:
 
     country = m.get("country", "Unknown")
 
-    # 🧠 LOGICA BASE (non random)
+    # LOGICA BASE (non random totale)
     if "u19" in home.lower() or "u21" in home.lower():
         prediction = "Over 2.5"
         prob = 65
