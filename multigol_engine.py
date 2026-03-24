@@ -1,48 +1,58 @@
 import json
 
-# carica matches
 with open("data/matches.json") as f:
     matches = json.load(f)
 
-# carica odds
 with open("data/odds.json") as f:
     odds = json.load(f)
 
 predictions = []
 
-for match in matches:
-    fixture_id = str(match["fixture_id"])
+for m in matches:
+    fid = str(m["fixture_id"])
 
-    if fixture_id not in odds:
+    if fid not in odds:
         continue
 
-    o = odds[fixture_id]
+    o = odds[fid]
 
-    if o["over_2_5"] >= 1.80:
+    o15 = o["over_1_5"]
+    o25 = o["over_2_5"]
+
+    # probabilità implicita
+    p15 = 1 / o15
+    p25 = 1 / o25
+
+    # LOGICA REALE
+    if p25 >= 0.60:
         pred = "Over 2.5"
-        prob = 75
-        quota = o["over_2_5"]
-    else:
+        prob = round(p25 * 100)
+        quota = o25
+    elif p15 >= 0.75:
         pred = "Over 1.5"
-        prob = 85
-        quota = o["over_1_5"]
+        prob = round(p15 * 100)
+        quota = o15
+    else:
+        continue
 
     predictions.append({
-        "home": match["home"],
-        "away": match["away"],
-        "date": match["date"],
-        "league": match.get("league", ""),
+        "home": m["home"],
+        "away": m["away"],
+        "date": m["date"],
+        "league": m["league"],
         "prediction": pred,
         "probability": prob,
         "odds": quota
     })
 
+predictions = sorted(predictions, key=lambda x: -x["probability"])
+
 output = {
-    "top": predictions[:10],
+    "top": predictions[:5],
     "all": predictions
 }
 
 with open("data/predictions.json", "w") as f:
     json.dump(output, f, indent=2)
 
-print("Predictions generate:", len(predictions))
+print("Predictions:", len(predictions))
