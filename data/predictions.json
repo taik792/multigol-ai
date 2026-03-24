@@ -1,4 +1,78 @@
 {
-  "top": [],
-  "all": []
+  "top": [
+    {
+      "home": "Aucas",
+      "away": "Orense SC",
+      "date": "2026-03-24T01:00:00+01:00",
+      "league": "Liga Pro",
+      "prediction": "Over 1.5",
+      "probability": 77,
+      "odds": 1.3
+    },
+    {
+      "home": "Metropolitanos FC",
+      "away": "Academia Anzo\u00e1tegui",
+      "date": "2026-03-24T00:00:00+01:00",
+      "league": "Primera Divisi\u00f3n",
+      "prediction": "Over 1.5",
+      "probability": 75,
+      "odds": 1.33
+    },
+    {
+      "home": "Cobreloa",
+      "away": "Magallanes",
+      "date": "2026-03-24T00:30:00+01:00",
+      "league": "Primera B",
+      "prediction": "Over 1.5",
+      "probability": 75,
+      "odds": 1.33
+    },
+    {
+      "home": "Paderborn II",
+      "away": "Schalke 04 II",
+      "date": "2026-03-24T15:00:00+01:00",
+      "league": "Regionalliga - West",
+      "prediction": "Over 2.5",
+      "probability": 62,
+      "odds": 1.62
+    }
+  ],
+  "all": [
+    {
+      "home": "Aucas",
+      "away": "Orense SC",
+      "date": "2026-03-24T01:00:00+01:00",
+      "league": "Liga Pro",
+      "prediction": "Over 1.5",
+      "probability": 77,
+      "odds": 1.3
+    },
+    {
+      "home": "Metropolitanos FC",
+      "away": "Academia Anzo\u00e1tegui",
+      "date": "2026-03-24T00:00:00+01:00",
+      "league": "Primera Divisi\u00f3n",
+      "prediction": "Over 1.5",
+      "probability": 75,
+      "odds": 1.33
+    },
+    {
+      "home": "Cobreloa",
+      "away": "Magallanes",
+      "date": "2026-03-24T00:30:00+01:00",
+      "league": "Primera B",
+      "prediction": "Over 1.5",
+      "probability": 75,
+      "odds": 1.33
+    },
+    {
+      "home": "Paderborn II",
+      "away": "Schalke 04 II",
+      "date": "2026-03-24T15:00:00+01:00",
+      "league": "Regionalliga - West",
+      "prediction": "Over 2.5",
+      "probability": 62,
+      "odds": 1.62
+    }
+  ]
 }
