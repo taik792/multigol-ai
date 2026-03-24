@@ -13,10 +13,7 @@ for m in matches:
     league = m.get("league", "Unknown")
     country = m.get("country", "Unknown")
 
-    # LOGICA NO FAKE
     if "u19" in home.lower() or "u21" in home.lower():
-        pick = "Over 2.5"
-    elif "youth" in league.lower():
         pick = "Over 2.5"
     else:
         pick = "Over 1.5"
@@ -30,7 +27,7 @@ for m in matches:
         "prediction": pick
     })
 
-# salva SEMPRE
+# 🔥 SALVA SOLO LISTA (IMPORTANTE)
 with open("predictions.json", "w") as f:
     json.dump(predictions, f, indent=2)
 
